@@ -27,6 +27,7 @@ JavaScript
 
 ## 3. 프로젝트 구조와 개발 일정
 ### 3.1 프로젝트 구조
+```
 .
 ├── node_modules
 ├── resource
@@ -40,6 +41,7 @@ JavaScript
 ├── router
 │   ├── market.js
 └── app.js
+```
 
 ### 3.2 개발일정
 기간 : 
