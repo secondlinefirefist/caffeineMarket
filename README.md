@@ -1,6 +1,4 @@
-# caffeineMarket2
-## 채지훈1
-=======
+# caffeineMarket
 
 ## **프로젝트 소개**
 
