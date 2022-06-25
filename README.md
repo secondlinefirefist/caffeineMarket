@@ -30,14 +30,14 @@ JavaScript
 ```
 .
 ├── node_modules
-├── resource
+├── src
 │   ├── pages
 │   │   ├── template
 │   |   └── ...html
-│   └── static
-│       ├── css
-│       ├── img
-│       └── js
+│   ├── css
+│   ├── img
+│   └── js
+│      
 ├── router
 │   ├── market.js
 └── app.js
