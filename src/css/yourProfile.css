@@ -128,6 +128,12 @@ body{
     margin: 0 auto;
 }
 
+.contSale h1{
+    margin-left: 16px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
 .contSale .productList{
     display: flex;
     
@@ -142,24 +148,23 @@ body{
     margin-left: 16px;
 }
 
-.contSale h1{
-    margin-left: 16px;
-    font-weight: 700;
-    font-size: 16px;
-}
 
 .productList li img{
+    font-weight: 400;
     border-radius: 8px;
 }
 
 .productList li .prodcutTitle{
     font-size: 14px;
+    padding: 6px 0 4px;
+    text-align: left;
 }
 
 .productList li .prodcutPrice{
     color: #F26E22;
     font-weight: 700;
     font-size: 12px;
+    padding-right: 97px;
 }
 
 /* 게시글 */
@@ -184,7 +189,18 @@ body{
 .postGrid{
     width: 390px;
     margin: 0 auto;
-    padding: 16px;
+    padding: 16px 0 30px;
+}
+
+.postGrid .postGridList{
+    display: grid;
+    grid-template-columns: repeat(3, 114px);
+    gap: 8px;
+    justify-content: center;
+}
+
+.postGrid li img{
+    width: 114px;
 }
 
 /* 하단메뉴 */
