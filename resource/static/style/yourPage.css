@@ -4,7 +4,7 @@
 }
 
 body{
-    width: 100vw;
+    width: 100%;
     font-family: 'SpoqaHanSansNeo-Regular';
 }
 
@@ -17,7 +17,7 @@ body{
 .wrapHeaderNav{
     display: flex;
     justify-content: space-between;
-    border: 1px solid #DBDBDB;
+    border: 0.5px solid #DBDBDB;
     background-color: #fff;
 }
 
@@ -25,12 +25,13 @@ body{
 .wrapHeaderNav .btnSetting{
     display: block;
     width: fit-content;
-    padding: 12px;
+    padding: 13px;
+
 }
 
 .contProfile{
-    border-bottom: 6px solid #DBDBDB;
     background-color: #fff;
+    border: 0.5px solid #DBDBDB;
 }
 
 /* 프로필 사진, follower */
@@ -147,6 +148,10 @@ body{
     font-size: 16px;
 }
 
+.productList li img{
+    border-radius: 8px;
+}
+
 .productList li .prodcutTitle{
     font-size: 14px;
 }
@@ -157,13 +162,34 @@ body{
     font-size: 12px;
 }
 
+/* 게시글 */
 .contPost{
-    border-top: 6px solid #DBDBDB;
-    padding: 20px;
+    border: 0.5px solid #DBDBDB;
 }
 
+.contPost .postType{
+    width: 390px;
+    padding: 9px 16px;
+    margin: 0 auto;
+    border-bottom: 0.5px solid #DBDBDB;
+    overflow: hidden;
+}
+
+.contPost .postType .button{
+    width: fit-content;
+    float: right;
+    padding-left: 10px;
+}
+
+.postGrid{
+    width: 390px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+/* 하단메뉴 */
 .contNav{
-    border-top: 1px solid #DBDBDB;
+    border: 0.5px solid #DBDBDB;
 }
 
 .navList{
@@ -172,8 +198,14 @@ body{
 }
 
 .navList li{
+    padding: 12px 30px 24px;
     display: inline-block;
 }
+
+.navList li img{
+    width: 24px;
+}
+
 
 @media (max-width: 400px) {
     header, main{
