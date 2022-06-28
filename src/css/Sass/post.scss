@@ -1,0 +1,94 @@
+body {
+  width: 100%;
+  margin: 0 auto;
+  .headerBtns {
+    padding: 13px 16px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #dbdbdb;
+    .headerIcon {
+      width: 22px;
+      height: 22px;
+    }
+  }
+  .postCard {
+    padding: 20px 16px;
+    position: relative;
+    .commonProfileHeader {
+      display: flex;
+      position: relative;
+      .profileImg {
+        width: 42px;
+        height: 42px;
+      }
+      .profileTextBox {
+        display: flex;
+        flex-direction: column;
+        padding-left: 12px;
+        .nickName {
+          margin: 4px 0 2px 0;
+          font-size: 14px;
+        }
+        .idName {
+          color: #767676;
+          font-size: 12px;
+        }
+      }
+      .commonSetting {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+    .postCardMain {
+      position: absolute;
+      left: 70px;
+      right: 16px;
+      .postCardMainTextBox {
+        padding-bottom: 16px;
+        .postCardMainText {
+          font-size: 14px;
+        }
+      }
+      .postCardMainImg {
+        width: 100%;
+        padding-bottom: 12px;
+      }
+      .commentBox {
+        padding-bottom: 20px;
+        width: 98px;
+        display: flex;
+
+        // justify-content: space-between;
+        .likeBtnBox {
+          display: flex;
+          padding: 4px;
+          margin-right: 14px;
+          .likeBtn {
+            width: fit-content;
+            margin-right: 7px;
+            .likeBtnImg {
+              max-width: 15px;
+            }
+          }
+          .likeTxt {
+            font-size: 12px;
+            line-height: 18px;
+          }
+        }
+      }
+      .date {
+        font-size: 10px;
+        width: 80px;
+        font-weight: 400;
+        color: #767676;
+      }
+    }
+  }
+}
+.dividingLine {
+  border-bottom: 1px solid #dbdbdb;
+  padding: 24px 0 0 20px;
+}
