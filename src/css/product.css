@@ -22,11 +22,11 @@
   cursor: pointer;
 }
 
-.nav .button-back {
+.nav .btnBack {
   width: fit-content;
 }
 
-.nav .button-save {
+.nav .btnSave {
   width: 90px;
   height: 32px;
   border-radius: 32px;
@@ -35,7 +35,7 @@
   cursor: pointer;
 }
 
-.form-product .screen-product-img button {
+.productForm .productImgScreen button {
   width: fit-content;
 }
 
@@ -43,7 +43,7 @@
   padding: 0 34px;
 }
 
-#app .product .product-content {
+#app .product .productContent {
   display: block;
   font-size: 12px;
   line-height: 15px;
@@ -53,11 +53,11 @@
   font-family: "Spoqa Han Sans Neo";
 }
 
-.product .product-img-upload {
+.product .productImgUpload {
   margin-bottom: 18px;
 }
 
-.product .form-product .screen-product-img {
+.product .productForm .productImgScreen {
   position: relative;
   display: block;
   margin-bottom: 30px;
@@ -69,7 +69,7 @@
   cursor: pointer;
 }
 
-.product .form-product .screen-product-img::after {
+.product .productForm .productImgScreen::after {
   content: "";
   position: absolute;
   right: 12px;
@@ -81,17 +81,17 @@
   background-size: 36px 36px;
 }
 
-.form-product .screen-product-img img {
+.productForm .productImgScreen img {
   position: absolute;
   right: 12px;
   bottom: 12px;
 }
 
-.form-product .title-product {
+.productForm .productTitle {
   margin-bottom: 10px;
 }
 
-.form-product .input-product {
+.productForm .inputProduct {
   border: 0;
   border-bottom: 1px solid #dbdbdb;
   margin-bottom: 16px;
@@ -101,12 +101,12 @@
   box-sizing: border-box;
 }
 
-.form-product .input-product:focus {
+.productForm .inputProduct:focus {
   outline: none;
   border-bottom: 1px solid #ffc7a7;
 }
 
-.form-product .input-product::placeholder {
+.productForm .inputProduct::placeholder {
   color: #dbdbdb;
   font-family: "Spoqa Han Sans Neo";
   font-style: normal;

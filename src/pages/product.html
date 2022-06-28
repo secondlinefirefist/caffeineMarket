@@ -12,28 +12,26 @@
     <div id="app">
       <header class="nav">
         <h1 class="ir">감귤마켓 상품페이지입니다.</h1>
-        <button type="button" class="button-back">
+        <button type="button" class="btnBack">
           <img src="../img/icon-arrow-left.png" alt="뒤로가기 버튼" />
         </button>
-        <button type="button" class="button-save">저장</button>
+        <button type="button" class="btnSave">저장</button>
       </header>
       <main>
         <h2 class="ir">상품을 등록하세요</h2>
         <section class="product">
-          <form action="" class="form-product">
-            <h3 for="product-upload" class="product-img-upload product-content">
-              이미지 등록
-            </h3>
-            <label class="screen-product-img" for="product-upload">
+          <form action="" class="productForm">
+            <h3 class="productImgUpload productContent">이미지 등록</h3>
+            <label class="productImgScreen" for="productUpload">
               <input
                 type="file"
                 accept="image/*"
                 multiple
-                id="product-upload"
+                id="productUpload"
                 class="ir"
               />
             </label>
-            <label for="product-name" class="title-product product-content"
+            <label for="productName" class="productTitle productContent"
               >상품명</label
             >
             <input
@@ -41,28 +39,28 @@
               placeholder="2~15자 이내여야 합니다."
               minlength="2"
               maxlength="15"
-              class="input-product-title input-product"
-              id="product-name"
+              class="inputProductTitle inputProduct"
+              id="productName"
             />
 
-            <label for="product-price" class="title-product product-content"
+            <label for="productPrice" class="productTitle productContent"
               >가격(원)</label
             >
             <input
               type="number"
               placeholder="숫자만 입력 가능합니다"
-              class="input-product-price input-product"
-              id="product-price"
+              class="inputProductPrice inputProduct"
+              id="productPrice"
             />
 
-            <label for="product-link" class="title-product product-content"
+            <label for="productLink" class="productTitle productContent"
               >판매 링크</label
             >
             <input
               type="url"
               placeholder="URL을 입력해 주세요"
-              class="input-product-link input-product"
-              id="product-link"
+              class="inputProductLink inputProduct"
+              id="productLink"
             />
           </form>
         </section>
