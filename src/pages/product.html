@@ -11,25 +11,37 @@
   <body>
     <div id="app">
       <header class="nav">
-        <h1 class="blind">감귤마켓 상품페이지입니다.</h1>
+        <h1 class="ir">감귤마켓 상품페이지입니다.</h1>
         <button type="button" class="button-back">
           <img src="../img/icon-arrow-left.png" alt="뒤로가기 버튼" />
         </button>
         <button type="button" class="button-save">저장</button>
       </header>
       <main>
-        <h2 class="blind">상품을 등록하세요</h2>
+        <h2 class="ir">상품을 등록하세요</h2>
         <section class="product">
           <form action="" class="form-product">
-            <label for="product-upload" class="product-img-upload product-content">이미지 등록</label>
+            <label
+              for="product-upload"
+              class="product-img-upload product-content"
+              >이미지 등록</label
+            >
             <div class="screen-product-img">
               <button type="button" class="button-product-upload">
-                <!-- <input type="file" accept="image/*" multiple type="hidden" id="product-upload"> -->
+                <input
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  type="hidden"
+                  id="product-upload"
+                />
                 <img src="../img/img-btn.png" alt="상품업로드 버튼" />
               </button>
             </div>
 
-            <label for="product-name" class="title-product product-content">상품명</label>
+            <label for="product-name" class="title-product product-content"
+              >상품명</label
+            >
             <input
               type="text"
               placeholder="2~15자 이내여야 합니다."
@@ -37,7 +49,9 @@
               id="product-name"
             />
 
-            <label for="product-price" class="title-product product-content">가격(원)</label>
+            <label for="product-price" class="title-product product-content"
+              >가격(원)</label
+            >
             <input
               type="number"
               placeholder="숫자만 입력 가능합니다"
@@ -45,7 +59,9 @@
               id="product-price"
             />
 
-            <label for="product-link" class="title-product product-content">판매 링크</label>
+            <label for="product-link" class="title-product product-content"
+              >판매 링크</label
+            >
             <input
               type="url"
               placeholder="URL을 입력해 주세요"
