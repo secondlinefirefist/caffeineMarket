@@ -21,25 +21,18 @@
         <h2 class="ir">상품을 등록하세요</h2>
         <section class="product">
           <form action="" class="form-product">
-            <label
-              for="product-upload"
-              class="product-img-upload product-content"
-              >이미지 등록</label
-            >
-            <div class="screen-product-img">
-
-              <button type="button" class="button-product-upload">
-                <input
-                  type="file"
-                  accept="image/*"
-                  multiple
-                  type="hidden"
-                  id="product-upload"
-                />
-                <img src="../img/img-btn.png" alt="상품업로드 버튼" />
-              </button>
-              
-            </div>
+            <h3 for="product-upload" class="product-img-upload product-content">
+              이미지 등록
+            </h3>
+            <label class="screen-product-img" for="product-upload">
+              <input
+                type="file"
+                accept="image/*"
+                multiple
+                id="product-upload"
+                class="ir"
+              />
+            </label>
             <label for="product-name" class="title-product product-content"
               >상품명</label
             >
