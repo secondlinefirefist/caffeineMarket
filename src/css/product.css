@@ -1,19 +1,17 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 
 #app {
-  margin: 0 auto;
-  max-width: 1000px;
+  width: 100vw;
   height: 100vh;
 }
 
 #app .nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   margin-bottom: 30px;
   border-bottom: 0.5px solid #dbdbdb;
   padding: 8px 16px;
-  max-width: 1000px;
   height: 48px;
   box-sizing: border-box;
 }
