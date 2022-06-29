@@ -54,3 +54,60 @@ body {
 main .contChatRoom {
   padding: 20px 16px;
 }
+
+main .chatRoom {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatRoom .chatContent {
+  margin-bottom: 9px;
+  display: flex;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.yourChatContent img {
+  margin-right: 12px;
+  width: 42px;
+  height: 42px;
+}
+
+.chatContent .chatText {
+  max-width: 240px;
+  padding: 12px;
+  line-height: 18px;
+}
+
+.yourChatContent .chatText {
+  margin-right: 6px;
+  background-color: #ffffff;
+  border: 1px solid #c4c4c4;
+  border-radius: 0 12px 12px 12px;
+}
+
+.chatRoom .myChatContent {
+  justify-content: flex-end;
+}
+
+.myChatContent .chatText {
+  margin-left: 6px;
+  background-color: #f26e22;
+  color: #ffffff;
+  border-radius: 12px 0 12px 12px;
+}
+
+.chatContent .chatTime {
+  align-self: flex-end;
+  font-style: normal;
+  font-size: 10px;
+  color: #767676;
+}
+
+@media (max-width: 400px) {
+  #app {
+    width: 390px;
+  }
+}
