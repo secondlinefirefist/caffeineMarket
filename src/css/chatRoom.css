@@ -16,6 +16,8 @@ body {
 /* header */
 
 .wrapHeaderNav {
+  /* width: 100%; */
+  height: 48px;
   padding: 12px 12px 12px 16px;
   display: flex;
   justify-content: space-between;
@@ -23,7 +25,6 @@ body {
   border-bottom: 0.5px solid #dbdbdb;
   background-color: #fff;
   box-sizing: border-box;
-  height: 48px;
 }
 
 .wrapHeaderNav .btnBack,
@@ -44,15 +45,13 @@ body {
 
 /* main */
 
-#app main {
-  width: 100%;
-  height: 100%;
-  background-color: #f2f2f2;
+#app-main {
   overflow-y: scroll;
 }
 
 main .contChatRoom {
   padding: 20px 16px;
+  background-color: #f2f2f2;
 }
 
 main .chatRoom {
@@ -71,6 +70,10 @@ main .chatRoom {
   box-sizing: border-box;
 }
 
+.chatRoom .chatContent:last-child {
+  margin-bottom: 0;
+}
+
 .chatContent .chatText {
   max-width: 240px;
   padding: 12px;
@@ -82,6 +85,12 @@ main .chatRoom {
   font-style: normal;
   font-size: 10px;
   color: #767676;
+}
+
+.chatContent .chatImg {
+  width: 240px;
+  height: 240px;
+  border-radius: 10px;
 }
 
 /* 상대방 채팅 내용 */
@@ -109,6 +118,59 @@ main .chatRoom {
   background-color: #f26e22;
   color: #ffffff;
   border-radius: 12px 0 12px 12px;
+}
+
+/* 메시지 입력 창 */
+
+#app .contChatForm {
+  height: 60px;
+  padding: 12px 20px 12px 16px;
+  background-color: #ffffff;
+  border-top: 0.5px solid #dbdbdb;
+  box-sizing: border-box;
+}
+
+#app .chatForm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chatForm .labelImgUpload {
+  display: inline-block;
+  margin-right: 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url(../img/img-btn.png);
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.chatForm .inputChatText {
+  vertical-align: 13px;
+  border: none;
+  outline: none;
+  line-height: 18px;
+  font-size: 14px;
+}
+
+.chatForm .inputChatText::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #c4c4c4;
+}
+
+.chatForm .btnTextSubmit {
+  margin-left: 18px;
+  width: 30px;
+  height: 18px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #c4c4c4;
 }
 
 @media (max-width: 400px) {
