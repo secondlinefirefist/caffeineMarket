@@ -130,10 +130,10 @@ main .chatRoom {
   box-sizing: border-box;
 }
 
-#app .chatForm {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+#app .chatForm::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .chatForm .labelImgUpload {
@@ -149,6 +149,7 @@ main .chatRoom {
 }
 
 .chatForm .inputChatText {
+  width: calc(100% - 110px);
   vertical-align: 13px;
   border: none;
   outline: none;
@@ -164,9 +165,10 @@ main .chatRoom {
 }
 
 .chatForm .btnTextSubmit {
+  float: right;
   margin-left: 18px;
   width: 30px;
-  height: 18px;
+  line-height: 36px;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
