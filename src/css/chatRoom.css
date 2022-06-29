@@ -60,6 +60,8 @@ main .chatRoom {
   flex-direction: column;
 }
 
+/* 채팅창 공통 스타일 */
+
 .chatRoom .chatContent {
   margin-bottom: 9px;
   display: flex;
@@ -69,16 +71,25 @@ main .chatRoom {
   box-sizing: border-box;
 }
 
-.yourChatContent img {
-  margin-right: 12px;
-  width: 42px;
-  height: 42px;
-}
-
 .chatContent .chatText {
   max-width: 240px;
   padding: 12px;
   line-height: 18px;
+}
+
+.chatContent .chatTime {
+  align-self: flex-end;
+  font-style: normal;
+  font-size: 10px;
+  color: #767676;
+}
+
+/* 상대방 채팅 내용 */
+
+.yourChatContent .chatUserProfile {
+  margin-right: 12px;
+  width: 42px;
+  height: 42px;
 }
 
 .yourChatContent .chatText {
@@ -88,6 +99,7 @@ main .chatRoom {
   border-radius: 0 12px 12px 12px;
 }
 
+/* 나의 채팅 내용 */
 .chatRoom .myChatContent {
   justify-content: flex-end;
 }
@@ -97,13 +109,6 @@ main .chatRoom {
   background-color: #f26e22;
   color: #ffffff;
   border-radius: 12px 0 12px 12px;
-}
-
-.chatContent .chatTime {
-  align-self: flex-end;
-  font-style: normal;
-  font-size: 10px;
-  color: #767676;
 }
 
 @media (max-width: 400px) {
