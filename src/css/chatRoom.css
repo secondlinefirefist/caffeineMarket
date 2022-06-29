@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "SpoqaHanSansNeo-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff")
+    format("woff");
+}
+
+body {
+  width: 100%;
+  font-family: "SpoqaHanSansNeo-Regular";
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+/* header */
+
+.wrapHeaderNav {
+  display: flex;
+  justify-content: space-between;
+  border: 0.5px solid #dbdbdb;
+  background-color: #fff;
+}
+
+.wrapHeaderNav .btnBack,
+.wrapHeaderNav .btnSetting {
+  display: block;
+  width: fit-content;
+  padding: 13px 10px 13px 16px;
+}
+
+.wrapHeaderNav .btnBack,
+.wrapHeaderNav .chatUser {
+  display: inline-block;
+}
+
+.wrapHeaderNav .chatUser {
+  vertical-align: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
