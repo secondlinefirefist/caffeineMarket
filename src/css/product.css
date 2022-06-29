@@ -22,10 +22,6 @@
   cursor: pointer;
 }
 
-.nav .btnBack {
-  width: fit-content;
-}
-
 .nav .btnSave {
   width: 90px;
   height: 32px;
@@ -35,6 +31,7 @@
   cursor: pointer;
 }
 
+.nav .btnBack,
 .productForm .productImgScreen button {
   width: fit-content;
 }
@@ -79,12 +76,6 @@
   background-image: url(../img/img-btn.png);
   background-repeat: no-repeat;
   background-size: 36px 36px;
-}
-
-.productForm .productImgScreen img {
-  position: absolute;
-  right: 12px;
-  bottom: 12px;
 }
 
 .productForm .productTitle {
