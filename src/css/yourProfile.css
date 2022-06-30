@@ -225,10 +225,28 @@ body{
     width: 42px;
 }
 
-.postIndexTitle{
+.postIndexCont{
     width: 304px;
 }
 
+.postIndexCont .btnPostSetting{
+    display: block;
+    float: right;
+    width: fit-content;
+}
+
+.postIndexCont .titleMarket {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.postIndexCont .marketId{
+    padding: 2px 0 16px;
+}
+
+.postIndexCont .imgIndexPost{
+    margin-top: 16px;
+}
 
 /* 하단메뉴 */
 .contNav{
