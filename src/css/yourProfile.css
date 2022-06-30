@@ -186,20 +186,20 @@ body{
     padding-left: 10px;
 }
 
-.postGrid{
+.wrapPost{
     width: 390px;
     margin: 0 auto;
     padding: 16px 0 30px;
 }
 
-.postGrid .postGridList{
+.wrapPost .postList{
     display: grid;
     grid-template-columns: repeat(3, 114px);
     gap: 8px;
     justify-content: center;
 }
 
-.postGrid li img{
+.wrapPost li img{
     width: 114px;
 }
 
