@@ -1,11 +1,16 @@
 @font-face {
     font-family: 'SpoqaHanSansNeo-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family: 'SpoqaHanSansNeo-Regular', 'sans-serif';
 }
 
 body{
     width: 100%;
-    font-family: 'SpoqaHanSansNeo-Regular';
 }
 
 /* header, main{
@@ -194,9 +199,9 @@ body{
 }
 
 .wrapPost{
-    width: 330px;
+    width: 358px;
     margin: 0 auto;
-    padding: 16px 30px 30px;
+    padding: 16px 16px 30px;
 }
 
 .wrapPost .postGridList{
@@ -236,12 +241,16 @@ body{
 }
 
 .postIndexCont .titleMarket {
-    font-weight: 700;
     font-size: 14px;
 }
 
 .postIndexCont .marketId{
-    padding: 2px 0 16px;
+    padding: 6px 0 16px;
+}
+
+.postIndexCont .postIndexText{
+    font-size: 14px;
+    line-height: 18px;
 }
 
 .postIndexCont .imgIndexPost{
