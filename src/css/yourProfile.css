@@ -1,11 +1,16 @@
 @font-face {
     font-family: 'SpoqaHanSansNeo-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family: 'SpoqaHanSansNeo-Regular', 'sans-serif';
 }
 
 body{
     width: 100%;
-    font-family: 'SpoqaHanSansNeo-Regular';
 }
 
 /* header, main{
@@ -80,11 +85,17 @@ body{
     font-size: 16px;
 }
 
-.userDetail .marketId{
+.marketId{
+    display: block;
+    width: fit-content;
     font-weight: 400;
     font-size: 12px;
-    padding: 6px 0 16px;
     color: #767676;
+}
+
+.userDetail .marketId{
+    margin: 0 auto;
+    padding: 6px 0 16px;
 }
 
 .userDetail .marketDetail{
@@ -128,6 +139,12 @@ body{
     margin: 0 auto;
 }
 
+.contSale h1{
+    margin-left: 16px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
 .contSale .productList{
     display: flex;
     
@@ -142,33 +159,33 @@ body{
     margin-left: 16px;
 }
 
-.contSale h1{
-    margin-left: 16px;
-    font-weight: 700;
-    font-size: 16px;
-}
 
 .productList li img{
+    font-weight: 400;
     border-radius: 8px;
 }
 
 .productList li .prodcutTitle{
     font-size: 14px;
+    padding: 6px 0 4px;
+    text-align: left;
 }
 
 .productList li .prodcutPrice{
     color: #F26E22;
     font-weight: 700;
     font-size: 12px;
+    padding-right: 97px;
 }
 
-/* 게시글 */
+/* 그리드 게시글 */
 .contPost{
     border: 0.5px solid #DBDBDB;
+    overflow: hidden;
 }
 
 .contPost .postType{
-    width: 390px;
+    width: 358px;
     padding: 9px 16px;
     margin: 0 auto;
     border-bottom: 0.5px solid #DBDBDB;
@@ -181,11 +198,83 @@ body{
     padding-left: 10px;
 }
 
-.postGrid{
-    width: 390px;
+.wrapPost{
+    width: 358px;
     margin: 0 auto;
-    padding: 16px;
+    padding: 16px 16px 30px;
 }
+
+.wrapPost .postGridList{
+    display: grid;
+    grid-template-columns: repeat(3, 114px);
+    gap: 8px;
+    justify-content: center;
+}
+
+.wrapPost .postGridList li .imgGrindPost{
+    width: 114px;
+}
+
+/*목차형 게시글*/
+.postIndexList{
+    width: 346px;
+}
+
+.postIndexList li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.postIndexList li .imgPostProfile{
+    width: 42px;
+}
+
+.postIndexCont{
+    width: 304px;
+}
+
+.postIndexCont .btnPostSetting{
+    display: block;
+    float: right;
+    width: fit-content;
+}
+
+.postIndexCont .titleMarket {
+    font-size: 14px;
+}
+
+.postIndexCont .marketId{
+    padding: 6px 0 16px;
+}
+
+.postIndexCont .postIndexText{
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.postIndexCont .imgIndexPost{
+    margin-top: 16px;
+}
+
+.wrapBtnReaction button{
+    display: inline-block;
+    width: fit-content;
+    margin: 14px 18px 0 0;
+    font-size: 12px;
+    color: #767676;
+}
+
+.wrapBtnReaction button img{
+    width: 15px;
+}
+
+.postIndexCont .dateTxt{
+    padding-top: 18px;
+    font-size: 10px;
+    color: #767676;;
+}
+
 
 /* 하단메뉴 */
 .contNav{
@@ -207,7 +296,7 @@ body{
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 390px) {
     header, main{
         width: 390px;
         margin: 0 auto;
