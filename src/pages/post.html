@@ -10,8 +10,12 @@
   </head>
   <body>
     <nav class="headerBtns">
-      <button class="headerIcon iconArrowLeft"><img src="../img/icon/icon-arrow-left.png" alt="" /></button>
-      <button class="headerIcon iconMoreVertical"><img src="../img/icon- more-vertical.png" alt="" /></button>
+      <button type="button" class="headerIcon iconArrowLeft">
+        <img src="../img/icon/icon-arrow-left.png" alt="" />
+      </button>
+      <button type="button" class="headerIcon iconMoreVertical">
+        <img src="../img/icon- more-vertical.png" alt="" />
+      </button>
     </nav>
     <main class="postCard">
       <div class="commonProfileHeader">
@@ -20,7 +24,7 @@
           <p class="nickName">애월읍 위니브 감귤농장</p>
           <p class="idName">@weniv_Mandarin</p>
         </div>
-        <button class="commonSetting"><img src="../img/icon/s-icon-more-vertical.png" alt="" /></button>
+        <button type="button" class="commonSetting"><img src="../img/icon/s-icon-more-vertical.png" alt="" /></button>
       </div>
       <article class="postCardMain">
         <div class="postCardMainTextBox">
@@ -48,16 +52,39 @@
           <p>2020년 10월 21일</p>
         </div>
       </article>
-      <div class="dividingLine"></div>
-      <div class="commentComponent"></div>
-      <div class="inputComponent"></div>
     </main>
+    <p class="dividingLine"></p>
+    <div class="commentComponent">
+      <div class="commentProfileInfo">
+        <img class="commentProfileImg" src="../img/Ellipse4.png" alt="profile" />
+        <div class="commentNames">
+          <p class="commentNickName">애월읍 위니브 감귤농장</p>
+          <p class="commentWrittenTime">&middot; 5분전</p>
+        </div>
+        <button type="button" class="commonSetting"><img src="../img/icon/s-icon-more-vertical.png" alt="" /></button>
+      </div>
+      <p class="commentText">게시글 답글 ~~ !! 최고최고</p>
+    </div>
+    <div class="commentComponent">
+      <div class="commentProfileInfo">
+        <img class="commentProfileImg" src="../img/Ellipse5.png" alt="profile" />
+        <div class="commentNames">
+          <p class="commentNickName">감귤러버</p>
+          <p class="commentWrittenTime">&middot; 15분전</p>
+        </div>
+        <button type="button" class="commonSetting"><img src="../img/icon/s-icon-more-vertical.png" alt="" /></button>
+      </div>
+      <p class="commentText">
+        안녕하세요. 사진이 너무 멋있어요. 한라봉 언제 먹을 수 있나요? 기다리기 지쳤어요 땡벌땡벌...
+      </p>
+    </div>
+    <div class="inputComponent">
+      <img class="inputProfileImg" src="../img/basic-profile-img.png" alt="profile" />
+      <form class="inputComment" action="post">
+        <input class="inputCommentText" type="text" placeholder="댓글 입력하기..." />
+      </form>
+      <button class="commentPostBtn">게시</button>
+    </div>
     <script src="../static/js/post.js"></script>
   </body>
 </html>
-
-<!-- folder tree 정하기 -->
-<!-- 마크업 제작, js 구조 고민 -->
-<!-- 반복되는 데이터 받아오는 것 고민 -->
-<!-- 기존 프로젝트 차용 -->
-<!-- 기존 프로젝트 차용 -->
