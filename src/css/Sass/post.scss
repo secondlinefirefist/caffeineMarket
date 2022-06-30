@@ -1,11 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
+html,
 body {
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   .headerBtns {
     padding: 13px 16px;
     display: flex;
@@ -19,7 +17,6 @@ body {
   .postCard {
     padding: 20px 16px;
     position: relative;
-    min-height: fit-content;
     .commonProfileHeader {
       display: flex;
       position: relative;
@@ -174,3 +171,4 @@ body {
     }
   }
 }
+// 화면 줄였을 때, html 밖 부분 없애야 함.
