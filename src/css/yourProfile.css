@@ -80,11 +80,17 @@ body{
     font-size: 16px;
 }
 
-.userDetail .marketId{
+.marketId{
+    display: block;
+    width: fit-content;
     font-weight: 400;
     font-size: 12px;
-    padding: 6px 0 16px;
     color: #767676;
+}
+
+.userDetail .marketId{
+    margin: 0 auto;
+    padding: 6px 0 16px;
 }
 
 .userDetail .marketDetail{
@@ -167,13 +173,14 @@ body{
     padding-right: 97px;
 }
 
-/* 게시글 */
+/* 그리드 게시글 */
 .contPost{
     border: 0.5px solid #DBDBDB;
+    overflow: hidden;
 }
 
 .contPost .postType{
-    width: 390px;
+    width: 358px;
     padding: 9px 16px;
     margin: 0 auto;
     border-bottom: 0.5px solid #DBDBDB;
@@ -187,21 +194,41 @@ body{
 }
 
 .wrapPost{
-    width: 390px;
+    width: 330px;
     margin: 0 auto;
-    padding: 16px 0 30px;
+    padding: 16px 30px 30px;
 }
 
-.wrapPost .postList{
+.wrapPost .postGridList{
     display: grid;
     grid-template-columns: repeat(3, 114px);
     gap: 8px;
     justify-content: center;
 }
 
-.wrapPost li img{
+.wrapPost .postGridList li .imgGrindPost{
     width: 114px;
 }
+
+/*목차형 게시글*/
+.postIndexList{
+    width: 346px;
+}
+
+.postIndexList li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.postIndexList li .imgPostProfile{
+    width: 42px;
+}
+
+.postIndexTitle{
+    width: 304px;
+}
+
 
 /* 하단메뉴 */
 .contNav{
