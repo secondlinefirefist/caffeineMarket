@@ -45,8 +45,10 @@ body {
 
 /* main */
 
-#app-main {
+#app main {
   overflow-y: scroll;
+  /* position: fixed; */
+  /* min-width: 100%; */
 }
 
 main .contChatRoom {
@@ -109,6 +111,7 @@ main .chatRoom {
 }
 
 /* 나의 채팅 내용 */
+
 .chatRoom .myChatContent {
   justify-content: flex-end;
 }
@@ -123,17 +126,14 @@ main .chatRoom {
 /* 메시지 입력 창 */
 
 #app .contChatForm {
-  height: 60px;
+  width: 100%;
+  /* position: fixed; */
+  /* bottom: 0; */
+  /* height: 60px; */
   padding: 12px 20px 12px 16px;
   background-color: #ffffff;
   border-top: 0.5px solid #dbdbdb;
   box-sizing: border-box;
-}
-
-#app .chatForm::after {
-  content: "";
-  display: block;
-  clear: both;
 }
 
 .chatForm .labelImgUpload {
@@ -155,6 +155,8 @@ main .chatRoom {
   outline: none;
   line-height: 18px;
   font-size: 14px;
+  /* background-color: aquamarine; */
+  /* overflow-y: scroll; */
 }
 
 .chatForm .inputChatText::placeholder {
@@ -173,6 +175,13 @@ main .chatRoom {
   font-weight: 400;
   font-size: 14px;
   color: #c4c4c4;
+}
+
+/* 전송 버튼에 대한 clear fix */
+#app .chatForm::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 @media (max-width: 400px) {
