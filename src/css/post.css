@@ -1,0 +1,15 @@
+body {
+  width: 100%;
+  margin: 0 auto;
+}
+
+body .headerBtns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .headerBtns .headerIcon {
+  display: block;
+}
+/*# sourceMappingURL=post.css.map */
