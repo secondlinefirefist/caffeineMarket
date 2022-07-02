@@ -1,0 +1,33 @@
+.login-header .title{
+  margin-bottom: 12px;
+}
+
+.login-header .sub-title {
+  color: #767676;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.wrap-cover {
+  margin: 30px auto;
+  width: fit-content;
+  position: relative;
+}
+
+.profile-cover {
+  vertical-align: top;
+}
+
+
+.profile-add {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 36px;
+}
+
+.profile-add img {
+  width: 100%;
+}
