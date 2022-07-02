@@ -1,0 +1,11 @@
+input[class*="-input"] {
+  padding: 0;
+}
+
+input::placeholder {
+  color: #bdbdbd;
+}
+
+input:last-child {
+  margin-bottom: 30px;
+}
