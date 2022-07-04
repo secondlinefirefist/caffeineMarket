@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/Sass/upload.css" />
+    <title>upload</title>
+  </head>
+  <body>
+    <nav class="headerBtns">
+      <button type="button" class="headerIcon iconArrowLeft">
+        <img src="../img/icon/icon-arrow-left.png" alt="" />
+      </button>
+      <button class="uploadBtn">업로드</button>
+    </nav>
+    <main class="uploadCard">
+      <img
+        class="profileImg"
+        src="../img/basic-profile-img.png"
+        alt="profile"
+      />
+      <textarea
+        class="uploadBoxText"
+        type="text"
+        placeholder="게시글 입력하기..."
+      ></textarea>
+    </main>
+    <label class="fileUploadBtn" for="inputFile"
+      ><img src="../img/upload-file.png" alt="uploadBtn"
+    /></label>
+    <input class="inputDisabled" type="file" id="inputFile" value="image" />
+  </body>
+</html>
