@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'SpoqaHanSansNeo-Regular', 'sans-serif';
+}
+
+body {
+  width: 100%;
+}
+
+/* header, main{
+      width: 390px;
+      margin: 0 auto;
+  } */
+
+.wrapHeaderNav {
+  display: flex;
+  justify-content: space-between;
+  border: 0.5px solid #dbdbdb;
+  background-color: #fff;
+}
+
+.wrapHeaderNav .btnBack {
+  display: block;
+  width: fit-content;
+  padding: 13px;
+}
+
+/* 하단메뉴 */
+.contNav {
+  border: 0.5px solid #dbdbdb;
+}
+
+.navList {
+  width: 390px;
+  margin: 0 auto;
+}
+
+.navList li {
+  padding: 12px 30px 24px;
+  display: inline-block;
+}
+
+.navList li img {
+  width: 24px;
+}
+
+@media (max-width: 390px) {
+  header,
+  main {
+    width: 390px;
+    margin: 0 auto;
+  }
+}
