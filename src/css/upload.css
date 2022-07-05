@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body .headerBtns {
@@ -12,8 +12,8 @@ body .headerBtns {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border-bottom: 1px solid #dbdbdb;
 }
 
@@ -46,14 +46,13 @@ body .uploadCard .profileImg {
 }
 
 body .uploadCard .textImgPart {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 body .uploadCard .textImgPart .uploadBoxText {
@@ -61,20 +60,16 @@ body .uploadCard .textImgPart .uploadBoxText {
   padding-top: 12px;
   border: none;
   resize: none;
-  overflow-y: hidden;
 }
 
 body .uploadCard .textImgPart .loadFileArea {
   margin-left: 14px;
   padding-top: 12px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 body .fileUploadBtn {
   position: absolute;
-  bottom: 16px;
+  bottom: calc(100% - 16px);
   right: 16px;
   width: 50px;
   cursor: pointer;

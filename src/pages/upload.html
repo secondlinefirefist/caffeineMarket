@@ -21,15 +21,27 @@
         src="../img/basic-profile-img.png"
         alt="profile"
       />
-      <textarea
-        class="uploadBoxText"
-        type="text"
-        placeholder="게시글 입력하기..."
-      ></textarea>
+      <div class="textImgPart">
+        <textarea
+          class="uploadBoxText"
+          type="text"
+          placeholder="게시글 입력하기..."
+        ></textarea>
+        <div class="loadImageArea"><img class="loadFileArea" alt="" /></div>
+      </div>
     </main>
     <label class="fileUploadBtn" for="inputFile"
       ><img src="../img/upload-file.png" alt="uploadBtn"
     /></label>
-    <input class="inputDisabled" type="file" id="inputFile" value="image" />
+    <input
+      class="inputDisabled"
+      type="file"
+      id="inputFile"
+      name="image"
+      accept="image/*"
+      multiple
+      onchange="loadFile(event)"
+    />
+    <script src="../js/upload.js"></script>
   </body>
 </html>
