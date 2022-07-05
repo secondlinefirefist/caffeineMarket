@@ -1,0 +1,99 @@
+#splash-login {
+  background-color: #EA7F42;
+}
+
+.header-background {
+  padding: 180px 0 177px;
+}
+
+.logo-wrap {
+  width: fit-content;
+  margin: auto;
+}
+
+.logo-cover {
+  vertical-align: top;
+}
+
+/* social-login */
+.social {
+  padding: 50px 34px 0;
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.social-button {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 13px 0;
+  border-radius: 44px;
+  color: #767676;
+  position: relative;
+}
+
+.social-button::before {
+  content: " ";
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 17px;
+  margin: auto 0;
+}
+
+.social-button.kakao {
+  border: 1px solid #F2C94C;
+}
+
+.social-button.kakao::before {
+  background: url(../img/message-circle.png);
+}
+
+.social-button.google {
+  border: 1px solid #767676;
+}
+
+.social-button.google::before {
+  background: url(../img/google.png);
+}
+
+.social-button.facebook {
+  border: 1px solid #2d9cdb;
+}
+
+.social-button.facebook::before {
+  background: url(../img/facebook.png);
+}
+
+.social-button + .social-button {
+  margin-top: 10px;
+}
+
+.sign-wrap {
+  margin-top: 20px;
+}
+
+.sign-wrap ul {
+  display: flex;
+  justify-content: center;
+}
+
+.sign-wrap li:first-child {
+  position: relative;
+  margin-right: 12px;
+  padding-right: 12px;
+}
+
+.sign-wrap li:first-child::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 0;
+  width: 1px;
+  height: 14px;
+  background-color: #C4C4C4;
+}
