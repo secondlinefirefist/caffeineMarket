@@ -133,6 +133,7 @@ body {
 .contSale {
   padding: 20px 0;
   width: 390px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -182,7 +183,8 @@ body {
 }
 
 .contPost .postType {
-  width: 358px;
+  width: 390px;
+  box-sizing: border-box;
   padding: 9px 16px;
   margin: 0 auto;
   border-bottom: 0.5px solid #dbdbdb;
@@ -196,7 +198,8 @@ body {
 }
 
 .wrapPost {
-  width: 358px;
+  width: 390px;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 16px 16px 30px;
 }
