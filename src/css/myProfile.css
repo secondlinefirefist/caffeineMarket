@@ -15,9 +15,9 @@ body {
 }
 
 /* header, main{
-    width: 390px;
-    margin: 0 auto;
-} */
+      width: 390px;
+      margin: 0 auto;
+  } */
 
 .wrapHeaderNav {
   display: flex;
@@ -106,29 +106,22 @@ body {
 }
 
 /* SNS */
-.userSns {
-  display: flex;
-  justify-content: center;
-  padding: 24px 0 26px;
+.userSettings {
+  width: fit-content;
+  margin: 24px auto;
 }
 
-.userSns .btnKakao,
-.userSns .btnShare {
-  width: 34px;
+.userSettings .btnEditProfile,
+.userSettings .btnAddProduct {
+  width: 100px;
   height: 34px;
   border: 1px solid #dbdbdb;
-  border-radius: 50%;
-  background-color: white;
+  border-radius: 30px;
+  font-size: 14px;
 }
 
-.userSns .btnFollow {
-  width: 120px;
-  margin: 0 10px;
-  border: 1px solid #dbdbdb;
-  border-radius: 30px;
-  color: #767676;
-  font-weight: 500;
-  font-size: 14px;
+.userSettings .btnEditProfile {
+  margin-right: 12px;
 }
 
 /* 판매상품 */
@@ -180,15 +173,19 @@ body {
 
 /* 그리드 게시글 */
 .contPost {
-  border: 0.5px solid #dbdbdb;
-  overflow: hidden;
-}
-
-.contPost {
   width: 390px;
   box-sizing: border-box;
   border-top: 0.5px solid #dbdbdb;
   margin: 0 auto;
+  overflow: hidden;
+}
+
+.contPost .postType {
+  width: 390px;
+  box-sizing: border-box;
+  padding: 9px 16px;
+  margin: 0 auto;
+  border-bottom: 0.5px solid #dbdbdb;
   overflow: hidden;
 }
 
