@@ -14,15 +14,14 @@ body {
   width: 100%;
 }
 
-/* header, main{
-      width: 390px;
-      margin: 0 auto;
-  } */
+main {
+  height: 100vh;
+}
 
 .wrapHeaderNav {
   display: flex;
-  justify-content: space-between;
-  border: 0.5px solid #dbdbdb;
+  align-items: center;
+  border: 1px solid #dbdbdb;
   background-color: #fff;
 }
 
@@ -30,6 +29,58 @@ body {
   display: block;
   width: fit-content;
   padding: 13px;
+}
+
+.wrapHeaderNav .titleFollowers {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/*followers List*/
+.contFollowers {
+  width: 390px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+.contFollowers .followersList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.followersList li .followerProfileImg {
+  width: 50px;
+  border: 1px solid #dbdbdb;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.followersList li .txtWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.followersList li .txtWrap .txtFollowerTitle {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.followersList li .txtWrap .txtFollwerInfo {
+  font-size: 12px;
+  margin-top: 6px;
+  color: #767676;
+}
+
+.followersList li .btnFollow {
+  width: 50px;
+  height: 24px;
+  font-size: 12px;
+  background: #f26e22;
+  border-radius: 26px;
+  color: white;
 }
 
 /* 하단메뉴 */
