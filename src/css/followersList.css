@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'SpoqaHanSansNeo-Regular', 'sans-serif';
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+main {
+  height: calc(100% - 100px);
+  overflow-y: scroll;
+}
+
+footer {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0px;
+  right: 0;
+  left: 0;
+}
+
+.wrapHeaderNav {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+}
+
+.wrapHeaderNav .btnBack {
+  display: block;
+  width: fit-content;
+  padding: 13px;
+}
+
+.wrapHeaderNav .titleFollowers {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/*followers List*/
+.contFollowers {
+  width: 390px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.contFollowers .followersList li {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.followersList li .followerProfileImg {
+  width: 50px;
+  border: 1px solid #dbdbdb;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.followersList li .txtWrap {
+  width: 228px;
+  display: flex;
+  flex-direction: column;
+}
+
+.followersList li .txtWrap .txtFollowerTitle {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.followersList li .txtWrap .txtFollwerInfo {
+  font-size: 12px;
+  margin-top: 6px;
+  color: #767676;
+}
+
+.followersList li .btnFollow {
+  width: 50px;
+  height: 24px;
+  font-size: 12px;
+  background: #f26e22;
+  border-radius: 26px;
+  color: white;
+}
+
+/* 하단메뉴 */
+.contNav {
+  border: 0.5px solid #dbdbdb;
+}
+
+.navList {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.navList li {
+  padding: 12px 30px 24px;
+  display: inline-block;
+}
+
+.navList li img {
+  width: 24px;
+}
+
+@media (max-width: 390px) {
+  header,
+  main {
+    width: 390px;
+    margin: 0 auto;
+  }
+}
