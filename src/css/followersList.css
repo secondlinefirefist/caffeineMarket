@@ -15,7 +15,15 @@ body {
 }
 
 main {
-  height: 100vh;
+  overflow-y: scroll;
+}
+
+footer {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0px;
+  right: 0;
+  left: 0;
 }
 
 .wrapHeaderNav {
