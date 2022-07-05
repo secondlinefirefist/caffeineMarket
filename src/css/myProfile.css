@@ -1,0 +1,298 @@
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'SpoqaHanSansNeo-Regular', 'sans-serif';
+}
+
+body {
+  width: 100%;
+}
+
+/* header, main{
+      width: 390px;
+      margin: 0 auto;
+  } */
+
+.wrapHeaderNav {
+  display: flex;
+  justify-content: space-between;
+  border: 0.5px solid #dbdbdb;
+  background-color: #fff;
+}
+
+.wrapHeaderNav .btnBack,
+.wrapHeaderNav .btnSetting {
+  display: block;
+  width: fit-content;
+  padding: 13px;
+}
+
+.contProfile {
+  background-color: #fff;
+  width: 390px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* 프로필 사진, follower */
+.userInfo {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 16px;
+}
+
+.imgProfile {
+  padding: 0 41px;
+}
+
+.userInfo .btnFollwers,
+.userInfo .btnFollwings {
+  display: block;
+  width: 43px;
+}
+
+.userInfo .btnFollwers strong,
+.userInfo .btnFollwings strong {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.userInfo .btnFollwings strong {
+  color: #767676;
+}
+
+.userInfo .btnFollwers span,
+.userInfo .btnFollwings span {
+  font-weight: 400;
+  font-size: 10px;
+  color: #767676;
+}
+
+/* 사용자 마켓 정보 */
+.userDetail {
+  margin: 0 auto;
+  width: fit-content;
+  text-align: center;
+}
+
+.userDetail .marketName {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.marketId {
+  display: block;
+  width: fit-content;
+  font-weight: 400;
+  font-size: 12px;
+  color: #767676;
+}
+
+.userDetail .marketId {
+  margin: 0 auto;
+  padding: 6px 0 16px;
+}
+
+.userDetail .marketDetail {
+  font-weight: 400;
+  font-size: 14px;
+  color: #767676;
+}
+
+/* SNS */
+.userSettings {
+  width: fit-content;
+  margin: 24px auto;
+}
+
+.userSettings .btnEditProfile,
+.userSettings .btnAddProduct {
+  width: 100px;
+  height: 34px;
+  border: 1px solid #dbdbdb;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.userSettings .btnEditProfile {
+  margin-right: 12px;
+}
+
+/* 판매상품 */
+.contSale {
+  padding: 20px 0;
+  width: 390px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.contSale h1 {
+  margin-left: 16px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.contSale .productList {
+  display: flex;
+}
+
+.contSale .productList li {
+  background-color: #fff;
+  margin: 16px 5px 6px 5px;
+}
+
+.contSale .productList li:nth-child(1) {
+  margin-left: 16px;
+}
+
+.productList li img {
+  font-weight: 400;
+  border-radius: 8px;
+}
+
+.productList li .prodcutTitle {
+  font-size: 14px;
+  padding: 6px 0 4px;
+  text-align: left;
+}
+
+.productList li .prodcutPrice {
+  color: #f26e22;
+  font-weight: 700;
+  font-size: 12px;
+  padding-right: 97px;
+}
+
+/* 그리드 게시글 */
+.contPost {
+  border: 0.5px solid #dbdbdb;
+  overflow: hidden;
+}
+
+.contPost .postType {
+  width: 390px;
+  box-sizing: border-box;
+  padding: 9px 16px;
+  margin: 0 auto;
+  border-bottom: 0.5px solid #dbdbdb;
+  overflow: hidden;
+}
+
+.contPost .postType .button {
+  width: fit-content;
+  float: right;
+  padding-left: 10px;
+}
+
+.wrapPost {
+  width: 390px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 16px 16px 30px;
+}
+
+.wrapPost .postGridList {
+  display: grid;
+  grid-template-columns: repeat(3, 114px);
+  gap: 8px;
+  justify-content: center;
+}
+
+.wrapPost .postGridList li .imgGrindPost {
+  width: 114px;
+}
+
+/*목차형 게시글*/
+.postIndexList {
+  width: 346px;
+}
+
+.postIndexList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.postIndexList li .imgPostProfile {
+  width: 42px;
+}
+
+.postIndexCont {
+  width: 304px;
+}
+
+.postIndexCont .btnPostSetting {
+  display: block;
+  float: right;
+  width: fit-content;
+}
+
+.postIndexCont .titleMarket {
+  font-size: 14px;
+}
+
+.postIndexCont .marketId {
+  padding: 6px 0 16px;
+}
+
+.postIndexCont .postIndexText {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.postIndexCont .imgIndexPost {
+  margin-top: 16px;
+}
+
+.wrapBtnReaction button {
+  display: inline-block;
+  width: fit-content;
+  margin: 14px 18px 0 0;
+  font-size: 12px;
+  color: #767676;
+}
+
+.wrapBtnReaction button img {
+  width: 15px;
+}
+
+.postIndexCont .dateTxt {
+  padding-top: 18px;
+  font-size: 10px;
+  color: #767676;
+}
+
+/* 하단메뉴 */
+.contNav {
+  border: 0.5px solid #dbdbdb;
+}
+
+.navList {
+  width: 390px;
+  margin: 0 auto;
+}
+
+.navList li {
+  padding: 12px 30px 24px;
+  display: inline-block;
+}
+
+.navList li img {
+  width: 24px;
+}
+
+@media (max-width: 390px) {
+  header,
+  main {
+    width: 390px;
+    margin: 0 auto;
+  }
+}
