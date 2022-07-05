@@ -34,8 +34,10 @@ body {
 }
 
 .contProfile {
-  background-color: #fff;
-  border: 0.5px solid #dbdbdb;
+  width: 390px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #dbdbdb;
+  margin: 0 auto;
 }
 
 /* 프로필 사진, follower */
@@ -182,12 +184,11 @@ body {
   overflow: hidden;
 }
 
-.contPost .postType {
+.contPost {
   width: 390px;
   box-sizing: border-box;
-  padding: 9px 16px;
+  border-top: 0.5px solid #dbdbdb;
   margin: 0 auto;
-  border-bottom: 0.5px solid #dbdbdb;
   overflow: hidden;
 }
 
