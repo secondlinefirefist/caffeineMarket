@@ -21,13 +21,12 @@
       </header>
       <main class="main">
         <section class="login">
-          <!-- 레이블 태그로 고치기 -->
-          <p class="email">사용자 이름</p>
-          <input class="email-input" placeholder="2~10자 이내여야 합니다." maxlength="10" type="text" />
-          <p class="password">계정 ID</p>
-          <input class="password-input" placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다." type="text" />
-          <p class="password">소개</p>
-          <input class="password-input" placeholder="자신과 판매할 상품에 대해 소개해 주세요!" type="text" />
+          <label for="email">사용자 이름</label>
+          <input id="email" class="email-input" placeholder="2~10자 이내여야 합니다." maxlength="10" type="text" />
+          <label for="password">계정 ID</label>
+          <input id="password" class="password-input" placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다." type="text" />
+          <label for="password-input">소개</label>
+          <input id="password-input" class="password-input" placeholder="자신과 판매할 상품에 대해 소개해 주세요!" type="text" />
         </section>
         <button class="login-button" type="button">감귤마켓 시작하기</button>
       </main>
