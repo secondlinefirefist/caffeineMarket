@@ -17,7 +17,7 @@ body {
 .wrapHeaderNav {
   display: flex;
   justify-content: space-between;
-  border: 0.5px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
   background-color: #fff;
 }
 
@@ -275,7 +275,7 @@ body {
 
 /* 하단메뉴 */
 .contNav {
-  border: 0.5px solid #dbdbdb;
+  border-top: 0.5px solid #dbdbdb;
 }
 
 .navList {
