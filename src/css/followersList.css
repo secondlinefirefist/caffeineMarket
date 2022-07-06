@@ -104,12 +104,8 @@ footer {
 }
 
 .navList li {
-  padding: 12px 30px 24px;
+  /* padding: 12px 30px 24px; */
   display: inline-block;
-}
-
-.navList li img {
-  width: 24px;
 }
 
 @media (max-width: 390px) {
