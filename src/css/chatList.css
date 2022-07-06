@@ -36,6 +36,55 @@ body {
   display: inline-block;
 }
 
+/* 채팅 리스트 */
+
+#app .contChatList {
+  padding: 24px 16px;
+  overflow-y: scroll;
+  height: calc(100% -117px);
+}
+
+.chatList .chatProfile {
+  display: inline-block;
+  margin-right: 12px;
+  width: 42px;
+  height: 42px;
+  vertical-align: -5px;
+}
+
+.chatList .chatItem {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.chatItem .userName {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.chatItem .userText {
+  font-size: 12px;
+  line-height: 15px;
+  color: #767676;
+}
+
+.chatItem .chatInfo {
+  display: inline-block;
+}
+
+.chatItem .chatDate {
+  display: block;
+  font-size: 10px;
+  line-height: 13px;
+  color: #DBDBDB;
+  align-self: flex-end;
+}
+
 /* 하단메뉴 */
 .contNav {
   border: 0.5px solid #dbdbdb;
