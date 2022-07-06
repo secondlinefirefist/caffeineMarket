@@ -61,7 +61,6 @@ body .uploadCard .textImgPart .uploadBoxText {
   padding-top: 12px;
   border: none;
   resize: none;
-  overflow-y: hidden;
 }
 
 body .uploadCard .textImgPart .loadFileArea {
