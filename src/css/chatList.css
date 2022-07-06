@@ -1,0 +1,115 @@
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff')
+    format('woff');
+}
+
+body {
+  font-family: 'SpoqaHanSansNeo-Regular';
+}
+
+#app {
+  width: 100%;
+  height: 100vh;
+}
+
+/* header */
+
+.wrapHeaderNav {
+  /* width: 100%; */
+  height: 48px;
+  padding: 12px 12px 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid #dbdbdb;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.wrapHeaderNav .btnBack,
+.wrapHeaderNav .btnSetting {
+  width: fit-content;
+}
+
+.wrapHeaderNav .btnBack {
+  display: inline-block;
+}
+
+/* 채팅 리스트 */
+
+#app .contChatList {
+  padding: 24px 16px;
+  height: calc(100% - 160px);
+  overflow-y: scroll;
+}
+
+.contChatList .userContent {
+  cursor: pointer;
+}
+
+.chatList .chatProfile {
+  display: inline-block;
+  margin-right: 12px;
+  width: 42px;
+  height: 42px;
+  vertical-align: -5px;
+}
+
+.chatList .chatItem {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chatList .chatItem:last-child {
+  margin-bottom: 0;
+}
+
+.chatItem .userName {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.chatItem .userText {
+  font-size: 12px;
+  line-height: 15px;
+  color: #767676;
+}
+
+.chatItem .chatInfo {
+  display: inline-block;
+}
+
+.chatItem .chatDate {
+  display: block;
+  font-size: 10px;
+  line-height: 13px;
+  color: #dbdbdb;
+  align-self: flex-end;
+}
+
+/* 하단메뉴 */
+.contNav {
+  border-top: 0.5px solid #dbdbdb;
+  box-sizing: border-box;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navList li,
+.navList button {
+  height: 60px;
+}
+
+@media (max-width: 400px) {
+  #app {
+    width: 390px;
+  }
+}
