@@ -139,6 +139,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  overflow-x: scroll;
 }
 
 .contSale h1 {
@@ -179,15 +180,14 @@ body {
 }
 
 /* 그리드 게시글 */
-.contPost {
+/* .contPost {
   border: 0.5px solid #dbdbdb;
   overflow: hidden;
-}
+} */
 
 .contPost {
   width: 390px;
   box-sizing: border-box;
-  border-top: 0.5px solid #dbdbdb;
   margin: 0 auto;
   overflow: hidden;
 }
