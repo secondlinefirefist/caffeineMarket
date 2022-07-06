@@ -40,8 +40,8 @@ body {
 
 #app .contChatList {
   padding: 24px 16px;
+  height: calc(100% - 161px);
   overflow-y: scroll;
-  height: calc(100% -117px);
 }
 
 .chatList .chatProfile {
@@ -56,7 +56,6 @@ body {
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
-  
 }
 
 .chatItem .userName {
@@ -81,7 +80,7 @@ body {
   display: block;
   font-size: 10px;
   line-height: 13px;
-  color: #DBDBDB;
+  color: #dbdbdb;
   align-self: flex-end;
 }
 
