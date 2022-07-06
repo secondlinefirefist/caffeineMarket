@@ -40,8 +40,12 @@ body {
 
 #app .contChatList {
   padding: 24px 16px;
-  height: calc(100% - 161px);
+  height: calc(100% - 160px);
   overflow-y: scroll;
+}
+
+.contChatList .userContent {
+  cursor: pointer;
 }
 
 .chatList .chatProfile {
@@ -56,6 +60,10 @@ body {
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+}
+
+.chatList .chatItem:last-child {
+  margin-bottom: 0;
 }
 
 .chatItem .userName {
@@ -86,21 +94,18 @@ body {
 
 /* 하단메뉴 */
 .contNav {
-  border: 0.5px solid #dbdbdb;
+  border-top: 0.5px solid #dbdbdb;
+  box-sizing: border-box;
 }
 
 .navList {
-  width: fit-content;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
-.navList li {
-  padding: 12px 30px 24px;
-  display: inline-block;
-}
-
-.navList li img {
-  width: 24px;
+.navList li,
+.navList button {
+  height: 60px;
 }
 
 @media (max-width: 400px) {
