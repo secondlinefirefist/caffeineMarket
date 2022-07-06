@@ -14,11 +14,6 @@ body {
   width: 100%;
 }
 
-/* header, main{
-    width: 390px;
-    margin: 0 auto;
-} */
-
 .wrapHeaderNav {
   display: flex;
   justify-content: space-between;
@@ -180,11 +175,6 @@ body {
 }
 
 /* 그리드 게시글 */
-/* .contPost {
-  border: 0.5px solid #dbdbdb;
-  overflow: hidden;
-} */
-
 .contPost {
   width: 390px;
   box-sizing: border-box;
@@ -192,10 +182,17 @@ body {
   overflow: hidden;
 }
 
-.contPost .postType .button {
+.contPost .postType {
+  padding: 9px 16px;
+  border-bottom: 1px solid #dbdbdb;
+  overflow: hidden;
+}
+
+.contPost .postType .gridType,
+.contPost .postType .listType {
   width: fit-content;
   float: right;
-  padding-left: 10px;
+  margin-left: 10px;
 }
 
 .wrapPost {
