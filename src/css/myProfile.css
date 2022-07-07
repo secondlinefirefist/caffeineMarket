@@ -15,11 +15,18 @@ body {
   height: 100vh;
 }
 
-/* header, main{
-      width: 390px;
-      margin: 0 auto;
-  } */
+main {
+  height: calc(100% - 100px);
+  overflow-y: scroll;
+}
 
+footer {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0px;
+  right: 0;
+  left: 0;
+}
 .wrapHeaderNav {
   display: flex;
   justify-content: space-between;
