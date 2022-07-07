@@ -99,13 +99,16 @@ footer {
 }
 
 .navList {
-  width: fit-content;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navList li {
-  /* padding: 12px 30px 24px; */
   display: inline-block;
+}
+
+.navList li img {
+  width: 84px;
 }
 
 @media (max-width: 390px) {
