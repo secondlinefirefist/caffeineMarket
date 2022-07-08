@@ -40,10 +40,13 @@ body {
         border: none;
         resize: none;
       }
-      .loadFileArea {
-        margin-left: 14px;
-        padding-top: 12px;
-        width: fit-content;
+      .loadImgArea {
+        display: block;
+        .loadFileArea {
+          margin-left: 14px;
+          padding-top: 12px;
+          width: fit-content;
+        }
       }
     }
   }

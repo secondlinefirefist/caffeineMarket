@@ -63,7 +63,11 @@ body .uploadCard .textImgPart .uploadBoxText {
   resize: none;
 }
 
-body .uploadCard .textImgPart .loadFileArea {
+body .uploadCard .textImgPart .loadImgArea {
+  display: block;
+}
+
+body .uploadCard .textImgPart .loadImgArea .loadFileArea {
   margin-left: 14px;
   padding-top: 12px;
   width: -webkit-fit-content;
