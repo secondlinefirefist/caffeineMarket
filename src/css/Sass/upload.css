@@ -54,6 +54,7 @@ body .uploadCard .textImgPart {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: hidden;
 }
 
 body .uploadCard .textImgPart .uploadBoxText {
@@ -63,16 +64,41 @@ body .uploadCard .textImgPart .uploadBoxText {
   resize: none;
 }
 
-body .uploadCard .textImgPart .loadImgArea {
-  display: block;
+body .uploadCard .textImgPart .fileImgArea {
+  overflow-x: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
 }
 
-body .uploadCard .textImgPart .loadImgArea .loadFileArea {
-  margin-left: 14px;
-  padding-top: 12px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+body .uploadCard .textImgPart .fileImgArea .imgUl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .uploadCard .textImgPart .fileImgArea .imgUl .imgLi {
+  position: relative;
+  margin-right: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 168px;
+}
+
+body .uploadCard .textImgPart .fileImgArea .imgUl .imgLi .deleteImg {
+  position: absolute;
+  top: 11.5px;
+  right: 11.5px;
+  width: 22px;
+  height: 22px;
+  background: url("../../img/icon/icon-delete-shadow.svg") no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+body .uploadCard .textImgPart .fileImgArea .imgUl .imgLi img {
+  width: 100%;
 }
 
 body .fileUploadBtn {

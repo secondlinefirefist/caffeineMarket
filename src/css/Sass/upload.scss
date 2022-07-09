@@ -34,18 +34,40 @@ body {
       width: 100%;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
       .uploadBoxText {
         margin-left: 14px;
         padding-top: 12px;
         border: none;
         resize: none;
       }
-      .loadImgArea {
-        display: block;
-        .loadFileArea {
-          margin-left: 14px;
-          padding-top: 12px;
-          width: fit-content;
+      .fileImgArea {
+        overflow-x: scroll;
+        display: flex;
+        white-space: nowrap;
+        .imgUl {
+          display: flex;
+          .imgLi {
+            position: relative;
+            margin-right: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 168px;
+            .deleteImg {
+              position: absolute;
+              top: 11.5px;
+              right: 11.5px;
+              width: 22px;
+              height: 22px;
+              background: url('../../img/icon/icon-delete-shadow.svg') no-repeat
+                center;
+              background-size: contain;
+              cursor: pointer;
+            }
+            img {
+              width: 100%;
+            }
+          }
         }
       }
     }
