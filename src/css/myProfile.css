@@ -134,32 +134,27 @@ footer {
 
 /* 판매상품 */
 .contSale {
-  padding: 20px 0;
+  padding: 20px 0 20px 16px;
   width: 390px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  overflow-x: scroll;
 }
 
 .contSale h1 {
-  margin-left: 16px;
   font-weight: 700;
   font-size: 16px;
 }
 
 .contSale .productList {
   display: flex;
+  overflow-x: scroll;
 }
 
 .contSale .productList li {
   background-color: #fff;
-  margin: 16px 5px 6px 5px;
-}
-
-.contSale .productList li:nth-child(1) {
-  margin-left: 16px;
+  margin: 16px 10px 6px 0;
 }
 
 .productList li img {
