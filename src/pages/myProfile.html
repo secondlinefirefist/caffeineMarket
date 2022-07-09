@@ -11,15 +11,11 @@
   <body>
     <header>
       <div class="wrapHeaderNav">
-        <a href="../pages/setProfile.html">
-          <button type="button" class="btnBack">
-            <img src="../img/icon/icon-arrow-left.png" alt="뒤로가기" />
-          </button>
+        <a href="../pages/search.html" class="btnBack">
+          <img src="../img/icon/icon-arrow-left.png" alt="뒤로가기" />
         </a>
-        <a href="#">
-          <button type="button" class="btnSetting">
-            <img src="../img/icon/icon-more-vertical.png" alt="설정으로가기" />
-          </button>
+        <a href="#" class="btnSetting">
+          <img src="../img/icon/icon-more-vertical.png" alt="설정으로가기" />
         </a>
       </div>
     </header>
@@ -29,7 +25,7 @@
         <h1 class="ir">사용자 프로필</h1>
         <!--프로필 사진, follower-->
         <section class="userInfo">
-          <h1 class="ir">프로필</h1>
+          <h2 class="ir">프로필</h2>
           <button class="btnFollwers" type="button">
             <strong>2950</strong>
             <span>followers</span>
@@ -48,7 +44,7 @@
 
         <!--사용자 마켓 정보-->
         <section class="userDetail">
-          <h1 class="ir">마켓 정보</h1>
+          <h2 class="ir">마켓 정보</h2>
           <strong class="marketName">애월읍 위니브 감귤농장</strong>
           <button class="marketId" type="button">@위니브 감귤농장</button>
           <p class="marketDetail">
@@ -59,6 +55,7 @@
 
         <!--follow-->
         <section class="userSettings">
+          <h2 class="ir">사용자 설정 버튼 구역</h2>
           <button type="button" class="btnEditProfile">프로필 수정</button>
           <button type="button" class="btnAddProduct">상품 등록</button>
         </section>
@@ -72,28 +69,42 @@
           <li>
             <button type="button">
               <img src="../img/product-img-example.png" alt="상품1" />
-              <h2 class="prodcutTitle">애월읍 엄청 큰 낑깡</h2>
+              <span class="prodcutTitle">애월읍 엄청 큰 낑깡</span>
               <strong class="prodcutPrice">35,000</strong>
             </button>
           </li>
           <li>
             <button type="button">
               <img src="../img/product-img-example.png" alt="상품2" />
-              <h2 class="prodcutTitle">애월읍 엄청 큰 낑깡</h2>
+              <span class="prodcutTitle">애월읍 엄청 큰 낑깡</span>
               <strong class="prodcutPrice">45,000</strong>
             </button>
           </li>
           <li>
             <button type="button">
-              <img src="../img/product-img-example.png" alt="상품2" />
-              <h2 class="prodcutTitle">애월읍 엄청 큰 낑깡</h2>
-              <strong class="prodcutPrice">45,000</strong>
+              <img src="../img/product-img-example.png" alt="상품1" />
+              <span class="prodcutTitle">애월읍 엄청 큰 낑깡</span>
+              <strong class="prodcutPrice">35,000</strong>
             </button>
           </li>
           <li>
             <button type="button">
               <img src="../img/product-img-example.png" alt="상품2" />
-              <h2 class="prodcutTitle">애월읍 엄청 큰 낑깡</h2>
+              <span class="prodcutTitle">애월읍 엄청 큰 낑깡</span>
+              <strong class="prodcutPrice">45,000</strong>
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <img src="../img/product-img-example.png" alt="상품1" />
+              <span class="prodcutTitle">애월읍 엄청 큰 낑깡</span>
+              <strong class="prodcutPrice">35,000</strong>
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <img src="../img/product-img-example.png" alt="상품2" />
+              <span class="prodcutTitle">애월읍 엄청 큰 낑깡</span>
               <strong class="prodcutPrice">45,000</strong>
             </button>
           </li>
@@ -105,7 +116,7 @@
       <section class="contPost">
         <h1 class="ir">포스트 게시글</h1>
         <section class="postType">
-          <h1 class="ir">게시글타입</h1>
+          <h2 class="ir">게시글타입</h2>
           <button class="button gridType" type="button">
             <img src="../img/icon/icon-post-album-off.png" alt="그리드형" />
           </button>
@@ -114,7 +125,7 @@
           </button>
         </section>
         <section class="wrapPost">
-          <h1 class="ir">그리드 타입 게시물</h1>
+          <h2 class="ir">그리드 타입 게시물</h2>
           <!-- <ul class="postGridList">
             <li>
               <button type="button">
@@ -175,7 +186,7 @@
           <ul class="postIndexList">
             <li>
               <img
-                src="../img/Ellipse 6.png"
+                src="../img/userProfile_base.png"
                 alt="게시글 저자 프로필 사진"
                 class="imgPostProfile"
               />
@@ -226,30 +237,22 @@
         <ul class="navList">
           <li>
             <a href="../pages/search.html">
-              <button type="button">
-                <img src="../img/home2.png" alt="홈" />
-              </button>
+              <img src="../img/home2.png" alt="홈" />
             </a>
           </li>
           <li>
             <a href="../pages/chatList.html">
-              <button type="button">
-                <img src="../img/chat2.png" alt="채팅" />
-              </button>
+              <img src="../img/chat2.png" alt="채팅" />
             </a>
           </li>
           <li>
             <a href="../pages/post.html">
-              <button type="button">
-                <img src="../img/post2.png" alt="게시글" />
-              </button>
+              <img src="../img/post2.png" alt="게시글" />
             </a>
           </li>
           <li>
             <a href="../pages/myProfile.html">
-              <button type="button">
-                <img src="../img/user-fill2.png" alt="마이페이지" />
-              </button>
+              <img src="../img/user-fill2.png" alt="마이페이지" />
             </a>
           </li>
         </ul>
