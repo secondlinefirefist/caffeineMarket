@@ -308,7 +308,7 @@ footer {
 @media (max-width: 390px) {
   header,
   main {
-    width: 390px;
+    width: 375px;
     margin: 0 auto;
   }
 }
