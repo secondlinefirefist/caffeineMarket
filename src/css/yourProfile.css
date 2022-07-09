@@ -16,7 +16,7 @@ body {
 }
 
 main {
-  height: calc(100% - 100px);
+  height: calc(100% - 116px);
   overflow-y: scroll;
 }
 
