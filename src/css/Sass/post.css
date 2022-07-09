@@ -1,4 +1,3 @@
-html,
 body {
   width: 100%;
   margin: 0;
@@ -7,7 +6,6 @@ body {
           box-sizing: border-box;
 }
 
-html .headerBtns,
 body .headerBtns {
   padding: 13px 16px;
   display: -webkit-box;
@@ -19,19 +17,16 @@ body .headerBtns {
   border-bottom: 1px solid #dbdbdb;
 }
 
-html .headerBtns .headerIcon,
 body .headerBtns .headerIcon {
   width: 22px;
   height: 22px;
 }
 
-html .postCard,
 body .postCard {
   padding: 20px 16px;
   position: relative;
 }
 
-html .postCard .commonProfileHeader,
 body .postCard .commonProfileHeader {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,13 +34,11 @@ body .postCard .commonProfileHeader {
   position: relative;
 }
 
-html .postCard .commonProfileHeader .profileImg,
 body .postCard .commonProfileHeader .profileImg {
   width: 42px;
   height: 42px;
 }
 
-html .postCard .commonProfileHeader .profileTextBox,
 body .postCard .commonProfileHeader .profileTextBox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -57,20 +50,17 @@ body .postCard .commonProfileHeader .profileTextBox {
   padding-left: 12px;
 }
 
-html .postCard .commonProfileHeader .profileTextBox .nickName,
 body .postCard .commonProfileHeader .profileTextBox .nickName {
   margin: 4px 0 2px 0;
   font-size: 14px;
   font-weight: 500;
 }
 
-html .postCard .commonProfileHeader .profileTextBox .idName,
 body .postCard .commonProfileHeader .profileTextBox .idName {
   color: #767676;
   font-size: 12px;
 }
 
-html .postCard .commonProfileHeader .commonSetting,
 body .postCard .commonProfileHeader .commonSetting {
   width: 18px;
   height: 18px;
@@ -79,31 +69,26 @@ body .postCard .commonProfileHeader .commonSetting {
   right: 0;
 }
 
-html .postCard .postCardMain,
 body .postCard .postCardMain {
   position: relative;
   left: 54px;
   width: calc(100% - 54px);
 }
 
-html .postCard .postCardMain .postCardMainTextBox,
 body .postCard .postCardMain .postCardMainTextBox {
   padding-bottom: 16px;
 }
 
-html .postCard .postCardMain .postCardMainTextBox .postCardMainText,
 body .postCard .postCardMain .postCardMainTextBox .postCardMainText {
   font-size: 14px;
   font-weight: 400;
 }
 
-html .postCard .postCardMain .postCardMainImg,
 body .postCard .postCardMain .postCardMainImg {
   width: 100%;
   padding-bottom: 12px;
 }
 
-html .postCard .postCardMain .commentBox,
 body .postCard .postCardMain .commentBox {
   padding-bottom: 20px;
   width: 98px;
@@ -112,7 +97,6 @@ body .postCard .postCardMain .commentBox {
   display: flex;
 }
 
-html .postCard .postCardMain .commentBox .likeBtnBox,
 body .postCard .postCardMain .commentBox .likeBtnBox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -121,7 +105,6 @@ body .postCard .postCardMain .commentBox .likeBtnBox {
   margin-right: 14px;
 }
 
-html .postCard .postCardMain .commentBox .likeBtnBox .likeBtn,
 body .postCard .postCardMain .commentBox .likeBtnBox .likeBtn {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -129,19 +112,16 @@ body .postCard .postCardMain .commentBox .likeBtnBox .likeBtn {
   margin-right: 7px;
 }
 
-html .postCard .postCardMain .commentBox .likeBtnBox .likeBtn .likeBtnImg,
 body .postCard .postCardMain .commentBox .likeBtnBox .likeBtn .likeBtnImg {
   max-width: 15px;
 }
 
-html .postCard .postCardMain .commentBox .likeBtnBox .likeTxt,
 body .postCard .postCardMain .commentBox .likeBtnBox .likeTxt {
   font-size: 12px;
   line-height: 18px;
   color: #767676;
 }
 
-html .postCard .postCardMain .date,
 body .postCard .postCardMain .date {
   font-size: 10px;
   width: 80px;
@@ -149,19 +129,16 @@ body .postCard .postCardMain .date {
   color: #767676;
 }
 
-html .dividingLine,
 body .dividingLine {
   border-bottom: 1px solid #dbdbdb;
   margin-top: 8px;
   margin-bottom: 26px;
 }
 
-html .commentComponent,
 body .commentComponent {
   padding: 0 16px 16px;
 }
 
-html .commentComponent .commentProfileInfo,
 body .commentComponent .commentProfileInfo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -171,13 +148,11 @@ body .commentComponent .commentProfileInfo {
   width: calc(100vw-32px);
 }
 
-html .commentComponent .commentProfileInfo .commentProfileImg,
 body .commentComponent .commentProfileInfo .commentProfileImg {
   width: 36px;
   height: 36px;
 }
 
-html .commentComponent .commentProfileInfo .commentNames,
 body .commentComponent .commentProfileInfo .commentNames {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -185,14 +160,12 @@ body .commentComponent .commentProfileInfo .commentNames {
   line-height: 20px;
 }
 
-html .commentComponent .commentProfileInfo .commentNames .commentNickName,
 body .commentComponent .commentProfileInfo .commentNames .commentNickName {
   font-size: 14px;
   margin-left: 12px;
   padding-top: 6px;
 }
 
-html .commentComponent .commentProfileInfo .commentNames .commentWrittenTime,
 body .commentComponent .commentProfileInfo .commentNames .commentWrittenTime {
   margin-left: 6px;
   font-size: 10px;
@@ -201,7 +174,6 @@ body .commentComponent .commentProfileInfo .commentNames .commentWrittenTime {
   color: #767676;
 }
 
-html .commentComponent .commentProfileInfo .commonSetting,
 body .commentComponent .commentProfileInfo .commonSetting {
   width: 18px;
   height: 18px;
@@ -210,7 +182,6 @@ body .commentComponent .commentProfileInfo .commonSetting {
   top: 5px;
 }
 
-html .commentComponent .commentText,
 body .commentComponent .commentText {
   padding-left: 48px;
   font-size: 14px;
@@ -218,7 +189,6 @@ body .commentComponent .commentText {
   color: #333333;
 }
 
-html .inputComponent,
 body .inputComponent {
   border-top: 1px solid #dbdbdb;
   margin-top: 50px;
@@ -229,13 +199,11 @@ body .inputComponent {
   display: flex;
 }
 
-html .inputComponent .inputProfileImg,
 body .inputComponent .inputProfileImg {
   width: 36px;
   height: 36px;
 }
 
-html .inputComponent .inputComment .inputCommentText,
 body .inputComponent .inputComment .inputCommentText {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -245,27 +213,22 @@ body .inputComponent .inputComment .inputCommentText {
   font-size: 14px;
 }
 
-html .inputComponent .inputComment .inputCommentText::-webkit-input-placeholder,
 body .inputComponent .inputComment .inputCommentText::-webkit-input-placeholder {
   color: #c4c4c4;
 }
 
-html .inputComponent .inputComment .inputCommentText:-ms-input-placeholder,
 body .inputComponent .inputComment .inputCommentText:-ms-input-placeholder {
   color: #c4c4c4;
 }
 
-html .inputComponent .inputComment .inputCommentText::-ms-input-placeholder,
 body .inputComponent .inputComment .inputCommentText::-ms-input-placeholder {
   color: #c4c4c4;
 }
 
-html .inputComponent .inputComment .inputCommentText::placeholder,
 body .inputComponent .inputComment .inputCommentText::placeholder {
   color: #c4c4c4;
 }
 
-html .inputComponent .commentPostBtn,
 body .inputComponent .commentPostBtn {
   position: absolute;
   padding-top: 12px;
