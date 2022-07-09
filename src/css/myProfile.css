@@ -16,7 +16,7 @@ body {
 }
 
 main {
-  height: calc(100% - 100px);
+  height: calc(100% - 116px);
   overflow-y: scroll;
 }
 
@@ -303,7 +303,7 @@ footer {
 @media (max-width: 390px) {
   header,
   main {
-    width: 390px;
+    width: 375px;
     margin: 0 auto;
   }
 }
