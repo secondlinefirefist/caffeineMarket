@@ -163,11 +163,11 @@ footer {
 }
 
 .productList li .prodcutTitle {
+  display: block;
   font-size: 14px;
-  padding: 6px 0 4px;
   text-align: left;
+  padding-top: 6px;
 }
-
 .productList li .prodcutPrice {
   color: #f26e22;
   font-weight: 700;
