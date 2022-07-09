@@ -16,7 +16,7 @@ body {
 }
 
 main {
-  height: calc(100% - 100px);
+  height: calc(100% - 116px);
   overflow-y: scroll;
 }
 
@@ -54,10 +54,14 @@ footer {
   padding: 0 24px;
 }
 
+.contFollowers .followersList {
+  padding-top: 16px;
+}
+
 .contFollowers .followersList li {
   display: flex;
   align-items: center;
-  margin-top: 16px;
+  padding-bottom: 16px;
 }
 
 .followersList li .followerProfileImg {
