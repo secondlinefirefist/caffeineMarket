@@ -35,3 +35,30 @@ const showButton = () => {
 
 loginInput.addEventListener('input', checkLoginInputValue);
 pwInput.addEventListener('input', checkpwInputValue);
+loginButton.addEventListener('click', loginData);
+
+
+// 로그인 데이터 요청 
+const url = "https://mandarin.api.weniv.co.kr";
+
+
+async function loginData() {
+  try{
+  const res = await fetch(url+"/user/login/", {
+                      method: "POST",
+                      headers: {
+                          "Content-Type": "application/json",
+                      },
+                      body : JSON.stringify({
+                          "user":{
+                              "email": loginInput.value,
+                              "password": pwInput.value
+                          }
+                      })
+                  });
+  const resJson = await res.json();
+  console.log(resJson);
+  } catch(err){
+    console.error(err);
+  }
+}
