@@ -114,6 +114,11 @@ body {
   justify-content: space-between;
 }
 
+.navList li:hover,
+.navList li:focus {
+  opacity: 0.7;
+}
+
 .navList img {
   width: 84px;
 }
