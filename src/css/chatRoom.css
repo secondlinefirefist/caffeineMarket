@@ -186,8 +186,8 @@ main .chatRoom {
   clear: both;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 390px) {
   #app {
-    width: 390px;
+    width: 375px;
   }
 }
