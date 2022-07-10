@@ -11,3 +11,29 @@ btnLike.addEventListener('click', () => {
 btnComment.addEventListener('click', () => {
   btnComment.classList.toggle('activeBtnComment');
 });
+
+/*상품등록 버튼 누르면 판매 상품 리스트 생성*/
+
+function createProductList(event) {
+  const productList = document.querySelector('.productList');
+  const productItem = document.createElement('li');
+  const productItemBtn = document.createElement('button');
+  const productItemImg = document.createElement('img');
+  const productItemSpan = document.createElement('span');
+  const productItemStrong = document.createElement('strong');
+
+  productList.appendChild(productItem);
+  productItem.appendChild(productItemBtn);
+  productItemBtn.append(productItemImg, productItemSpan, productItemStrong);
+
+  productItemBtn.setAttribute('type', 'button');
+  productItemImg.setAttribute('src', '../img/product-img-example.png');
+  productItemImg.setAttribute('alt', '상품');
+  productItemSpan.classList.add('prodcutTitle');
+  productItemSpan.textContent = '애월읍 엄청 큰 낑깡';
+  productItemStrong.classList.add('prodcutPrice');
+  productItemStrong.textContent = '4500';
+}
+
+const btnAddProduct = document.querySelector('.btnAddProduct');
+btnAddProduct.addEventListener('click', createProductList);
