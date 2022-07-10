@@ -40,7 +40,7 @@ body {
 
 #app .contChatList {
   padding: 24px 16px;
-  height: calc(100% - 161gpx);
+  height: calc(100% - 161px);
   overflow-y: scroll;
 }
 
