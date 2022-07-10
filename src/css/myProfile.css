@@ -139,6 +139,12 @@ footer {
   border: 1px solid #f26e22;
 }
 
+.userSettings .btnEditProfile:focus,
+.userSettings .btnAddProduct:focus {
+  color: #f26e22;
+  border: 1px solid #f26e22;
+}
+
 /* 판매상품 */
 .contSale {
   padding: 20px 0 20px 16px;
@@ -206,6 +212,11 @@ footer {
   padding-left: 10px;
 }
 
+.contPost .postType .button:hover,
+.contPost .postType .button:focus {
+  filter: invert(0.5);
+}
+
 .wrapPost {
   width: 390px;
   box-sizing: border-box;
@@ -247,6 +258,11 @@ footer {
   display: block;
   float: right;
   width: fit-content;
+}
+
+.postIndexCont .btnPostSetting:hover,
+.postIndexCont .btnPostSetting:focus {
+  filter: invert(0.5);
 }
 
 .postIndexCont .titleMarket {
