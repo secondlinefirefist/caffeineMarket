@@ -13,23 +13,57 @@
         <h2 class="title set-title">프로필 설정</h2>
         <p class="sub-title">나중에 언제든지 변경할 수 있습니다.</p>
         <div class="wrap-cover">
-          <img class="profile-cover" src="../img/basic-profile-img.png" alt="프로필 사진">
+          <img
+            class="profile-cover"
+            src="../img/basic-profile-img.png"
+            alt="프로필 사진"
+          />
           <button class="profile-add">
-            <img  src="../img/upload-file.png" alt="업로드 버튼">
+            <img src="../img/upload-file.png" alt="업로드 버튼" />
           </button>
         </div>
       </header>
       <main class="main">
         <section class="login">
-          <label for="email">사용자 이름</label>
-          <input id="email" class="email-input" placeholder="2~10자 이내여야 합니다." maxlength="10" type="text" />
-          <label for="password">계정 ID</label>
-          <input id="password" class="password-input" placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다." type="text" />
-          <label for="password-input">소개</label>
-          <input id="password-input" class="password-input" placeholder="자신과 판매할 상품에 대해 소개해 주세요!" type="text" />
+          <div>
+            <label for="userName">사용자 이름</label>
+            <input
+              id="userName"
+              class="email-input"
+              placeholder="2~10자 이내여야 합니다."
+              minlength="2"
+              maxlength="10"
+              type="text"
+            />
+          </div>
+          <div>
+            <label for="userId">계정 ID</label>
+            <input
+              id="userId"
+              class="password-input"
+              placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다."
+              type="text"
+            />
+            <p id="Reg-error-message" class="error-message display-none">
+              *영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.
+            </p>
+            <p id="duplicate-error-message" class="error-message display-none">
+              *이미 사용 중인 ID입니다.
+            </p>
+          </div>
+          <div>
+            <label for="intro">소개</label>
+            <input
+              id="intro"
+              class="password-input"
+              placeholder="자신과 판매할 상품에 대해 소개해 주세요!"
+              type="text"
+            />
+          </div>
         </section>
         <button class="login-button" type="button">감귤마켓 시작하기</button>
       </main>
     </div>
+    <script src="../Js/setProfile.js"></script>
   </body>
 </html>

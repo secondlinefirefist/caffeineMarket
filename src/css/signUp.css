@@ -1,11 +1,15 @@
-input[class*="-input"] {
+.login div input {
+  padding-top: 10px;
+}
+
+.error-focus :focus {
+  border-bottom: 1px solid #eb5757;
+}
+
+input[class*='-input'] {
   padding: 0;
 }
 
 input::placeholder {
   color: #bdbdbd;
-}
-
-input:last-child {
-  margin-bottom: 30px;
 }

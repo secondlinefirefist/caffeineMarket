@@ -15,10 +15,17 @@
       <main class="main">
         <!-- section 폼으로 변경하면 버튼 엔터로 진입 가능 -->
         <section class="login">
-          <label for="email">이메일</label>
-          <input id="email" class="email-input" type="email" />
-          <label for="password">비밀번호</label>
-          <input id="password" class="password-input" type="password" />
+          <div>
+            <label for="email">이메일</label>
+            <input id="email" class="email-input" type="email" />
+          </div>
+          <div>
+            <label for="password">비밀번호</label>
+            <input id="password" class="password-input" type="password" />
+          </div>
+          <p class="error-message display-none">
+            *이메일 또는 비밀번호가 일치하지 않습니다.
+          </p>
         </section>
         <button class="login-button" type="button">로그인</button>
         <div class="text-align">
