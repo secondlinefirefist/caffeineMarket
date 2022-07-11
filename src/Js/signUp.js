@@ -69,35 +69,3 @@ async function setProfileHref() {
     location.href = './setProfile.html';
   }
 }
-
-
-//회원가입 데이터 보내기 
-
-// 프로필 설정까지 해서 데이터 보낼때 사용하기
-// async function sendSingUpdata() {
-//   const url = "https://mandarin.api.weniv.co.kr";
-
-//   try{
-
-//     const res = await fetch(url+"/user", {
-//                       method: "POST",
-//                       headers: {
-//                           "Content-Type": "application/json",
-//                       },
-//                       body : JSON.stringify({
-//                         "user": {
-//                             "username": String,
-//                             "email": String,
-//                             "password": String,
-//                             "accountname": String,
-//                             "intro": String,
-//                             "image": String 
-//                         }
-//                     })
-//                   });
-//     const resJson = await res.json();
-//     console.log(resJson);
-//   } catch(err){
-//     console.error(err);
-//   }
-// }
