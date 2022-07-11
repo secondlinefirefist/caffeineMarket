@@ -35,9 +35,18 @@ const createProductList = () => {
   productItemSpan.textContent = '애월읍 엄청 큰 낑깡';
   productItemStrong.classList.add('prodcutPrice');
   productItemStrong.textContent = '4500';
-
-  preventReload();
 };
 
 const btnAddProduct = document.querySelector('.btnAddProduct');
 btnAddProduct.addEventListener('click', createProductList);
+
+/*메인 모달*/
+const btnSetting = document.querySelector('.btnSetting');
+const mainModal = document.querySelector('.mainModal');
+btnSetting.addEventListener('click', () => {
+  mainModal.classList.toggle('displayMainModal');
+});
+
+btnSetting.addEventListener('blur', (event) => {
+  mainModal.classList.remove('displayMainModal');
+});
