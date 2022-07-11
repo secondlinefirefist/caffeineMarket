@@ -37,3 +37,67 @@ const showButton = () => {
 
 $emailInput.addEventListener('input', checkEmailInputValue);
 $pwInput.addEventListener('input', checkpwInputValue);
+$loginButton.addEventListener('click', setProfileHref);
+
+// 이메일 가입 회원 중복 체크
+// {message: '사용 가능한 이메일 입니다.'} 전달 받으면 다음 페이지로 이동
+async function emailValid () {
+  const url = "https://mandarin.api.weniv.co.kr";
+  try{
+        const res = await fetch(url+"/user/emailvalid", {
+                          method: "POST",
+                          headers: {
+                              "Content-Type": "application/json",
+                          },
+                          body : JSON.stringify({
+                            "user": {
+                                "email": $emailInput.value,
+                            }
+                        })
+                      });
+        const resJson = await res.json();
+        return resJson.message
+      } catch(err){
+        console.error(err);
+      }
+}
+
+//이메일 검증이 완료 되면 프로필 설정 페이지로 이동
+async function setProfileHref() {
+  const emailResult = await emailValid();
+  if (emailResult === '사용 가능한 이메일 입니다.') {
+    location.href = './setProfile.html';
+  }
+}
+
+
+//회원가입 데이터 보내기 
+
+// 프로필 설정까지 해서 데이터 보낼때 사용하기
+// async function sendSingUpdata() {
+//   const url = "https://mandarin.api.weniv.co.kr";
+
+//   try{
+
+//     const res = await fetch(url+"/user", {
+//                       method: "POST",
+//                       headers: {
+//                           "Content-Type": "application/json",
+//                       },
+//                       body : JSON.stringify({
+//                         "user": {
+//                             "username": String,
+//                             "email": String,
+//                             "password": String,
+//                             "accountname": String,
+//                             "intro": String,
+//                             "image": String 
+//                         }
+//                     })
+//                   });
+//     const resJson = await res.json();
+//     console.log(resJson);
+//   } catch(err){
+//     console.error(err);
+//   }
+// }
