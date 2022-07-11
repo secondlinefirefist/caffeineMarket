@@ -57,7 +57,7 @@ function isLogin(resJson) {
   resJson.hasOwnProperty('user') ? isLoginTrue() : isLoginFalse();
 }
 
-//로그인 성공 시
+//로그인 성공 시 페이지 전환
 function isLoginTrue() {
   location.href = './search.html';
 }
