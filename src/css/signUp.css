@@ -13,7 +13,3 @@ input[class*='-input'] {
 input::placeholder {
   color: #bdbdbd;
 }
-
-input:last-child {
-  margin-bottom: 30px;
-}
