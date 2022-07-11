@@ -47,6 +47,6 @@ btnSetting.addEventListener('click', () => {
   mainModal.classList.toggle('displayMainModal');
 });
 
-btnSetting.addEventListener('blur', (event) => {
-  mainModal.classList.remove('displayMainModal');
-});
+// btnSetting.addEventListener('blur', (event) => {
+//   mainModal.classList.remove('displayMainModal');
+// });
