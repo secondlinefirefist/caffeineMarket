@@ -354,12 +354,12 @@ footer {
   display: none;
   width: 390px;
   box-sizing: border-box;
-  bottom: 0;
+  bottom: 2px;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px 10px 0 0;
   background-color: #fff;
-  box-shadow: 0 0 4px #cacaca;
+  box-shadow: 0 0 3px #dbdbdb;
   z-index: 10;
 }
 
