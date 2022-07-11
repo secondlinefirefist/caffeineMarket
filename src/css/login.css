@@ -16,39 +16,37 @@
   margin: 30px 0 40px;
 }
 
-.error-message {
-  font-size: 12px;
-  color: red;
-  margin: 6px 0;
-}
-
 .login label {
   font-size: 12px;
   font-weight: 500;
   margin-bottom: 8px;
 }
 
-input[class*="-input"] {
+.login div + div {
+  margin-top: 16px;
+}
+
+input[class*='-input'] {
   background-color: white;
   border: none;
   outline: none;
-  border-bottom: 1px solid #DBDBDB;
-  margin-bottom: 16px;
+  border-bottom: 1px solid #dbdbdb;
   width: 100%;
   height: 25px;
 }
 
-input[class*="-input"]:focus {
-  border-bottom: 1px solid #F26E22;
+input[class*='-input']:focus {
+  border-bottom: 1px solid #f26e22;
 }
 
 .login-button {
   display: block;
+  margin-top: 30px;
   font-size: 14px;
   font-weight: 500;
   border: none;
   color: white;
-  background-color: #FFC7A7;
+  background-color: #ffc7a7;
   width: 100%;
   height: 44px;
   border-radius: 44px;
@@ -57,10 +55,9 @@ input[class*="-input"]:focus {
 }
 
 .login-button.focus {
-  background-color: #F26E22;  
+  background-color: #f26e22;
   cursor: pointer;
 }
-
 
 .text-align {
   text-align: center;
@@ -71,4 +68,15 @@ input[class*="-input"]:focus {
   color: #767676;
   font-size: 12px;
   font-weight: 400;
+}
+
+/* 에러 메세지 */
+.error-message {
+  font-size: 12px;
+  color: red;
+  margin: 6px 0;
+}
+
+.display-none {
+  display: none;
 }
