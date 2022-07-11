@@ -14,10 +14,30 @@
       </header>
       <main class="main">
         <section class="login">
-          <label for="email">이메일</label>
-          <input id="email" class="email-input" placeholder="이메일 주소를 입력해 주세요." type="email" />
-          <label for="password">비밀번호</label>
-          <input id="password" class="password-input" placeholder="비밀번호를 설정해 주세요." type="password" />
+          <div>
+            <label for="email">이메일</label>
+            <input
+              id="email"
+              class="email-input"
+              placeholder="이메일 주소를 입력해 주세요."
+              type="email"
+            />
+            <p id="email-error-message" class="error-message display-none">
+              *이미 가입된 이메일 주소입니다.
+            </p>
+          </div>
+          <div>
+            <label for="password">비밀번호</label>
+            <input
+              id="password"
+              class="password-input"
+              placeholder="비밀번호를 설정해 주세요."
+              type="password"
+            />
+            <p id="pw-error-message" class="error-message display-none">
+              *비밀번호는 6자 이상이어야 합니다.
+            </p>
+          </div>
         </section>
         <button class="login-button" type="button">로그인</button>
       </main>

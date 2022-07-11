@@ -1,75 +1,72 @@
-//인풋 내용 검사 후 로그인 버튼 활성화
 const $emailInput = document.querySelector('#email');
 const $pwInput = document.querySelector('#password');
 const $loginButton = document.querySelector('.login-button');
-//const emailInput = document.querySelector('.login');
+const $errorMessage = document.querySelector('.error-message');
 
 let checkemailInput = false;
 let checkpwInput = false;
-// const checkInputValue = () => (event, checkValue) => {
-//   if (event.target.value) {
-//     checkValue = true;
-//   }
-//   return checkValue
-// }
 
+//이메일 인풋값 검사
 const checkEmailInputValue = (event) => {
-    if (event.target.value !== '') {
-    checkemailInput = true;
-    } else checkemailInput = false;
-    showButton();
-}
+  event.target.value !== ''
+    ? (checkemailInput = true)
+    : (checkemailInput = false);
+  showButton();
+};
 
+//비밀번호 인풋값 검사
 const checkpwInputValue = (event) => {
-    if (event.target.value !== '') {
-      checkpwInput = true;
-    } else checkpwInput = false;
-    showButton();
+  event.target.value !== '' ? (checkpwInput = true) : (checkpwInput = false);
+  showButton();
+};
+
+//버튼 활성화
+const showButton = () => {
+  checkemailInput === true && checkpwInput === true
+    ? $loginButton.classList.add('focus')
+    : $loginButton.classList.remove('focus');
+};
+
+// 로그인 데이터 요청
+const url = 'https://mandarin.api.weniv.co.kr';
+
+async function loginData() {
+  try {
+    const res = await fetch(url + '/user/login/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        user: {
+          email: $emailInput.value,
+          password: $pwInput.value,
+        },
+      }),
+    });
+    const resJson = await res.json();
+    console.log(resJson); //나중에 지우기
+    isLogin(resJson);
+  } catch (err) {
+    console.error(err); //나중에 지우기
+  }
 }
 
-const showButton = () => {
-  if(checkemailInput === true && checkpwInput === true) {
-    $loginButton.classList.add('focus')
-  } else {
-    $loginButton.classList.remove('focus')
-  }
+//로그인 체크 로직
+function isLogin(resJson) {
+  resJson.hasOwnProperty('user') ? isLoginTrue() : isLoginFalse();
+}
+
+//로그인 성공 시 페이지 전환
+function isLoginTrue() {
+  location.href = './search.html';
+}
+
+//로그인 실패 시 알람 문구 출력
+function isLoginFalse() {
+  $errorMessage.classList.remove('display-none');
 }
 
 $emailInput.addEventListener('input', checkEmailInputValue);
 $pwInput.addEventListener('input', checkpwInputValue);
 $loginButton.addEventListener('click', loginData);
-
-
-// 로그인 데이터 요청 
-const url = "https://mandarin.api.weniv.co.kr";
-const createP = document.createElement('p');
-const createText = document.createTextNode('이거 안맞음')
-
-async function loginData() {
-    try{
-    const res = await fetch(url+"/user/login/", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body : JSON.stringify({
-                            "user":{
-                                "email": $emailInput.value,
-                                "password": $pwInput.value
-                            }
-                        })
-                    });
-    const resJson = await res.json();
-    console.log(resJson);
-    isLogin(resJson);
-    } catch(err){
-      console.error(err);
-    }
-}
-
-//로그인 성공 시 로직 구현
-function isLogin (resJson) {
-  if (resJson.hasOwnProperty('user')) {
-    location.href = './search.html';
-  }
-}
