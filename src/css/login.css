@@ -73,7 +73,7 @@ input[class*='-input']:focus {
 /* 에러 메세지 */
 .error-message {
   font-size: 12px;
-  color: red;
+  color: #eb5757;
   margin: 6px 0;
 }
 
