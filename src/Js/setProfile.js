@@ -45,7 +45,7 @@ const showButton = () => {
 $userNameInput.addEventListener('input', checkUserNamInputValue);
 $userIdInput.addEventListener('input', checkUserIdInputValue);
 $introInput.addEventListener('input', introInputValue);
-$loginButton.addEventListener('click', userIdValid);
+$loginButton.addEventListener('click', sendSingUpdata);
 
 //아이디 중복 체크
 
@@ -65,6 +65,7 @@ async function userIdValid () {
                       });
         const resJson = await res.json();
         console.log(resJson)
+        return resJson.message
       } catch(err){
         console.error(err);
       }
@@ -74,26 +75,30 @@ async function userIdValid () {
 
 async function sendSingUpdata() {
   const url = "https://mandarin.api.weniv.co.kr";
-  try{
-    const res = await fetch(url+"/user", {
-                      method: "POST",
-                      headers: {
-                          "Content-Type": "application/json",
-                      },
-                      body : JSON.stringify({
-                        "user": {
-                            "username": $userNameInput.value, 
-                            "email": String, //로컬스토리지 데이터 넘기기
-                            "password": String, //로컬스토리지 데이터 넘기기
-                            "accountname": $userIdInput.value,
-                            "intro": $introInput.value,
-                            "image": String 
-                        }
-                    })
-                  });
-    const resJson = await res.json();
-    console.log(resJson);
-  } catch(err){
-    console.error(err);
-  }
+  const userIdResult = await userIdValid();
+  if (userIdResult === '사용 가능한 계정ID 입니다.') {
+    try{
+      const res = await fetch(url+"/user", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body : JSON.stringify({
+                          "user": {
+                              "username": $userNameInput.value, 
+                              "email": localStorage.getItem('email'), //로컬스토리지 데이터 넘기기
+                              "password": localStorage.getItem('password'), //로컬스토리지 데이터 넘기기
+                              "accountname": $userIdInput.value,
+                              "intro": $introInput.value,
+                              "image": String 
+                          }
+                      })
+                    });
+      const resJson = await res.json();
+      console.log(resJson);
+      //location.href = './search.html';
+    } catch(err){
+      console.error(err);
+    }
+  }  
 }
