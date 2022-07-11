@@ -53,6 +53,7 @@ input[class*="-input"]:focus {
   height: 44px;
   border-radius: 44px;
   margin-bottom: 20px;
+  cursor: default;
 }
 
 .login-button.focus {

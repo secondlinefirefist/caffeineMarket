@@ -61,8 +61,15 @@ async function loginData() {
                     });
     const resJson = await res.json();
     console.log(resJson);
+    isLogin(resJson);
     } catch(err){
       console.error(err);
-      $pwInput.appendChild(createText);
     }
+}
+
+//로그인 성공 시 로직 구현
+function isLogin (resJson) {
+  if (resJson.hasOwnProperty('user')) {
+    location.href = './search.html';
+  }
 }
