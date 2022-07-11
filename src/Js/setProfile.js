@@ -96,7 +96,7 @@ async function sendSingUpdata() {
                     });
       const resJson = await res.json();
       console.log(resJson);
-      //location.href = './search.html';
+      location.href = './search.html';
     } catch(err){
       console.error(err);
     }
