@@ -94,7 +94,7 @@ async function checkProfileData() {
   const emailResult = await emailValid();
   if (emailResult === '사용 가능한 이메일 입니다.') {
     setSignUpData();
-    //router(); //페이지 전환
+    router(); //페이지 전환
   }
 }
 
