@@ -62,10 +62,17 @@ async function emailValid () {
       }
 }
 
+//중복 체크 후 이메일과 비밀번호 로컬스토리지에 저장하기
+function setSignUpData() {
+  localStorage.setItem('email', $emailInput.value)
+  localStorage.setItem('password', $pwInput.value)
+}
+
 //이메일 검증이 완료 되면 프로필 설정 페이지로 이동
 async function setProfileHref() {
   const emailResult = await emailValid();
   if (emailResult === '사용 가능한 이메일 입니다.') {
+    setSignUpData();
     location.href = './setProfile.html';
   }
 }
