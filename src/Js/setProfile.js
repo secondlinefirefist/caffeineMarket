@@ -1,104 +1,123 @@
-// 구현 사항
-// 1. 계정 아이디 중복 확인, 영문 숫자 특문만 가능하게 세팅하기
-// 2. 사용자 이름
-
-
-//인풋 내용 검사 후 로그인 버튼 활성화 login.js 와 겹침 나중에 합치기
 const $userNameInput = document.querySelector('#userName');
 const $userIdInput = document.querySelector('#userId');
 const $introInput = document.querySelector('#intro');
 const $loginButton = document.querySelector('.login-button');
+const $RegErrorMessage = document.querySelector('#Reg-error-message');
+const $duplicateErrorMessage = document.querySelector(
+  '#duplicate-error-message'
+);
+const regexp = /[0-9a-zA-Z._]/g;
+
+const url = 'https://mandarin.api.weniv.co.kr';
 
 let checkUserNamInput = false;
 let checkUserIdInput = false;
 let checkIntroIdInput = false;
 
 const checkUserNamInputValue = (event) => {
-    if (event.target.value !== '') {
-    checkUserNamInput = true;
-    } else checkUserNamInput = false;
-    showButton();
-}
+  event.target.value !== ''
+    ? (checkUserNamInput = true)
+    : (checkUserNamInput = false);
+  showButton();
+};
 
 const checkUserIdInputValue = (event) => {
-    if (event.target.value !== '') {
-      checkUserIdInput = true;
-    } else checkUserIdInput = false;
-    showButton();
+  event.target.value !== ''
+    ? (checkUserIdInput = true)
+    : (checkUserIdInput = false);
+  userIdRegErrorMessage(event);
+  showButton();
+};
+
+//아이디 정규식 오류 메시지 출력
+function userIdRegErrorMessage(event) {
+  if (!regexp.test(event.target.value)) {
+    $RegErrorMessage.classList.remove('display-none');
+  } else {
+    $RegErrorMessage.classList.add('display-none');
+  }
 }
 
 const introInputValue = (event) => {
-    if (event.target.value !== '') {
-      checkIntroIdInput = true;
-    } else checkIntroIdInput = false;
-    showButton();
-}
+  event.target.value !== ''
+    ? (checkIntroIdInput = true)
+    : (checkIntroIdInput = false);
+  showButton();
+};
 
 const showButton = () => {
-  if(checkUserNamInput === true && checkUserIdInput === true && checkIntroIdInput === true) {
-    $loginButton.classList.add('focus')
+  checkUserNamInput === true &&
+  checkUserIdInput === true &&
+  checkIntroIdInput === true
+    ? $loginButton.classList.add('focus')
+    : $loginButton.classList.remove('focus');
+};
+
+//아이디 중복 체크 인풋 할 때 마다 통신이 일어나는데 리팩토링 필요해 보임
+async function userIdValid() {
+  try {
+    const res = await fetch(url + '/user/accountnamevalid', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        user: {
+          accountname: $userIdInput.value,
+        },
+      }),
+    });
+    const resJson = await res.json();
+    console.log(resJson);
+    userIdErrorMessage(resJson); //실시간 감지 필요함 리팩토링 요망
+    return resJson.message;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+//아이디 중복 체크 오류 메시지 출력
+function userIdErrorMessage(resJson) {
+  if (resJson.message === '이미 가입된 계정ID 입니다.') {
+    $duplicateErrorMessage.classList.remove('display-none');
   } else {
-    $loginButton.classList.remove('focus')
+    $duplicateErrorMessage.classList.add('display-none');
+  }
+}
+
+//회원가입 정보 보내기
+async function sendSingUpdata() {
+  const userIdResult = await userIdValid();
+  if (userIdResult === '사용 가능한 계정ID 입니다.') {
+    try {
+      const res = await fetch(url + '/user', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          user: {
+            username: $userNameInput.value,
+            email: localStorage.getItem('email'), //로컬스토리지 데이터 넘기기
+            password: localStorage.getItem('password'), //로컬스토리지 데이터 넘기기
+            accountname: $userIdInput.value,
+            intro: $introInput.value,
+            image: String,
+          },
+        }),
+      });
+      const resJson = await res.json();
+      console.log(resJson);
+      userIdDuplicateCheck(resJson);
+      location.href = './search.html';
+    } catch (err) {
+      console.error(err);
+    }
   }
 }
 
 $userNameInput.addEventListener('input', checkUserNamInputValue);
 $userIdInput.addEventListener('input', checkUserIdInputValue);
+$userIdInput.addEventListener('input', userIdValid);
 $introInput.addEventListener('input', introInputValue);
 $loginButton.addEventListener('click', sendSingUpdata);
-
-//아이디 중복 체크
-
-async function userIdValid () {
-  const url = "https://mandarin.api.weniv.co.kr";
-  try{
-        const res = await fetch(url+"/user/accountnamevalid", {
-                          method: "POST",
-                          headers: {
-                              "Content-Type": "application/json",
-                          },
-                          body : JSON.stringify({
-                            "user": {
-                              "accountname": $userIdInput.value,
-                            }
-                        })
-                      });
-        const resJson = await res.json();
-        console.log(resJson)
-        return resJson.message
-      } catch(err){
-        console.error(err);
-      }
-}
-
-//회원가입 정보 보내기
-
-async function sendSingUpdata() {
-  const url = "https://mandarin.api.weniv.co.kr";
-  const userIdResult = await userIdValid();
-  if (userIdResult === '사용 가능한 계정ID 입니다.') {
-    try{
-      const res = await fetch(url+"/user", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body : JSON.stringify({
-                          "user": {
-                              "username": $userNameInput.value, 
-                              "email": localStorage.getItem('email'), //로컬스토리지 데이터 넘기기
-                              "password": localStorage.getItem('password'), //로컬스토리지 데이터 넘기기
-                              "accountname": $userIdInput.value,
-                              "intro": $introInput.value,
-                              "image": String 
-                          }
-                      })
-                    });
-      const resJson = await res.json();
-      console.log(resJson);
-      location.href = './search.html';
-    } catch(err){
-      console.error(err);
-    }
-  }  
-}
