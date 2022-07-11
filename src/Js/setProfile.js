@@ -48,7 +48,9 @@ const introInputValue = (event) => {
 const showButton = () => {
   checkUserNamInput === true &&
   checkUserIdInput === true &&
-  checkIntroIdInput === true
+  checkIntroIdInput === true &&
+  $RegErrorMessage.classList.contains('display-none') &&
+  $duplicateErrorMessage.classList.contains('display-none')
     ? $loginButton.classList.add('focus')
     : $loginButton.classList.remove('focus');
 };
@@ -70,6 +72,7 @@ async function userIdValid() {
     const resJson = await res.json();
     console.log(resJson);
     userIdErrorMessage(resJson); //실시간 감지 필요함 리팩토링 요망
+    showButton();
     return resJson.message;
   } catch (err) {
     console.error(err);
