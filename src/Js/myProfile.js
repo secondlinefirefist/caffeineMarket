@@ -59,8 +59,10 @@ btnGoLogout.addEventListener('mousedown', (event) => {
 });
 
 const btnCancelLogout = document.querySelector('.btnCancelLogout');
-const btnOkLogout = document.querySelector('.btnOkLogout');
-
 btnCancelLogout.addEventListener('click', () => {
   logout.classList.remove('displayModal');
 });
+
+/*로그아웃 버튼에 링크 달기*/
+const btnOkLogout = document.querySelector('.btnOkLogout');
+btnOkLogout.setAttribute('location.href', '../pages/login.html');
