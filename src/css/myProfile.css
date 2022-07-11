@@ -30,7 +30,7 @@ footer {
 .wrapHeaderNav {
   display: flex;
   justify-content: space-between;
-  border: 0.5px solid #dbdbdb;
+  border-bottom: 0.5px solid #dbdbdb;
   background-color: #fff;
 }
 
@@ -321,7 +321,7 @@ footer {
 
 /* 하단메뉴 */
 .contNav {
-  border: 0.5px solid #dbdbdb;
+  border-top: 0.5px solid #dbdbdb;
 }
 
 .navList {
@@ -348,7 +348,7 @@ footer {
   display: none;
   width: 100%;
   box-sizing: border-box;
-  bottom: 0.2%;
+  bottom: 1px;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px 10px 0 0;

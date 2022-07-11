@@ -65,4 +65,7 @@ btnCancelLogout.addEventListener('click', () => {
 
 /*로그아웃 버튼에 링크 달기*/
 const btnOkLogout = document.querySelector('.btnOkLogout');
-btnOkLogout.setAttribute('location.href', '../pages/login.html');
+// btnOkLogout.setAttribute('location.href', '../pages/login.html');
+btnOkLogout.addEventListener('click', () => {
+  btnOkLogout.setAttribute('location.href', '../pages/login.html');
+});
