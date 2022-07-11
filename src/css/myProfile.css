@@ -431,7 +431,7 @@ footer {
   border-right: 1px solid #dbdbdb;
 }
 
-.wrapLogoutButtons .btnOkLogout li a {
+.wrapLogoutButtons .btnOkLogout {
   text-decoration: none;
   color: #f26e22;
 }
