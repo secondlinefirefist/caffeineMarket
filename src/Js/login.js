@@ -6,36 +6,29 @@ const $errorMessage = document.querySelector('.error-message');
 let checkemailInput = false;
 let checkpwInput = false;
 
+//이메일 인풋값 검사
 const checkEmailInputValue = (event) => {
-  if (event.target.value !== '') {
-    checkemailInput = true;
-  } else checkemailInput = false;
+  event.target.value !== ''
+    ? (checkemailInput = true)
+    : (checkemailInput = false);
   showButton();
 };
 
+//비밀번호 인풋값 검사
 const checkpwInputValue = (event) => {
-  if (event.target.value !== '') {
-    checkpwInput = true;
-  } else checkpwInput = false;
+  event.target.value !== '' ? (checkpwInput = true) : (checkpwInput = false);
   showButton();
 };
 
+//버튼 활성화
 const showButton = () => {
-  if (checkemailInput === true && checkpwInput === true) {
-    $loginButton.classList.add('focus');
-  } else {
-    $loginButton.classList.remove('focus');
-  }
+  checkemailInput === true && checkpwInput === true
+    ? $loginButton.classList.add('focus')
+    : $loginButton.classList.remove('focus');
 };
-
-$emailInput.addEventListener('input', checkEmailInputValue);
-$pwInput.addEventListener('input', checkpwInputValue);
-$loginButton.addEventListener('click', loginData);
 
 // 로그인 데이터 요청
 const url = 'https://mandarin.api.weniv.co.kr';
-const createP = document.createElement('p');
-const createText = document.createTextNode('이거 안맞음');
 
 async function loginData() {
   try {
@@ -52,10 +45,10 @@ async function loginData() {
       }),
     });
     const resJson = await res.json();
-    console.log(resJson);
+    console.log(resJson); //나중에 지우기
     isLogin(resJson);
   } catch (err) {
-    console.error(err);
+    console.error(err); //나중에 지우기
   }
 }
 
@@ -73,3 +66,7 @@ function isLoginTrue() {
 function isLoginFalse() {
   $errorMessage.classList.remove('display-none');
 }
+
+$emailInput.addEventListener('input', checkEmailInputValue);
+$pwInput.addEventListener('input', checkpwInputValue);
+$loginButton.addEventListener('click', loginData);
