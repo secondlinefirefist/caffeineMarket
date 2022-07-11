@@ -295,7 +295,7 @@ footer {
   margin: -3px;
 }
 
-.wrapBtnReaction button p {
+.wrapBtnReaction button span {
   display: inline-block;
   width: 15px;
   margin-left: 7px;
