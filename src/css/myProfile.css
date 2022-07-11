@@ -354,17 +354,13 @@ footer {
   display: none;
   width: 390px;
   box-sizing: border-box;
-  bottom: 2px;
+  bottom: 1px;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px 10px 0 0;
   background-color: #fff;
   box-shadow: 0px -5px 22px -4px rgba(166, 166, 166, 0.75);
   z-index: 10;
-}
-
-.displayModal {
-  display: block;
 }
 
 .mainModal::after {
@@ -394,6 +390,7 @@ footer {
 }
 
 /*로그아웃 모달*/
+
 .wrapLogoutModal {
   display: none;
   position: absolute;
@@ -437,6 +434,15 @@ footer {
 
 .wrapLogoutButtons .btnCancelLogout {
   border-right: 1px solid #dbdbdb;
+}
+
+.wrapLogoutButtons .btnOkLogout a {
+  text-decoration: none;
+  color: #f26e22;
+}
+
+.displayModal {
+  display: block;
 }
 
 @media (max-width: 390px) {

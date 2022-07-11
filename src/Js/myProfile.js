@@ -51,8 +51,16 @@ document.querySelector('main').addEventListener('click', (event) => {
   mainModal.classList.remove('displayModal');
 });
 
-const btnGoLogout = document.querySelector('#btnGoLogout');
-const wrapLogoutModal = document.querySelector('.wrapLogoutModal');
-btnGoLogout.addEventListener('click', () => {
-  wrapLogoutModal.classList.add('displayModal');
+/*로그아웃 모달*/
+const btnGoLogout = document.querySelector('.btnGoLogout');
+const logout = document.querySelector('#logout');
+btnGoLogout.addEventListener('mousedown', (event) => {
+  logout.classList.add('displayModal');
+});
+
+const btnCancelLogout = document.querySelector('.btnCancelLogout');
+const btnOkLogout = document.querySelector('.btnOkLogout');
+
+btnCancelLogout.addEventListener('click', () => {
+  logout.classList.remove('displayModal');
 });
