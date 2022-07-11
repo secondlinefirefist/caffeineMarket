@@ -44,9 +44,15 @@ btnAddProduct.addEventListener('click', createProductList);
 const btnSetting = document.querySelector('.btnSetting');
 const mainModal = document.querySelector('.mainModal');
 btnSetting.addEventListener('click', () => {
-  mainModal.classList.toggle('displayMainModal');
+  mainModal.classList.toggle('displayModal');
 });
 
-// btnSetting.addEventListener('blur', (event) => {
-//   mainModal.classList.remove('displayMainModal');
-// });
+document.querySelector('main').addEventListener('click', (event) => {
+  mainModal.classList.remove('displayModal');
+});
+
+const btnGoLogout = document.querySelector('#btnGoLogout');
+const wrapLogoutModal = document.querySelector('.wrapLogoutModal');
+btnGoLogout.addEventListener('click', () => {
+  wrapLogoutModal.classList.add('displayModal');
+});
