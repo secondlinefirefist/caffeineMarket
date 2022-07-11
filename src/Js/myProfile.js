@@ -69,3 +69,17 @@ btnOkLogout.setAttribute('location.href', '../pages/login.html');
 // btnOkLogout.addEventListener('click', (event) => {
 //   event.target.setAttribute('location.href', '../pages/login.html');
 // });
+
+/*포스트 게시글 설정 모달*/
+const btnPostSetting = document.querySelector('#btnPostSetting');
+const postModal = document.querySelector('.postModal');
+btnPostSetting.addEventListener('click', (event) => {
+  event.stopPropagation();
+  console.log('버튼');
+  btnPostSetting.focus();
+  postModal.classList.toggle('displayModal');
+});
+document.querySelector('main').addEventListener('click', (event) => {
+  console.log('main');
+  postModal.classList.remove('displayModal');
+});

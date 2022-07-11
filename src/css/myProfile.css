@@ -440,10 +440,6 @@ footer {
   color: #f26e22;
 }
 
-.displayModal {
-  display: block;
-}
-
 /* 게시글 설정 모달 */
 .postModal {
   position: absolute;
@@ -489,6 +485,10 @@ footer {
 
 .postModal .postModalList li a:hover {
   color: #f26e22;
+}
+
+.displayModal {
+  display: block;
 }
 
 @media (max-width: 390px) {
