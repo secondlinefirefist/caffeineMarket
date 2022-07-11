@@ -342,6 +342,47 @@ footer {
   width: 84px;
 }
 
+/*메인 모달*/
+.mainModal {
+  position: absolute;
+  display: none;
+  width: 390px;
+  box-sizing: border-box;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px 10px 0 0;
+  background-color: #fff;
+  box-shadow: 0 0 4px #cacaca;
+  z-index: 10;
+}
+
+.mainModal::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  left: 170px;
+  top: 16px;
+  background-color: #dbdbdb;
+}
+
+.mainModal .mainModalList {
+  padding-top: 36px;
+}
+
+.mainModal .mainModalList li {
+  display: block;
+  padding: 14px 0 14px 26px;
+}
+
+.mainModal .mainModalList li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #000;
+}
+
 @media (max-width: 390px) {
   header,
   main {
