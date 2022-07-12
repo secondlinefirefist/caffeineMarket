@@ -31,6 +31,10 @@
   cursor: pointer;
 }
 
+.nav .btnActive {
+  background-color:  #F26E22;
+}
+
 .nav .btnBack,
 .productForm .productImgScreen button {
   width: fit-content;
