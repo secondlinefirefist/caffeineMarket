@@ -8,6 +8,11 @@ const $inputProductLink = document.querySelector('.inputProductLink');
 // 이미지 업로드
 
 // 상품명 길이 유효성 검사
+const checkProductName = () => {
+  $inputProductTitle.value.length < 16 && $inputProductTitle.value.length > 1
+    ? true // 상품명 2 ~ 15자이면 true
+    : false;
+};
 
 // 상품명 1자미만 15자 초과시 error 메시지 처리
 
