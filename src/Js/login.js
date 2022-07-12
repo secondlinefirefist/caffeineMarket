@@ -46,7 +46,7 @@ async function loginData() {
     });
     const resJson = await res.json();
     console.log(resJson); //나중에 지우기
-    isLogin(resJson);
+    //isLogin(resJson);
   } catch (err) {
     console.error(err); //나중에 지우기
   }
