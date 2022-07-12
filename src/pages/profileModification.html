@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인 페이지</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="login-header">
+        <div class="wrapHeaderNav">
+            <a href="./" class="btnBack">
+              <img src="../img/icon/icon-arrow-left.png" alt="뒤로가기" />
+            </a>
+            <button class="btnSave" type="button">저장</button>
+        </div>
+        <div class="wrap-cover">
+          <img
+            class="profile-cover"
+            src="../img/basic-profile-img.png"
+            alt="프로필 사진"
+          />
+          <button class="profile-add">
+            <img src="../img/upload-file.png" alt="업로드 버튼" />
+          </button>
+        </div>
+      </header>
+      <main class="main">
+        <section class="login">
+          <div>
+            <label for="userName">사용자 이름</label>
+            <input
+              id="userName"
+              class="email-input"
+              placeholder="2~10자 이내여야 합니다."
+              minlength="2"
+              maxlength="10"
+              type="text"
+            />
+          </div>
+          <div>
+            <label for="userId">계정 ID</label>
+            <input
+              id="userId"
+              class="password-input"
+              placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다."
+              type="text"
+            />
+            <p id="Reg-error-message" class="error-message display-none">
+              *영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.
+            </p>
+            <p id="duplicate-error-message" class="error-message display-none">
+              *이미 사용 중인 ID입니다.
+            </p>
+          </div>
+          <div>
+            <label for="intro">소개</label>
+            <input
+              id="intro"
+              class="password-input"
+              placeholder="자신과 판매할 상품에 대해 소개해 주세요!"
+              type="text"
+            />
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="../Js/setProfile.js"></script>
+  </body>
+</html>
