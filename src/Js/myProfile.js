@@ -1,5 +1,3 @@
-/*데이터 불러오기*/
-
 /*게시글 좋아요 버튼, 댓글 버튼 클릭 시 배경 채워짐*/
 const btnLike = document.querySelector('#btnLike');
 const btnComment = document.querySelector('#btnComment');
@@ -92,3 +90,29 @@ btnDelPost.addEventListener('click', () => {
 btnCancelDel.addEventListener('click', () => {
   subDelPostModal.classList.remove('displayModal');
 });
+
+/*상품 삭제*/
+//message: 유효하지 않은 토큰, 401 unauthorize 오류 뜨는 상태
+async function okDelPost() {
+  const url = 'https://mandarin.api.weniv.co.kr';
+  try {
+    const res = await fetch(url + '/product/:product_id', {
+      method: 'DELETE',
+      headers: {
+        'Authorization':
+          'Bearer {eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2I4OTc2ODJmZGNjNzEyZjQzODJhZSIsImV4cCI6MTY2Mjc5Nzg5NiwiaWF0IjoxNjU3NjEzODk2fQ.2dhYjxSagUtVf9bsBy8pPb52R2J_nzscfPv_7afguRs}',
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(),
+    });
+    const json = await res.json();
+    console.log(json);
+    alert(json.message);
+    // 상품이 삭제되었습니다 메세지가 나오게 일단 해보려교고 넣은 것
+  } catch {
+    console.error('ERROR!');
+  }
+}
+
+const btnOkDel = document.querySelector('.btnOkDel');
+btnOkDel.addEventListener('click', okDelPost);
