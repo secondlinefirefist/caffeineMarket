@@ -57,7 +57,7 @@ const subModal = document.querySelector('#subLogoutModal');
 btnGoLogout.addEventListener('mousedown', (event) => {
   subLogoutModal.classList.add('displayModal');
 });
-
+/*로그아웃 취소 버튼 기능*/
 const btnCancelLogout = document.querySelector('.btnCancelLogout');
 btnCancelLogout.addEventListener('click', () => {
   subLogoutModal.classList.remove('displayModal');
@@ -88,6 +88,7 @@ const btnCancelDel = document.querySelector('.btnCancelDel');
 btnDelPost.addEventListener('click', () => {
   subDelPostModal.classList.add('displayModal');
 });
+/*게시글 삭제 취소 버튼 기능*/
 btnCancelDel.addEventListener('click', () => {
   subDelPostModal.classList.remove('displayModal');
 });
