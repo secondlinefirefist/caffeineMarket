@@ -11,7 +11,7 @@
   <body>
     <header>
       <div class="wrapHeaderNav">
-        <a href="../pages/search.html" class="btnBack">
+        <a href="./" class="btnBack">
           <img src="../img/icon/icon-arrow-left.png" alt="뒤로가기" />
         </a>
         <a href="#" class="btnSetting">
@@ -73,41 +73,6 @@
               <strong class="prodcutPrice">35,000</strong>
             </button>
           </li>
-          <!-- <li>
-            <button type="button">
-              <img src="../img/product-img-example.png" alt="상품2" />
-              <span class="prodcutTitle">애월읍 엄청 큰 낑깡</span>
-              <strong class="prodcutPrice">45,000</strong>
-            </button>
-          </li>
-          <li>
-            <button type="button">
-              <img src="../img/product-img-example.png" alt="상품1" />
-              <span class="prodcutTitle">애월읍 엄청 큰 낑깡</span>
-              <strong class="prodcutPrice">35,000</strong>
-            </button>
-          </li>
-          <li>
-            <button type="button">
-              <img src="../img/product-img-example.png" alt="상품2" />
-              <span class="prodcutTitle">애월읍 엄청 큰 낑깡</span>
-              <strong class="prodcutPrice">45,000</strong>
-            </button>
-          </li>
-          <li>
-            <button type="button">
-              <img src="../img/product-img-example.png" alt="상품1" />
-              <span class="prodcutTitle">애월읍 엄청 큰 낑깡</span>
-              <strong class="prodcutPrice">35,000</strong>
-            </button>
-          </li>
-          <li>
-            <button type="button">
-              <img src="../img/product-img-example.png" alt="상품2" />
-              <span class="prodcutTitle">애월읍 엄청 큰 낑깡</span>
-              <strong class="prodcutPrice">45,000</strong>
-            </button>
-          </li> -->
         </ul>
       </section>
       <!--판매상품-->
@@ -196,6 +161,7 @@
                   <img
                     src="../img/icon/s-icon-more-vertical.png"
                     alt="설정으로가기"
+                    id="btnPostSetting"
                   />
                 </button>
                 <button type="button" class="marketId">@Weniv_Mandarin</button>
@@ -216,7 +182,7 @@
                       alt="좋아요 버튼"
                       id="btnLike"
                     />
-                    <p id="numLike">0</p>
+                    <span id="numLike">0</span>
                   </button>
                   <button type="button">
                     <img
@@ -224,7 +190,7 @@
                       alt="댓글 버튼"
                       id="btnComment"
                     />
-                    <p>12</p>
+                    <span>12</span>
                   </button>
                 </div>
                 <p class="dateTxt">2022년 6월 30일</p>
@@ -234,6 +200,51 @@
         </section>
       </section>
       <!--게시글-->
+
+      <!--메인모달-->
+      <section class="mainModal">
+        <h2 class="ir">메인모달 영역</h2>
+        <ul class="mainModalList">
+          <li><a href="./setProfile.html">설정 및 개인 정보</a></li>
+          <li><a href="#" class="btnGoLogout">로그아웃</a></li>
+        </ul>
+      </section>
+      <!--메인모달-->
+
+      <!--로그아웃 확인 모달-->
+      <section class="wrapSubModal" id="subLogoutModal">
+        <h2 class="ir">로그아웃 모달 영역</h2>
+        <div class="subModal">
+          <p class="txtSubModal">로그아웃 하시겠어요?</p>
+          <div class="wrapSubModalBtns">
+            <button type="button" class="btnCancelLogout">취소</button>
+            <button type="button" class="btnOkLogout">로그아웃</button>
+          </div>
+        </div>
+      </section>
+      <!--로그아웃 모달-->
+
+      <!--게시글 설정 모달-->
+      <section class="postModal">
+        <h2 class="ir">게시글 모달 영역</h2>
+        <ul class="postModalList">
+          <li id="btnDelPost"><a href="#">삭제</a></li>
+          <li><a href="#" class="btnGoLogout">수정</a></li>
+        </ul>
+      </section>
+
+      <!--게시글 삭제 확인 모달-->
+      <section class="wrapSubModal" id="subDelPostModal">
+        <h2 class="ir">로그아웃 모달 영역</h2>
+        <div class="subModal">
+          <p class="txtSubModal">게시글을 삭제할까요?</p>
+          <div class="wrapSubModalBtns">
+            <button type="button" class="btnCancelDel">취소</button>
+            <button type="button" class="btnOkDel">삭제</button>
+          </div>
+        </div>
+      </section>
+      <!--게게시글 삭제 확인 모달-->
     </main>
 
     <footer>
@@ -263,7 +274,6 @@
         </ul>
       </section>
     </footer>
-
     <script src="../Js/myProfile.js"></script>
   </body>
 </html>

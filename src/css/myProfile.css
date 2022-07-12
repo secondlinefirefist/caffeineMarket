@@ -30,7 +30,7 @@ footer {
 .wrapHeaderNav {
   display: flex;
   justify-content: space-between;
-  border: 0.5px solid #dbdbdb;
+  border-bottom: 0.5px solid #dbdbdb;
   background-color: #fff;
 }
 
@@ -295,7 +295,7 @@ footer {
   margin: -3px;
 }
 
-.wrapBtnReaction button p {
+.wrapBtnReaction button span {
   display: inline-block;
   width: 15px;
   margin-left: 7px;
@@ -321,7 +321,7 @@ footer {
 
 /* 하단메뉴 */
 .contNav {
-  border: 0.5px solid #dbdbdb;
+  border-top: 0.5px solid #dbdbdb;
 }
 
 .navList {
@@ -340,6 +340,159 @@ footer {
 
 .navList li a img {
   width: 84px;
+}
+
+/*메인 모달*/
+.mainModal {
+  position: absolute;
+  display: none;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: 1px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px 10px 0 0;
+  background-color: #fff;
+  box-shadow: 0px -5px 22px -4px rgba(166, 166, 166, 0.75);
+  z-index: 10;
+}
+
+.mainModal::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  left: calc(50% - 12px);
+  top: 16px;
+  border-radius: 5px;
+  background-color: #dbdbdb;
+}
+
+.mainModal .mainModalList {
+  padding-top: 36px;
+}
+
+.mainModal .mainModalList li {
+  display: block;
+  text-align: center;
+  padding: 14px 0 14px 26px;
+}
+
+.mainModal .mainModalList li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #000;
+}
+
+.mainModal .mainModalList li a:hover {
+  color: #f26e22;
+}
+
+/*로그아웃 확인 모달, 게시글 삭제 모달*/
+.wrapSubModal {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.wrapSubModal .subModal {
+  width: 252px;
+  position: absolute;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px 10px 0 0;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.subModal .txtSubModal {
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  padding: 22px 0;
+}
+
+.subModal .wrapSubModalBtns {
+  display: flex;
+  border-top: 1px solid #dbdbdb;
+}
+
+.wrapSubModalBtns .btnCancelLogout,
+.wrapSubModalBtns .btnCancelDel,
+.wrapSubModalBtns .btnOkLogout,
+.wrapSubModalBtns .btnOkDel {
+  padding: 14px 0;
+  font-size: 14px;
+}
+
+.wrapSubModalBtns .btnCancelLogout,
+.wrapSubModalBtns .btnCancelDel {
+  border-right: 1px solid #dbdbdb;
+}
+
+.wrapSubModalBtns .btnOkLogout,
+.wrapSubModalBtns .btnOkDel {
+  text-decoration: none;
+  color: #f26e22;
+}
+
+/* 게시글 설정 모달 */
+.postModal {
+  position: absolute;
+  display: none;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: 1px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px 10px 0 0;
+  background-color: #fff;
+  box-shadow: 0px -5px 22px -4px rgba(166, 166, 166, 0.75);
+  z-index: 10;
+}
+
+.postModal::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  left: calc(50% - 12px);
+  top: 16px;
+  border-radius: 5px;
+  background-color: #dbdbdb;
+}
+
+.postModal .postModalList {
+  padding-top: 36px;
+}
+
+.postModal .postModalList li {
+  display: block;
+  text-align: center;
+  padding: 14px 0 14px 26px;
+}
+
+.postModal .postModalList li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #000;
+}
+
+.postModal .postModalList li a:hover {
+  color: #f26e22;
+}
+
+.displayModal {
+  display: block;
 }
 
 @media (max-width: 390px) {
