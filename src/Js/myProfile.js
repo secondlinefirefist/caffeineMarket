@@ -53,14 +53,14 @@ document.querySelector('main').addEventListener('click', (event) => {
 
 /*로그아웃 모달*/
 const btnGoLogout = document.querySelector('.btnGoLogout');
-const logout = document.querySelector('#logout');
+const subModal = document.querySelector('#subLogoutModal');
 btnGoLogout.addEventListener('mousedown', (event) => {
-  logout.classList.add('displayModal');
+  subLogoutModal.classList.add('displayModal');
 });
 
 const btnCancelLogout = document.querySelector('.btnCancelLogout');
 btnCancelLogout.addEventListener('click', () => {
-  logout.classList.remove('displayModal');
+  subLogoutModal.classList.remove('displayModal');
 });
 
 /*로그아웃 버튼에 링크 달기*/
@@ -75,11 +75,19 @@ const btnPostSetting = document.querySelector('#btnPostSetting');
 const postModal = document.querySelector('.postModal');
 btnPostSetting.addEventListener('click', (event) => {
   event.stopPropagation();
-  console.log('버튼');
   btnPostSetting.focus();
   postModal.classList.toggle('displayModal');
 });
 document.querySelector('main').addEventListener('click', (event) => {
-  console.log('main');
   postModal.classList.remove('displayModal');
+});
+/*포스트 게시글 삭제 확인 모달*/
+const btnDelPost = document.querySelector('#btnDelPost');
+const subDelPostModal = document.querySelector('#subDelPostModal');
+const btnCancelDel = document.querySelector('.btnCancelDel');
+btnDelPost.addEventListener('click', () => {
+  subDelPostModal.classList.add('displayModal');
+});
+btnCancelDel.addEventListener('click', () => {
+  subDelPostModal.classList.remove('displayModal');
 });

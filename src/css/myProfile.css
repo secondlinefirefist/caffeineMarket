@@ -389,8 +389,8 @@ footer {
   color: #f26e22;
 }
 
-/*로그아웃 모달*/
-.wrapLogoutModal {
+/*로그아웃 확인 모달, 게시글 삭제 모달*/
+.wrapSubModal {
   display: none;
   position: absolute;
   width: 100%;
@@ -401,7 +401,7 @@ footer {
   z-index: 10;
 }
 
-.wrapLogoutModal .logoutModal {
+.wrapSubModal .subModal {
   width: 252px;
   position: absolute;
   box-sizing: border-box;
@@ -413,29 +413,33 @@ footer {
   background-color: #fff;
 }
 
-.logoutModal .txtLogout {
+.subModal .txtSubModal {
   font-weight: 500;
   font-size: 16px;
   text-align: center;
   padding: 22px 0;
 }
 
-.logoutModal .wrapLogoutButtons {
+.subModal .wrapSubModalBtns {
   display: flex;
   border-top: 1px solid #dbdbdb;
 }
 
-.wrapLogoutButtons .btnCancelLogout,
-.wrapLogoutButtons .btnOkLogout {
+.wrapSubModalBtns .btnCancelLogout,
+.wrapSubModalBtns .btnCancelDel,
+.wrapSubModalBtns .btnOkLogout,
+.wrapSubModalBtns .btnOkDel {
   padding: 14px 0;
   font-size: 14px;
 }
 
-.wrapLogoutButtons .btnCancelLogout {
+.wrapSubModalBtns .btnCancelLogout,
+.wrapSubModalBtns .btnCancelDel {
   border-right: 1px solid #dbdbdb;
 }
 
-.wrapLogoutButtons .btnOkLogout {
+.wrapSubModalBtns .btnOkLogout,
+.wrapSubModalBtns .btnOkDel {
   text-decoration: none;
   color: #f26e22;
 }
