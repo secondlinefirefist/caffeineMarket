@@ -116,8 +116,7 @@ async function sendSingUpdata() {
       const resJson = await res.json();
       console.log(resJson);
       //userIdDuplicateCheck(resJson); //중복 체크 나중에 구현하기
-      saveToken(resJson)
-      //location.href = './search.html';
+      location.href = './login.html';
     } catch (err) {
       console.error(err);
     }
@@ -160,10 +159,7 @@ async function resImage() {
   }
 }
 
-//로컬스토리지에 토큰 저장하기
-function saveToken(resJson) {
-  localStorage.setItem('token', resJson.user.token)
-}
+
 
 $userNameInput.addEventListener('input', checkUserNamInputValue);
 $userIdInput.addEventListener('input', checkUserIdInputValue);
