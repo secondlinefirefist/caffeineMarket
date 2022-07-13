@@ -32,7 +32,14 @@
   border-radius: 32px;
   background: #ffc7a7;
   color: #ffffff;
-  cursor: pointer;
+}
+
+.nav .btnSaveActive {
+  width: 90px;
+  height: 32px;
+  border-radius: 32px;
+  color: #ffffff;
+  background-color: #f26e22;
 }
 
 .productForm .productImgScreen button {
@@ -88,7 +95,7 @@
 }
 
 .productForm .productTitle {
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 
 .productForm .inputProduct {
