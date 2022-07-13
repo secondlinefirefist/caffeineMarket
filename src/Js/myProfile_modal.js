@@ -66,11 +66,12 @@ btnCancelDel.addEventListener('click', () => {
 });
 
 /*상품 리스트 설정 모달*/
-const productItemBtn = document.querySelector('.productItemBtn');
+const btnProductItem = document.querySelector('.btnProductItem');
 const productModal = document.querySelector('.productModal');
-productItemBtn.addEventListener('click', (event) => {
+btnProductItem.addEventListener('click', (event) => {
   event.stopPropagation();
   productModal.classList.toggle('displayModal');
+  console.log('test');
 });
 document.querySelector('main').addEventListener('click', (event) => {
   productModal.classList.remove('displayModal');

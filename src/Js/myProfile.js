@@ -10,7 +10,7 @@ const createProductList = () => {
   productList.appendChild(productItem);
   productItem.appendChild(productItemBtn);
   productItemBtn.append(productItemImg, productItemSpan, productItemStrong);
-
+  productItemBtn.setAttribute('class', 'btnProductItem');
   productItemBtn.setAttribute('type', 'button');
   productItemImg.setAttribute('src', '../img/product-img-example.png');
   productItemImg.setAttribute('alt', '상품');
