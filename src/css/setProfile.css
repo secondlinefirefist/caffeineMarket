@@ -12,12 +12,16 @@
 
 .wrap-cover {
   margin: 30px auto;
-  width: fit-content;
+  width: 110px;
+  height: 110px;
   position: relative;
 }
 
 .profile-cover {
   vertical-align: top;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 
@@ -30,4 +34,8 @@
 
 .profile-add img {
   width: 100%;
+}
+
+#profile-input {
+  display: none;
 }

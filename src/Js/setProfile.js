@@ -6,6 +6,10 @@ const $RegErrorMessage = document.querySelector('#Reg-error-message');
 const $duplicateErrorMessage = document.querySelector(
   '#duplicate-error-message'
 );
+const $profileUploadButton = document.querySelector('.profile-add');
+const $profileInput = document.querySelector('#profile-input')
+const $profileCover = document.querySelector('.profile-cover')
+
 const regexp = /[0-9a-zA-Z._]/g;
 
 const url = 'https://mandarin.api.weniv.co.kr';
@@ -119,8 +123,46 @@ async function sendSingUpdata() {
   }
 }
 
+//프로필 이미지 버튼 클릭 시 파일 업로드 하기
+function clickProfileInput (e) {
+  $profileInput.click(console.log
+    (e.target));
+}
+
+function uploadImg(e) {
+  clickProfileInput(e);
+}
+
+//프리뷰 구현
+function previewProfileCover() {
+  const reader = new FileReader();
+  reader.onload = ({ target }) => {
+    $profileCover.src = target.result;
+  };
+  reader.readAsDataURL($profileInput.files[0]);
+}
+
+
+//이미지 불러오기
+async function resImage() {
+
+  try {
+    const response = await fetch(url+"filename.png", {
+        method: "GET",
+    });t
+  
+    const data = await response.json();
+    
+    console.log(data)
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 $userNameInput.addEventListener('input', checkUserNamInputValue);
 $userIdInput.addEventListener('input', checkUserIdInputValue);
 $userIdInput.addEventListener('input', userIdValid);
 $introInput.addEventListener('input', introInputValue);
 $loginButton.addEventListener('click', sendSingUpdata);
+$profileUploadButton.addEventListener('click', uploadImg)
+$profileInput.addEventListener('change', previewProfileCover);
