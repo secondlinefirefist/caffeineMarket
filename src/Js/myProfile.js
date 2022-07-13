@@ -1,4 +1,4 @@
-/*상품등록 버튼 누르면 판매 상품 리스트 생성*/
+//상품등록 버튼 누르면 판매 상품 리스트 생성
 const createProductList = () => {
   const productList = document.querySelector('.productList');
   const productItem = document.createElement('li');
@@ -23,7 +23,7 @@ const createProductList = () => {
 const btnAddProduct = document.querySelector('.btnAddProduct');
 btnAddProduct.addEventListener('click', createProductList);
 
-/*상품 삭제*/
+//상품 삭제
 //message: 유효하지 않은 토큰, 401 unauthorize 오류 뜨는 상태
 const url = 'https://mandarin.api.weniv.co.kr';
 async function okDelProduct() {
@@ -48,3 +48,38 @@ async function okDelProduct() {
 
 const btnDelProduct = document.querySelector('#btnDelProduct');
 btnDelProduct.addEventListener('click', okDelProduct);
+
+//프로필 정보 보여주기
+async function profileInfo() {
+  const profileData = {
+    profile: {
+      _id: '62cb897682fdcc712f4382ae',
+      username: '김지수',
+      accountname: 'wltn1385',
+      intro: '반갑습니다 사랑합니다',
+      image: 'http://146.56.183.55:5050/Ellipse.png',
+      isfollow: Boolean,
+      following: [],
+      follower: [],
+      followerCount: Number,
+      followingCount: Number,
+    },
+  };
+  try {
+    const res = await fetch(url + '/profile/:wltn1385', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(profileData),
+    });
+    const resJson = await res.json();
+    console.log(resJson);
+  } catch {
+    console.error('ERROR!');
+  }
+}
+profileInfo();
+
+console.log(`${window.localStorage.getItem('token')}`);
