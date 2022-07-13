@@ -50,7 +50,7 @@
   color: #767676;
   font-style: normal;
   font-weight: 400;
-  font-family: "Spoqa Han Sans Neo";
+  font-family: 'Spoqa Han Sans Neo';
 }
 
 .product .productImgUpload {
@@ -70,7 +70,7 @@
 }
 
 .product .productForm .productImgScreen::after {
-  content: "";
+  content: '';
   position: absolute;
   right: 12px;
   bottom: 12px;
@@ -108,9 +108,16 @@
 
 .productForm .inputProduct::placeholder {
   color: #dbdbdb;
-  font-family: "Spoqa Han Sans Neo";
+  font-family: 'Spoqa Han Sans Neo';
   font-style: normal;
   font-weight: 400;
+}
+
+.productForm .errMessage {
+  display: block;
+  font-size: 12px;
+  color: #eb5757;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 400px) {
