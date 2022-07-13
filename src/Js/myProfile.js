@@ -26,7 +26,7 @@ btnAddProduct.addEventListener('click', createProductList);
 /*상품 삭제*/
 //message: 유효하지 않은 토큰, 401 unauthorize 오류 뜨는 상태
 const url = 'https://mandarin.api.weniv.co.kr';
-async function okDelPost() {
+async function okDelProduct() {
   try {
     const res = await fetch(url + '/product/:product_id', {
       method: 'DELETE',
@@ -40,11 +40,11 @@ async function okDelPost() {
     const json = await res.json();
     console.log(json);
     alert(json.message);
-    // 상품이 삭제되었습니다 메세지가 나오게 일단 해보려교고 넣은 것
+    // 상품이 삭제되었습니다 메세지가 나오게 일단 해보려교 넣은 것
   } catch {
     console.error('ERROR!');
   }
 }
 
-const btnOkDel = document.querySelector('.btnOkDel');
-btnOkDel.addEventListener('click', okDelPost);
+const btnDelProduct = document.querySelector('#btnDelProduct');
+btnDelProduct.addEventListener('click', okDelProduct);
