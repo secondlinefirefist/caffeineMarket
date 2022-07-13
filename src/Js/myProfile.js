@@ -51,28 +51,13 @@ btnDelProduct.addEventListener('click', okDelProduct);
 
 //프로필 정보 보여주기
 async function profileInfo() {
-  const profileData = {
-    profile: {
-      _id: '62cb897682fdcc712f4382ae',
-      username: '김지수',
-      accountname: 'wltn1385',
-      intro: '반갑습니다 사랑합니다',
-      image: 'http://146.56.183.55:5050/Ellipse.png',
-      isfollow: Boolean,
-      following: [],
-      follower: [],
-      followerCount: Number,
-      followingCount: Number,
-    },
-  };
   try {
-    const res = await fetch(url + '/profile/:wltn1385', {
+    const res = await fetch(url + '/profile/taetae', {
       method: 'GET',
       headers: {
-        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2JiOTg3ODJmZGNjNzEyZjQzODVmYiIsImV4cCI6MTY2MjkwOTE3OCwiaWF0IjoxNjU3NzI1MTc4fQ.h25CjHzhXoZV5PApmeRSZvSIQ48q7YG-n4jjTzB15_c`,
         'Content-type': 'application/json',
       },
-      body: JSON.stringify(profileData),
     });
     const resJson = await res.json();
     console.log(resJson);
