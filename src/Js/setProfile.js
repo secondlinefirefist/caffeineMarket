@@ -6,6 +6,10 @@ const $RegErrorMessage = document.querySelector('#Reg-error-message');
 const $duplicateErrorMessage = document.querySelector(
   '#duplicate-error-message'
 );
+const $profileUploadButton = document.querySelector('.profile-add');
+const $profileInput = document.querySelector('#profile-input')
+const $profileCover = document.querySelector('.profile-cover')
+
 const regexp = /[0-9a-zA-Z._]/g;
 
 const url = 'https://mandarin.api.weniv.co.kr';
@@ -111,12 +115,54 @@ async function sendSingUpdata() {
       });
       const resJson = await res.json();
       console.log(resJson);
-      userIdDuplicateCheck(resJson);
-      location.href = './search.html';
+      //userIdDuplicateCheck(resJson); //중복 체크 나중에 구현하기
+      saveToken(resJson)
+      //location.href = './search.html';
     } catch (err) {
       console.error(err);
     }
   }
+}
+
+//프로필 이미지 버튼 클릭 시 파일 업로드 하기 아직 미구현
+function clickProfileInput (e) {
+  $profileInput.click(console.log
+    (e.target));
+}
+
+function uploadImg(e) {
+  clickProfileInput(e);
+}
+
+//프리뷰 구현
+function previewProfileCover() {
+  const reader = new FileReader();
+  reader.onload = ({ target }) => {
+    $profileCover.src = target.result;
+  };
+  reader.readAsDataURL($profileInput.files[0]);
+}
+
+
+//이미지 불러오기
+async function resImage() {
+
+  try {
+    const response = await fetch(url+"filename.png", {
+        method: "GET",
+    });t
+  
+    const data = await response.json();
+    
+    console.log(data)
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+//로컬스토리지에 토큰 저장하기
+function saveToken(resJson) {
+  localStorage.setItem('token', resJson.user.token)
 }
 
 $userNameInput.addEventListener('input', checkUserNamInputValue);
@@ -124,3 +170,5 @@ $userIdInput.addEventListener('input', checkUserIdInputValue);
 $userIdInput.addEventListener('input', userIdValid);
 $introInput.addEventListener('input', introInputValue);
 $loginButton.addEventListener('click', sendSingUpdata);
+$profileUploadButton.addEventListener('click', uploadImg)
+$profileInput.addEventListener('change', previewProfileCover);
