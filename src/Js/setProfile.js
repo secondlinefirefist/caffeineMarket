@@ -115,15 +115,16 @@ async function sendSingUpdata() {
       });
       const resJson = await res.json();
       console.log(resJson);
-      userIdDuplicateCheck(resJson);
-      location.href = './search.html';
+      //userIdDuplicateCheck(resJson); //중복 체크 나중에 구현하기
+      saveToken(resJson)
+      //location.href = './search.html';
     } catch (err) {
       console.error(err);
     }
   }
 }
 
-//프로필 이미지 버튼 클릭 시 파일 업로드 하기
+//프로필 이미지 버튼 클릭 시 파일 업로드 하기 아직 미구현
 function clickProfileInput (e) {
   $profileInput.click(console.log
     (e.target));
@@ -157,6 +158,11 @@ async function resImage() {
   } catch (err) {
     console.error(err);
   }
+}
+
+//로컬스토리지에 토큰 저장하기
+function saveToken(resJson) {
+  localStorage.setItem('token', resJson.user.token)
 }
 
 $userNameInput.addEventListener('input', checkUserNamInputValue);
