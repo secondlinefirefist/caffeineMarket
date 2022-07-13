@@ -22,19 +22,23 @@
   cursor: pointer;
 }
 
-.nav .btnBack {
-  width: fit-content;
-}
-
 .nav .btnSave {
   width: 90px;
   height: 32px;
   border-radius: 32px;
   background: #ffc7a7;
   color: #ffffff;
-  cursor: pointer;
 }
 
+.nav .btnSaveActive {
+  background-color: #f26e22;
+}
+
+.nav .btnActive {
+  background-color:  #F26E22;
+}
+
+.nav .btnBack,
 .productForm .productImgScreen button {
   width: fit-content;
 }
@@ -50,7 +54,7 @@
   color: #767676;
   font-style: normal;
   font-weight: 400;
-  font-family: "Spoqa Han Sans Neo";
+  font-family: 'Spoqa Han Sans Neo';
 }
 
 .product .productImgUpload {
@@ -70,7 +74,7 @@
 }
 
 .product .productForm .productImgScreen::after {
-  content: "";
+  content: '';
   position: absolute;
   right: 12px;
   bottom: 12px;
@@ -81,14 +85,8 @@
   background-size: 36px 36px;
 }
 
-.productForm .productImgScreen img {
-  position: absolute;
-  right: 12px;
-  bottom: 12px;
-}
-
 .productForm .productTitle {
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 
 .productForm .inputProduct {
@@ -108,9 +106,16 @@
 
 .productForm .inputProduct::placeholder {
   color: #dbdbdb;
-  font-family: "Spoqa Han Sans Neo";
+  font-family: 'Spoqa Han Sans Neo';
   font-style: normal;
   font-weight: 400;
+}
+
+.productForm .errMessage {
+  display: none;
+  font-size: 12px;
+  color: #eb5757;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 400px) {

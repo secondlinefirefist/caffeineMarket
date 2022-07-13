@@ -10,8 +10,12 @@
   <body>
     <div class="wrap">
       <header class="login-header">
-        <h2 class="title set-title">프로필 설정</h2>
-        <p class="sub-title">나중에 언제든지 변경할 수 있습니다.</p>
+        <div class="wrapHeaderNav">
+            <a href="./" class="btnBack">
+              <img src="../img/icon/icon-arrow-left.png" alt="뒤로가기" />
+            </a>
+            <button class="btnSave" type="button">저장</button>
+        </div>
         <div class="wrap-cover">
           <img
             class="profile-cover"
@@ -19,9 +23,8 @@
             alt="프로필 사진"
           />
           <button class="profile-add">
-            <img class="profile-cover" src="../img/upload-file.png" alt="업로드 버튼" />
+            <img src="../img/upload-file.png" alt="업로드 버튼" />
           </button>
-          <input id="profile-input" type="file" accept='image/*'/>
         </div>
       </header>
       <main class="main">
@@ -62,7 +65,6 @@
             />
           </div>
         </section>
-        <button class="login-button" type="button">감귤마켓 시작하기</button>
       </main>
     </div>
     <script src="../Js/setProfile.js"></script>
