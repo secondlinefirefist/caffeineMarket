@@ -55,7 +55,7 @@ async function profileInfo() {
     const res = await fetch(url + '/profile/taetae', {
       method: 'GET',
       headers: {
-        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2JiOTg3ODJmZGNjNzEyZjQzODVmYiIsImV4cCI6MTY2MjkwOTE3OCwiaWF0IjoxNjU3NzI1MTc4fQ.h25CjHzhXoZV5PApmeRSZvSIQ48q7YG-n4jjTzB15_c`,
+        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
         'Content-type': 'application/json',
       },
     });
