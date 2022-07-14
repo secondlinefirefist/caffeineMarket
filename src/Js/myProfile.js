@@ -66,7 +66,9 @@ function createProductList() {
     <button type="button" class="btnProductItem">
       <img src=${element.itemImage}alt="상품1" />
       <span class="prodcutTitle">${element.itemName}</span>
-      <strong class="prodcutPrice">${element.price}</strong>
+      <strong class="prodcutPrice">${element.price
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</strong>
     </button>
   </li>
   `
