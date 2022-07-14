@@ -23,10 +23,11 @@
           <form action="" class="productForm">
             <h3 class="productImgUpload productContent">이미지 등록</h3>
             <label class="productImgScreen" for="productUpload">
+              <img src="" alt="" class="productImg">
               <input
                 type="file"
                 accept="image/*"
-                multiple
+                onchange="imgPreView(event)"
                 id="productUpload"
                 class="ir inputProductImg"
               />
@@ -42,7 +43,9 @@
               class="inputProductTitle inputProduct"
               id="productName"
             />
-            <strong class="errMessage errProductName">*2~15자 이내여야 합니다.</strong>
+            <strong class="errMessage errProductName"
+              >*2~15자 이내여야 합니다.</strong
+            >
             <label for="productPrice" class="productTitle productContent"
               >가격(원)</label
             >
@@ -52,7 +55,9 @@
               class="inputProductPrice inputProduct"
               id="productPrice"
             />
-            <strong class="errMessage errProductPrice">*숫자만 입력 가능합니다.</strong>
+            <strong class="errMessage errProductPrice"
+              >*숫자만 입력 가능합니다.</strong
+            >
             <label for="productLink" class="productTitle productContent"
               >판매 링크</label
             >
@@ -62,7 +67,9 @@
               class="inputProductLink inputProduct"
               id="productLink"
             />
-            <strong class="errMessage errProductLink">*URL을 입력해 주세요.</strong>
+            <strong class="errMessage errProductLink"
+              >*URL을 입력해 주세요.</strong
+            >
           </form>
         </section>
       </main>
