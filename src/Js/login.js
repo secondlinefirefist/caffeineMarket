@@ -46,7 +46,7 @@ async function loginData() {
     });
     const resJson = await res.json();
     console.log(resJson); //나중에 지우기
-    saveToken(resJson)
+    saveData(resJson)
     isLogin(resJson);
   } catch (err) {
     console.error(err); //나중에 지우기
@@ -69,8 +69,9 @@ function isLoginFalse() {
 }
 
 //로컬스토리지에 토큰 저장하기
-function saveToken(resJson) {
+function saveData(resJson) {
   localStorage.setItem('token', resJson.user.token)
+  localStorage.setItem('accountname', resJson.user.accountname)
 }
 
 $emailInput.addEventListener('input', checkEmailInputValue);
