@@ -60,7 +60,7 @@ function isLogin(resJson) {
 
 //로그인 성공 시 페이지 전환
 function isLoginTrue() {
-  location.href = './search.html';
+  location.href = './home.html';
 }
 
 //로그인 실패 시 알람 문구 출력
@@ -72,6 +72,7 @@ function isLoginFalse() {
 function saveData(resJson) {
   localStorage.setItem('token', resJson.user.token)
   localStorage.setItem('accountname', resJson.user.accountname)
+  localStorage.setItem('key', resJson.user._id)
 }
 
 $emailInput.addEventListener('input', checkEmailInputValue);
