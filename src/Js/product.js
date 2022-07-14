@@ -44,9 +44,10 @@ const handleCheckInput = () => {
   // 이미지 업로드 되는 경우를 추가해야함
 };
 
-
-// 저장버튼 클릭시 상품 데이터 POST 요청
+// 저장버튼 클릭시 상품 데이터 POST 요청(이미지 업로드 미구현)
 const url = 'https://mandarin.api.weniv.co.kr';
+const token = localStorage.getItem('token');
+// console.log(token)
 
 async function productData() {
   try {
@@ -61,8 +62,7 @@ async function productData() {
         },
       }),
       headers: {
-        'Authorization':
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2Y3MWJkODJmZGNjNzEyZjQ5YWQxYyIsImV4cCI6MTY2Mjk0NjI1OSwiaWF0IjoxNjU3NzYyMjU5fQ.ZZJU2G6yXYACD1gGnoMa_DPYBDCwD2mOWAsBtf5chxI',
+        'Authorization': `Bearer ${token}`,
         'Content-type': 'application/json',
       },
     });
