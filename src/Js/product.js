@@ -44,7 +44,40 @@ const handleCheckInput = () => {
   // 이미지 업로드 되는 경우를 추가해야함
 };
 
-// 이미지, 상품명, 가격, 판매링크 모두 입력될 경우 저장버튼 활성화 이벤트 리스너
-$productForm.addEventListener('input', handleCheckInput);
+// 저장버튼 클릭시 상품 데이터 POST 요청(이미지 업로드 미구현)
+const url = 'https://mandarin.api.weniv.co.kr';
+const token = localStorage.getItem('token');
+// console.log(token)
 
-// POST요청
+async function productData() {
+  try {
+    const res = await fetch(url + '/product', {
+      method: 'POST',
+      body: JSON.stringify({
+        product: {
+          itemName: $inputProductTitle.value,
+          price: parseInt($inputProductPrice.value),
+          link: $inputProductLink.value,
+          itemImage: url,
+        },
+      }),
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-type': 'application/json',
+      },
+    });
+    const resJson = await res.json();
+    console.log(resJson);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+// 상품등록 체크로직
+
+// 상품등록 성공시 페이지전환
+
+// 상품등록 식패시 알림문구 출력
+
+$productForm.addEventListener('input', handleCheckInput);
+$btnSave.addEventListener('click', productData);
