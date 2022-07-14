@@ -4,8 +4,20 @@ const $inputProductImg = document.querySelector('.inputProductImg');
 const $inputProductTitle = document.querySelector('.inputProductTitle');
 const $inputProductPrice = document.querySelector('.inputProductPrice');
 const $inputProductLink = document.querySelector('.inputProductLink');
+const $productImg = document.querySelector('.productImg');
+
 
 // 이미지 업로드 시 미리보기
+const imgPreView = (event) => {
+  let reader = new FileReader();
+
+  reader.onload = (event) => {
+    $productImg.setAttribute('src', event.target.result);
+    $productImg.style.display = 'block'
+    
+  };
+  reader.readAsDataURL(event.target.files[0]);
+};
 
 // 상품명 길이 유효성 검사
 const checkProductName = () => {
@@ -66,7 +78,7 @@ async function productData() {
       body: JSON.stringify({
         product: {
           itemName: $inputProductTitle.value,
-          price: parseInt($inputProductPrice.value.replaceAll(",", "")),
+          price: parseInt($inputProductPrice.value.replaceAll(',', '')),
           link: $inputProductLink.value,
           itemImage: url,
         },
