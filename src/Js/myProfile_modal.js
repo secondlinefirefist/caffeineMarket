@@ -59,13 +59,13 @@ btnCancelDel.addEventListener('click', () => {
 });
 
 /*상품 리스트 설정 모달*/
-const btnProductItem = document.querySelector('.btnProductItem');
-const productModal = document.querySelector('.productModal');
-btnProductItem.addEventListener('click', (event) => {
-  event.stopPropagation();
-  productModal.classList.toggle('displayModal');
-  console.log('test');
-});
-document.querySelector('main').addEventListener('click', (event) => {
-  productModal.classList.remove('displayModal');
-});
+// const btnProductItem = document.querySelector('.btnProductItem');
+// const productModal = document.querySelector('.productModal');
+// btnProductItem.addEventListener('click', (event) => {
+//   event.stopPropagation();
+//   productModal.classList.toggle('displayModal');
+//   console.log('test');
+// });
+// document.querySelector('main').addEventListener('click', (event) => {
+//   productModal.classList.remove('displayModal');
+// });
