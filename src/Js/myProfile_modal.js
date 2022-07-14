@@ -35,13 +35,6 @@ btnCancelLogout.addEventListener('click', () => {
   subLogoutModal.classList.remove('displayModal');
 });
 
-/*로그아웃 버튼에 링크 달기*/
-const btnOkLogout = document.querySelector('.btnOkLogout');
-btnOkLogout.setAttribute('location.href', '../pages/login.html');
-// btnOkLogout.addEventListener('click', (event) => {
-//   event.target.setAttribute('location.href', '../pages/login.html');
-// });
-
 /*포스트 게시글 설정 모달*/
 const btnPostSetting = document.querySelector('#btnPostSetting');
 const postModal = document.querySelector('.postModal');

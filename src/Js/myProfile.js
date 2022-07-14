@@ -65,8 +65,7 @@ async function okDelProduct() {
     const res = await fetch(url + '/product/:product_id', {
       method: 'DELETE',
       headers: {
-        'Authorization':
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2I4OTc2ODJmZGNjNzEyZjQzODJhZSIsImV4cCI6MTY2Mjc5Nzg5NiwiaWF0IjoxNjU3NjEzODk2fQ.2dhYjxSagUtVf9bsBy8pPb52R2J_nzscfPv_7afguRs',
+        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
         'Content-type': 'application/json',
       },
       body: JSON.stringify(),
@@ -82,3 +81,10 @@ async function okDelProduct() {
 
 const btnDelProduct = document.querySelector('#btnDelProduct');
 btnDelProduct.addEventListener('click', okDelProduct);
+
+//로그아웃
+const btnOkLogout = document.querySelector('.btnOkLogout');
+btnOkLogout.addEventListener('click', () => {
+  btnOkLogout.setAttribute('location.href', '../pages/splash.html');
+  // localStorage.clear();
+});
