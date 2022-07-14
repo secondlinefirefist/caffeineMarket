@@ -24,7 +24,7 @@ $inputProductTitle.addEventListener('input', (event) => {
   }
 });
 
-// 상품가격 유효성 검사
+// 상품 가격 유효성 검사
 const checkProductPrice = (event) => {
   const $errProductPrice = document.querySelector('.errProductPrice');
   let originNum = event.target.value.replace(/,/gi, ''); // 콤마를 빈 문자열로 변경
