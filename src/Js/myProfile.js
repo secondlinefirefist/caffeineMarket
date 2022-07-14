@@ -104,5 +104,5 @@ btnDelProduct.addEventListener('click', okDelProduct);
 const btnOkLogout = document.querySelector('.btnOkLogout');
 btnOkLogout.addEventListener('click', () => {
   btnOkLogout.setAttribute('location.href', '../pages/splash.html');
-  // localStorage.clear();
+  localStorage.clear();
 });
