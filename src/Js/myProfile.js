@@ -12,13 +12,13 @@ const url = 'https://mandarin.api.weniv.co.kr';
     });
     const resJson = await res.json();
     console.log(resJson);
-    infoProfile(resJson);
+    infoUserProfile(resJson);
   } catch {
     console.error('ERROR!');
   }
 })();
 
-function infoProfile(resJson) {
+function infoUserProfile(resJson) {
   const marketName = document.querySelector('.marketName');
   const followerCount = document.querySelector('.btnFollowers > strong');
   const followingCount = document.querySelector('.btnFollwings > strong');
