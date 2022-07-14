@@ -4,7 +4,8 @@ const $inputProductImg = document.querySelector('.inputProductImg');
 const $inputProductTitle = document.querySelector('.inputProductTitle');
 const $inputProductPrice = document.querySelector('.inputProductPrice');
 const $inputProductLink = document.querySelector('.inputProductLink');
-// 이미지 업로드
+
+// 이미지 업로드 시 미리보기
 
 // 상품명 길이 유효성 검사
 const checkProductName = () => {
@@ -23,9 +24,20 @@ $inputProductTitle.addEventListener('input', (event) => {
   }
 });
 
-// 가격에 숫자만 입력 가능하도록
+// 상품가격 유효성 검사
+const checkProductPrice = (event) => {
+  const $errProductPrice = document.querySelector('.errProductPrice');
+  let originNum = event.target.value.replace(/,/gi, ''); // 콤마를 빈 문자열로 변경
 
-// 가격에 숫자 입력하지 않을 경우 error 메시지 처리
+  // 숫자가 아니라면 error 메시지 출력
+  if (isNaN(originNum)) {
+    $errProductPrice.style.display = 'block';
+  } else {
+    $errProductPrice.style.display = 'none';
+    // 가격자동 원단위 콤마 표시
+    event.target.value = originNum.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+};
 
 // 이미지, 상품명, 가격, 판매링크 모두 입력될 경우 저장버튼 활성화 함수
 const handleCheckInput = () => {
@@ -46,8 +58,7 @@ const handleCheckInput = () => {
 
 // 저장버튼 클릭시 상품 데이터 POST 요청(이미지 업로드 미구현)
 const url = 'https://mandarin.api.weniv.co.kr';
-const token = localStorage.getItem('token');
-// console.log(token)
+const token = window.localStorage.getItem('token');
 
 async function productData() {
   try {
@@ -81,3 +92,4 @@ async function productData() {
 
 $productForm.addEventListener('input', handleCheckInput);
 $btnSave.addEventListener('click', productData);
+$inputProductPrice.addEventListener('input', checkProductPrice);
