@@ -109,7 +109,7 @@ async function sendSingUpdata() {
             password: localStorage.getItem('password'), //로컬스토리지 데이터 넘기기
             accountname: $userIdInput.value,
             intro: $introInput.value,
-            image: String,
+            image: $profileCover.src,
           },
         }),
       });
