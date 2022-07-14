@@ -81,3 +81,10 @@ async function okDelProduct() {
 
 const btnDelProduct = document.querySelector('#btnDelProduct');
 btnDelProduct.addEventListener('click', okDelProduct);
+
+//로그아웃
+const btnOkLogout = document.querySelector('.btnOkLogout');
+btnOkLogout.addEventListener('click', () => {
+  btnOkLogout.setAttribute('location.href', '../pages/splash.html');
+  // localStorage.clear();
+});
