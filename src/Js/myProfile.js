@@ -52,7 +52,7 @@ function infoUserProfile(resJson) {
   }
 })();
 
-//상품등록 버튼 누르면 판매 상품 리스트 생성
+//판매 상품 리스트 생성
 const productList = document.querySelector('.productList');
 function createProductList() {
   console.log(prodcutListDummy, 'test');
