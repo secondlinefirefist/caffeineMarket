@@ -59,15 +59,23 @@ btnCancelDel.addEventListener('click', () => {
 });
 
 // 상품 리스트 설정 모달
-const btnProductItem = document.querySelector('#btnProductItem');
-const productModal = document.querySelector('.productModal');
-console.log(btnProductItem, 'btnProductItem');
-console.log(productModal, 'productModal');
+// const productModal = document.querySelector('.productModal');
+// const btnProductItem = document.querySelectorAll('#btnProductItem');
+// for (let i = 0; i < btnProductItem.length; i++) {
+//   console.log('제발료');
+//   btnProductItem[i].addEventListener('click', () => {
+//     productModal.classList.toggle('displayModal');
+//   });
+// }
 
-if (btnProductItem) {
-  for (let i = 0; btnProductItem.length < i; i++) {
-    console.log(btnProductItem[i], '제발 ㅠㅠ');
-  }
+const productModal = document.querySelector('.productModal');
+const btnProductItem = document.querySelectorAll('#btnProductItem');
+
+for (let i = 0; i < btnProductItem.length; i++) {
+  btnProductItem[i].addEventListener('click', (event) => {
+    event.stopPropagation();
+    productModal.classList.toggle('displayModal');
+  });
 }
 
 document.querySelector('main').addEventListener('click', (event) => {

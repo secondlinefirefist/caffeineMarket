@@ -56,26 +56,32 @@ function infoUserProfile(resJson) {
 const productList = document.querySelector('.productList');
 function createProductList() {
   console.log(prodcutListDummy, 'test');
-  productList.innerHTML = prodcutListDummy
-    .map(
-      (element) =>
-        `
-  <li>
-    <button type="button" class="btnProductItem" id="btnProductItem">
-      <img src=${element.itemImage}alt="상품1" />
-      <span class="prodcutTitle">${element.itemName}</span>
-      <strong class="prodcutPrice">${element.price
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</strong>
-    </button>
-  </li>
-  `
-    )
-    .join('');
+  for (let i = 0; i < prodcutListDummy.length; i++) {
+    const li = document.createElement('li');
+    const button = document.createElement('button');
+    const img = document.createElement('img');
+    const span = document.createElement('span');
+    const strong = document.createElement('strong');
+
+    productList.appendChild(li);
+    li.appendChild(button);
+    button.append(img, span, strong);
+
+    button.setAttribute('type', 'button');
+    button.setAttribute('class', 'btnProductItem');
+    button.setAttribute('id', 'btnProductItem');
+
+    img.setAttribute('src', '#');
+    img.setAttribute('alt', '상품이미지');
+
+    span.setAttribute('class', 'productTitle');
+    span.textContent = `${prodcutListDummy[i].itemName}`;
+    strong.setAttribute('class', 'productPrice');
+    strong.textContent = `${prodcutListDummy[i].price}`;
+  }
 }
 
 //상품 삭제
-
 async function okDelProduct() {
   console.log(prodcutListDummy, 'okDelProduct');
   const productId = `${prodcutListDummy[0].id}`;
