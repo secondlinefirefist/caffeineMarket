@@ -77,7 +77,9 @@ function createProductList() {
     span.setAttribute('class', 'productTitle');
     span.textContent = `${prodcutListDummy[i].itemName}`;
     strong.setAttribute('class', 'productPrice');
-    strong.textContent = `${prodcutListDummy[i].price}`;
+    strong.textContent = `${prodcutListDummy[i].price
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
   }
 }
 
