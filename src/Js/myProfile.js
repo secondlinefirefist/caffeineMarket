@@ -81,6 +81,20 @@ function createProductList() {
       .toString()
       .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
   }
+  // 상품 리스트 설정 모달 열기
+  const productModal = document.querySelector('.productModal');
+  let btnProductItem = document.querySelectorAll('.btnProductItem');
+  console.log(btnProductItem.length);
+  for (let i = 0; i < btnProductItem.length; i++) {
+    btnProductItem[i].addEventListener('click', (event) => {
+      event.stopPropagation();
+      productModal.classList.toggle('displayModal');
+    });
+  }
+  // 메인 눌렀을 때도 모달이 닫힐 수 있게 설정
+  document.querySelector('main').addEventListener('click', (event) => {
+    productModal.classList.remove('displayModal');
+  });
 }
 
 //상품 삭제
@@ -100,12 +114,10 @@ async function okDelProduct() {
     const json = await res.json();
     console.log(json);
     alert(json.message);
-    // 상품이 삭제되었습니다 메세지가 나오게 일단 해보려교 넣은 것
   } catch {
     console.error('ERROR!');
   }
 }
-
 const btnDelProduct = document.querySelector('#btnDelProduct');
 btnDelProduct.addEventListener('click', okDelProduct);
 

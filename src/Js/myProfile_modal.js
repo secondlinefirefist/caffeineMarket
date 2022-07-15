@@ -57,27 +57,3 @@ btnDelPost.addEventListener('click', () => {
 btnCancelDel.addEventListener('click', () => {
   subDelPostModal.classList.remove('displayModal');
 });
-
-// 상품 리스트 설정 모달
-// const productModal = document.querySelector('.productModal');
-// const btnProductItem = document.querySelectorAll('#btnProductItem');
-// for (let i = 0; i < btnProductItem.length; i++) {
-//   console.log('제발료');
-//   btnProductItem[i].addEventListener('click', () => {
-//     productModal.classList.toggle('displayModal');
-//   });
-// }
-
-const productModal = document.querySelector('.productModal');
-const btnProductItem = document.querySelectorAll('#btnProductItem');
-
-for (let i = 0; i < btnProductItem.length; i++) {
-  btnProductItem[i].addEventListener('click', (event) => {
-    event.stopPropagation();
-    productModal.classList.toggle('displayModal');
-  });
-}
-
-document.querySelector('main').addEventListener('click', (event) => {
-  productModal.classList.remove('displayModal');
-});
