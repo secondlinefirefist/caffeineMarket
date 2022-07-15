@@ -69,7 +69,7 @@ function createProductList() {
 
     button.setAttribute('type', 'button');
     button.setAttribute('class', 'btnProductItem');
-    button.setAttribute('id', 'btnProductItem');
+    button.setAttribute('value', parseInt([i]));
 
     img.setAttribute('src', '#');
     img.setAttribute('alt', '상품이미지');
@@ -82,12 +82,13 @@ function createProductList() {
       .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
   }
   onProductSettingModal();
+  confirmDeleteProduct();
 }
+
+const productModal = document.querySelector('.productModal');
 function onProductSettingModal() {
   // 상품 리스트 설정 모달 열기
-  const productModal = document.querySelector('.productModal');
   let btnProductItem = document.querySelectorAll('.btnProductItem');
-  console.log(btnProductItem.length);
   for (let i = 0; i < btnProductItem.length; i++) {
     btnProductItem[i].addEventListener('click', (event) => {
       event.stopPropagation();
@@ -102,9 +103,7 @@ function onProductSettingModal() {
 
 //상품 삭제
 async function okDelProduct() {
-  console.log(prodcutListDummy, 'okDelProduct');
-  const productId = `${prodcutListDummy[0].id}`;
-  console.log(productId, 'productId');
+  const productId = prodcutListDummy[0].id;
   try {
     const res = await fetch(url + '/product/' + productId, {
       method: 'DELETE',
@@ -115,7 +114,8 @@ async function okDelProduct() {
       body: JSON.stringify(),
     });
     const json = await res.json();
-    alert(json.message);
+    confirm(json.message);
+    location.reload();
   } catch {
     console.error('ERROR!');
   }
