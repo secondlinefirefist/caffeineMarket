@@ -81,6 +81,9 @@ function createProductList() {
       .toString()
       .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
   }
+  onProductSettingModal();
+}
+function onProductSettingModal() {
   // 상품 리스트 설정 모달 열기
   const productModal = document.querySelector('.productModal');
   let btnProductItem = document.querySelectorAll('.btnProductItem');
@@ -112,7 +115,6 @@ async function okDelProduct() {
       body: JSON.stringify(),
     });
     const json = await res.json();
-    console.log(json);
     alert(json.message);
   } catch {
     console.error('ERROR!');
