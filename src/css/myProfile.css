@@ -455,7 +455,7 @@ footer {
   color: #f26e22;
 }
 
-/* 게시글 설정 모달 */
+/* 게시글 설정 모달, 상품 설정 모달 */
 .postModal,
 .productModal {
   position: absolute;
