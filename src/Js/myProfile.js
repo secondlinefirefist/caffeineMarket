@@ -45,7 +45,6 @@ function infoUserProfile(resJson) {
     });
     const resJson = await res.json();
     console.log(resJson, 'resjson');
-    // console.log(resJson.product.map((x) => x));
     prodcutListDummy = resJson.product;
     createProductList(prodcutListDummy);
   } catch {
@@ -54,7 +53,6 @@ function infoUserProfile(resJson) {
 })();
 
 //상품등록 버튼 누르면 판매 상품 리스트 생성
-
 const productList = document.querySelector('.productList');
 function createProductList() {
   console.log(prodcutListDummy, 'test');
@@ -63,7 +61,7 @@ function createProductList() {
       (element) =>
         `
   <li>
-    <button type="button" class="btnProductItem">
+    <button type="button" class="btnProductItem" id="btnProductItem">
       <img src=${element.itemImage}alt="상품1" />
       <span class="prodcutTitle">${element.itemName}</span>
       <strong class="prodcutPrice">${element.price
@@ -77,10 +75,13 @@ function createProductList() {
 }
 
 //상품 삭제
-//message: 유효하지 않은 토큰, 401 unauthorize 오류 뜨는 상태
+
 async function okDelProduct() {
+  console.log(prodcutListDummy, 'okDelProduct');
+  const productId = `${prodcutListDummy[0].id}`;
+  console.log(productId, 'productId');
   try {
-    const res = await fetch(url + '/product/:product_id', {
+    const res = await fetch(url + '/product/' + productId, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
@@ -103,6 +104,12 @@ btnDelProduct.addEventListener('click', okDelProduct);
 //로그아웃
 const btnOkLogout = document.querySelector('.btnOkLogout');
 btnOkLogout.addEventListener('click', () => {
-  btnOkLogout.setAttribute('location.href', '../pages/splash.html');
+  location.href = '../pages/splash.html';
   localStorage.clear();
+});
+
+//프로필 수정 링크 이동
+const btnEditProfile = document.querySelector('.btnEditProfile');
+btnEditProfile.addEventListener('click', () => {
+  location.href = '../pages/profileModification.html';
 });

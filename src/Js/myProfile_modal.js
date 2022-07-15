@@ -58,14 +58,18 @@ btnCancelDel.addEventListener('click', () => {
   subDelPostModal.classList.remove('displayModal');
 });
 
-/*상품 리스트 설정 모달*/
-// const btnProductItem = document.querySelector('.btnProductItem');
-// const productModal = document.querySelector('.productModal');
-// btnProductItem.addEventListener('click', (event) => {
-//   event.stopPropagation();
-//   productModal.classList.toggle('displayModal');
-//   console.log('test');
-// });
-// document.querySelector('main').addEventListener('click', (event) => {
-//   productModal.classList.remove('displayModal');
-// });
+// 상품 리스트 설정 모달
+const btnProductItem = document.querySelector('#btnProductItem');
+const productModal = document.querySelector('.productModal');
+console.log(btnProductItem, 'btnProductItem');
+console.log(productModal, 'productModal');
+
+if (btnProductItem) {
+  for (let i = 0; btnProductItem.length < i; i++) {
+    console.log(btnProductItem[i], '제발 ㅠㅠ');
+  }
+}
+
+document.querySelector('main').addEventListener('click', (event) => {
+  productModal.classList.remove('displayModal');
+});
