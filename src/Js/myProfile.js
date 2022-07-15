@@ -52,30 +52,55 @@ function infoUserProfile(resJson) {
   }
 })();
 
-//상품등록 버튼 누르면 판매 상품 리스트 생성
+//판매 상품 리스트 생성
 const productList = document.querySelector('.productList');
 function createProductList() {
   console.log(prodcutListDummy, 'test');
-  productList.innerHTML = prodcutListDummy
-    .map(
-      (element) =>
-        `
-  <li>
-    <button type="button" class="btnProductItem" id="btnProductItem">
-      <img src=${element.itemImage}alt="상품1" />
-      <span class="prodcutTitle">${element.itemName}</span>
-      <strong class="prodcutPrice">${element.price
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</strong>
-    </button>
-  </li>
-  `
-    )
-    .join('');
+  for (let i = 0; i < prodcutListDummy.length; i++) {
+    const li = document.createElement('li');
+    const button = document.createElement('button');
+    const img = document.createElement('img');
+    const span = document.createElement('span');
+    const strong = document.createElement('strong');
+
+    productList.appendChild(li);
+    li.appendChild(button);
+    button.append(img, span, strong);
+
+    button.setAttribute('type', 'button');
+    button.setAttribute('class', 'btnProductItem');
+    button.setAttribute('id', 'btnProductItem');
+
+    img.setAttribute('src', '#');
+    img.setAttribute('alt', '상품이미지');
+
+    span.setAttribute('class', 'productTitle');
+    span.textContent = `${prodcutListDummy[i].itemName}`;
+    strong.setAttribute('class', 'productPrice');
+    strong.textContent = `${prodcutListDummy[i].price
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
+  }
+  onProductSettingModal();
+}
+function onProductSettingModal() {
+  // 상품 리스트 설정 모달 열기
+  const productModal = document.querySelector('.productModal');
+  let btnProductItem = document.querySelectorAll('.btnProductItem');
+  console.log(btnProductItem.length);
+  for (let i = 0; i < btnProductItem.length; i++) {
+    btnProductItem[i].addEventListener('click', (event) => {
+      event.stopPropagation();
+      productModal.classList.toggle('displayModal');
+    });
+  }
+  // 메인 눌렀을 때도 모달이 닫힐 수 있게 설정
+  document.querySelector('main').addEventListener('click', (event) => {
+    productModal.classList.remove('displayModal');
+  });
 }
 
 //상품 삭제
-
 async function okDelProduct() {
   console.log(prodcutListDummy, 'okDelProduct');
   const productId = `${prodcutListDummy[0].id}`;
@@ -90,14 +115,11 @@ async function okDelProduct() {
       body: JSON.stringify(),
     });
     const json = await res.json();
-    console.log(json);
     alert(json.message);
-    // 상품이 삭제되었습니다 메세지가 나오게 일단 해보려교 넣은 것
   } catch {
     console.error('ERROR!');
   }
 }
-
 const btnDelProduct = document.querySelector('#btnDelProduct');
 btnDelProduct.addEventListener('click', okDelProduct);
 
