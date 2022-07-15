@@ -82,7 +82,6 @@ function createProductList() {
       .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
   }
   onProductSettingModal();
-  confirmDeleteProduct();
 }
 
 const productModal = document.querySelector('.productModal');
@@ -96,10 +95,25 @@ function onProductSettingModal() {
     });
   }
   // 메인 눌렀을 때도 모달이 닫힐 수 있게 설정
-  document.querySelector('main').addEventListener('click', (event) => {
-    productModal.classList.remove('displayModal');
+  document.querySelector('main').addEventListener(
+    'click',
+    (event) => {
+      productModal.classList.remove('displayModal');
+    },
+    true
+  );
+}
+
+// 상품 삭제 마지막 확인 모달
+const btnDelProduct = document.querySelector('#btnDelProduct');
+const subDelProductModal = document.querySelector('#subDelProductModal');
+function openCheckDelProductModal() {
+  btnDelProduct.addEventListener('click', (event) => {
+    event.stopPropagation();
+    subDelProductModal.classList.toggle('displayModal');
   });
 }
+openCheckDelProductModal();
 
 //상품 삭제
 async function okDelProduct() {
@@ -120,8 +134,9 @@ async function okDelProduct() {
     console.error('ERROR!');
   }
 }
-const btnDelProduct = document.querySelector('#btnDelProduct');
-btnDelProduct.addEventListener('click', okDelProduct);
+
+const btnOkDeleteProdcut = document.querySelector('#btnOkDeleteProdcut');
+btnOkDeleteProdcut.addEventListener('click', okDelProduct);
 
 //로그아웃
 const btnOkLogout = document.querySelector('.btnOkLogout');

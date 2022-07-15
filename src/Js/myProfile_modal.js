@@ -57,10 +57,3 @@ btnDelPost.addEventListener('click', () => {
 btnCancelDel.addEventListener('click', () => {
   subDelPostModal.classList.remove('displayModal');
 });
-
-//상품 삭제 확인 모달
-const subDelProductModal = document.querySelector('#subDelProductModal');
-const btnDeleteProdcut = document.querySelector('#btnDeleteProdcut');
-btnDeleteProdcut.addEventListener('click', () => {
-  subDelProductModal.classList.remove('displayModal');
-});
