@@ -57,3 +57,10 @@ btnDelPost.addEventListener('click', () => {
 btnCancelDel.addEventListener('click', () => {
   subDelPostModal.classList.remove('displayModal');
 });
+
+//로그아웃
+const btnOkLogout = document.querySelector('.btnOkLogout');
+btnOkLogout.addEventListener('click', () => {
+  location.href = '../pages/splash.html';
+  localStorage.clear();
+});
