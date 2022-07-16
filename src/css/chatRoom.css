@@ -170,6 +170,11 @@ main .chatRoom {
   color: #c4c4c4;
 }
 
+
+.chatForm .btnActive {
+color: #F26E22;
+}
+
 /* 전송 버튼에 대한 clear fix */
 #app .chatForm::after {
   content: "";
