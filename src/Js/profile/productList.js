@@ -115,7 +115,12 @@ async function delProduct() {
 }
 
 function okDelProducItem(json) {
-  alert(json.message);
+  if (json.message == '등록된 상품이 없습니다.') {
+    alert(json.message);
+  }
+  if (json.message == '잘못된 요청입니다. 로그인 정보를 확인하세요.') {
+    alert(json.message);
+  }
   location.reload();
 }
 
