@@ -14,7 +14,7 @@
         <div class="wrapHeaderNav">
           <h1 class="ir">감귤마켓 채팅페이지입니다</h1>
           <div class="leftBar">
-            <button class="btnBack">  
+            <button class="btnBack">
               <img src="../img/icon/icon-arrow-left.png" alt="뒤로가기" />
             </button>
             <h2 class="chatUser">애월읍 위니브 감귤농장</h2>
@@ -91,7 +91,13 @@
         <form action="" class="chatForm">
           <h2 class="ir">메시지 입력창입니다</h2>
           <label for="inputImg" class="labelImgUpload"></label>
-          <input type="file" multiple class="ir" id="inputImg" />
+          <input
+            type="file"
+            multiple
+            class="ir"
+            onchange="imgPreView(event)"
+            id="inputImg"
+          />
           <label for="inputText" class="ir"></label>
           <input
             type="text"
@@ -99,7 +105,7 @@
             id="inputText"
             class="inputChatText"
           />
-          <button disabled class="btnTextSubmit ">전송</button>
+          <button disabled class="btnTextSubmit">전송</button>
         </form>
       </article>
     </div>
@@ -118,7 +124,6 @@
       <h3 class="ir">채팅방 모달 배경</h3>   
       </div>
     </section> -->
-
 
     <script src="../Js/chatRoom.js"></script>
   </body>
