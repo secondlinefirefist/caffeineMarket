@@ -37,7 +37,6 @@ function createProductList() {
     button.setAttribute('type', 'button');
     button.setAttribute('class', 'btnProductItem');
     button.setAttribute('data-id', `${prodcutListDummy[i].id}`);
-    console.log(this);
 
     img.setAttribute('src', '#');
     img.setAttribute('alt', '상품이미지');
@@ -130,5 +129,11 @@ btnOkDeleteProdcut.addEventListener('click', delProduct);
 //상품 등록
 const btnAddProduct = document.querySelector('.btnAddProduct');
 btnAddProduct.addEventListener('click', () => {
+  location.href = '../pages/product.html';
+});
+
+// 상품 수정
+const btnModifyProduct = document.querySelector('.btnModifyProduct');
+btnModifyProduct.addEventListener('click', () => {
   location.href = '../pages/product.html';
 });
