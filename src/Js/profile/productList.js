@@ -37,6 +37,7 @@ function createProductList() {
     button.setAttribute('type', 'button');
     button.setAttribute('class', 'btnProductItem');
     button.setAttribute('data-id', `${prodcutListDummy[i].id}`);
+    button.setAttribute('data-link', `${prodcutListDummy[i].link}`);
 
     img.setAttribute('src', '#');
     img.setAttribute('alt', '상품이미지');
@@ -53,6 +54,7 @@ function createProductList() {
 }
 
 const productModal = document.querySelector('.productModal');
+const btnGoStore = document.querySelector('.btnGoStore');
 function onProductSettingModal() {
   // 상품 리스트 설정 모달 열기
   let btnProductItem = document.querySelectorAll('.btnProductItem');
@@ -60,11 +62,15 @@ function onProductSettingModal() {
     btnProductItem[i].addEventListener('click', (event) => {
       event.stopPropagation();
       productModal.classList.toggle('displayModal');
-      console.log(event.target);
       btnDelProduct.setAttribute(
         'dataId',
         event.currentTarget.getAttribute('data-id')
       );
+      btnGoStore.setAttribute(
+        'datalink',
+        event.currentTarget.getAttribute('data-link')
+      );
+      console.log(event.currentTarget);
     });
   }
   // 메인 눌렀을 때도 모달이 닫힐 수 있게 설정
@@ -137,3 +143,11 @@ const btnModifyProduct = document.querySelector('.btnModifyProduct');
 btnModifyProduct.addEventListener('click', () => {
   location.href = '../pages/product.html';
 });
+
+// 웹사이트에서 상품 보기
+function goStoreSite() {
+  btnGoStore.addEventListener('click', (event) => {
+    location.href = event.currentTarget.getAttribute('datalink');
+  });
+}
+goStoreSite();
