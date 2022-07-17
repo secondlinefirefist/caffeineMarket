@@ -6,6 +6,9 @@ const $inputProductPrice = document.querySelector('.inputProductPrice');
 const $inputProductLink = document.querySelector('.inputProductLink');
 const $productImg = document.querySelector('.productImg');
 
+const url = 'https://mandarin.api.weniv.co.kr';
+const token = window.localStorage.getItem('token');
+
 // 이미지 업로드 시 미리보기
 const imgPreView = (event) => {
   let reader = new FileReader();
@@ -15,14 +18,26 @@ const imgPreView = (event) => {
     $productImg.style.display = 'block';
   };
   reader.readAsDataURL(event.target.files[0]);
+  storeImage(event);
+};
+
+// 이미지 POST요청
+const storeImage = async (event) => {
+  const formData = new FormData();
+  formData.append('image', event.target.files[0]);
+  try {
+    const res = await fetch(url + '/image/uploadfile', {
+      method: 'POST',
+      body: formData,
+    });
+    const resJson = await res.json();
+    console.log(resJson);
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 // 상품명 길이 유효성 검사 -> if문 리턴으로
-// const checkProductName = () => {
-//   $inputProductTitle.value.length < 16 && $inputProductTitle.value.length > 1
-//     ? true // 상품명 2 ~ 15자이면 true
-//     : false;
-// };
 
 const checkProductName = () => {
   if (
@@ -77,8 +92,6 @@ const handleCheckInput = () => {
 };
 
 // 저장버튼 클릭시 상품 데이터 POST 요청(이미지 업로드 미구현)
-const url = 'https://mandarin.api.weniv.co.kr';
-const token = window.localStorage.getItem('token');
 
 async function productData() {
   try {
@@ -100,16 +113,19 @@ async function productData() {
     const resJson = await res.json();
     console.log(resJson);
     alert('상품이 정상적으로 등록되었습니다');
+    isProductTrue()
   } catch (err) {
     console.error(err);
   }
 }
 
-// 상품등록 체크로직
-
 // 상품등록 성공시 페이지전환
+const isProductTrue = () => {
+  location.href = './myProfile.html'
+}
 
-// 상품등록 식패시 알림문구 출력
+
+// 상품등록 실패시 알림문구 출력
 
 $productForm.addEventListener('input', handleCheckInput);
 $btnSave.addEventListener('click', productData);
