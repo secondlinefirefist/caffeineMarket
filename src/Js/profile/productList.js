@@ -39,7 +39,7 @@ function createProductList() {
     button.setAttribute('data-id', `${prodcutListDummy[i].id}`);
     button.setAttribute('data-link', `${prodcutListDummy[i].link}`);
 
-    img.setAttribute('src', '#');
+    img.setAttribute('src', `${prodcutListDummy[i].itemImage}`);
     img.setAttribute('alt', '상품이미지');
 
     span.setAttribute('class', 'productTitle');
