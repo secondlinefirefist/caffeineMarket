@@ -252,6 +252,7 @@ footer {
 }
 
 .postIndexList li {
+  margin-bottom: 16px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -289,8 +290,16 @@ footer {
   line-height: 18px;
 }
 
-.postIndexCont .imgIndexPost {
+.wrapPostImage {
+  display: flex;
+  overflow-x: scroll;
+  padding-bottom: 6px;
+}
+.wrapPostImage .imgIndexPost {
   margin-top: 16px;
+  width: 304px;
+  border-radius: 10px;
+  padding-right: 6px;
 }
 
 .wrapBtnReaction button {

@@ -2,15 +2,15 @@
 const btnLike = document.querySelector('#btnLike');
 const btnComment = document.querySelector('#btnComment');
 
-let numLike = 0;
-const numLikeTxt = document.querySelector('#numLike');
-btnLike.addEventListener('click', () => {
-  btnLike.classList.toggle('activeBtnLike');
-});
+// let numLike = 0;
+// const numLikeTxt = document.querySelector('#numLike');
+// btnLike.addEventListener('click', () => {
+//   btnLike.classList.toggle('activeBtnLike');
+// });
 
-btnComment.addEventListener('click', () => {
-  btnComment.classList.toggle('activeBtnComment');
-});
+// btnComment.addEventListener('click', () => {
+//   btnComment.classList.toggle('activeBtnComment');
+// });
 
 /*메인 모달*/
 const btnSetting = document.querySelector('.btnSetting');
@@ -42,25 +42,25 @@ btnOkLogout.addEventListener('click', () => {
   localStorage.clear();
 });
 
-/*포스트 게시글 설정 모달*/
-const btnPostSetting = document.querySelector('#btnPostSetting');
-const postModal = document.querySelector('.postModal');
-btnPostSetting.addEventListener('click', (event) => {
-  event.stopPropagation();
-  btnPostSetting.focus();
-  postModal.classList.toggle('displayModal');
-});
-document.querySelector('main').addEventListener('click', (event) => {
-  postModal.classList.remove('displayModal');
-});
-/*포스트 게시글 삭제 확인 모달*/
-const btnDelPost = document.querySelector('#btnDelPost');
-const subDelPostModal = document.querySelector('#subDelPostModal');
-const btnCancelDel = document.querySelector('.btnCancelDel');
-btnDelPost.addEventListener('click', () => {
-  subDelPostModal.classList.add('displayModal');
-});
-/*게시글 삭제 취소 버튼 기능*/
-btnCancelDel.addEventListener('click', () => {
-  subDelPostModal.classList.remove('displayModal');
-});
+// /*포스트 게시글 설정 모달*/
+// const btnPostSetting = document.querySelector('#btnPostSetting');
+// const postModal = document.querySelector('.postModal');
+// btnPostSetting.addEventListener('click', (event) => {
+//   event.stopPropagation();
+//   btnPostSetting.focus();
+//   postModal.classList.toggle('displayModal');
+// });
+// document.querySelector('main').addEventListener('click', (event) => {
+//   postModal.classList.remove('displayModal');
+// });
+// /*포스트 게시글 삭제 확인 모달*/
+// const btnDelPost = document.querySelector('#btnDelPost');
+// const subDelPostModal = document.querySelector('#subDelPostModal');
+// const btnCancelDel = document.querySelector('.btnCancelDel');
+// btnDelPost.addEventListener('click', () => {
+//   subDelPostModal.classList.add('displayModal');
+// });
+// /*게시글 삭제 취소 버튼 기능*/
+// btnCancelDel.addEventListener('click', () => {
+//   subDelPostModal.classList.remove('displayModal');
+// });

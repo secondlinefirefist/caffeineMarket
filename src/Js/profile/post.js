@@ -29,6 +29,7 @@ function createPostFeed() {
       postSettingImg = document.createElement('img'),
       account = document.createElement('button'),
       text = document.createElement('p'),
+      wrapPostImage = document.querySelector('div'),
       postImage = document.createElement('img'),
       wrapReaction = document.createElement('div'),
       likeBtn = document.createElement('button'),
@@ -57,6 +58,7 @@ function createPostFeed() {
       wrapReaction,
       date
     );
+
     postSetting.appendChild(postSettingImg);
     userName.setAttribute('class', 'titleMarket');
     postSetting.setAttribute('type', 'button');
