@@ -35,6 +35,13 @@ btnCancelLogout.addEventListener('click', () => {
   subLogoutModal.classList.remove('displayModal');
 });
 
+//로그아웃
+const btnOkLogout = document.querySelector('.btnOkLogout');
+btnOkLogout.addEventListener('click', () => {
+  location.href = '../pages/splash.html';
+  localStorage.clear();
+});
+
 /*포스트 게시글 설정 모달*/
 const btnPostSetting = document.querySelector('#btnPostSetting');
 const postModal = document.querySelector('.postModal');
@@ -56,11 +63,4 @@ btnDelPost.addEventListener('click', () => {
 /*게시글 삭제 취소 버튼 기능*/
 btnCancelDel.addEventListener('click', () => {
   subDelPostModal.classList.remove('displayModal');
-});
-
-//로그아웃
-const btnOkLogout = document.querySelector('.btnOkLogout');
-btnOkLogout.addEventListener('click', () => {
-  location.href = '../pages/splash.html';
-  localStorage.clear();
 });

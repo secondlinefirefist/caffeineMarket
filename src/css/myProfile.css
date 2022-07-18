@@ -44,7 +44,6 @@ footer {
 .contProfile {
   width: 270px;
   box-sizing: border-box;
-  border-bottom: 1px solid #dbdbdb;
   margin: 0 auto;
 }
 
@@ -164,6 +163,7 @@ footer {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  border-top: 1px solid #dbdbdb;
 }
 
 .contSale h1 {
