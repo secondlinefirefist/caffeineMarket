@@ -82,9 +82,9 @@ async function clickUnFollow(unfollowUserData, followState, targetButton) {
         }
       );
       const resJson = await res.json();
-      targetButton.setAttribute('class', 'btnUnfollow');
-      targetButton.classList.remove('btnFollow');
-      targetButton.textContent = '팔로우';
+      // targetButton.classList.add('btnUnfollow');
+      // targetButton.textContent = '팔로우';
+      location.reload();
     } catch {
       console.error('ERROR');
     }
