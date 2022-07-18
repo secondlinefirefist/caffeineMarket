@@ -70,3 +70,4 @@ const closeModal = () => {
 $inputChatText.addEventListener('input', handleCheckMessage);
 $btnTextSubmit.addEventListener('click', handleTextSend);
 $btnModalClose.addEventListener('click', closeModal);
+ 
