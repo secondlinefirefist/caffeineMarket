@@ -174,11 +174,12 @@ footer {
 .contSale .productList {
   display: flex;
   overflow-x: scroll;
+  gap: 6px;
 }
 
 .contSale .productList li {
   background-color: #fff;
-  margin: 16px 10px 6px 0;
+  margin: 16px 0 6px 0;
 }
 
 .productList li img {
@@ -189,14 +190,23 @@ footer {
 .productList li .productTitle {
   display: block;
   font-size: 14px;
-  text-align: left;
   padding-top: 6px;
 }
 .productList li .productPrice {
   color: #f26e22;
   font-weight: 700;
   font-size: 12px;
-  padding-right: 97px;
+}
+
+.btnProductItem {
+  text-align: left;
+}
+
+.btnProductItem img {
+  width: 140px;
+  height: 90px;
+  border: 0.5px solid #dbdbdb;
+  border-radius: 8px;
 }
 
 /* 그리드 게시글 */

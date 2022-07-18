@@ -1,18 +1,15 @@
 (async function postData() {
   try {
-    const res = await fetch(
-      url + '/post/' + accountname + '/userpost/?limit=5&skip=3',
-      {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
-          'Content-type': 'application/json',
-        },
-      }
-    );
+    const res = await fetch(url + '/post/' + accountname + '/userpost', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
+      },
+    });
     const resJson = await res.json();
     console.log(resJson, 'postData');
-    // createPostFeed(resJson);
+    createPostFeed(resJson);
   } catch {
     console.error('ERROR');
   }
@@ -20,7 +17,7 @@
 
 const postIndexList = document.querySelector('.postIndexList');
 function createPostFeed() {
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 1; i++) {
     const li = document.createElement('li'),
       imgProfile = document.createElement('img'),
       postWrap = document.createElement('div'),
