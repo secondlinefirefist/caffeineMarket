@@ -42,8 +42,8 @@ function createPostFeed() {
 
     postIndexList.append(li);
     li.setAttribute('class', 'postIndexList');
-
     li.append(imgProfile, postWrap);
+    wrapPostImage.appendChild(postImage);
     imgProfile.setAttribute('class', 'imgPostProfile');
     imgProfile.setAttribute('src', '../img/userProfile_base.png');
     imgProfile.setAttribute('alt', '게시글 저자 프로필 사진');
@@ -89,3 +89,4 @@ function createPostFeed() {
     commentImage.setAttribute('id', 'btnComment');
   }
 }
+createPostFeed();
