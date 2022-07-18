@@ -105,7 +105,11 @@ footer {
   color: #767676;
 }
 
-.followersList li .btnFollow:focus {
+.followersList li .btnUnfollow {
+  width: 50px;
+  height: 24px;
+  font-size: 12px;
+  border-radius: 26px;
   background-color: #f26e22;
   color: white;
 }
