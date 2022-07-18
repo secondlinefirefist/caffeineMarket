@@ -44,7 +44,6 @@ footer {
 .contProfile {
   width: 270px;
   box-sizing: border-box;
-  border-bottom: 1px solid #dbdbdb;
   margin: 0 auto;
 }
 
@@ -164,6 +163,7 @@ footer {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  border-top: 1px solid #dbdbdb;
 }
 
 .contSale h1 {
@@ -252,6 +252,7 @@ footer {
 }
 
 .postIndexList li {
+  margin-bottom: 16px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -289,8 +290,16 @@ footer {
   line-height: 18px;
 }
 
-.postIndexCont .imgIndexPost {
+.wrapPostImage {
+  display: flex;
+  overflow-x: scroll;
+  padding-bottom: 6px;
+}
+.wrapPostImage .imgIndexPost {
   margin-top: 16px;
+  width: 304px;
+  border-radius: 10px;
+  padding-right: 6px;
 }
 
 .wrapBtnReaction button {

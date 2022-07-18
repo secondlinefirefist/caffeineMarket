@@ -145,9 +145,8 @@ btnModifyProduct.addEventListener('click', () => {
 });
 
 // 웹사이트에서 상품 보기
-function goStoreSite() {
+(function goStoreSite() {
   btnGoStore.addEventListener('click', (event) => {
     location.href = event.currentTarget.getAttribute('datalink');
   });
-}
-goStoreSite();
+})();

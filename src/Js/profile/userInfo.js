@@ -39,3 +39,9 @@ const btnEditProfile = document.querySelector('.btnEditProfile');
 btnEditProfile.addEventListener('click', () => {
   location.href = '../pages/profileModification.html';
 });
+
+//팔로우 버튼 클릭하여 팔로우리스트로 넘어가기
+const btnFollwings = document.querySelector('.btnFollwings');
+btnFollwings.addEventListener('click', () => {
+  location.href = '../pages/followingList.html';
+});
