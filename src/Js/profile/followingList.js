@@ -23,6 +23,7 @@ function showfollowingList(resJson) {
   console.log(resJson);
   for (let i = 0; i < resJson.length; i++) {
     const li = document.createElement('li'),
+      imgwrap = document.createElement('div'),
       img = document.createElement('img'),
       div = document.createElement('div'),
       strong = document.createElement('strong'),
@@ -30,9 +31,11 @@ function showfollowingList(resJson) {
       button = document.createElement('button');
 
     followersList.append(li);
-    li.append(img, div, button);
+    li.append(imgwrap, div, button);
+    imgwrap.append(img);
     div.append(strong, p);
 
+    imgwrap.setAttribute('class', 'wrapImg');
     img.setAttribute('src', resJson[i].image);
     img.setAttribute('alt', '팔로워 프로필사진');
     img.setAttribute('class', 'followerProfileImg');
@@ -44,6 +47,7 @@ function showfollowingList(resJson) {
     p.textContent = resJson[i].intro;
 
     button.setAttribute('class', 'btnFollow');
-    button.textContent = '팔로우';
+    button.setAttribute('isfollow', resJson[i].isfollow);
+    button.textContent = '취소';
   }
 }
