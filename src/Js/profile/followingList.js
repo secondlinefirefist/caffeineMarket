@@ -1,3 +1,4 @@
+const followersList = document.querySelector('.followersList');
 const url = 'https://mandarin.api.weniv.co.kr';
 const accountname = `${window.localStorage.getItem('accountname')}`;
 async function followListData() {
@@ -10,14 +11,19 @@ async function followListData() {
       },
     });
     const resJson = await res.json();
-    showfollowingList(resJson);
+    if (resJson == '') {
+      const noFollowingTxt = document.createElement('p');
+      noFollowingTxt.textContent = '팔로워가 없습니다 (´。＿。｀)';
+      followersList.appendChild(noFollowingTxt);
+    } else {
+      showfollowingList(resJson);
+    }
   } catch {
     console.error('ERROR');
   }
 }
 followListData();
 
-const followersList = document.querySelector('.followersList');
 function showfollowingList(resJson) {
   console.log(resJson);
   for (let i = 0; i < resJson.length; i++) {
