@@ -103,7 +103,7 @@ async function productData() {
           itemName: $inputProductTitle.value,
           price: parseInt($inputProductPrice.value.replaceAll(',', '')),
           link: $inputProductLink.value,
-          itemImage: `${url}/${filename}`, // 서버주소와 파일명 붙여서 서버로 전송
+          itemImage: `${url}/${filename}`, 
         },
       }),
       headers: {
