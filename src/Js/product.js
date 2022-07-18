@@ -8,9 +8,10 @@ const $productImg = document.querySelector('.productImg');
 
 const url = 'https://mandarin.api.weniv.co.kr';
 const token = window.localStorage.getItem('token');
+let filename = '';
 
 // 이미지 업로드 시 미리보기
-const imgPreView = (event) => {
+const imgPreView = async (event) => {
   let reader = new FileReader();
 
   reader.onload = (event) => {
@@ -18,20 +19,20 @@ const imgPreView = (event) => {
     $productImg.style.display = 'block';
   };
   reader.readAsDataURL(event.target.files[0]);
-  storeImage(event);
+  filename = await storeImage(event.target); // 리턴 받은 파일명을 filename에 저장
 };
 
 // 이미지 POST요청
-const storeImage = async (event) => {
+const storeImage = async (target) => {
   const formData = new FormData();
-  formData.append('image', event.target.files[0]);
+  formData.append('image', target.files[0]);
   try {
     const res = await fetch(url + '/image/uploadfile', {
       method: 'POST',
       body: formData,
     });
     const resJson = await res.json();
-    console.log(resJson);
+    return resJson.filename; // 응답 중 filename 리턴
   } catch (err) {
     console.error(err);
   }
@@ -102,7 +103,7 @@ async function productData() {
           itemName: $inputProductTitle.value,
           price: parseInt($inputProductPrice.value.replaceAll(',', '')),
           link: $inputProductLink.value,
-          itemImage: url,
+          itemImage: `${url}/${filename}`, // 서버주소와 파일명 붙여서 서버로 전송
         },
       }),
       headers: {
@@ -113,17 +114,17 @@ async function productData() {
     const resJson = await res.json();
     console.log(resJson);
     alert('상품이 정상적으로 등록되었습니다');
-    isProductTrue()
+    isProductTrue();
   } catch (err) {
     console.error(err);
+    location.href = './page404.html';
   }
 }
 
 // 상품등록 성공시 페이지전환
 const isProductTrue = () => {
-  location.href = './myProfile.html'
-}
-
+  location.href = './myProfile.html';
+};
 
 // 상품등록 실패시 알림문구 출력
 
