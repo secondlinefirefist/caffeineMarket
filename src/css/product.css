@@ -47,6 +47,11 @@
   padding: 0 34px;
 }
 
+#app main {
+  max-width: 390px;
+  margin: 0 auto;
+}
+
 #app .product .productContent {
   display: block;
   font-size: 12px;
