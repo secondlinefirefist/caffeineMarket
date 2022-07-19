@@ -1,8 +1,10 @@
 const url = 'https://mandarin.api.weniv.co.kr';
-const accountname = `${window.localStorage.getItem('accountname')}`;
-
+const myAccountname = `${window.localStorage.getItem('accountname')}`;
+const yourAccountname = location.search.replace('?', '').split('=')[1];
+const accountname =
+  yourAccountname !== myAccountname ? yourAccountname : myAccountname;
 //프로필 정보 보여주기
-(async function infoUser() {
+async function infoUser() {
   try {
     const res = await fetch(url + '/profile/' + accountname, {
       method: 'GET',
@@ -17,7 +19,8 @@ const accountname = `${window.localStorage.getItem('accountname')}`;
   } catch {
     console.error('ERROR!');
   }
-})();
+}
+infoUser();
 
 const marketName = document.querySelector('.marketName');
 const followerCount = document.querySelector('.btnFollowers > strong');

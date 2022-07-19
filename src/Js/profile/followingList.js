@@ -1,9 +1,9 @@
 const followersList = document.querySelector('.followersList');
 const url = 'https://mandarin.api.weniv.co.kr';
-const accountname = `${window.localStorage.getItem('accountname')}`;
+const myAccountname = `${window.localStorage.getItem('accountname')}`;
 async function followListData() {
   try {
-    const res = await fetch(url + '/profile/' + accountname + '/following', {
+    const res = await fetch(url + '/profile/' + myAccountname + '/following', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${window.localStorage.getItem('token')}`,

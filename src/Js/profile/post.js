@@ -1,6 +1,6 @@
 (async function postData() {
   try {
-    const res = await fetch(url + '/post/' + accountname + '/userpost', {
+    const res = await fetch(url + '/post/' + myAccountname + '/userpost', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
