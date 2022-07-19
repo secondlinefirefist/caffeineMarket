@@ -1,7 +1,10 @@
 const url = 'https://mandarin.api.weniv.co.kr';
+//나의 accountname
 const accountname = `${window.localStorage.getItem('accountname')}`;
-
+//상대방 accountname
+const yourAccountname = location.search.replace('?', '').split('=')[1];
 //프로필 정보 보여주기
+
 (async function infoUser() {
   try {
     const res = await fetch(url + '/profile/' + accountname, {
