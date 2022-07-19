@@ -26,7 +26,7 @@ document.querySelector('main').addEventListener('click', (event) => {
 /*메인모달에서 뒤로가기*/
 const btnBack = document.querySelector('.btnBack');
 btnBack.addEventListener('click', () => {
-  href.location = './';
+  window.history.back();
 });
 
 /*로그아웃 모달*/
