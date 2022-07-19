@@ -1,4 +1,5 @@
 const url = 'https://mandarin.api.weniv.co.kr';
+//나의 accountname
 const accountname = `${window.localStorage.getItem('accountname')}`;
 //프로필 정보 보여주기
 (async function infoUser() {
