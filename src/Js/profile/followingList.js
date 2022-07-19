@@ -18,7 +18,7 @@ async function followListData() {
     const resJson = await res.json();
     if (resJson == '') {
       const noFollowingTxt = document.createElement('p');
-      noFollowingTxt.textContent = '팔로워가 없습니다 (´。＿。｀)';
+      noFollowingTxt.textContent = '팔로잉 유저가 없습니다 (´。＿。｀)';
       followersList.appendChild(noFollowingTxt);
     } else {
       showfollowingList(resJson);
