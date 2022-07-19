@@ -1,9 +1,11 @@
 const followersList = document.querySelector('.followersList');
 const url = 'https://mandarin.api.weniv.co.kr';
 const myAccountname = `${window.localStorage.getItem('accountname')}`;
+const yourAccountname = location.search.replace('?', '').split('=')[1];
+const accountname = yourAccountname ? yourAccountname : myAccountname;
 async function followListData() {
   try {
-    const res = await fetch(url + '/profile/' + myAccountname + '/following', {
+    const res = await fetch(url + '/profile/' + accountname + '/following', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
