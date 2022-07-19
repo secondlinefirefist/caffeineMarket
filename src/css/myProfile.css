@@ -183,6 +183,7 @@ footer {
 }
 
 .productList li img {
+  object-fit: cover;
   font-weight: 400;
   border-radius: 8px;
 }
