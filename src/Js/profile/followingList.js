@@ -111,5 +111,3 @@ async function clickUnFollow(unfollowUserData, followState, targetButton) {
     }
   }
 }
-
-//

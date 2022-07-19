@@ -66,6 +66,10 @@ function onProductSettingModal() {
         'dataId',
         event.currentTarget.getAttribute('data-id')
       );
+      btnModifyProduct.setAttribute(
+        'dataId',
+        event.currentTarget.getAttribute('data-id')
+      );
       btnGoStore.setAttribute(
         'datalink',
         event.currentTarget.getAttribute('data-link')
@@ -140,8 +144,9 @@ btnAddProduct.addEventListener('click', () => {
 
 // 상품 수정
 const btnModifyProduct = document.querySelector('.btnModifyProduct');
-btnModifyProduct.addEventListener('click', () => {
-  location.href = '../pages/product.html';
+btnModifyProduct.addEventListener('click', (event) => {
+  location.href =
+    '../pages/product.html?id=' + event.target.getAttribute('dataId');
 });
 
 // 웹사이트에서 상품 보기
