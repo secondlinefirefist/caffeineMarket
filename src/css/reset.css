@@ -117,7 +117,7 @@ ul {
 
 button {
   cursor: pointer;
-  /* 채지훈님 button 요소 아래 추가 */
+  /* 지훈님 button 요소 아래 추가 */
   width: 100%;
   background: none;
   border: none;
@@ -126,7 +126,7 @@ button {
   cursor: pointer;
 }
 
-/* 김지수님 ir 요소 아래 추가 */
+/* 지수님 ir 요소 아래 추가 */
 
 .ir {
   position: absolute; /* position: absolute/fixed 에서만 clip 속성 작동 */
@@ -139,7 +139,7 @@ button {
   overflow: hidden; /* overflow: visible 이면 clip 속성 작동 안됨 */
   clip: rect(0, 0, 0, 0);
   clip-path: inset(50%); /* H5BP에선 안씀 */
-  /* 채지훈님, 김태희님 blind(ir) 요소 아래 추가  */
+  /* 지훈님, 태희님 blind(ir) 요소 아래 추가  */
   display: block;
   text-indent: -9999px;
   line-height: 0;
