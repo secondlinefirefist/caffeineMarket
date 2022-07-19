@@ -29,30 +29,30 @@ function showfollowingList(resJson) {
   for (let i = 0; i < resJson.length; i++) {
     const li = document.createElement('li'),
       link = document.createElement('a'),
-      imgwrap = document.createElement('div'),
+      imgWrap = document.createElement('div'),
       img = document.createElement('img'),
-      div = document.createElement('div'),
+      txtWrap = document.createElement('div'),
       strong = document.createElement('strong'),
       p = document.createElement('p'),
       button = document.createElement('button');
 
     followersList.append(li);
-    li.appendChild(link);
-    link.append(imgwrap, div, button);
+    li.append(link, txtWrap, button);
+    link.append(imgWrap);
+    imgWrap.append(img);
+    txtWrap.append(strong, p);
     link.setAttribute(
       'href',
       '../pages/myProfile.html?accountname=' + resJson[i].accountname
     );
     link.setAttribute('class', 'followerLink');
-    imgwrap.append(img);
-    div.append(strong, p);
 
-    imgwrap.setAttribute('class', 'wrapImg');
+    imgWrap.setAttribute('class', 'wrapImg');
     img.setAttribute('src', resJson[i].image);
     img.setAttribute('alt', '팔로워 프로필사진');
     img.setAttribute('class', 'followerProfileImg');
 
-    div.setAttribute('class', 'txtWrap');
+    txtWrap.setAttribute('class', 'txtWrap');
     strong.setAttribute('class', 'txtFollowerTitle');
     strong.textContent = resJson[i].username;
     p.setAttribute('class', 'txtFollwerInfo');
