@@ -5,13 +5,16 @@ const yourAccountname = location.search.replace('?', '').split('=')[1];
 const accountname = yourAccountname ? yourAccountname : myAccountname;
 async function followListData() {
   try {
-    const res = await fetch(url + '/profile/' + accountname + '/following', {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
-        'Content-type': 'application/json',
-      },
-    });
+    const res = await fetch(
+      url + '/profile/' + accountname + '/following/?limit=30&skip=3',
+      {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Content-type': 'application/json',
+        },
+      }
+    );
     const resJson = await res.json();
     if (resJson == '') {
       const noFollowingTxt = document.createElement('p');
@@ -99,9 +102,10 @@ async function clickUnFollow(unfollowUserData, followState, targetButton) {
         }
       );
       const resJson = await res.json();
-      // targetButton.classList.add('btnUnfollow');
-      // targetButton.textContent = '팔로우';
       location.reload();
+      // targetButton.classList.add('btnUnfollow');
+      // targetButton.classList.remove('btnFollow');
+      // targetButton.textContent = '팔로우';
     } catch {
       console.error('ERROR');
     }
