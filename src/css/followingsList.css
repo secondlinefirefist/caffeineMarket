@@ -59,9 +59,14 @@ footer {
 }
 
 .contFollowers .followersList li {
-  display: flex;
   align-items: center;
   padding-bottom: 16px;
+}
+.contFollowers .followersList li .followerLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #767676;
 }
 
 .wrapImg {
@@ -83,6 +88,7 @@ footer {
   display: flex;
   flex-direction: column;
   padding-left: 12px;
+  justify-content: center;
 }
 
 .followersList li .txtWrap .txtFollowerTitle {
