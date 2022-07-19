@@ -28,6 +28,7 @@ function showfollowingList(resJson) {
   console.log(resJson);
   for (let i = 0; i < resJson.length; i++) {
     const li = document.createElement('li'),
+      link = document.createElement('a'),
       imgwrap = document.createElement('div'),
       img = document.createElement('img'),
       div = document.createElement('div'),
@@ -36,7 +37,10 @@ function showfollowingList(resJson) {
       button = document.createElement('button');
 
     followersList.append(li);
-    li.append(imgwrap, div, button);
+    li.appendChild(link);
+    link.append(imgwrap, div, button);
+    link.setAttribute('href', '#');
+    link.setAttribute('class', 'followerLink');
     imgwrap.append(img);
     div.append(strong, p);
 
