@@ -1,6 +1,17 @@
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'SpoqaHanSansNeo-Regular', 'sans-serif';
+}
 body {
-  width: 100%;
-  margin: 0;
+  width: 390px;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
   .headerBtns {
@@ -54,6 +65,7 @@ body {
         .postCardMainText {
           font-size: 14px;
           font-weight: 400;
+          line-height: 17.53px;
         }
       }
       .postCardMainImg {
@@ -149,11 +161,12 @@ body {
       width: 36px;
       height: 36px;
     }
-    .inputComment {
+    .commentForm {
       .inputCommentText {
+        width: 278px;
         appearance: none;
         border: none;
-        padding: 10px 0 0 18px;
+        padding: 10px 0 10px 18px;
         font-size: 14px;
         &::placeholder {
           color: #c4c4c4;
