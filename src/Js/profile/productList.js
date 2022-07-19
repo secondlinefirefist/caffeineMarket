@@ -1,7 +1,7 @@
 // 상품 정보 불러오기
 (async function productInfo() {
   try {
-    const res = await fetch(url + '/product/' + myAccountname, {
+    const res = await fetch(url + '/product/' + accountname, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
