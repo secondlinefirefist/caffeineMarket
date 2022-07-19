@@ -3,13 +3,16 @@ const url = 'https://mandarin.api.weniv.co.kr';
 const accountname = `${window.localStorage.getItem('accountname')}`;
 async function followListData() {
   try {
-    const res = await fetch(url + '/profile/' + accountname + '/following', {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
-        'Content-type': 'application/json',
-      },
-    });
+    const res = await fetch(
+      url + '/profile/' + accountname + '/following/?limit=30&skip=3',
+      {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Content-type': 'application/json',
+        },
+      }
+    );
     const resJson = await res.json();
     if (resJson == '') {
       const noFollowingTxt = document.createElement('p');
@@ -28,6 +31,7 @@ function showfollowingList(resJson) {
   console.log(resJson);
   for (let i = 0; i < resJson.length; i++) {
     const li = document.createElement('li'),
+      link = document.createElement('a'),
       imgwrap = document.createElement('div'),
       img = document.createElement('img'),
       div = document.createElement('div'),
@@ -36,7 +40,8 @@ function showfollowingList(resJson) {
       button = document.createElement('button');
 
     followersList.append(li);
-    li.append(imgwrap, div, button);
+    li.append(link);
+    link.append(imgwrap, div, button);
     imgwrap.append(img);
     div.append(strong, p);
 
@@ -88,9 +93,10 @@ async function clickUnFollow(unfollowUserData, followState, targetButton) {
         }
       );
       const resJson = await res.json();
-      // targetButton.classList.add('btnUnfollow');
-      // targetButton.textContent = '팔로우';
       location.reload();
+      // targetButton.classList.add('btnUnfollow');
+      // targetButton.classList.remove('btnFollow');
+      // targetButton.textContent = '팔로우';
     } catch {
       console.error('ERROR');
     }
