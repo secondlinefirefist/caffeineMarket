@@ -1,10 +1,10 @@
 const url = 'https://mandarin.api.weniv.co.kr';
+
 //나의 accountname
 const accountname = `${window.localStorage.getItem('accountname')}`;
 //상대방 accountname
 const yourAccountname = location.search.replace('?', '').split('=')[1];
 //프로필 정보 보여주기
-
 (async function infoUser() {
   try {
     const res = await fetch(url + '/profile/' + accountname, {
@@ -20,7 +20,8 @@ const yourAccountname = location.search.replace('?', '').split('=')[1];
   } catch {
     console.error('ERROR!');
   }
-})();
+}
+infoUser();
 
 const marketName = document.querySelector('.marketName');
 const followerCount = document.querySelector('.btnFollowers > strong');
@@ -44,7 +45,10 @@ btnEditProfile.addEventListener('click', () => {
 });
 
 //팔로우 버튼 클릭하여 팔로우리스트로 넘어가기
+const goFollowingsList = yourAccountname
+  ? '../pages/followingList.html?accountname=' + yourAccountname
+  : '../pages/followingList.html';
 const btnFollwings = document.querySelector('.btnFollwings');
 btnFollwings.addEventListener('click', () => {
-  location.href = '../pages/followingList.html';
+  location.href = goFollowingsList;
 });
