@@ -6,7 +6,7 @@ const accountname = yourAccountname ? yourAccountname : myAccountname;
 async function followListData() {
   try {
     const res = await fetch(
-      url + '/profile/' + accountname + '/following/?limit=30&skip=3',
+      url + '/profile/' + accountname + '/following/?limit=50',
       {
         method: 'GET',
         headers: {
