@@ -39,7 +39,10 @@ function showfollowingList(resJson) {
     followersList.append(li);
     li.appendChild(link);
     link.append(imgwrap, div, button);
-    link.setAttribute('href', '#');
+    link.setAttribute(
+      'href',
+      '../pages/myProfile.html?accountname=' + resJson[i].accountname
+    );
     link.setAttribute('class', 'followerLink');
     imgwrap.append(img);
     div.append(strong, p);
@@ -62,6 +65,7 @@ function showfollowingList(resJson) {
   unfollowData(resJson);
 }
 
+//언팔로에 필요한 매개변수값들 넘겨주기
 function unfollowData(resJson) {
   console.log(resJson, '언팔로우 함수 내부입니다');
   let btnFollow = document.querySelectorAll('.btnFollow');
@@ -76,6 +80,7 @@ function unfollowData(resJson) {
   }
 }
 
+//언팔로우 하기
 async function clickUnFollow(unfollowUserData, followState, targetButton) {
   let unfollowUserAccountName = unfollowUserData.accountname;
   if (followState == 'true') {
@@ -100,3 +105,5 @@ async function clickUnFollow(unfollowUserData, followState, targetButton) {
     }
   }
 }
+
+//
