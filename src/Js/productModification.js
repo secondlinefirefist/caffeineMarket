@@ -13,7 +13,9 @@ const prodId = location.search.split('id=')[1];
 
 // 모든 input창에 해당 상품 데이터 미리 보이도록
 const setProductData = (res) => {
-  $inputProductImg.value = res.product;
+  // $inputProductImg.value = res.product;
+  // $inputProductPrice.value = res.product;
+  // console.log(res)
 };
 
 // 이미지 업로드 시 미리보기
@@ -110,23 +112,16 @@ function checkProdId() {
 // 상품 데이터 GET요청으로 가져오기
 async function getProductData() {
   try {
-    const res = await fetch(url + `/product/${prodId}`, {
+    const res = await fetch(url + `/product`, {
       method: 'GET',
-      body: JSON.stringify({
-        product: {
-          itemName: $inputProductTitle.value,
-          price: parseInt($inputProductPrice.value.replaceAll(',', '')),
-          link: $inputProductLink.value,
-          itemImage: `${url}/${filename}`,
-        },
-      }),
       headers: {
         'Authorization': `Bearer ${token}`,
         'Content-type': 'application/json',
       },
     });
     const resJson = await res.json();
-    console.log(resJson);
+    console.log(resJson.product);
+    setProductData(resJson);
   } catch (err) {
     console.error(err);
     location.href = './page404.html';
@@ -154,8 +149,8 @@ async function productData() {
     });
     const resJson = await res.json();
     console.log(resJson);
-    alert('상품이 정상적으로 등록되었습니다');
-    isProductTrue();
+    // alert('상품이 정상적으로 등록되었습니다');
+    // isProductTrue();
   } catch (err) {
     console.error(err);
     location.href = './page404.html';
