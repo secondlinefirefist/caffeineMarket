@@ -24,9 +24,11 @@ const prodId = location.search.split('id=')[1];
 const setProductData = (resJson) => {
   $productImg.src = resJson.itemImage;
   $inputProductTitle.value = resJson.itemName;
-  $inputProductPrice.value = resJson.price;
+  $inputProductPrice.value = resJson.price
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   $inputProductLink.value = resJson.link;
-  
+
   if ($productImg.src) {
     $productImg.style.display = 'block';
   }
@@ -124,7 +126,7 @@ function checkProdId() {
 }
 
 // 상품 데이터 GET요청으로 가져오기
-async function getProductData() {
+(async function getProductData() {
   try {
     const res = await fetch(url + `/product/detail/${prodId}`, {
       method: 'GET',
@@ -140,7 +142,7 @@ async function getProductData() {
     console.error(err);
     location.href = './page404.html';
   }
-}
+})();
 
 // 저장버튼 클릭시 상품 데이터 PUT 요청(이미지 업로드 미구현)
 
