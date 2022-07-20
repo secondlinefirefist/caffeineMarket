@@ -128,6 +128,7 @@ function openPostSettingModal() {
   let btnPostSetting = document.querySelectorAll('.btnPostSetting');
   for (let i = 0; i < btnPostSetting.length; i++) {
     btnPostSetting[i].addEventListener('click', (event) => {
+      event.stopPropagation();
       postModal.classList.toggle('displayModal');
       // console.log(event.currentTarget);
       btnDelPost.setAttribute(
@@ -144,6 +145,9 @@ function openPostSettingModal() {
       );
     });
   }
+  document.querySelector('main').addEventListener('click', (event) => {
+    postModal.classList.remove('displayModal');
+  });
 }
 
 const subDelPostModal = document.querySelector('#subDelPostModal');
@@ -154,6 +158,7 @@ function checkDelPost() {
   btnDelPost.addEventListener('click', (event) => {
     event.stopPropagation();
     subDelPostModal.classList.add('displayModal');
+    postModal.classList.remove('displayModal');
   });
 
   // 게시글 삭제 '취소' 버튼 누르기
