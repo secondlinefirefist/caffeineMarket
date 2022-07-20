@@ -219,13 +219,17 @@ footer {
   overflow: hidden;
 }
 
-.contPost .postType {
+.postType {
   width: 390px;
   box-sizing: border-box;
   padding: 9px 16px;
   margin: 0 auto;
   border-bottom: 0.5px solid #dbdbdb;
   overflow: hidden;
+}
+
+.postTypeHide {
+  display: none;
 }
 
 .contPost .postType .button {
