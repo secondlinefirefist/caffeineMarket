@@ -11,11 +11,27 @@ const token = window.localStorage.getItem('token');
 let filename = '';
 const prodId = location.search.split('id=')[1];
 
+// author: {_id: '62cf970982fdcc712f49b5f4', username: '지훈지훈', accountname: 'hoon9', intro: 'helloWorlld', image: 'http://146.56.183.55:5050/Ellipse.png', …}
+// createdAt: "2022-07-20T08:17:44.425Z"
+// id: "62d7ba2817ae6665817c96cb"
+// itemImage: "https://mandarin.api.weniv.co.kr/1658305058302.png"
+// itemName: "강아지"
+// link: "ㅁㄴㅇ"
+// price: 30000
+// updatedAt: "2022-07-20T08:17:44.425Z"
+
 // 모든 input창에 해당 상품 데이터 미리 보이도록
-const setProductData = (res) => {
-  // $inputProductImg.value = res.product;
-  // $inputProductPrice.value = res.product;
-  // console.log(res)
+const setProductData = (resJson) => {
+  $productImg.src = resJson.itemImage;
+  $inputProductTitle.value = resJson.itemName;
+  $inputProductPrice.value = resJson.price
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  $inputProductLink.value = resJson.link;
+
+  if ($productImg.src) {
+    $productImg.style.display = 'block';
+  }
 };
 
 // 이미지 업로드 시 미리보기
@@ -110,9 +126,9 @@ function checkProdId() {
 }
 
 // 상품 데이터 GET요청으로 가져오기
-async function getProductData() {
+(async function getProductData() {
   try {
-    const res = await fetch(url + `/product`, {
+    const res = await fetch(url + `/product/detail/${prodId}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -121,12 +137,12 @@ async function getProductData() {
     });
     const resJson = await res.json();
     console.log(resJson.product);
-    setProductData(resJson);
+    setProductData(resJson.product);
   } catch (err) {
     console.error(err);
     location.href = './page404.html';
   }
-}
+})();
 
 // 저장버튼 클릭시 상품 데이터 PUT 요청(이미지 업로드 미구현)
 
@@ -139,7 +155,7 @@ async function productData() {
           itemName: $inputProductTitle.value,
           price: parseInt($inputProductPrice.value.replaceAll(',', '')),
           link: $inputProductLink.value,
-          itemImage: `${url}/${filename}`,
+          itemImage: $productImg.src,
         },
       }),
       headers: {
@@ -167,3 +183,5 @@ const isProductTrue = () => {
 $productForm.addEventListener('input', handleCheckInput);
 $btnSave.addEventListener('click', productData);
 $inputProductPrice.addEventListener('input', checkProductPrice);
+
+// getProductData();
