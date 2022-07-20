@@ -77,14 +77,9 @@ function onProductSettingModal() {
       console.log(event.currentTarget);
     });
   }
-  // 메인 눌렀을 때도 모달이 닫힐 수 있게 설정
-  document.querySelector('main').addEventListener(
-    'click',
-    (event) => {
-      productModal.classList.remove('displayModal');
-    },
-    true
-  );
+  document.querySelector('main').addEventListener('click', () => {
+    productModal.classList.remove('displayModal');
+  });
 }
 
 // 상품 삭제 마지막 확인 모달
@@ -97,7 +92,7 @@ function openCheckDelProductModal() {
     subDelProductModal.classList.toggle('displayModal');
   });
 
-  btnCancelDelProduct.addEventListener('click', () => {
+  btnCancelDelProduct.addEventListener('click', (event) => {
     subDelProductModal.classList.remove('displayModal');
   });
 }

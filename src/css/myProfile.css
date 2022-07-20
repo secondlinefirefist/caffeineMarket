@@ -59,11 +59,11 @@ footer {
 .userInfo {
   display: flex;
   justify-content: center;
-  padding: 55px 0 16px;
+  padding-top: 56px;
 }
 
 .profileImageWrap {
-  margin: 30px auto;
+  margin: 16px auto;
   width: 110px;
   height: 110px;
   position: relative;
@@ -395,11 +395,11 @@ footer {
 
 /*메인 모달*/
 .mainModal {
-  position: absolute;
+  position: fixed;
   display: none;
   width: 100%;
   box-sizing: border-box;
-  bottom: 1px;
+  bottom: 0px;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px 10px 0 0;
@@ -498,11 +498,11 @@ footer {
 /* 게시글 설정 모달, 상품 설정 모달 */
 .postModal,
 .productModal {
-  position: absolute;
+  position: fixed;
   display: none;
   width: 100%;
   box-sizing: border-box;
-  bottom: 1px;
+  bottom: 0px;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px 10px 0 0;
