@@ -316,14 +316,14 @@ footer {
 
 .wrapPostImage {
   display: flex;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   padding-bottom: 6px;
   width: 304px;
 }
 
-/* .wrapPostImageScroll {
+.wrapPostImageScroll {
   overflow-x: scroll;
-} */
+}
 
 .wrapPostImage .imgIndexPost {
   margin-top: 16px;

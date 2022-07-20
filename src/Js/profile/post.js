@@ -62,6 +62,10 @@ function createPostFeed(resJson) {
         for (let x = 0; x < countImages; x++) {
           let postImage = document.createElement('img');
           wrapPostImage.appendChild(postImage);
+          wrapPostImage.setAttribute(
+            'class',
+            'wrapPostImage wrapPostImageScroll'
+          );
           postImage.setAttribute('class', 'imgIndexPost');
           postImage.setAttribute('alt', '게시 사진');
           postImage.setAttribute('src', resJson.post[i].image.split(',')[x]);
@@ -69,13 +73,13 @@ function createPostFeed(resJson) {
       } else if (countImages <= 1) {
         let postImage = document.createElement('img');
         wrapPostImage.appendChild(postImage);
+        wrapPostImage.setAttribute('class', 'wrapPostImage');
         postImage.setAttribute('class', 'imgIndexPost');
         postImage.setAttribute('alt', '게시 사진');
         postImage.setAttribute('src', resJson.post[i].image);
       }
     }
 
-    wrapPostImage.setAttribute('class', 'wrapPostImage');
     postIndexList.append(li);
     li.append(imgProfile, postWrap);
     postWrap.setAttribute('class', 'postIndexCont');
