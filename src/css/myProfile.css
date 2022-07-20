@@ -21,11 +21,11 @@ header {
   top: 0px;
   right: 0;
   left: 0;
+  z-index: 5;
 }
 
 main {
-  height: calc(100% - 5%);
-  overflow-y: scroll;
+  height: calc(100% - 116px);
 }
 
 footer {
@@ -59,7 +59,7 @@ footer {
 .userInfo {
   display: flex;
   justify-content: center;
-  padding: 30px 0 16px;
+  padding: 55px 0 16px;
 }
 
 .profileImageWrap {
@@ -255,7 +255,7 @@ footer {
   width: 390px;
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 16px 16px 30px;
+  padding: 16px 16px 60px;
 }
 
 .wrapPost .postGridList {
