@@ -138,6 +138,10 @@ function openPostSettingModal() {
         'postId',
         event.currentTarget.getAttribute('data-id')
       );
+      btnModifyPost.setAttribute(
+        'postId',
+        event.currentTarget.getAttribute('data-id')
+      );
     });
   }
 }
@@ -180,6 +184,7 @@ async function confirmDelPost() {
 }
 btnOkDelPost.addEventListener('click', confirmDelPost);
 
+// 게시글 삭제 fail되면 알려주기
 function alertDelPost(json) {
   if (json.message == '존재하지 않는 게시글입니다.') {
     alert(json.message);
@@ -189,3 +194,10 @@ function alertDelPost(json) {
   }
   location.reload();
 }
+
+// 상품 수정 넘겨주기
+const btnModifyPost = document.querySelector('#btnModifyPost');
+btnModifyPost.addEventListener('click', (event) => {
+  location.href =
+    '../pages/upload.html?id=' + event.target.getAttribute('postid');
+});
