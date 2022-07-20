@@ -112,7 +112,7 @@ function checkProdId() {
 // 상품 데이터 GET요청으로 가져오기
 async function getProductData() {
   try {
-    const res = await fetch(url + `/product`, {
+    const res = await fetch(url + `/product/detail/${prodId}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
