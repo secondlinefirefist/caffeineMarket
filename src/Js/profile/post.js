@@ -49,7 +49,6 @@ function createPostFeed(resJson) {
     const countImages = resJson.post[i].image.split(',').length;
     if (resJson.post[i].image != '') {
       if (countImages > 1) {
-        wrapPostImage.setAttribute('class', 'wrapPostImageNoScroll');
         for (let x = 0; x < countImages; x++) {
           let postImage = document.createElement('img');
           wrapPostImage.appendChild(postImage);
@@ -60,12 +59,12 @@ function createPostFeed(resJson) {
       } else if (countImages <= 1) {
         let postImage = document.createElement('img');
         wrapPostImage.appendChild(postImage);
-        wrapPostImage.setAttribute('class', 'wrapPostImageNoScroll');
         postImage.setAttribute('class', 'imgIndexPost');
         postImage.setAttribute('alt', '게시 사진');
         postImage.setAttribute('src', resJson.post[i].image);
       }
     }
+    //scroll class가 안 붙음
     wrapPostImage.setAttribute('class', 'wrapPostImage');
     postIndexList.append(li);
     li.append(imgProfile, postWrap);
