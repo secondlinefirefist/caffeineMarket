@@ -35,20 +35,6 @@ function createPostFeed(resJson) {
       (commentImage = document.createElement('img')),
       (commentNumber = document.createElement('span')),
       (date = document.createElement('p'));
-    for (let x = 0; x < resJson.post[i].image.length; x++) {
-      const postImage = document.createElement('img');
-      postImage.setAttribute('class', 'imgIndexPost');
-      postImage.setAttribute('src', resJson.post[i].image[x]);
-      postImage.setAttribute('alt', '게시 사진');
-    }
-
-    postIndexList.append(li);
-    li.append(imgProfile, postWrap);
-    wrapPostImage.setAttribute('class', 'wrapPostImage');
-    postWrap.setAttribute('class', 'postIndexCont');
-    imgProfile.setAttribute('class', 'imgPostProfile');
-    imgProfile.setAttribute('src', '../img/userProfile_base.png');
-    imgProfile.setAttribute('alt', '게시글 저자 프로필 사진');
 
     postWrap.append(
       userName,
@@ -59,6 +45,34 @@ function createPostFeed(resJson) {
       wrapReaction,
       date
     );
+    //사진 만들기
+    const countImages = resJson.post[i].image.split(',').length;
+    if (resJson.post[i].image != '') {
+      if (countImages > 1) {
+        wrapPostImage.setAttribute('class', 'wrapPostImageNoScroll');
+        for (let x = 0; x < countImages; x++) {
+          let postImage = document.createElement('img');
+          wrapPostImage.appendChild(postImage);
+          postImage.setAttribute('class', 'imgIndexPost');
+          postImage.setAttribute('alt', '게시 사진');
+          postImage.setAttribute('src', resJson.post[i].image.split(',')[x]);
+        }
+      } else if (countImages <= 1) {
+        let postImage = document.createElement('img');
+        wrapPostImage.appendChild(postImage);
+        wrapPostImage.setAttribute('class', 'wrapPostImageNoScroll');
+        postImage.setAttribute('class', 'imgIndexPost');
+        postImage.setAttribute('alt', '게시 사진');
+        postImage.setAttribute('src', resJson.post[i].image);
+      }
+    }
+    wrapPostImage.setAttribute('class', 'wrapPostImage');
+    postIndexList.append(li);
+    li.append(imgProfile, postWrap);
+    postWrap.setAttribute('class', 'postIndexCont');
+    imgProfile.setAttribute('class', 'imgPostProfile');
+    imgProfile.setAttribute('src', '../img/userProfile_base.png');
+    imgProfile.setAttribute('alt', '게시글 저자 프로필 사진');
 
     postSetting.appendChild(postSettingImg);
     userName.setAttribute('class', 'titleMarket');
