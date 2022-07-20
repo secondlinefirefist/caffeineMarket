@@ -9,13 +9,23 @@
     });
     const resJson = await res.json();
     console.log(resJson, 'postData');
+    if (resJson.post != '') {
+      postType.classList.remove('postTypeHide');
+    }
+    if (resJson.post == '') {
+      postType.classList.add('postTypeHide');
+    }
     createPostFeed(resJson);
   } catch {
     console.error('ERROR');
   }
 })();
 
+const contPost = document.querySelector('.contPost');
+const wrapPost = document.querySelector('.wrapPost');
 const postIndexList = document.querySelector('.postIndexList');
+const postType = document.querySelector('.postType');
+
 function createPostFeed(resJson) {
   for (let i = 0; i < resJson.post.length; i++) {
     const li = document.createElement('li'),
@@ -64,20 +74,20 @@ function createPostFeed(resJson) {
         postImage.setAttribute('src', resJson.post[i].image);
       }
     }
-    //scroll class가 안 붙음
+
     wrapPostImage.setAttribute('class', 'wrapPostImage');
     postIndexList.append(li);
     li.append(imgProfile, postWrap);
     postWrap.setAttribute('class', 'postIndexCont');
     imgProfile.setAttribute('class', 'imgPostProfile');
-    imgProfile.setAttribute('src', '../img/userProfile_base.png');
+    imgProfile.setAttribute('src', resJson.post[i].author.image);
     imgProfile.setAttribute('alt', '게시글 저자 프로필 사진');
 
     postSetting.appendChild(postSettingImg);
     userName.setAttribute('class', 'titleMarket');
     userName.textContent = resJson.post[i].author.username;
     account.setAttribute('class', 'marketId');
-    account.textContent = resJson.post[i].author.accountname;
+    account.textContent = '@ ' + resJson.post[i].author.accountname;
     postSetting.setAttribute('type', 'button');
     postSetting.setAttribute('class', 'btnPostSetting');
     postSettingImg.setAttribute('src', '../img/icon/s-icon-more-vertical.png');

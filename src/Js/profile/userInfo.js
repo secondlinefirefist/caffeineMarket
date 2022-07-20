@@ -31,7 +31,7 @@ function infoUserProfile(resJson) {
   marketName.textContent = resJson.profile.username;
   followerCount.textContent = resJson.profile.followerCount;
   followingCount.textContent = resJson.profile.followingCount;
-  userAccountname.textContent = resJson.profile.accountname;
+  userAccountname.textContent = '@ ' + resJson.profile.accountname;
   marketDetail.textContent = resJson.profile.intro;
   imgProfile.setAttribute('src', resJson.profile.image);
 }
