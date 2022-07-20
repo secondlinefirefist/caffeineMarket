@@ -11,11 +11,25 @@ const token = window.localStorage.getItem('token');
 let filename = '';
 const prodId = location.search.split('id=')[1];
 
+// author: {_id: '62cf970982fdcc712f49b5f4', username: '지훈지훈', accountname: 'hoon9', intro: 'helloWorlld', image: 'http://146.56.183.55:5050/Ellipse.png', …}
+// createdAt: "2022-07-20T08:17:44.425Z"
+// id: "62d7ba2817ae6665817c96cb"
+// itemImage: "https://mandarin.api.weniv.co.kr/1658305058302.png"
+// itemName: "강아지"
+// link: "ㅁㄴㅇ"
+// price: 30000
+// updatedAt: "2022-07-20T08:17:44.425Z"
+
 // 모든 input창에 해당 상품 데이터 미리 보이도록
-const setProductData = (res) => {
-  // $inputProductImg.value = res.product;
-  // $inputProductPrice.value = res.product;
-  // console.log(res)
+const setProductData = (resJson) => {
+  $productImg.src = resJson.itemImage;
+  $inputProductTitle.value = resJson.itemName;
+  $inputProductPrice.value = resJson.price;
+  $inputProductLink.value = resJson.link;
+  
+  if ($productImg.src) {
+    $productImg.style.display = 'block';
+  }
 };
 
 // 이미지 업로드 시 미리보기
@@ -121,7 +135,7 @@ async function getProductData() {
     });
     const resJson = await res.json();
     console.log(resJson.product);
-    setProductData(resJson);
+    setProductData(resJson.product);
   } catch (err) {
     console.error(err);
     location.href = './page404.html';
@@ -167,3 +181,5 @@ const isProductTrue = () => {
 $productForm.addEventListener('input', handleCheckInput);
 $btnSave.addEventListener('click', productData);
 $inputProductPrice.addEventListener('input', checkProductPrice);
+
+// getProductData();
