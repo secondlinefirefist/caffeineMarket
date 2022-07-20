@@ -263,7 +263,7 @@ footer {
 }
 
 .postIndexList li {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -275,6 +275,7 @@ footer {
 
 .postIndexCont {
   width: 304px;
+  padding-top: 6px;
 }
 
 .postIndexCont .btnPostSetting {
@@ -293,7 +294,7 @@ footer {
 }
 
 .postIndexCont .marketId {
-  padding: 6px 0 16px;
+  padding: 2px 0 16px;
 }
 
 .postIndexCont .postIndexText {
@@ -309,6 +310,7 @@ footer {
 .wrapPostImage .imgIndexPost {
   margin-top: 16px;
   width: 304px;
+  height: 228px;
   border-radius: 10px;
   padding-right: 6px;
 }
