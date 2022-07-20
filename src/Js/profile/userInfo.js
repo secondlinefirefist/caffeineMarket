@@ -14,6 +14,7 @@ async function infoUser() {
     });
     const resJson = await res.json();
     console.log(resJson);
+
     infoUserProfile(resJson);
   } catch {
     console.error('ERROR!');
