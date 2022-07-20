@@ -20,6 +20,7 @@ const imgPreView = async (event) => {
   };
   reader.readAsDataURL(event.target.files[0]);
   filename = await storeImage(event.target); // 리턴 받은 파일명을 filename에 저장
+  console.log(event.target.files[0])
 };
 
 // 이미지 POST요청
