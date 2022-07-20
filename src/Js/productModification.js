@@ -9,10 +9,11 @@ const $productImg = document.querySelector('.productImg');
 const url = 'https://mandarin.api.weniv.co.kr';
 const token = window.localStorage.getItem('token');
 let filename = '';
+const prodId = checkProdId();
 
 // 모든 input창에 해당 상품 데이터 미리 보이도록
-const setProductData = (resProductData) => {
-  $inputProductImg.value = resProductData.product;
+const setProductData = (res) => {
+  $inputProductImg.value = res.product;
 };
 
 // 이미지 업로드 시 미리보기
@@ -97,10 +98,18 @@ const handleCheckInput = () => {
   }
 };
 
+// prodid값 체크
+function checkProdId() {
+  const prodId = location.search.split('id=')[1]
+    ? location.search.split('id=')[1]
+    : null;
+  return prodId;
+}
+
 // 상품 데이터 GET요청으로 가져오기
 async function getProductData() {
   try {
-    const res = await fetch(url + '/product', {
+    const res = await fetch(url + `/product/${prodId}`, {
       method: 'GET',
       body: JSON.stringify({
         product: {
@@ -123,11 +132,11 @@ async function getProductData() {
   }
 }
 
-// 저장버튼 클릭시 상품 데이터 POST 요청(이미지 업로드 미구현)
+// 저장버튼 클릭시 상품 데이터 PUT 요청(이미지 업로드 미구현)
 
 async function productData() {
   try {
-    const res = await fetch(url + '/product', {
+    const res = await fetch(url + `/product/${prodId}`, {
       method: 'PUT',
       body: JSON.stringify({
         product: {
