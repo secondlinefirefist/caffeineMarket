@@ -72,11 +72,11 @@ function showfollowingList(resJson) {
       button.textContent = '팔로우';
     }
   }
-  unfollowData(resJson);
+  followingData(resJson);
 }
 
 //팔로우 & 언팔로에 필요한 매개변수값들 넘겨주기
-function unfollowData(resJson) {
+function followingData(resJson) {
   console.log(resJson, '언팔로우 함수 내부입니다');
   let btnFollow = document.querySelectorAll('.btnFollow');
   for (let i = 0; i < btnFollow.length; i++) {
@@ -94,7 +94,7 @@ function unfollowData(resJson) {
 //언팔로우하기
 async function clickUnFollow(followUserData, followState, targetButton) {
   let userAccountName = followUserData.accountname;
-  if (followState == 'true') {
+  if (followState == 'true' && targetButton.classList.contains('btnFollow')) {
     try {
       const res = await fetch(
         url + '/profile/' + userAccountName + '/unfollow',
@@ -108,7 +108,6 @@ async function clickUnFollow(followUserData, followState, targetButton) {
         }
       );
       const resJson = await res.json();
-      // location.reload();
       targetButton.classList.add('btnUnfollow');
       targetButton.classList.remove('btnFollow');
       targetButton.textContent = '팔로우';
@@ -122,7 +121,7 @@ async function clickUnFollow(followUserData, followState, targetButton) {
 async function clickFollow(followUserData, followState, targetButton) {
   let userAccountName = followUserData.accountname;
   if (
-    (followState == 'true' && targetButton.classList.contains('btnUnfollow')) ||
+    targetButton.classList.contains('btnUnfollow') ||
     followState == 'false'
   ) {
     try {
