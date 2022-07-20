@@ -146,7 +146,8 @@ btnAddProduct.addEventListener('click', () => {
 const btnModifyProduct = document.querySelector('.btnModifyProduct');
 btnModifyProduct.addEventListener('click', (event) => {
   location.href =
-    '../pages/product.html?id=' + event.target.getAttribute('dataId');
+    '../pages/productModification.html?id=' +
+    event.target.getAttribute('dataId');
 });
 
 // 웹사이트에서 상품 보기
