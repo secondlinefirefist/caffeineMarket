@@ -9,7 +9,7 @@ const $productImg = document.querySelector('.productImg');
 const url = 'https://mandarin.api.weniv.co.kr';
 const token = window.localStorage.getItem('token');
 let filename = '';
-const prodId = checkProdId();
+const prodId = location.search.split('id=')[1];
 
 // 모든 input창에 해당 상품 데이터 미리 보이도록
 const setProductData = (res) => {
@@ -100,10 +100,11 @@ const handleCheckInput = () => {
 
 // prodid값 체크
 function checkProdId() {
-  const prodId = location.search.split('id=')[1]
-    ? location.search.split('id=')[1]
-    : null;
-  return prodId;
+  if (prodId) {
+    return prodId;
+  } else {
+    return null;
+  }
 }
 
 // 상품 데이터 GET요청으로 가져오기
