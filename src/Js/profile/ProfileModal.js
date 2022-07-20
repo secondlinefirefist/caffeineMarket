@@ -19,7 +19,7 @@ btnSetting.addEventListener('click', () => {
   mainModal.classList.toggle('displayModal');
 });
 
-document.querySelector('main').addEventListener('click', (event) => {
+btnSetting.addEventListener('blur', (event) => {
   mainModal.classList.remove('displayModal');
 });
 

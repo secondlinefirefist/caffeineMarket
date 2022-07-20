@@ -1,3 +1,4 @@
+//post data 가져오기
 (async function postData() {
   try {
     const res = await fetch(url + '/post/' + accountname + '/userpost', {
@@ -21,7 +22,6 @@
   }
 })();
 
-const contPost = document.querySelector('.contPost');
 const wrapPost = document.querySelector('.wrapPost');
 const postIndexList = document.querySelector('.postIndexList');
 const postType = document.querySelector('.postType');
@@ -84,12 +84,13 @@ function createPostFeed(resJson) {
     imgProfile.setAttribute('alt', '게시글 저자 프로필 사진');
 
     postSetting.appendChild(postSettingImg);
+    postSetting.setAttribute('type', 'button');
+    postSetting.setAttribute('class', 'btnPostSetting');
+    postSetting.setAttribute('data-id', resJson.post[i].id);
     userName.setAttribute('class', 'titleMarket');
     userName.textContent = resJson.post[i].author.username;
     account.setAttribute('class', 'marketId');
     account.textContent = '@ ' + resJson.post[i].author.accountname;
-    postSetting.setAttribute('type', 'button');
-    postSetting.setAttribute('class', 'btnPostSetting');
     postSettingImg.setAttribute('src', '../img/icon/s-icon-more-vertical.png');
     postSettingImg.setAttribute('alt', '설정으로가기');
     postSettingImg.setAttribute('id', 'btnPostSetting');
@@ -116,5 +117,92 @@ function createPostFeed(resJson) {
     commentImage.setAttribute('id', 'btnComment');
     commentNumber.textContent = resJson.post[i].commentCount;
   }
+  openPostSettingModal();
 }
-createPostFeed();
+
+//포스트 게시글 설정 모달
+const postModal = document.querySelector('#postModal');
+const btnDelPost = document.querySelector('#btnDelPost');
+const contPost = document.querySelector('.contPost');
+function openPostSettingModal() {
+  let btnPostSetting = document.querySelectorAll('.btnPostSetting');
+  for (let i = 0; i < btnPostSetting.length; i++) {
+    btnPostSetting[i].addEventListener('click', (event) => {
+      event.stopPropagation();
+      postModal.classList.toggle('displayModal');
+      // console.log(event.currentTarget);
+      btnDelPost.setAttribute(
+        'postId',
+        event.currentTarget.getAttribute('data-id')
+      );
+      btnOkDelPost.setAttribute(
+        'postId',
+        event.currentTarget.getAttribute('data-id')
+      );
+      btnModifyPost.setAttribute(
+        'postId',
+        event.currentTarget.getAttribute('data-id')
+      );
+    });
+  }
+  document.querySelector('main').addEventListener('click', (event) => {
+    postModal.classList.remove('displayModal');
+  });
+}
+
+const subDelPostModal = document.querySelector('#subDelPostModal');
+const btnCancelDelPost = document.querySelector('#btnCancelDelPost');
+const btnOkDelPost = document.querySelector('#btnOkDelPost');
+function checkDelPost() {
+  // 게시글 셋팅 모달의 '삭제' 버튼 누르기
+  btnDelPost.addEventListener('click', (event) => {
+    event.stopPropagation();
+    subDelPostModal.classList.add('displayModal');
+    postModal.classList.remove('displayModal');
+  });
+
+  // 게시글 삭제 '취소' 버튼 누르기
+  btnCancelDelPost.addEventListener('click', () => {
+    console.log('와이라노');
+    subDelPostModal.classList.remove('displayModal');
+  });
+}
+checkDelPost();
+
+//게시글 최종 삭제 버튼 누르기
+async function confirmDelPost() {
+  const productId = btnOkDelPost.getAttribute('postid');
+  try {
+    const res = await fetch(url + '/post/' + productId, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(),
+    });
+    const json = await res.json();
+    alertDelPost(json);
+  } catch {
+    console.error('ERROR!');
+  }
+}
+btnOkDelPost.addEventListener('click', confirmDelPost);
+
+// 게시글 삭제 fail되면 알려주기
+function alertDelPost(json) {
+  if (json.message == '존재하지 않는 게시글입니다.') {
+    alert(json.message);
+  }
+  if (json.message == '잘못된 요청입니다. 로그인 정보를 확인하세요.') {
+    alert(json.message);
+  }
+  location.reload();
+}
+
+// 상품 수정 넘겨주기
+const btnModifyPost = document.querySelector('#btnModifyPost');
+btnModifyPost.addEventListener('click', (event) => {
+  location.href =
+    '../pages/upload.html?id=' + event.target.getAttribute('postid');
+});
