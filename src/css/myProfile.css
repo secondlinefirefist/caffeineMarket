@@ -307,8 +307,14 @@ footer {
   overflow-x: scroll;
   padding-bottom: 6px;
 }
+
+/* .wrapPostImageScroll {
+  overflow-x: scroll;
+} */
+
 .wrapPostImage .imgIndexPost {
   margin-top: 16px;
+  object-fit: cover;
   width: 304px;
   height: 228px;
   border-radius: 10px;

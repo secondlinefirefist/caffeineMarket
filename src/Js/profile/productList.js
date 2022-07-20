@@ -48,7 +48,7 @@ function createProductList() {
     strong.setAttribute('class', 'productPrice');
     strong.textContent = `${prodcutListDummy[i].price
       .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')} 원`;
   }
   onProductSettingModal();
 }
