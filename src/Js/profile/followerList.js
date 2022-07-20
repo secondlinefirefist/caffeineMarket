@@ -6,7 +6,7 @@ const accountname = yourAccountname ? yourAccountname : myAccountname;
 async function followListData() {
   try {
     const res = await fetch(
-      url + '/profile/' + accountname + '/following/?limit=50',
+      url + '/profile/' + accountname + '/follower/?limit=50',
       {
         method: 'GET',
         headers: {
@@ -90,6 +90,31 @@ function followingData(resJson) {
     });
   }
 }
+//팔로우하기
+async function clickFollow(followUserData, followState, targetButton) {
+  let userAccountName = followUserData.accountname;
+  if (
+    followState == 'false' &&
+    targetButton.classList.contains('btnUnfollow')
+  ) {
+    try {
+      const res = await fetch(url + '/profile/' + userAccountName + '/follow', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Content-type': 'application/json',
+        },
+      });
+      console.log('왜 왜 왜!!!!!!!!!🐰');
+      const resJson = await res.json();
+      targetButton.classList.add('btnFollow');
+      targetButton.classList.remove('btnUnfollow');
+      targetButton.textContent = '취소';
+    } catch {
+      console.error('ERROR');
+    }
+  }
+}
 
 //언팔로우하기
 async function clickUnFollow(followUserData, followState, targetButton) {
@@ -111,33 +136,6 @@ async function clickUnFollow(followUserData, followState, targetButton) {
       targetButton.classList.add('btnUnfollow');
       targetButton.classList.remove('btnFollow');
       targetButton.textContent = '팔로우';
-    } catch {
-      console.error('ERROR');
-    }
-  }
-}
-
-//팔로우하기
-async function clickFollow(followUserData, followState, targetButton) {
-  let userAccountName = followUserData.accountname;
-  if (
-    targetButton.classList.contains('btnUnfollow') ||
-    followState == 'false'
-  ) {
-    try {
-      const res = await fetch(url + '/profile/' + userAccountName + '/follow', {
-        method: 'POST',
-        body: JSON.stringify(),
-        headers: {
-          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
-          'Content-type': 'application/json',
-        },
-      });
-      console.log('왜 왜 왜!!!!!!!!!🐰');
-      const resJson = await res.json();
-      targetButton.classList.add('btnFollow');
-      targetButton.classList.remove('btnUnfollow');
-      targetButton.textContent = '취소';
     } catch {
       console.error('ERROR');
     }

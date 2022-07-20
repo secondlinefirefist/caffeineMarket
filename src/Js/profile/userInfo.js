@@ -42,11 +42,20 @@ btnEditProfile.addEventListener('click', () => {
   location.href = '../pages/profileModification.html';
 });
 
-//팔로우 버튼 클릭하여 팔로우리스트로 넘어가기
+//팔로우 버튼 클릭하여 팔로잉리스트로 넘어가기
+const btnFollwings = document.querySelector('.btnFollwings');
 const goFollowingsList = yourAccountname
   ? '../pages/followingList.html?accountname=' + yourAccountname
   : '../pages/followingList.html';
-const btnFollwings = document.querySelector('.btnFollwings');
 btnFollwings.addEventListener('click', () => {
   location.href = goFollowingsList;
+});
+
+//팔로우 버튼 클릭하여 팔로워리스트로 넘어가기
+const btnFollowers = document.querySelector('.btnFollowers');
+const goFollowerList = yourAccountname
+  ? '../pages/followerList.html?accountname=' + yourAccountname
+  : '../pages/followerList.html';
+btnFollowers.addEventListener('click', () => {
+  location.href = goFollowerList;
 });
