@@ -155,7 +155,7 @@ async function productData() {
           itemName: $inputProductTitle.value,
           price: parseInt($inputProductPrice.value.replaceAll(',', '')),
           link: $inputProductLink.value,
-          itemImage: `${url}/${filename}`,
+          itemImage: $productImg.src,
         },
       }),
       headers: {
