@@ -165,8 +165,8 @@ async function productData() {
     });
     const resJson = await res.json();
     console.log(resJson);
-    // alert('상품이 정상적으로 등록되었습니다');
-    // isProductTrue();
+    alert('상품이 정상적으로 등록되었습니다');
+    isProductTrue();
   } catch (err) {
     console.error(err);
     location.href = './page404.html';
@@ -184,4 +184,3 @@ $productForm.addEventListener('input', handleCheckInput);
 $btnSave.addEventListener('click', productData);
 $inputProductPrice.addEventListener('input', checkProductPrice);
 
-// getProductData();
