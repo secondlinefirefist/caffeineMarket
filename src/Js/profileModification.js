@@ -9,6 +9,7 @@ const $RegErrorMessage = document.querySelector('#Reg-error-message');
 const $duplicateErrorMessage = document.querySelector(
   '#duplicate-error-message'
 );
+const accountname = window.localStorage.getItem('accountname');
 
 const regexp = /[0-9a-zA-Z._]/g;
 
@@ -17,6 +18,29 @@ const url = 'https://mandarin.api.weniv.co.kr';
 let checkUserNamInput = false;
 let checkUserIdInput = false;
 let checkIntroIdInput = false;
+
+//프로필 정보 보여주기
+async function infoUser() {
+  try {
+    const res = await fetch(url + '/profile/' + accountname, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
+      },
+    });
+    const resJson = await res.json();
+    console.log(resJson);
+    infoUserProfile(resJson);
+  } catch {
+    console.error('ERROR!');
+  }
+}
+infoUser();
+
+function infoUserProfile(resJson) {
+  $profileCover.setAttribute('src', resJson.profile.image);
+}
 
 //프로필 수정 요청
 async function modifiaction() {
@@ -124,6 +148,7 @@ const showButton = () => {
     ? $profileSaveButton.classList.add('focus')
     : $profileSaveButton.classList.remove('focus');
 };
+
 //아이디 정규식 오류 메시지 출력
 function userIdRegErrorMessage(event) {
   if (!regexp.test(event.target.value)) {
