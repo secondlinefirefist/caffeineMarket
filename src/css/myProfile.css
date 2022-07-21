@@ -136,6 +136,9 @@ footer {
   width: fit-content;
   margin: 24px auto;
 }
+.userSettingsHide {
+  display: none;
+}
 
 .userSettings .btnEditProfile,
 .userSettings .btnAddProduct {
@@ -161,6 +164,32 @@ footer {
 .userSettings .btnAddProduct:focus {
   color: #f26e22;
   border: 1px solid #f26e22;
+}
+
+/* yourProfile SNS */
+.userSns {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0 26px;
+}
+
+.userSns .btnKakao,
+.userSns .btnShare {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #dbdbdb;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.userSns .btnFollow {
+  width: 120px;
+  margin: 0 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 30px;
+  color: #767676;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 /* 판매상품 */

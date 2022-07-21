@@ -2,6 +2,7 @@ const url = 'https://mandarin.api.weniv.co.kr';
 const myAccountname = `${window.localStorage.getItem('accountname')}`;
 const yourAccountname = location.search.replace('?', '').split('=')[1];
 const accountname = yourAccountname ? yourAccountname : myAccountname;
+const userSettings = document.querySelector('.userSettings');
 //프로필 정보 보여주기
 async function infoUser() {
   try {
@@ -15,12 +16,48 @@ async function infoUser() {
     const resJson = await res.json();
     console.log(resJson);
     infoUserProfile(resJson);
+    if (accountname != myAccountname) {
+      showYourProfileButton();
+    }
   } catch {
     console.error('ERROR!');
   }
 }
 infoUser();
 
+//
+const contProfile = document.querySelector('.contProfile');
+function showYourProfileButton() {
+  userSettings.classList.add('userSettingsHide');
+  const userFollowSection = document.createElement('section'),
+    sectionName = document.createElement('h2'),
+    btnKakao = document.createElement('button'),
+    imgKakao = document.createElement('img'),
+    btnFollow = document.createElement('button'),
+    btnShare = document.createElement('button'),
+    imgShare = document.createElement('img');
+
+  contProfile.append(userFollowSection);
+  userFollowSection.append(sectionName, btnKakao, btnFollow, btnShare);
+  btnKakao.appendChild(imgKakao);
+  btnShare.appendChild(imgShare);
+
+  userFollowSection.setAttribute('class', 'userSns');
+  sectionName.setAttribute('class', 'ir');
+  btnKakao.setAttribute('class', 'btnKakao');
+  btnKakao.setAttribute('type', 'button');
+  imgKakao.setAttribute('src', '../img/message-circle.png');
+  imgKakao.setAttribute('alt', '카카오');
+
+  btnFollow.setAttribute('class', 'btnFollow');
+  btnFollow.setAttribute('type', 'button');
+  btnFollow.textContent = '언팔로우';
+
+  btnShare.setAttribute('class', 'btnShare');
+  btnShare.setAttribute('type', 'button');
+  imgShare.setAttribute('src', '../img/icon/icon-share.png');
+  imgShare.setAttribute('alt', '공유하기');
+}
 const marketName = document.querySelector('.marketName');
 const followerCount = document.querySelector('.btnFollowers > strong');
 const followingCount = document.querySelector('.btnFollwings > strong');
