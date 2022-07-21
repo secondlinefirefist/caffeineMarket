@@ -93,11 +93,11 @@ const checkProductPrice = (event) => {
 // 이미지, 상품명, 가격, 판매링크 모두 입력될 경우 저장버튼 활성화 함수
 const handleCheckInput = () => {
   if (
-    checkProductName() ||
-    $inputProductImg.files.length ||
-    $inputProductTitle.value ||
-    $inputProductPrice.value ||
-    $inputProductLink.value
+    checkProductName() &&
+    ($inputProductImg.files.length ||
+      $inputProductTitle.value ||
+      $inputProductPrice.value ||
+      $inputProductLink.value)
   ) {
     $btnSave.removeAttribute('disabled');
     $btnSave.className = 'btnSave btnSaveActive';
@@ -106,15 +106,6 @@ const handleCheckInput = () => {
     $btnSave.className = 'btnSave';
   }
 };
-
-// prodid값 체크
-function checkProdId() {
-  if (prodId) {
-    return prodId;
-  } else {
-    return null;
-  }
-}
 
 // 상품 데이터 GET요청으로 가져오기
 (async function getProductData() {
@@ -156,8 +147,15 @@ async function productData() {
     });
     const resJson = await res.json();
     console.log(resJson);
-    alert('상품이 정상적으로 수정되었습니다');
-    isProductTrue();
+    console.log(resJson.type);
+    if (resJson.type == 'entity.too.large') {
+      alert('이미지 용량이 너무 큽니다');
+      // location.href = './page404.html';
+    } else {
+      isProductTrue();
+    }
+    // alert('상품이 정상적으로 수정되었습니다');
+    // isProductTrue();
   } catch (err) {
     console.error(err);
     location.href = './page404.html';
@@ -174,3 +172,12 @@ const isProductTrue = () => {
 $productForm.addEventListener('input', handleCheckInput);
 $btnSave.addEventListener('click', productData);
 $inputProductPrice.addEventListener('input', checkProductPrice);
+
+// prodid값 체크
+const checkProdId = () => {
+  if (prodId) {
+    return prodId;
+  } else {
+    return null;
+  }
+};
