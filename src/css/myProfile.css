@@ -236,19 +236,10 @@ footer {
   overflow: hidden;
 }
 
-.postTypeHide {
-  display: none;
-}
-
 .contPost .postType .button {
   width: fit-content;
   float: right;
   padding-left: 10px;
-}
-
-.contPost .postType .button:hover,
-.contPost .postType .button:focus {
-  filter: invert(0.5);
 }
 
 .wrapPost {
@@ -258,15 +249,27 @@ footer {
   padding: 16px 16px 60px;
 }
 
-.wrapPost .postGridList {
+.wrapPost .postGridShow {
   display: grid;
   grid-template-columns: repeat(3, 114px);
+  grid-template-rows: repeat(auto-fill, 114px);
   gap: 8px;
   justify-content: center;
+  padding-bottom: 35px;
 }
 
-.wrapPost .postGridList li .imgGrindPost {
+.wrapPost .postGridList {
+  display: none;
+}
+
+.wrapPost .postGridShow li {
   width: 114px;
+}
+
+.wrapPost .postGridShow li .imgGrindPost {
+  width: 100%;
+  height: 114px;
+  object-fit: contain;
 }
 
 /*목차형 게시글*/
@@ -330,6 +333,7 @@ footer {
   height: 304px;
   border-radius: 10px;
   padding-right: 6px;
+  object-fit: contain;
 }
 
 .wrapBtnReaction button {
@@ -367,6 +371,18 @@ footer {
   background-image: url(../img/icon/icon-message-circle-fill.png);
   background-position: center;
   background-size: 15px;
+}
+
+.contPost .postType .listType {
+  filter: invert(0.5);
+}
+
+.contPost .postType .gridType {
+  filter: invert(0.5);
+}
+
+.postTypeHide {
+  display: none;
 }
 
 /* 하단메뉴 */

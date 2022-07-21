@@ -17,6 +17,7 @@
       postType.classList.add('postTypeHide');
     }
     createPostFeed(resJson);
+    createGridFedd(resJson);
   } catch {
     console.error('ERROR');
   }
@@ -25,6 +26,41 @@
 const wrapPost = document.querySelector('.wrapPost');
 const postIndexList = document.querySelector('.postIndexList');
 const postType = document.querySelector('.postType');
+const postGridList = document.querySelector('.postGridList');
+
+//그리드 타입 변환
+// 그리드 타입 보기
+const gridType = document.querySelector('.gridType');
+gridType.addEventListener('click', () => {
+  postIndexList.classList.add('postTypeHide');
+  postGridList.classList.add('postGridShow');
+  postGridList.classList.remove('postGridList');
+});
+// 리스트 타입 피드 보기
+const listType = document.querySelector('.listType');
+listType.addEventListener('click', () => {
+  postIndexList.classList.remove('postTypeHide');
+  postGridList.classList.remove('postGridShow');
+  postGridList.classList.add('postGridList');
+});
+
+function createGridFedd(resJson) {
+  for (let i = 0; i < resJson.post.length; i++) {
+    if (resJson.post[i].image != '') {
+      const li = document.createElement('li'),
+        btnGrid = document.createElement('button'),
+        imgGrid = document.createElement('img');
+      postGridList.appendChild(li);
+      li.appendChild(btnGrid);
+      btnGrid.appendChild(imgGrid);
+
+      btnGrid.setAttribute('type', 'button');
+      imgGrid.setAttribute('src', resJson.post[i].image.split(',')[0]);
+      imgGrid.setAttribute('alt', '그리드 게시 사진');
+      imgGrid.setAttribute('class', 'imgGrindPost');
+    }
+  }
+}
 
 function createPostFeed(resJson) {
   for (let i = 0; i < resJson.post.length; i++) {
