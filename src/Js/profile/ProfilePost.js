@@ -62,7 +62,7 @@ function createGridFeed(resJson) {
       imgGrid.setAttribute('class', 'imgGrindPost');
     }
   }
-  goDetailPostPage();
+  goPostDetailPage();
 }
 
 function createPostFeed(resJson) {
@@ -251,11 +251,12 @@ btnModifyPost.addEventListener('click', (event) => {
 });
 
 // post 상세 페이지로 이동 (그리드 타입에서만 작동)
-// 안 넘어감, 이유 모름
-// let goDetailPost = document.querySelectorAll('.goDetailPost');
-// console.log(goDetailPost);
-// for (let i = 0; i < 10; i++) {
-//   goDetailPost[i].addEventListener('click', (event) => {
-//     location.href = '../pages/post.html?id=' + event.target.getAttribute('postid');
-//   });
-// }
+function goPostDetailPage() {
+  let goDetailPost = document.querySelectorAll('#goDetailPost');
+  for (let i = 0; i < goDetailPost.length; i++) {
+    goDetailPost[i].addEventListener('click', (event) => {
+      location.href =
+        '../pages/post.html?id=' + event.currentTarget.getAttribute('postid');
+    });
+  }
+}

@@ -121,8 +121,8 @@ async function clickUnFollow(followUserData, followState, targetButton) {
 async function clickFollow(followUserData, followState, targetButton) {
   let userAccountName = followUserData.accountname;
   if (
-    targetButton.classList.contains('btnUnfollow') ||
-    followState == 'false'
+    (followState == 'false' && targetButton.classList.contains('btnFollow')) ||
+    (followState == 'true' && targetButton.classList.contains('btnUnfollow'))
   ) {
     try {
       const res = await fetch(url + '/profile/' + userAccountName + '/follow', {
