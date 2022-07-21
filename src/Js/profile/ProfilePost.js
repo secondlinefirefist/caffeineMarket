@@ -17,6 +17,7 @@
       postType.classList.add('postTypeHide');
     }
     createPostFeed(resJson);
+    createGridFeed(resJson);
   } catch {
     console.error('ERROR');
   }
@@ -25,6 +26,44 @@
 const wrapPost = document.querySelector('.wrapPost');
 const postIndexList = document.querySelector('.postIndexList');
 const postType = document.querySelector('.postType');
+const postGridList = document.querySelector('.postGridList');
+
+//그리드 타입 변환
+// 그리드 타입 보기
+const gridType = document.querySelector('.gridType');
+gridType.addEventListener('click', () => {
+  postIndexList.classList.add('postTypeHide');
+  postGridList.classList.add('postGridShow');
+  postGridList.classList.remove('postGridList');
+});
+// 리스트 타입 피드 보기
+const listType = document.querySelector('.listType');
+listType.addEventListener('click', () => {
+  postIndexList.classList.remove('postTypeHide');
+  postGridList.classList.remove('postGridShow');
+  postGridList.classList.add('postGridList');
+});
+
+function createGridFeed(resJson) {
+  for (let i = 0; i < resJson.post.length; i++) {
+    if (resJson.post[i].image != '') {
+      const li = document.createElement('li'),
+        btnGrid = document.createElement('button'),
+        imgGrid = document.createElement('img');
+      postGridList.appendChild(li);
+      li.appendChild(btnGrid);
+      btnGrid.appendChild(imgGrid);
+
+      btnGrid.setAttribute('type', 'button');
+      btnGrid.setAttribute('id', 'goDetailPost');
+      btnGrid.setAttribute('postid', resJson.post[i].id);
+      imgGrid.setAttribute('src', resJson.post[i].image.split(',')[0]);
+      imgGrid.setAttribute('alt', '그리드 게시 사진');
+      imgGrid.setAttribute('class', 'imgGrindPost');
+    }
+  }
+  goDetailPostPage();
+}
 
 function createPostFeed(resJson) {
   for (let i = 0; i < resJson.post.length; i++) {
@@ -204,9 +243,21 @@ function alertDelPost(json) {
   location.reload();
 }
 
-// 상품 수정 넘겨주기
+// 게시글 수정 넘겨주기
 const btnModifyPost = document.querySelector('#btnModifyPost');
 btnModifyPost.addEventListener('click', (event) => {
   location.href =
     '../pages/upload.html?id=' + event.target.getAttribute('postid');
 });
+
+// post 상세 페이지로 이동 (그리드 타입에서만 작동)
+// 안 넘어감, 이유 모름
+// const goDetailPost = document.querySelectorAll('#goDetailPost');
+// console.log(goDetailPost);
+// function goDetailPostPage() {
+//   for (let i = 0; i < goDetailPost.length; i++) {
+//     goDetailPost[i].addEventListener('click', (event) => {
+//       location.href = '../pages/post.html';
+//     });
+//   }
+// }
