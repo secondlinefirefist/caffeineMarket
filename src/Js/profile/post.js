@@ -17,7 +17,7 @@
       postType.classList.add('postTypeHide');
     }
     createPostFeed(resJson);
-    createGridFedd(resJson);
+    createGridFeed(resJson);
   } catch {
     console.error('ERROR');
   }
@@ -44,7 +44,7 @@ listType.addEventListener('click', () => {
   postGridList.classList.add('postGridList');
 });
 
-function createGridFedd(resJson) {
+function createGridFeed(resJson) {
   for (let i = 0; i < resJson.post.length; i++) {
     if (resJson.post[i].image != '') {
       const li = document.createElement('li'),
@@ -55,11 +55,14 @@ function createGridFedd(resJson) {
       btnGrid.appendChild(imgGrid);
 
       btnGrid.setAttribute('type', 'button');
+      btnGrid.setAttribute('id', 'goDetailPost');
+      btnGrid.setAttribute('postid', resJson.post[i].id);
       imgGrid.setAttribute('src', resJson.post[i].image.split(',')[0]);
       imgGrid.setAttribute('alt', '그리드 게시 사진');
       imgGrid.setAttribute('class', 'imgGrindPost');
     }
   }
+  goDetailPostPage();
 }
 
 function createPostFeed(resJson) {
@@ -240,9 +243,19 @@ function alertDelPost(json) {
   location.reload();
 }
 
-// 상품 수정 넘겨주기
+// 게시글 수정 넘겨주기
 const btnModifyPost = document.querySelector('#btnModifyPost');
 btnModifyPost.addEventListener('click', (event) => {
   location.href =
     '../pages/upload.html?id=' + event.target.getAttribute('postid');
 });
+
+// post 상세 페이지로 이동 (그리드 타입에서만 작동)
+// 안 넘어감, 이유 모름
+// const goDetailPost = document.querySelectorAll('#goDetailPost');
+// console.log(goDetailPost);
+// for (let i = 0; i < goDetailPost.length; i++) {
+//   goDetailPost[i].addEventListener('click', () => {
+//     location.href = '../pages/post.html';
+//   });
+// }
