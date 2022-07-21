@@ -1,5 +1,4 @@
 const $btnSave = document.querySelector('.btnSave');
-const $btnBack = document.querySelector('.btnBack');
 const $productForm = document.querySelector('.productForm');
 const $inputProductImg = document.querySelector('.inputProductImg');
 const $inputProductTitle = document.querySelector('.inputProductTitle');
@@ -44,7 +43,7 @@ const storeImage = async (target) => {
   formData.append('image', target.files[0]);
   try {
     const res = await fetch(url + '/image/uploadfile', {
-      method: 'PUT',
+      method: 'POST',
       body: formData,
     });
     const resJson = await res.json();
@@ -138,7 +137,7 @@ async function productData() {
           itemName: $inputProductTitle.value,
           price: parseInt($inputProductPrice.value.replaceAll(',', '')),
           link: $inputProductLink.value,
-          itemImage: $productImg.src,
+          itemImage: `${url}/${filename}`,
         },
       }),
       headers: {
@@ -172,9 +171,6 @@ const isProductTrue = () => {
 
 $productForm.addEventListener('input', handleCheckInput);
 $btnSave.addEventListener('click', productData);
-$btnBack.addEventListener('click', () => {
-  location.href = './myProfile.html';
-});
 $inputProductPrice.addEventListener('input', checkProductPrice);
 
 // prodid값 체크
