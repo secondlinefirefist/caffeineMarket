@@ -1,4 +1,5 @@
 const $btnSave = document.querySelector('.btnSave');
+const $btnBack = document.querySelector('.btnBack');
 const $productForm = document.querySelector('.productForm');
 const $inputProductImg = document.querySelector('.inputProductImg');
 const $inputProductTitle = document.querySelector('.inputProductTitle');
@@ -20,7 +21,7 @@ const imgPreView = async (event) => {
   };
   reader.readAsDataURL(event.target.files[0]);
   filename = await storeImage(event.target); // 리턴 받은 파일명을 filename에 저장
-  console.log(event.target.files[0])
+  console.log(event.target.files[0]);
 };
 
 // 이미지 POST요청
@@ -104,7 +105,7 @@ async function productData() {
           itemName: $inputProductTitle.value,
           price: parseInt($inputProductPrice.value.replaceAll(',', '')),
           link: $inputProductLink.value,
-          itemImage: `${url}/${filename}`, 
+          itemImage: `${url}/${filename}`,
         },
       }),
       headers: {
@@ -132,9 +133,9 @@ const isProductTrue = () => {
   location.href = './myProfile.html';
 };
 
-// 상품등록 실패시 알림문구 출력
-
 $productForm.addEventListener('input', handleCheckInput);
 $btnSave.addEventListener('click', productData);
+$btnBack.addEventListener('click', () => {
+  location.href = './myProfile.html';
+});
 $inputProductPrice.addEventListener('input', checkProductPrice);
-
