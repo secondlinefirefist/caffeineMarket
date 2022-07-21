@@ -254,8 +254,10 @@ btnModifyPost.addEventListener('click', (event) => {
 // 안 넘어감, 이유 모름
 // const goDetailPost = document.querySelectorAll('#goDetailPost');
 // console.log(goDetailPost);
-// for (let i = 0; i < goDetailPost.length; i++) {
-//   goDetailPost[i].addEventListener('click', () => {
-//     location.href = '../pages/post.html';
-//   });
+// function goDetailPostPage() {
+//   for (let i = 0; i < goDetailPost.length; i++) {
+//     goDetailPost[i].addEventListener('click', (event) => {
+//       location.href = '../pages/post.html';
+//     });
+//   }
 // }
