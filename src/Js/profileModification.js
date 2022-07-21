@@ -14,6 +14,10 @@ const regexp = /[0-9a-zA-Z._]/g;
 
 const url = 'https://mandarin.api.weniv.co.kr';
 
+let checkUserNamInput = false;
+let checkUserIdInput = false;
+let checkIntroIdInput = false;
+
 //프로필 수정 요청
 async function modifiaction() {
   try {
@@ -83,28 +87,43 @@ function saveData(resJson) {
 function userIdErrorMessage(resJson) {
   if (resJson.message === '이미 가입된 계정ID 입니다.') {
     $duplicateErrorMessage.classList.remove('display-none');
+    checkUserIdInput = false;
+    showButton();
   } else {
     $duplicateErrorMessage.classList.add('display-none');
   }
 }
 
-let checkUserNamInput = false;
-let checkUserIdInput = false;
-let checkIntroIdInput = false;
-
 const checkUserNamInputValue = (event) => {
   event.target.value !== ''
     ? (checkUserNamInput = true)
     : (checkUserNamInput = false);
+  showButton();
 };
 
 const checkUserIdInputValue = (event) => {
   event.target.value !== ''
     ? (checkUserIdInput = true)
     : (checkUserIdInput = false);
-  userIdRegErrorMessage(event);
+  showButton();
 };
 
+const introInputValue = (event) => {
+  event.target.value !== ''
+    ? (checkIntroIdInput = true)
+    : (checkIntroIdInput = false);
+  showButton();
+};
+
+const showButton = () => {
+  checkUserNamInput &&
+  checkUserIdInput &&
+  checkIntroIdInput &&
+  $RegErrorMessage.classList.contains('display-none') &&
+  $duplicateErrorMessage.classList.contains('display-none')
+    ? $profileSaveButton.classList.add('focus')
+    : $profileSaveButton.classList.remove('focus');
+};
 //아이디 정규식 오류 메시지 출력
 function userIdRegErrorMessage(event) {
   if (!regexp.test(event.target.value)) {
@@ -138,3 +157,5 @@ $profileSaveButton.addEventListener('click', modifiaction);
 $userNameInput.addEventListener('input', checkUserNamInputValue);
 $userIdInput.addEventListener('input', checkUserIdInputValue);
 $userIdInput.addEventListener('input', userIdValid);
+
+$introInput.addEventListener('input', introInputValue);

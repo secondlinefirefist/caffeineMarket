@@ -15,8 +15,13 @@ padding: 13px;
     width: 90px;
     height: 32px;
     line-height: 32px;
-    background-color: #F26E22;
+    background-color: #ffc7a7;
     color: #fff;
     margin: auto 0;
     border-radius: 32px;
 }
+
+.btnSave.focus {
+    background-color: #f26e22;
+    cursor: pointer;
+  }
