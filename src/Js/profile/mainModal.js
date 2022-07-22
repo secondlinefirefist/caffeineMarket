@@ -47,26 +47,3 @@ btnOkLogout.addEventListener('click', () => {
   location.href = '../pages/splash.html';
   localStorage.clear();
 });
-
-// /*포스트 게시글 설정 모달*/
-// const btnPostSetting = document.querySelector('#btnPostSetting');
-// const postModal = document.querySelector('.postModal');
-// btnPostSetting.addEventListener('click', (event) => {
-//   event.stopPropagation();
-//   btnPostSetting.focus();
-//   postModal.classList.toggle('displayModal');
-// });
-// document.querySelector('main').addEventListener('click', (event) => {
-//   postModal.classList.remove('displayModal');
-// });
-// /*포스트 게시글 삭제 확인 모달*/
-// const btnDelPost = document.querySelector('#btnDelPost');
-// const subDelPostModal = document.querySelector('#subDelPostModal');
-// const btnCancelDel = document.querySelector('.btnCancelDel');
-// btnDelPost.addEventListener('click', () => {
-//   subDelPostModal.classList.add('displayModal');
-// });
-// /*게시글 삭제 취소 버튼 기능*/
-// btnCancelDel.addEventListener('click', () => {
-//   subDelPostModal.classList.remove('displayModal');
-// });
