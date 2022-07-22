@@ -60,18 +60,18 @@ JavaScript
    - 게시글 API
 
 ### 👨🏻‍🚒 채지훈
-1) 상품등록 (product)
+#### 1) 상품등록 (product)
 
 - 이미지 업로드 기능 구현
 - 상품 데이터 POST 요청
 
-2) 상품수정(productModification)
+#### 2) 상품수정(productModification)
 
 - 이미지 업로드 기능 구현
 - 상품 데이터 GET요청
 - 상품 데이터 PUT요청
 
-3) 채팅방(charRoom) 
+#### 3) 채팅방(charRoom) 
 
 - 채팅 입력후 전송 버튼 클릭시 채팅창에 렌더링
 - 이미지 업로드 시 채팅창에 렌더링
