@@ -9,13 +9,22 @@
       },
     });
     const resJson = await res.json();
-    console.log(resJson, 'resjson');
+    showSwitchProduct(resJson);
+    console.log(resJson, '상품목록');
     prodcutListDummy = resJson.product;
     createProductList(prodcutListDummy);
   } catch {
     console.error('ERROR!');
   }
 })();
+
+// 상품 품목 없으면 상품 마크업 아예 안 보이기
+const contSale = document.querySelector('.contSale');
+function showSwitchProduct(resJson) {
+  if (resJson.data == 0) {
+    contSale.style.display = 'none';
+  }
+}
 
 //판매 상품 리스트 생성
 const productList = document.querySelector('.productList');
@@ -101,7 +110,6 @@ openCheckDelProductModal();
 //상품 삭제
 async function delProduct() {
   const productId = btnDelProduct.getAttribute('dataId');
-  // const productId = prodcutListDummy[0].id;
   try {
     const res = await fetch(url + '/product/' + productId, {
       method: 'DELETE',
