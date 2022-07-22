@@ -301,6 +301,14 @@ footer {
   object-fit: contain;
 }
 
+.btnGridTypeOn {
+  filter: invert(0.5);
+}
+
+.btnListTypeOn {
+  filter: invert(0.5);
+}
+
 /*목차형 게시글*/
 .postIndexList {
   width: 346px;
@@ -400,14 +408,6 @@ footer {
   background-image: url(../img/icon/icon-message-circle-fill.png);
   background-position: center;
   background-size: 15px;
-}
-
-.contPost .postType .listType {
-  filter: invert(0.5);
-}
-
-.contPost .postType .gridType {
-  filter: invert(0.5);
 }
 
 .postTypeHide {
