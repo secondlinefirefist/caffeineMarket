@@ -14,11 +14,9 @@
         <div class="wrapHeaderNav">
           <h1 class="ir">감귤마켓 채팅 리스트 페이지입니다</h1>
           <div class="leftBar">
-            <button type="button">
-            <a href="./home.html" class="btnBack">
+            <button type="button" class="btnBack">
               <img src="../img/icon/icon-arrow-left.png" alt="뒤로가기" />
-            </a>
-          </button>
+            </button>
           </div>
           <button type="button" class="btnSetting">
             <img src="../img/icon-more-vertical.png" alt="설정으로가기" />
@@ -99,8 +97,12 @@
     </div>
     <script>
       document.querySelector('.userContent').addEventListener('click', () => {
-        location.href = './chatRoom.html'
-      })
+        location.href = './chatRoom.html';
+      });
+
+      document.querySelector('.btnBack').addEventListener('click', () => {
+        location.href = './home.html';
+      });
     </script>
   </body>
 </html>
