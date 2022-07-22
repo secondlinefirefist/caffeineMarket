@@ -30,11 +30,15 @@ const postGridList = document.querySelector('.postGridList');
 
 //그리드 타입 변환
 // 그리드 타입 보기
+const btnGridTypeImg = document.querySelector('#btnGridTypeImg');
+const btnListTypeImg = document.querySelector('#btnListTypeImg');
 const gridType = document.querySelector('.gridType');
 gridType.addEventListener('click', () => {
   postIndexList.classList.add('postTypeHide');
   postGridList.classList.add('postGridShow');
   postGridList.classList.remove('postGridList');
+  btnGridTypeImg.classList.add('btnGridTypeOn');
+  btnListTypeImg.classList.remove('btnListTypeOn');
 });
 // 리스트 타입 피드 보기
 const listType = document.querySelector('.listType');
@@ -42,6 +46,8 @@ listType.addEventListener('click', () => {
   postIndexList.classList.remove('postTypeHide');
   postGridList.classList.remove('postGridShow');
   postGridList.classList.add('postGridList');
+  btnGridTypeImg.classList.remove('btnGridTypeOn');
+  btnListTypeImg.classList.add('btnListTypeOn');
 });
 
 function createGridFeed(resJson) {
