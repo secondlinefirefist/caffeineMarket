@@ -83,7 +83,6 @@ function onProductSettingModal() {
         'datalink',
         event.currentTarget.getAttribute('data-link')
       );
-      console.log(event.currentTarget);
     });
   }
   document.querySelector('main').addEventListener('click', () => {
@@ -126,12 +125,12 @@ async function delProduct() {
   }
 }
 
+// 상품 삭제 예외 처리
 function okDelProducItem(json) {
   if (json.message == '등록된 상품이 없습니다.') {
     alert(json.message);
-  }
-  if (json.message == '잘못된 요청입니다. 로그인 정보를 확인하세요.') {
-    alert(json.message);
+  } else if (accountname != myAccountname) {
+    alert('잘못된 요청입니다. 로그인 정보를 확인하세요.');
   }
   location.reload();
 }
