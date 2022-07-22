@@ -43,7 +43,7 @@ const storeImage = async (target) => {
   formData.append('image', target.files[0]);
   try {
     const res = await fetch(url + '/image/uploadfile', {
-      method: 'POST',
+      method: 'PUT',
       body: formData,
     });
     const resJson = await res.json();
@@ -137,7 +137,7 @@ async function productData() {
           itemName: $inputProductTitle.value,
           price: parseInt($inputProductPrice.value.replaceAll(',', '')),
           link: $inputProductLink.value,
-          itemImage: `${url}/${filename}`,
+          itemImage: $productImg.src,
         },
       }),
       headers: {
