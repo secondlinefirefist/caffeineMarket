@@ -130,7 +130,7 @@ function okDelProducItem(json) {
   if (json.message == '등록된 상품이 없습니다.') {
     alert(json.message);
   } else if (accountname != myAccountname) {
-    alert('잘못된 요청입니다. 로그인 정보를 확인하세요.');
+    alert('잘못된 접근입니다. 계정을 확인해주세요🔥');
   }
   location.reload();
 }

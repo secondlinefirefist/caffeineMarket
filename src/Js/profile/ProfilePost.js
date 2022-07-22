@@ -242,9 +242,8 @@ btnOkDelPost.addEventListener('click', confirmDelPost);
 function alertDelPost(json) {
   if (json.message == '존재하지 않는 게시글입니다.') {
     alert(json.message);
-  }
-  if (json.message == '잘못된 요청입니다. 로그인 정보를 확인하세요.') {
-    alert(json.message);
+  } else if (accountname != myAccountname) {
+    alert('잘못된 접근입니다. 계정을 확인해주세요🔥');
   }
   location.reload();
 }
