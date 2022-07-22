@@ -20,6 +20,8 @@ const setProductData = (resJson) => {
     .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   $inputProductLink.value = resJson.link;
 
+  filename = resJson.itemImage; //가져온 이미지 주소 filename에 할당
+
   if ($productImg.src) {
     $productImg.style.display = 'block';
   }
@@ -43,11 +45,12 @@ const storeImage = async (target) => {
   formData.append('image', target.files[0]);
   try {
     const res = await fetch(url + '/image/uploadfile', {
-      method: 'PUT',
+      method: 'POST',
       body: formData,
     });
     const resJson = await res.json();
-    return resJson.filename;
+    console.log(resJson);
+    return `${url}/${resJson.filename}`;
   } catch (err) {
     console.error(err);
   }
@@ -137,7 +140,7 @@ async function productData() {
           itemName: $inputProductTitle.value,
           price: parseInt($inputProductPrice.value.replaceAll(',', '')),
           link: $inputProductLink.value,
-          itemImage: $productImg.src,
+          itemImage: filename,
         },
       }),
       headers: {
