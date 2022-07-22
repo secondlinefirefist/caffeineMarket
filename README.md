@@ -69,11 +69,11 @@ JavaScript
 - 유저 정보 API GET 
 - 상품 리스트 API GET, DELETE
 - 게시글 리스트 API GET, DELETE
-- 공용 및 프로필 모달 제작 및 기능 구현
+- 공용 및 프로필 모달  기능 구현
 - 로그아웃 기능 구현
 
 #### 2) follwing & follower (진행중)
-- 팔로잉/ 팔로우 리스트 보여주기
+- 팔로잉/ 팔로우 API GET, DELETE, POST
 - 팔로우 버튼 누르면 숫자 증가  
 - 팔로우 취소 버튼 누르면 숫자 감소
 
