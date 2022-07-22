@@ -45,11 +45,12 @@ function handleFiles(files) {
   uploadBtn.addEventListener('click', async () => {
     await filesArray.forEach(async (f) => {
       const filename = await imgUpload(f);
-      urls.push(`${url}/${filename}`);
+      console.log(filename);
+      urls.push(`${urls}/${filename}`);
     });
-
     postUpload(urls);
-    window.location.href = './myProfile.html';
+    // window.location.href = './myProfile.html';
+    console.log(token);
   });
 }
 // textArea 자동 줄 채우기
@@ -70,7 +71,7 @@ async function imgUpload(file) {
     });
 
     const data = await res.json();
-
+    console.log(data);
     return data[0].filename;
   } catch (err) {
     console.log(err);
