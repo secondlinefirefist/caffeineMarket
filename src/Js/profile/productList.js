@@ -15,6 +15,7 @@
     createProductList(prodcutListDummy);
   } catch {
     console.error('ERROR!');
+    location.href = '../pages/page404.html';
   }
 })();
 
@@ -121,6 +122,7 @@ async function delProduct() {
     okDelProducItem(json);
   } catch {
     console.error('ERROR!');
+    location.href = '../pages/page404.html';
   }
 }
 

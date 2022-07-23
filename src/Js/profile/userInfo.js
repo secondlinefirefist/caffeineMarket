@@ -21,6 +21,7 @@ async function infoUser() {
     }
   } catch {
     console.error('ERROR!');
+    location.href = '../pages/page404.html';
   }
 }
 infoUser();

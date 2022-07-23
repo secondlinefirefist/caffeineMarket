@@ -24,6 +24,7 @@ async function followListData() {
       showfollowingList(resJson);
     }
   } catch {
+    location.href = '../pages/page404.html';
     console.error('ERROR');
   }
 }
@@ -114,6 +115,7 @@ async function clickUnFollow(followUserData, followState, targetButton) {
       targetButton.classList.remove('btnFollow');
       targetButton.textContent = '팔로우';
     } catch {
+      location.href = '../pages/page404.html';
       console.error('ERROR');
     }
   }
@@ -141,6 +143,7 @@ async function clickFollow(followUserData, followState, targetButton) {
       targetButton.classList.remove('btnUnfollow');
       targetButton.textContent = '취소';
     } catch {
+      location.href = '../pages/page404.html';
       console.error('ERROR');
     }
   }
