@@ -43,7 +43,7 @@ function showfollowingList(resJson) {
 
     followersList.append(li);
     li.append(link, txtWrap, button);
-    link.append(imgWrap);
+    link.append(imgWrap, txtWrap);
     imgWrap.append(img);
     txtWrap.append(strong, p);
     link.setAttribute(
