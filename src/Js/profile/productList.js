@@ -37,6 +37,7 @@ function createProductList() {
     const img = document.createElement('img');
     const span = document.createElement('span');
     const strong = document.createElement('strong');
+
     productList.appendChild(li);
     li.appendChild(button);
     li.setAttribute('data-id', `${prodcutListDummy[i].id}`);
