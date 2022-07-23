@@ -96,7 +96,10 @@ function followingData(resJson) {
 //언팔로우하기
 async function clickUnFollow(followUserData, followState, targetButton) {
   let userAccountName = followUserData.accountname;
-  if (followState == 'true' && targetButton.classList.contains('btnFollow')) {
+  if (
+    (followState == 'true' && targetButton.classList.contains('btnFollow')) ||
+    (followState == 'false' && targetButton.classList.contains('btnFollow'))
+  ) {
     try {
       const res = await fetch(
         url + '/profile/' + userAccountName + '/unfollow',

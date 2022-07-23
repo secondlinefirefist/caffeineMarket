@@ -402,8 +402,8 @@ footer {
 }
 
 .activeBtnLike {
-  background-image: url(../img/icon/icon-heart-active.png);
-  background-position: center;
+  background: url(../img/icon/icon-heart-active.png) center no-repeat;
+  margin: -10px;
   background-size: 15px;
 }
 
