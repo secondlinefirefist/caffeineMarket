@@ -18,6 +18,7 @@
     }
     createPostFeed(resJson);
     createGridFeed(resJson);
+    clickLike(resJson);
   } catch {
     console.error('ERROR');
   }
@@ -154,9 +155,14 @@ function createPostFeed(resJson) {
 
     wrapReaction.setAttribute('class', 'wrapBtnReaction');
     likeBtn.setAttribute('type', 'button');
+    likeBtn.setAttribute('id', 'likeBtn');
+    likeBtn.setAttribute('likeid', resJson.post[i].id);
     likeImage.setAttribute('src', '../img/icon/icon-heart.png');
     likeImage.setAttribute('alt', '좋아요 버튼');
-    likeImage.setAttribute('id', 'btnLike');
+    if (resJson.post[i].hearted == 'true') {
+      likeImage.setAttribute('class', 'activeBtnLike');
+    }
+    likeImage.setAttribute('id', 'btnLikeImg');
     likeNumber.setAttribute('id', 'numLike');
     likeNumber.textContent = resJson.post[i].heartCount;
 
@@ -263,5 +269,61 @@ function goPostDetailPage() {
       location.href =
         '../pages/post.html?id=' + event.currentTarget.getAttribute('postid');
     });
+  }
+}
+
+//좋아요 누르기
+function clickLike(resJson) {
+  let likeBtn = document.querySelectorAll('#likeBtn');
+  let btnLikeImg = document.querySelectorAll('#btnLikeImg');
+  for (let i = 0; i < likeBtn.length; i++) {
+    likeBtn[i].addEventListener('click', (event) => {
+      let likeId = event.currentTarget.getAttribute('likeid');
+      let heartState = resJson.post[i].hearted;
+      let likeBtnClass = btnLikeImg[i].getAttribute('class');
+      // console.log(likeBtnClass);
+      if (!likeBtnClass || heartState == 'false') {
+        onLikePost(likeId, heartState);
+        btnLikeImg[i].classList.add('activeBtnLike');
+      }
+      if ((likeBtnClass != '' && heartState == 'false') || likeBtnClass) {
+        cancleLikePost(likeId, heartState, likeBtnClass);
+        btnLikeImg[i].classList.remove('activeBtnLike');
+      }
+    });
+  }
+}
+
+//좋아요
+async function onLikePost(likeId, heartState, likeBtnClass) {
+  try {
+    const res = await fetch(url + '/post/' + likeId + '/heart', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
+      },
+    });
+    const likeJson = await res.json();
+    console.log(likeJson, '💜');
+  } catch {
+    console.error('ERROR');
+  }
+}
+
+//좋아요 취소
+async function cancleLikePost(likeId, heartState, likeBtnClass) {
+  try {
+    const res = await fetch(url + '/post/' + likeId + '/unheart', {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
+      },
+    });
+    const likeJson = await res.json();
+    console.log('💜취소', likeJson);
+  } catch {
+    console.error('ERROR');
   }
 }
