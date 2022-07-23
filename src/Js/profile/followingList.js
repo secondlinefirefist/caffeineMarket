@@ -25,6 +25,7 @@ async function followListData() {
     }
   } catch {
     console.error('ERROR');
+    location.href = '../pages/page404.html';
   }
 }
 followListData();
@@ -115,6 +116,7 @@ async function clickUnFollow(followUserData, followState, targetButton) {
       targetButton.textContent = '팔로우';
     } catch {
       console.error('ERROR');
+      location.href = '../pages/page404.html';
     }
   }
 }
@@ -142,6 +144,7 @@ async function clickFollow(followUserData, followState, targetButton) {
       targetButton.textContent = '취소';
     } catch {
       console.error('ERROR');
+      location.href = '../pages/page404.html';
     }
   }
 }
