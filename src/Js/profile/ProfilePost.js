@@ -21,6 +21,7 @@
     clickLike(resJson);
   } catch {
     console.error('ERROR');
+    // location.href = '../pages/page404.html';
   }
 })();
 
@@ -240,6 +241,7 @@ async function confirmDelPost() {
     alertDelPost(json);
   } catch {
     console.error('ERROR!');
+    // location.href = '../pages/page404.html';
   }
 }
 btnOkDelPost.addEventListener('click', confirmDelPost);

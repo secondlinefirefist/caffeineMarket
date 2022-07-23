@@ -50,14 +50,17 @@ footer {
 }
 
 .contProfile {
-  width: 270px;
+  width: 390px;
   box-sizing: border-box;
   margin: 0 auto;
+  border-bottom: 1px solid #dbdbdb;
 }
 
 /* 프로필 사진, follower */
 .userInfo {
   display: flex;
+  width: 270px;
+  margin: 0 auto;
   justify-content: center;
   padding-top: 56px;
 }
@@ -200,7 +203,6 @@ footer {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  border-top: 1px solid #dbdbdb;
 }
 
 .contSale h1 {

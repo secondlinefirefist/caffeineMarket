@@ -25,6 +25,7 @@ async function followListData() {
     }
   } catch {
     console.error('ERROR');
+    location.href = '../pages/page404.html';
   }
 }
 followListData();
@@ -43,7 +44,7 @@ function showfollowingList(resJson) {
 
     followersList.append(li);
     li.append(link, txtWrap, button);
-    link.append(imgWrap);
+    link.append(imgWrap, txtWrap);
     imgWrap.append(img);
     txtWrap.append(strong, p);
     link.setAttribute(
@@ -66,9 +67,11 @@ function showfollowingList(resJson) {
     button.setAttribute('isfollow', resJson[i].isfollow);
     if (button.getAttribute('isfollow') == 'true') {
       button.setAttribute('class', 'btnFollow');
+      button.setAttribute('id', 'btnSelectFollow');
       button.textContent = '취소';
     } else if (button.getAttribute('isfollow') == 'false') {
       button.setAttribute('class', 'btnUnfollow');
+      button.setAttribute('id', 'btnSelectFollow');
       button.textContent = '팔로우';
     }
   }
@@ -77,11 +80,10 @@ function showfollowingList(resJson) {
 
 //팔로우 & 언팔로에 필요한 매개변수값들 넘겨주기
 function followingData(resJson) {
-  console.log(resJson, '언팔로우 함수 내부입니다');
-  let btnFollow = document.querySelectorAll('.btnFollow');
-  for (let i = 0; i < btnFollow.length; i++) {
-    btnFollow[i].addEventListener('click', (event) => {
-      console.log(resJson[i].accountname);
+  let btnSelectFollow = document.querySelectorAll('#btnSelectFollow');
+  for (let i = 0; i < btnSelectFollow.length; i++) {
+    btnSelectFollow[i].addEventListener('click', (event) => {
+      // console.log(resJson[i].accountname);
       let followUserData = resJson[i];
       let followState = event.currentTarget.getAttribute('isfollow');
       let targetButton = event.currentTarget;
@@ -108,11 +110,13 @@ async function clickUnFollow(followUserData, followState, targetButton) {
         }
       );
       const resJson = await res.json();
+      console.log('언팔로우됨');
       targetButton.classList.add('btnUnfollow');
       targetButton.classList.remove('btnFollow');
       targetButton.textContent = '팔로우';
     } catch {
       console.error('ERROR');
+      location.href = '../pages/page404.html';
     }
   }
 }
@@ -121,8 +125,8 @@ async function clickUnFollow(followUserData, followState, targetButton) {
 async function clickFollow(followUserData, followState, targetButton) {
   let userAccountName = followUserData.accountname;
   if (
-    (followState == 'false' && targetButton.classList.contains('btnFollow')) ||
-    (followState == 'true' && targetButton.classList.contains('btnUnfollow'))
+    followState === 'false' ||
+    (followState === 'true' && targetButton.classList.contains('btnUnfollow'))
   ) {
     try {
       const res = await fetch(url + '/profile/' + userAccountName + '/follow', {
@@ -133,13 +137,14 @@ async function clickFollow(followUserData, followState, targetButton) {
           'Content-type': 'application/json',
         },
       });
-      console.log('왜 왜 왜!!!!!!!!!🐰');
+      console.log('왜 왜 왜!!!!!!!!!🐰 팔로우됨');
       const resJson = await res.json();
       targetButton.classList.add('btnFollow');
       targetButton.classList.remove('btnUnfollow');
       targetButton.textContent = '취소';
     } catch {
       console.error('ERROR');
+      location.href = '../pages/page404.html';
     }
   }
 }
