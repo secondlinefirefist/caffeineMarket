@@ -284,11 +284,14 @@ function clickLike(resJson) {
       let heartState = resJson.post[i].hearted;
       let likeBtnClass = btnLikeImg[i].getAttribute('class');
       // console.log(likeBtnClass);
-      if (!likeBtnClass || heartState == 'false') {
+      if (heartState == 'false') {
         onLikePost(likeId, heartState);
         btnLikeImg[i].classList.add('activeBtnLike');
       }
-      if ((likeBtnClass != '' && heartState == 'false') || likeBtnClass) {
+      if (
+        (likeBtnClass == '' && heartState == 'false') ||
+        heartState == 'true'
+      ) {
         cancleLikePost(likeId, heartState, likeBtnClass);
         btnLikeImg[i].classList.remove('activeBtnLike');
       }
