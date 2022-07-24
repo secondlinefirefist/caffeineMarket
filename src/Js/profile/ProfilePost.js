@@ -157,11 +157,13 @@ function createPostFeed(resJson) {
     wrapReaction.setAttribute('class', 'wrapBtnReaction');
     likeBtn.setAttribute('type', 'button');
     likeBtn.setAttribute('id', 'likeBtn');
+    likeBtn.setAttribute('hearted', resJson.post[i].hearted);
     likeBtn.setAttribute('likeid', resJson.post[i].id);
-    likeImage.setAttribute('src', '../img/icon/icon-heart.png');
     likeImage.setAttribute('alt', '좋아요 버튼');
-    if (resJson.post[i].hearted == 'true') {
-      likeImage.setAttribute('class', 'activeBtnLike');
+    if (likeBtn.getAttribute('hearted') == 'true') {
+      likeImage.setAttribute('src', '../img/icon/icon-heart-active.png');
+    } else if (likeBtn.getAttribute('hearted') == 'false') {
+      likeImage.setAttribute('src', '../img/icon/icon-heart.png');
     }
     likeImage.setAttribute('id', 'btnLikeImg');
     likeNumber.setAttribute('id', 'numLike');
@@ -274,7 +276,7 @@ function goPostDetailPage() {
   }
 }
 
-//좋아요 누르기
+//좋아요 버튼 누르기
 function clickLike(resJson) {
   let likeBtn = document.querySelectorAll('#likeBtn');
   let btnLikeImg = document.querySelectorAll('#btnLikeImg');
@@ -283,52 +285,57 @@ function clickLike(resJson) {
       let likeId = event.currentTarget.getAttribute('likeid');
       let heartState = resJson.post[i].hearted;
       let likeBtnClass = btnLikeImg[i].getAttribute('class');
-      // console.log(likeBtnClass);
-      if (heartState == 'false') {
-        onLikePost(likeId, heartState);
-        btnLikeImg[i].classList.add('activeBtnLike');
-      }
-      if (
-        (likeBtnClass == '' && heartState == 'false') ||
-        heartState == 'true'
-      ) {
-        cancleLikePost(likeId, heartState, likeBtnClass);
-        btnLikeImg[i].classList.remove('activeBtnLike');
-      }
+      let likeTarget = event.currentTarget.firstElementChild;
+      console.log(likeBtnClass, likeTarget);
+
+      onLikePost(likeId, heartState, likeBtnClass, likeTarget);
+      cancleLikePost(likeId, heartState, likeBtnClass, likeTarget);
     });
   }
 }
 
-//좋아요
-async function onLikePost(likeId, heartState, likeBtnClass) {
-  try {
-    const res = await fetch(url + '/post/' + likeId + '/heart', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
-        'Content-type': 'application/json',
-      },
-    });
-    const likeJson = await res.json();
-    console.log(likeJson, '💜');
-  } catch {
-    console.error('ERROR');
+//좋아요 활성
+async function onLikePost(likeId, heartState, likeBtnClass, likeTarget) {
+  if (
+    heartState == 'false' ||
+    likeBtnClass == null ||
+    (heartState == 'true' && !likeBtnClass)
+  ) {
+    try {
+      const res = await fetch(url + '/post/' + likeId + '/heart', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Content-type': 'application/json',
+        },
+      });
+      const likeJson = await res.json();
+      console.log('💜');
+      likeTarget.classList.add('activeBtnLike');
+      likeTarget.classList.remove('activeBtnLikeOff');
+    } catch {
+      console.error('ERROR');
+    }
   }
 }
 
 //좋아요 취소
-async function cancleLikePost(likeId, heartState, likeBtnClass) {
-  try {
-    const res = await fetch(url + '/post/' + likeId + '/unheart', {
-      method: 'DELETE',
-      headers: {
-        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
-        'Content-type': 'application/json',
-      },
-    });
-    const likeJson = await res.json();
-    console.log('💜취소', likeJson);
-  } catch {
-    console.error('ERROR');
+async function cancleLikePost(likeId, heartState, likeBtnClass, likeTarget) {
+  if (heartState == 'true' || likeBtnClass == 'activeBtnLike') {
+    try {
+      const res = await fetch(url + '/post/' + likeId + '/unheart', {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Content-type': 'application/json',
+        },
+      });
+      const likeJson = await res.json();
+      console.log('💜취소');
+      likeTarget.classList.add('activeBtnLikeOff');
+      likeTarget.classList.remove('activeBtnLike');
+    } catch {
+      console.error('ERROR');
+    }
   }
 }

@@ -416,7 +416,11 @@ footer {
 
 .activeBtnLike {
   background: url(../img/icon/icon-heart-active.png) center no-repeat;
-  margin: -10px;
+  background-size: 15px;
+}
+
+.activeBtnLikeOff {
+  background: url(../img/icon/icon-heart.png) center no-repeat;
   background-size: 15px;
 }
 
