@@ -6,6 +6,13 @@ const $chatRoom = document.querySelector('.chatRoom');
 const $mainModal = document.querySelector('.mainModal');
 const $btnModalClose = document.querySelector('.btnModalClose');
 
+// login flag
+const isLogin = localStorage.token;
+
+// 비 로그인 상태로 접근할 경우 splash로 이동
+if (!isLogin) {
+  location.href = './splash.html';
+}
 
 // 메시지 입력시 true 반환
 const checkMessage = () => {
@@ -50,7 +57,7 @@ const imgPreView = (event) => {
     $chatRoom.innerHTML += ` 
     <li class="chatContent myChatContent">
     <strong class="chatTime">${time}</strong>
-    <img src=${event.target.result} alt="" class="chatImg" />
+    <img src=${event.target.result} alt="업로드 이미지" class="chatImg" />
     </li>`;
   };
   reader.readAsDataURL(event.target.files[0]);
@@ -71,8 +78,9 @@ $inputChatText.addEventListener('input', handleCheckMessage);
 $btnTextSubmit.addEventListener('click', handleTextSend);
 $btnModalClose.addEventListener('click', closeModal);
 
-
-
 document.querySelector('.btnBack').addEventListener('click', () => {
-  location.href ='./chatList.html'
+  location.href = './chatList.html';
 });
+
+// WebSocket 접속
+const socket = io();
