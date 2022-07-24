@@ -86,7 +86,7 @@ JavaScript
 - 공용 및 프로필 모달  기능 구현
 - 로그아웃 기능 구현
 
-#### 2) follwing & follower (진행중)
+#### 2) follwing & follower
 - 팔로잉/ 팔로우 API GET, DELETE, POST
 - 팔로우 버튼 누르면 숫자 증가  
 - 팔로우 취소 버튼 누르면 숫자 감소
