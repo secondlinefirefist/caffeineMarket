@@ -336,6 +336,9 @@ footer {
 
 .postIndexList li .imgPostProfile {
   width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .postIndexCont {

@@ -19,7 +19,7 @@ async function infoUser() {
     showYourProfileButton(resJson);
   } catch {
     console.error('ERROR!');
-    // location.href = '../pages/page404.html';
+    location.href = '../pages/page404.html';
   }
 }
 infoUser();
@@ -67,8 +67,9 @@ function showYourProfileButton(resJson) {
     btnShare.setAttribute('type', 'button');
     imgShare.setAttribute('src', '../img/icon/icon-share.png');
     imgShare.setAttribute('alt', '공유하기');
+
+    followDataFunc();
   }
-  followDataFunc();
 }
 
 // 팔로우 & 언팔로우 매개변수
@@ -110,7 +111,7 @@ async function clickUserInfoFollowBtn(
       const resJson = await res.json();
     } catch {
       console.error('ERROR');
-      // location.href = '../pages/page404.html';
+      location.href = '../pages/page404.html';
     }
 }
 // 언팔로우
