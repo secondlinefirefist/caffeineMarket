@@ -16,49 +16,135 @@ async function infoUser() {
     const resJson = await res.json();
     console.log(resJson);
     infoUserProfile(resJson);
-    if (accountname != myAccountname) {
-      showYourProfileButton();
-    }
+    showYourProfileButton(resJson);
   } catch {
     console.error('ERROR!');
-    location.href = '../pages/page404.html';
+    // location.href = '../pages/page404.html';
   }
 }
 infoUser();
 
-//
+// yourProfile 버튼 생성
 const contProfile = document.querySelector('.contProfile');
-function showYourProfileButton() {
-  userSettings.classList.add('userSettingsHide');
-  const userFollowSection = document.createElement('section'),
-    sectionName = document.createElement('h2'),
-    btnKakao = document.createElement('button'),
-    imgKakao = document.createElement('img'),
-    btnFollow = document.createElement('button'),
-    btnShare = document.createElement('button'),
-    imgShare = document.createElement('img');
+function showYourProfileButton(resJson) {
+  if (accountname != myAccountname) {
+    userSettings.classList.add('userSettingsHide');
+    const userFollowSection = document.createElement('section'),
+      sectionName = document.createElement('h2'),
+      btnKakao = document.createElement('button'),
+      imgKakao = document.createElement('img'),
+      btnFollow = document.createElement('button'),
+      btnShare = document.createElement('button'),
+      imgShare = document.createElement('img');
 
-  contProfile.append(userFollowSection);
-  userFollowSection.append(sectionName, btnKakao, btnFollow, btnShare);
-  btnKakao.appendChild(imgKakao);
-  btnShare.appendChild(imgShare);
+    contProfile.append(userFollowSection);
+    userFollowSection.append(sectionName, btnKakao, btnFollow, btnShare);
+    btnKakao.appendChild(imgKakao);
+    btnShare.appendChild(imgShare);
 
-  userFollowSection.setAttribute('class', 'userSns');
-  sectionName.setAttribute('class', 'ir');
-  btnKakao.setAttribute('class', 'btnKakao');
-  btnKakao.setAttribute('type', 'button');
-  imgKakao.setAttribute('src', '../img/message-circle.png');
-  imgKakao.setAttribute('alt', '카카오');
+    userFollowSection.setAttribute('class', 'userSns');
+    sectionName.setAttribute('class', 'ir');
+    btnKakao.setAttribute('class', 'btnKakao');
+    btnKakao.setAttribute('type', 'button');
+    imgKakao.setAttribute('src', '../img/message-circle.png');
+    imgKakao.setAttribute('alt', '카카오');
 
-  btnFollow.setAttribute('class', 'btnFollow');
-  btnFollow.setAttribute('type', 'button');
-  btnFollow.textContent = '언팔로우';
+    btnFollow.setAttribute('isfollow', resJson.profile.isfollow);
+    btnFollow.setAttribute('id', 'userInfoFollowBtn');
 
-  btnShare.setAttribute('class', 'btnShare');
-  btnShare.setAttribute('type', 'button');
-  imgShare.setAttribute('src', '../img/icon/icon-share.png');
-  imgShare.setAttribute('alt', '공유하기');
+    if (btnFollow.getAttribute('isfollow') == 'true') {
+      console.log(resJson.profile.isfollow);
+      btnFollow.setAttribute('class', 'btnFollowUser');
+      btnFollow.setAttribute('type', 'button');
+      btnFollow.textContent = '언팔로우';
+    } else if (btnFollow.getAttribute('isfollow') == 'false') {
+      btnFollow.setAttribute('class', 'btnUnFollowUser');
+      btnFollow.setAttribute('type', 'button');
+      btnFollow.textContent = '팔로우';
+    }
+
+    btnShare.setAttribute('class', 'btnShare');
+    btnShare.setAttribute('type', 'button');
+    imgShare.setAttribute('src', '../img/icon/icon-share.png');
+    imgShare.setAttribute('alt', '공유하기');
+  }
+  followDataFunc();
 }
+
+// 팔로우 & 언팔로우 매개변수
+function followDataFunc() {
+  let userInfoFollowBtn = document.querySelector('#userInfoFollowBtn');
+  console.log(userInfoFollowBtn);
+  userInfoFollowBtn.addEventListener('click', (event) => {
+    let followingState = event.currentTarget.getAttribute('isfollow');
+    let followingClass = event.currentTarget.getAttribute('class');
+    let followingTarget = event.currentTarget;
+    clickUserInfoFollowBtn(followingState, followingClass, followingTarget);
+    clickUserInfoUnFollowBtn(followingState, followingClass, followingTarget);
+  });
+}
+
+//팔로우
+async function clickUserInfoFollowBtn(
+  followingState,
+  followingClass,
+  followingTarget
+) {
+  if (
+    followingState == 'false' ||
+    (followingState == 'true' && followingClass == 'btnUnFollowUser')
+  )
+    try {
+      const res = await fetch(url + '/profile/' + accountname + '/follow', {
+        method: 'POST',
+        body: JSON.stringify(),
+        headers: {
+          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Content-type': 'application/json',
+        },
+      });
+      console.log('왜 왜 왜!!!!!!!!!🐰 팔로우됨');
+      followingTarget.classList.add('btnFollowUser');
+      followingTarget.classList.remove('btnUnFollowUser');
+      followingTarget.textContent = '언팔로우';
+      const resJson = await res.json();
+    } catch {
+      console.error('ERROR');
+      // location.href = '../pages/page404.html';
+    }
+}
+// 언팔로우
+async function clickUserInfoUnFollowBtn(
+  followingState,
+  followingClass,
+  followingTarget
+) {
+  if (
+    (followingState == 'true' && followingClass == 'btnFollowUser') ||
+    (followingState == 'false' && followingClass == 'btnFollowUser')
+  ) {
+    try {
+      const res = await fetch(url + '/profile/' + accountname + '/unfollow', {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(),
+      });
+      const resJson = await res.json();
+      console.log('언팔로우됨');
+      followingTarget.classList.add('btnUnFollowUser');
+      followingTarget.classList.remove('btnFollowUser');
+      followingTarget.textContent = '팔로우';
+    } catch {
+      console.error('ERROR');
+      location.href = '../pages/page404.html';
+    }
+  }
+}
+
+// profile 정보 GET
 const marketName = document.querySelector('.marketName');
 const followerCount = document.querySelector('.btnFollowers > strong');
 const followingCount = document.querySelector('.btnFollwings > strong');
