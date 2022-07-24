@@ -57,22 +57,22 @@ const storeImage = async (target) => {
 };
 
 // 상품명 길이 유효성 검사
-
+const PRODUCT_NAME_MAX_LENGTH = 16;
+const PRODUCT_NAME_MIN_LENGTH = 11;
 const checkProductName = () => {
   if (
-    $inputProductTitle.value.length < 16 &&
-    $inputProductTitle.value.length > 1
-  ) {
+    $inputProductTitle.value.length < PRODUCT_NAME_MAX_LENGTH &&
+    $inputProductTitle.value.length > PRODUCT_NAME_MIN_LENGTH
+  )
     return true;
-  } else {
-    return false;
-  }
+
+  return false;
 };
 
 // 상품명 1자미만 15자 초과시 error 메시지 처리
-$inputProductTitle.addEventListener('input', (event) => {
+$inputProductTitle.addEventListener('input', ({ target }) => {
   const $errProductName = document.querySelector('.errProductName');
-  if (event.target.value.length < 16 && event.target.value.length > 1) {
+  if (target.value.length < 16 && target.value.length > 1) {
     $errProductName.style.display = 'none';
   } else {
     $errProductName.style.display = 'block';

@@ -5,7 +5,7 @@ const $inputChatText = document.querySelector('.inputChatText');
 const $chatRoom = document.querySelector('.chatRoom');
 const $mainModal = document.querySelector('.mainModal');
 const $btnModalClose = document.querySelector('.btnModalClose');
-// const $wrapSubModal = document.querySelector('.wrapSubModal');
+
 
 // 메시지 입력시 true 반환
 const checkMessage = () => {
@@ -70,4 +70,9 @@ const closeModal = () => {
 $inputChatText.addEventListener('input', handleCheckMessage);
 $btnTextSubmit.addEventListener('click', handleTextSend);
 $btnModalClose.addEventListener('click', closeModal);
- 
+
+
+
+document.querySelector('.btnBack').addEventListener('click', () => {
+  location.href ='./chatList.html'
+});
