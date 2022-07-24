@@ -6,9 +6,6 @@ const $chatRoom = document.querySelector('.chatRoom');
 const $mainModal = document.querySelector('.mainModal');
 const $btnModalClose = document.querySelector('.btnModalClose');
 
-const url = 'https://mandarin.api.weniv.co.kr';
-const token = window.localStorage.getItem('token');
-const accountname = localStorage.getItem('accountname');
 // login flag
 const isLogin = localStorage.token;
 
@@ -84,7 +81,6 @@ $btnModalClose.addEventListener('click', closeModal);
 document.querySelector('.btnBack').addEventListener('click', () => {
   location.href = './chatList.html';
 });
-
 
 // WebSocket 접속
 const socket = io();
