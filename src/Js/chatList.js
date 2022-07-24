@@ -1,7 +1,11 @@
-//  팔로워 GET요청으로 불러오기 
+const url = 'https://mandarin.api.weniv.co.kr';
+const token = window.localStorage.getItem('token');
+const accountname = localStorage.getItem('accountname');
+
+//  팔로잉 유저 GET요청으로 불러오기 
 (async function chatListData() {
   try {
-    const res = await fetch(url + '/profile/' + accountname + '/follower', {
+    const res = await fetch(url + '/profile/' + accountname + '/following', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -10,12 +14,22 @@
     });
     const resJson = await res.json();
     // console.log(resJson);
-    showfollowerList(resJson);
+    showfollowingList(resJson);
   } catch {
     console.error('err');
   }
 })()
 
-const showfollowerList = (resJson) => {
+const showfollowingList = (resJson) => {
   console.log(resJson);
 }
+
+
+
+document.querySelector('.userContent').addEventListener('click', () => {
+  location.href = './chatRoom.html';
+});
+
+document.querySelector('.btnBack').addEventListener('click', () => {
+  location.href = './home.html';
+});
