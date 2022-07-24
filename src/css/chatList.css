@@ -65,6 +65,7 @@ body {
   width: 42px;
   height: 42px;
   vertical-align: -5px;
+  border-radius: 50%;
 }
 
 .chatList .chatItem {
