@@ -185,7 +185,7 @@ footer {
   background-color: white;
 }
 
-.userSns .btnFollow {
+.userSns .btnFollowUser {
   width: 120px;
   margin: 0 10px;
   border: 1px solid #dbdbdb;
@@ -193,6 +193,16 @@ footer {
   color: #767676;
   font-weight: 500;
   font-size: 14px;
+}
+
+.userSns .btnUnFollowUser {
+  width: 120px;
+  margin: 0 10px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  background-color: #f26e22;
 }
 
 /* 판매상품 */
