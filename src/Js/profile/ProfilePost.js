@@ -297,9 +297,9 @@ function clickLike(resJson) {
 //좋아요 활성
 async function onLikePost(likeId, heartState, likeBtnClass, likeTarget) {
   if (
-    heartState == 'false' ||
-    likeBtnClass == null ||
-    (heartState == 'true' && !likeBtnClass)
+    // heartState == 'false' ||
+    (likeBtnClass == null && !heartState) ||
+    likeBtnClass == 'activeBtnLikeOff'
   ) {
     try {
       const res = await fetch(url + '/post/' + likeId + '/heart', {
@@ -321,7 +321,7 @@ async function onLikePost(likeId, heartState, likeBtnClass, likeTarget) {
 
 //좋아요 취소
 async function cancleLikePost(likeId, heartState, likeBtnClass, likeTarget) {
-  if (heartState == 'true' || likeBtnClass == 'activeBtnLike') {
+  if (likeBtnClass == 'activeBtnLike' || (heartState && likeBtnClass == null)) {
     try {
       const res = await fetch(url + '/post/' + likeId + '/unheart', {
         method: 'DELETE',
@@ -334,6 +334,7 @@ async function cancleLikePost(likeId, heartState, likeBtnClass, likeTarget) {
       console.log('💜취소');
       likeTarget.classList.add('activeBtnLikeOff');
       likeTarget.classList.remove('activeBtnLike');
+      likeTarget.setAttribute('src', '../img/icon/icon-heart.png');
     } catch {
       console.error('ERROR');
     }
