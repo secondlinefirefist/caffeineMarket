@@ -6,6 +6,10 @@ const $chatRoom = document.querySelector('.chatRoom');
 const $mainModal = document.querySelector('.mainModal');
 const $btnModalClose = document.querySelector('.btnModalClose');
 
+const url = 'https://mandarin.api.weniv.co.kr';
+const token = window.localStorage.getItem('token');
+const accountname = location.search.replace('?', '').split('=')[1];
+
 // 메시지 입력시 true 반환
 const checkMessage = () => {
   if ($inputChatText.value) {
@@ -73,6 +77,30 @@ $btnModalClose.addEventListener('click', closeModal);
 document.querySelector('.btnBack').addEventListener('click', () => {
   location.href = './chatList.html';
 });
+
+//  팔로잉 유저 GET요청으로 불러오기
+(async function chatRoomData() {
+  try {
+    const res = await fetch(url + '/profile/' + accountname, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-type': 'application/json',
+      },
+    });
+    const resJson = await res.json();
+    console.log(resJson);
+    showUser(resJson);
+  } catch {
+    console.error('err');
+  }
+})();
+
+const showUser = (resJson) => {
+  const $chatUserProfile = document.querySelectorAll('.chatUserProfile');
+  for(i=0; i < $chatUserProfile.length; i ++){
+  $chatUserProfile[i].setAttribute('src', resJson.profile.image);}
+};
 
 // WebSocket 접속
 const socket = io();

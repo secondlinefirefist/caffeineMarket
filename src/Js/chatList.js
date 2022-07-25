@@ -28,37 +28,42 @@ const time = date.getMonth() + 1 + '월 ' + date.getDate() + '일';
 const showfollowingList = (resJson) => {
   console.log(resJson);
   for (let i = 0; i < resJson.length; i++) {
-    $chatList.innerHTML += `<li class="chatItem">
-    <a href="./chatRoom.html" class="linkChatRoom">
-    <div class="userContent">
-      <img
-        src=${resJson[i].image}
-        alt="유저 프로필사진"
-        class="chatProfile"
-      />
-      <div class="chatInfo">
-        <strong class="userName">${resJson[i].username}</strong>
-        <p class="userText">${resJson[i].intro}</p>
-      </div>
-    </div>
-    </a>
-    <strong class="chatDate">${time}</strong>
-  </li>`;
+    const $li = document.createElement('li'),
+      $link = document.createElement('a'),
+      $userWrap = document.createElement('div'),
+      $img = document.createElement('img'),
+      $userInfo = document.createElement('div'),
+      $chatDate = document.createElement('strong'),
+      $userName = document.createElement('strong'),
+      $p = document.createElement('p');
+
+    $chatList.append($li);
+    $li.append($link, $chatDate);
+    $link.append($userWrap);
+    $userWrap.append($img, $userInfo);
+    $userInfo.append($userName, $p);
+
+    $li.setAttribute('class', 'chatItem');
+    $link.setAttribute(
+      'href',
+      './chatRoom.html?accountname=' + resJson[i].accountname
+    );
+    $link.setAttribute('class', 'linkChatRoom');
+    $userWrap.setAttribute('class', 'userContent');
+    $img.setAttribute('src', resJson[i].image);
+    $img.setAttribute('alt', '유저 프로필 사진');
+    $img.setAttribute('class', 'chatProfile');
+    $userInfo.setAttribute('class', 'chatInfo');
+    $chatDate.setAttribute('class', 'chatDate');
+
+    $userName.setAttribute('class', 'userName');
+    $userName.textContent = resJson[i].username;
+    $p.setAttribute('class', 'userText');
+    $p.textContent = resJson[i].intro;
+    $chatDate.textContent = time;
   }
 };
 
 document.querySelector('.btnBack').addEventListener('click', () => {
   location.href = './home.html';
 });
-
-document.querySelectorAll('.userContent').addEventListener('click', () => {
-  location.href = './chatRoom.html';
-});
-
-
-//채팅 목록 클릭하여 채팅리스트로 넘어가기
-// const $userContent = document.querySelector('.userContent');
-// const goChatRoom = './chatRoom.html?accountname=' + yourAccountname;
-// $userContent.addEventListener('click', () => {
-//   location.href = goChatRoom;
-// });
