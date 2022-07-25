@@ -7,8 +7,8 @@ const $duplicateErrorMessage = document.querySelector(
   '#duplicate-error-message'
 );
 const $profileUploadButton = document.querySelector('.profile-add');
-const $profileInput = document.querySelector('#profile-input')
-const $profileCover = document.querySelector('.profile-cover')
+const $profileInput = document.querySelector('#profile-input');
+const $profileCover = document.querySelector('.profile-cover');
 
 const regexp = /[0-9a-zA-Z._]/g;
 
@@ -93,7 +93,7 @@ function userIdErrorMessage(resJson) {
 }
 
 //회원가입 정보 보내기
-async function sendSingUpdata() {
+async function sendSignUpdata() {
   const userIdResult = await userIdValid();
   if (userIdResult === '사용 가능한 계정ID 입니다.') {
     try {
@@ -124,9 +124,8 @@ async function sendSingUpdata() {
 }
 
 //프로필 이미지 버튼 클릭 시 파일 업로드 하기 아직 미구현
-function clickProfileInput (e) {
-  $profileInput.click(console.log
-    (e.target));
+function clickProfileInput(e) {
+  $profileInput.click(console.log(e.target));
 }
 
 function uploadImg(e) {
@@ -142,29 +141,26 @@ function previewProfileCover() {
   reader.readAsDataURL($profileInput.files[0]);
 }
 
-
 //이미지 불러오기
 async function resImage() {
-
   try {
-    const response = await fetch(url+"filename.png", {
-        method: "GET",
-    });t
-  
+    const response = await fetch(url + 'filename.png', {
+      method: 'GET',
+    });
+    t;
+
     const data = await response.json();
-    
-    console.log(data)
+
+    console.log(data);
   } catch (err) {
     console.error(err);
   }
 }
 
-
-
 $userNameInput.addEventListener('input', checkUserNamInputValue);
 $userIdInput.addEventListener('input', checkUserIdInputValue);
 $userIdInput.addEventListener('input', userIdValid);
 $introInput.addEventListener('input', introInputValue);
-$loginButton.addEventListener('click', sendSingUpdata);
-$profileUploadButton.addEventListener('click', uploadImg)
+$loginButton.addEventListener('click', sendSignUpdata);
+$profileUploadButton.addEventListener('click', uploadImg);
 $profileInput.addEventListener('change', previewProfileCover);
