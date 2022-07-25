@@ -311,7 +311,7 @@ footer {
 .wrapPost .postGridShow li .imgGrindPost {
   width: 100%;
   height: 114px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .btnGridTypeOn {
