@@ -274,7 +274,8 @@ function goPostDetailPage() {
   for (let i = 0; i < goDetailPost.length; i++) {
     goDetailPost[i].addEventListener('click', (event) => {
       location.href =
-        '../pages/post.html?id=' + event.currentTarget.getAttribute('postid');
+        '../pages/postDetail.html?id=' +
+        event.currentTarget.getAttribute('postid');
     });
   }
 }
