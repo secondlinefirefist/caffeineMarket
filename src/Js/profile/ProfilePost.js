@@ -1,13 +1,16 @@
 //post data 가져오기
 (async function postData() {
   try {
-    const res = await fetch(url + '/post/' + accountname + '/userpost', {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
-        'Content-type': 'application/json',
-      },
-    });
+    const res = await fetch(
+      url + '/post/' + accountname + '/userpost/?limit=100&skip=10',
+      {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Content-type': 'application/json',
+        },
+      }
+    );
     const resJson = await res.json();
     console.log(resJson, 'postData');
     if (resJson.post != '') {
