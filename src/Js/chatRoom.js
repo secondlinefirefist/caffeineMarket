@@ -90,17 +90,23 @@ document.querySelector('.btnBack').addEventListener('click', () => {
     });
     const resJson = await res.json();
     console.log(resJson);
-    showUser(resJson);
+    showUserImg(resJson);
+    showUserName(resJson);
   } catch {
     console.error('err');
   }
 })();
 
-const showUser = (resJson) => {
+// 유저 이미지 바인딩
+const showUserImg = (resJson) => {
   const $chatUserProfile = document.querySelectorAll('.chatUserProfile');
-  for(i=0; i < $chatUserProfile.length; i ++){
-  $chatUserProfile[i].setAttribute('src', resJson.profile.image);}
+  for (i = 0; i < $chatUserProfile.length; i++) {
+    $chatUserProfile[i].setAttribute('src', resJson.profile.image);
+  }
 };
 
-// WebSocket 접속
-const socket = io();
+// 유저 이름 바인딩
+const showUserName = (resJson) => {
+  const $chatUser = document.querySelector('.chatUser');
+  $chatUser.textContent = resJson.profile.username
+};
