@@ -68,10 +68,28 @@ body {
           line-height: 17.53px;
         }
       }
-      .postCardMainImg {
+
+      .fileImgArea {
         width: 100%;
         padding-bottom: 12px;
+        overflow-x: scroll;
+        display: flex;
+        white-space: nowrap;
+        .imgUl {
+          display: flex;
+          .imgLi {
+            position: relative;
+            margin-right: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 304px;
+            .postImg {
+              width: 100%;
+            }
+          }
+        }
       }
+
       .commentBox {
         padding-bottom: 20px;
         width: 98px;

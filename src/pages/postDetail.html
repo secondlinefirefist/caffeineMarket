@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/Sass/post.css" />
+    <link rel="stylesheet" href="../css/Sass/postDetail.css" />
     <title>Post Page</title>
   </head>
   <body>
@@ -18,6 +18,7 @@
       </button>
     </nav>
     <main class="postCard">
+      <!-- 프로필 이미지, 아이디, 닉네임 받아오기-->
       <div class="commonProfileHeader">
         <img
           class="profileImg"
@@ -32,7 +33,9 @@
           <img src="../img/icon/s-icon-more-vertical.png" alt="" />
         </button>
       </div>
+
       <article class="postCardMain">
+        <!-- content 내용 불러오기 -->
         <div class="postCardMainTextBox">
           <p class="postCardMainText">
             옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다.
@@ -40,7 +43,12 @@
             풍부하게 뛰노는 인생의 힘있다.
           </p>
         </div>
-        <img src="../img/post-img-example.png" alt="" class="postCardMainImg" />
+
+        <!-- 이미지  -->
+        <!-- post 사진 불러오기 -->
+        <div class="fileImgArea"></div>
+
+        <!-- like and comment  -->
         <div class="commentBox">
           <div class="likeBtnBox">
             <button class="likeBtn">
@@ -59,12 +67,18 @@
             <div class="likeTxt">12</div>
           </div>
         </div>
+
+        <!-- date -->
+        <!-- 업로드한 날짜 불러오기 -->
         <div class="date">
           <p>2020년 10월 21일</p>
         </div>
       </article>
     </main>
     <p class="dividingLine"></p>
+
+    <!-- commentComponent -->
+    <!-- 팔로워 이미지, 아이디, 댓글 날짜 받기 -->
     <div class="commentComponent">
       <div class="commentProfileInfo">
         <img
@@ -82,6 +96,9 @@
       </div>
       <p class="commentText">게시글 답글 ~~ !! 최고최고</p>
     </div>
+
+    <!-- comment Component -->
+    <!-- 팔로워 이미지, 아이디, 댓글 날짜 받기 -->
     <div class="commentComponent">
       <div class="commentProfileInfo">
         <img
@@ -102,6 +119,9 @@
         지쳤어요 땡벌땡벌...
       </p>
     </div>
+
+    <!-- 댓글 입력란  -->
+    <!-- 프로필이미지받기, input post 하기 -->
     <div class="inputComponent">
       <img
         class="inputProfileImg"
@@ -118,5 +138,7 @@
       </form>
       <button class="commentPostBtn">게시</button>
     </div>
+
+    <script src="../Js/postDetail.js"></script>
   </body>
 </html>
