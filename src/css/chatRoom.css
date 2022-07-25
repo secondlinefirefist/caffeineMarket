@@ -99,6 +99,7 @@ main .chatRoom {
   margin-right: 12px;
   width: 42px;
   height: 42px;
+  border-radius: 50%;
 }
 
 .yourChatContent .chatText {
