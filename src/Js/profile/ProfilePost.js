@@ -2,7 +2,7 @@
 (async function postData() {
   try {
     const res = await fetch(
-      url + '/post/' + accountname + '/userpost/?limit=100&skip=10',
+      url + '/post/' + accountname + '/userpost/?limit=100',
       {
         method: 'GET',
         headers: {
