@@ -1,0 +1,276 @@
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'SpoqaHanSansNeo-Regular', 'sans-serif';
+}
+
+body {
+  width: 390px;
+  margin: 0 auto;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body .headerBtns {
+  padding: 13px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+body .headerBtns .headerIcon {
+  width: 22px;
+  height: 22px;
+}
+
+body .postCard {
+  padding: 20px 16px;
+  position: relative;
+}
+
+body .postCard .commonProfileHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+body .postCard .commonProfileHeader .profileImg {
+  width: 42px;
+  height: 42px;
+}
+
+body .postCard .commonProfileHeader .profileTextBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 12px;
+}
+
+body .postCard .commonProfileHeader .profileTextBox .nickName {
+  margin: 4px 0 2px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+body .postCard .commonProfileHeader .profileTextBox .idName {
+  color: #767676;
+  font-size: 12px;
+}
+
+body .postCard .commonProfileHeader .commonSetting {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+body .postCard .postCardMain {
+  position: relative;
+  left: 54px;
+  width: calc(100% - 54px);
+}
+
+body .postCard .postCardMain .postCardMainTextBox {
+  padding-bottom: 16px;
+}
+
+body .postCard .postCardMain .postCardMainTextBox .postCardMainText {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17.53px;
+}
+
+body .postCard .postCardMain .fileImgArea {
+  width: 100%;
+  padding-bottom: 12px;
+  overflow-x: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+}
+
+body .postCard .postCardMain .fileImgArea .imgUl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .postCard .postCardMain .fileImgArea .imgUl .imgLi {
+  position: relative;
+  margin-right: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 304px;
+}
+
+body .postCard .postCardMain .fileImgArea .imgUl .imgLi .postImg {
+  width: 100%;
+}
+
+body .postCard .postCardMain .commentBox {
+  padding-bottom: 20px;
+  width: 98px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .postCard .postCardMain .commentBox .likeBtnBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 4px;
+  margin-right: 14px;
+}
+
+body .postCard .postCardMain .commentBox .likeBtnBox .likeBtn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 7px;
+}
+
+body .postCard .postCardMain .commentBox .likeBtnBox .likeBtn .likeBtnImg {
+  max-width: 15px;
+}
+
+body .postCard .postCardMain .commentBox .likeBtnBox .likeTxt {
+  font-size: 12px;
+  line-height: 18px;
+  color: #767676;
+}
+
+body .postCard .postCardMain .date {
+  font-size: 10px;
+  width: 80px;
+  font-weight: 400;
+  color: #767676;
+}
+
+body .dividingLine {
+  border-bottom: 1px solid #dbdbdb;
+  margin-top: 8px;
+  margin-bottom: 26px;
+}
+
+body .commentComponent {
+  padding: 0 16px 16px;
+}
+
+body .commentComponent .commentProfileInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-right: 16px;
+  width: calc(100vw-32px);
+}
+
+body .commentComponent .commentProfileInfo .commentProfileImg {
+  width: 36px;
+  height: 36px;
+}
+
+body .commentComponent .commentProfileInfo .commentNames {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 20px;
+}
+
+body .commentComponent .commentProfileInfo .commentNames .commentNickName {
+  font-size: 14px;
+  margin-left: 12px;
+  padding-top: 6px;
+}
+
+body .commentComponent .commentProfileInfo .commentNames .commentWrittenTime {
+  margin-left: 6px;
+  font-size: 10px;
+  padding-top: 9px;
+  line-height: 12px;
+  color: #767676;
+}
+
+body .commentComponent .commentProfileInfo .commonSetting {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+body .commentComponent .commentText {
+  padding-left: 48px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #333333;
+}
+
+body .inputComponent {
+  border-top: 1px solid #dbdbdb;
+  margin-top: 50px;
+  padding: 13px 16px 12px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .inputComponent .inputProfileImg {
+  width: 36px;
+  height: 36px;
+}
+
+body .inputComponent .commentForm .inputCommentText {
+  width: 278px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  padding: 10px 0 10px 18px;
+  font-size: 14px;
+}
+
+body .inputComponent .commentForm .inputCommentText::-webkit-input-placeholder {
+  color: #c4c4c4;
+}
+
+body .inputComponent .commentForm .inputCommentText:-ms-input-placeholder {
+  color: #c4c4c4;
+}
+
+body .inputComponent .commentForm .inputCommentText::-ms-input-placeholder {
+  color: #c4c4c4;
+}
+
+body .inputComponent .commentForm .inputCommentText::placeholder {
+  color: #c4c4c4;
+}
+
+body .inputComponent .commentPostBtn {
+  position: absolute;
+  padding-top: 12px;
+  color: #c4c4c4;
+  right: 16px;
+  font-size: 14px;
+  width: 26px;
+}
+/*# sourceMappingURL=postDetail.css.map */

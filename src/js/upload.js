@@ -4,7 +4,8 @@ const fileSelect = document.getElementById('fileSelect'),
   fileElem = document.getElementById('fileElem'),
   fileList = document.getElementById('fileList'),
   uploadBtn = document.querySelector('.uploadBtn'),
-  inputFile = document.querySelector('.inputDisabled');
+  inputFile = document.querySelector('.inputDisabled'),
+  fileImgArea = document.getElementById('#fileImgArea');
 let filesArray;
 const token = localStorage.getItem('token');
 const url = 'https://mandarin.api.weniv.co.kr';
@@ -34,22 +35,29 @@ function handleFiles(files) {
     li.appendChild(img);
     li.appendChild(deleteImg);
     img.src = window.URL.createObjectURL(files[i]);
-    img.onload = function () {
-      window.URL.revokeObjectURL(this.src);
-    };
   }
   filesArray = Array.from(files);
-
   uploadBtn.style.backgroundColor = '#F26E22';
   let urls = [];
   uploadBtn.addEventListener('click', async () => {
-    await filesArray.forEach(async (f) => {
+    await filesArray.forEach(async (f, index) => {
       const filename = await imgUpload(f);
+      console.log('filename', filename);
       urls.push(`${url}/${filename}`);
+      if (filesArray.length - 1 === index) {
+        postUpload(urls);
+      }
     });
 
-    postUpload(urls);
-    window.location.href = './myProfile.html';
+    // forEach는 비동기를 기다려주지 않는다.
+    // for (const f of filesArray) {
+    //   const filename = await imgUpload(f);
+    //   urls.push(`${url}/${filename}`);
+    // }
+    // postUpload(urls);
+
+    // await postUpload(urls);
+    // window.location.href = './myProfile.html';
   });
 }
 // textArea 자동 줄 채우기
@@ -70,7 +78,6 @@ async function imgUpload(file) {
     });
 
     const data = await res.json();
-
     return data[0].filename;
   } catch (err) {
     console.log(err);
@@ -78,6 +85,7 @@ async function imgUpload(file) {
 }
 
 async function postUpload(urls) {
+  console.log('post urls', urls);
   try {
     const res = await fetch(url + '/post', {
       method: 'POST',
@@ -93,7 +101,7 @@ async function postUpload(urls) {
       }),
     });
     const resJson = await res.json();
-    console.log('resJson', resJson);
+    console.log(resJson);
     // 로컬스토리지 저장하기 (2)
   } catch (err) {
     console.error(err);
