@@ -1,18 +1,13 @@
-/*메인 모달*/
-const btnSetting = document.querySelector('.btnSetting');
+/*로그아웃 메인 모달*/
 const mainModal = document.querySelector('.mainModal');
+const btnSetting = document.querySelector('.btnSetting');
+
 btnSetting.addEventListener('click', () => {
   mainModal.classList.toggle('displayModal');
 });
 
 btnSetting.addEventListener('blur', (event) => {
   mainModal.classList.remove('displayModal');
-});
-
-/*메인모달에서 뒤로가기*/
-const btnBack = document.querySelector('.btnBack');
-btnBack.addEventListener('click', () => {
-  window.history.back();
 });
 
 /*로그아웃 모달*/
