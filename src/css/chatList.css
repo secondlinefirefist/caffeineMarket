@@ -16,7 +16,6 @@ body {
 /* header */
 
 .wrapHeaderNav {
-  /* width: 100%; */
   height: 48px;
   padding: 12px 12px 12px 16px;
   display: flex;
@@ -39,9 +38,10 @@ body {
 /* 채팅 리스트 */
 
 #app .contChatList {
+  margin: 0 auto;
   padding: 24px 16px;
+  max-width: 390px;
   height: calc(100% - 163px);
-  overflow-y: scroll;
 }
 
 .contChatList .userContent {
@@ -65,6 +65,7 @@ body {
   width: 42px;
   height: 42px;
   vertical-align: -5px;
+  border-radius: 50%;
 }
 
 .chatList .chatItem {
