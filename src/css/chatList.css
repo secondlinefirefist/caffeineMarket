@@ -84,6 +84,10 @@ body {
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
+  color: black;
+}
+.chatItem .linkChatRoom {
+  text-decoration: none;
 }
 
 .chatItem .userText {

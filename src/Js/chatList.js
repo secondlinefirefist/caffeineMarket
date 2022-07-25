@@ -3,6 +3,7 @@ const $chatList = document.querySelector('.chatList');
 const url = 'https://mandarin.api.weniv.co.kr';
 const token = window.localStorage.getItem('token');
 const accountname = localStorage.getItem('accountname');
+const yourAccountname = location.search.replace('?', '').split('=')[1];
 
 //  팔로잉 유저 GET요청으로 불러오기
 (async function chatListData() {
@@ -28,6 +29,7 @@ const showfollowingList = (resJson) => {
   console.log(resJson);
   for (let i = 0; i < resJson.length; i++) {
     $chatList.innerHTML += `<li class="chatItem">
+    <a href="./chatRoom.html" class="linkChatRoom">
     <div class="userContent">
       <img
         src=${resJson[i].image}
@@ -39,15 +41,24 @@ const showfollowingList = (resJson) => {
         <p class="userText">${resJson[i].intro}</p>
       </div>
     </div>
+    </a>
     <strong class="chatDate">${time}</strong>
   </li>`;
   }
 };
 
-document.querySelector('.userContent').addEventListener('click', () => {
-  location.href = './chatRoom.html';
-});
-
 document.querySelector('.btnBack').addEventListener('click', () => {
   location.href = './home.html';
 });
+
+document.querySelectorAll('.userContent').addEventListener('click', () => {
+  location.href = './chatRoom.html';
+});
+
+
+//채팅 목록 클릭하여 채팅리스트로 넘어가기
+// const $userContent = document.querySelector('.userContent');
+// const goChatRoom = './chatRoom.html?accountname=' + yourAccountname;
+// $userContent.addEventListener('click', () => {
+//   location.href = goChatRoom;
+// });
