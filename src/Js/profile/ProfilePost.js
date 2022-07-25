@@ -79,11 +79,10 @@ function createGridFeed(resJson) {
 function createPostFeed(resJson) {
   for (let i = 0; i < resJson.post.length; i++) {
     const li = document.createElement('li'),
-      postLink = document.createElement('a'),
       imgProfile = document.createElement('img'),
       postWrap = document.createElement('div'),
-      userName = document.createElement('strong'),
       postSetting = document.createElement('button'),
+      userName = document.createElement('strong'),
       postSettingImg = document.createElement('img'),
       account = document.createElement('p'),
       text = document.createElement('p'),
@@ -132,13 +131,7 @@ function createPostFeed(resJson) {
     }
 
     postIndexList.append(li);
-    // 게시글 상세페이지 쿼리를 전달 해줌
-    li.append(postLink);
-    postLink.setAttribute(
-      'href',
-      `/src/pages/post.html?postId=${resJson.post[i].id}`
-    );
-    postLink.append(imgProfile, postWrap);
+    li.append(imgProfile, postWrap);
     postWrap.setAttribute('class', 'postIndexCont');
     imgProfile.setAttribute('class', 'imgPostProfile');
     imgProfile.setAttribute('src', resJson.post[i].author.image);
