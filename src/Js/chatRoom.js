@@ -6,14 +6,6 @@ const $chatRoom = document.querySelector('.chatRoom');
 const $mainModal = document.querySelector('.mainModal');
 const $btnModalClose = document.querySelector('.btnModalClose');
 
-// login flag
-const isLogin = localStorage.token;
-
-// 비 로그인 상태로 접근할 경우 splash로 이동
-if (!isLogin) {
-  location.href = './splash.html';
-}
-
 // 메시지 입력시 true 반환
 const checkMessage = () => {
   if ($inputChatText.value) {
