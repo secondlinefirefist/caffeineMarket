@@ -270,7 +270,7 @@ function alertDelPost(json) {
 const btnModifyPost = document.querySelector('#btnModifyPost');
 btnModifyPost.addEventListener('click', (event) => {
   location.href =
-    '../pages/upload.html?id=' + event.CurrentTarget.getAttribute('postid');
+    '../pages/upload.html?id=' + event.currentTarget.getAttribute('postid');
 });
 
 // 리스트 페이지 댓글 보기
