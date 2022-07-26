@@ -2,10 +2,13 @@
     padding: 13px 16px;
 }
 
+header {
+    position: inherit;
+}
+
 .title {
     font-size: 18px;
     font-weight: 500;
-
     line-height: 22px;
     
 }
@@ -20,107 +23,3 @@
     height: 100%;
 }
 
-.postCard {
-    padding: 20px 16px;
-    position: relative;
-  }
-  
-.postCard .commonProfileHeader {
-    display: flex;
-    position: relative;
-  }
-  
-.postCard .commonProfileHeader .profileImg {
-    width: 42px;
-    height: 42px;
-  }
-  
-.postCard .commonProfileHeader .profileTextBox {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding-left: 12px;
-  }
-  
-.postCard .commonProfileHeader .profileTextBox .nickName {
-    margin: 4px 0 2px 0;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  
-.postCard .commonProfileHeader .profileTextBox .idName {
-    color: #767676;
-    font-size: 12px;
-  }
-  
-.postCard .commonProfileHeader .commonSetting {
-    width: 18px;
-    height: 18px;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  
-.postCard .postCardMain {
-    position: relative;
-    left: 54px;
-    width: calc(100% - 54px);
-  }
-  
-.postCard .postCardMain .postCardMainTextBox {
-    padding-bottom: 16px;
-  }
-  
-.postCard .postCardMain .postCardMainTextBox .postCardMainText {
-    font-size: 14px;
-    font-weight: 400;
-  }
-  
-.postCard .postCardMain .postCardMainImg {
-    width: 100%;
-    padding-bottom: 12px;
-  }
-  
-.postCard .postCardMain .commentBox {
-    padding-bottom: 20px;
-    width: 98px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  
-.postCard .postCardMain .commentBox .likeBtnBox {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 4px;
-    margin-right: 14px;
-  }
-  
-.postCard .postCardMain .commentBox .likeBtnBox .likeBtn {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin-right: 7px;
-  }
-  
-.postCard .postCardMain .commentBox .likeBtnBox .likeBtn .likeBtnImg {
-    max-width: 15px;
-  }
-  
-.postCard .postCardMain .commentBox .likeBtnBox .likeTxt {
-    font-size: 12px;
-    line-height: 18px;
-    color: #767676;
-  }
-  
-.postCard .postCardMain .date {
-    font-size: 10px;
-    width: 80px;
-    font-weight: 400;
-    color: #767676;
-  }
