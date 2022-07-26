@@ -40,7 +40,7 @@ const storeImage = async (target) => {
   }
 };
 
-// 상품명 길이 유효성 검사 
+// 상품명 길이 유효성 검사
 const checkProductName = () => {
   if (
     $inputProductTitle.value.length < 16 &&
@@ -135,6 +135,6 @@ const isProductTrue = () => {
 $productForm.addEventListener('input', handleCheckInput);
 $btnSave.addEventListener('click', productData);
 $btnBack.addEventListener('click', () => {
-  location.href = './myProfile.html';
+  window.history.back();
 });
 $inputProductPrice.addEventListener('input', checkProductPrice);

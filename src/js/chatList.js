@@ -64,5 +64,6 @@ const showFollowingList = (resJson) => {
 };
 
 document.querySelector('.btnBack').addEventListener('click', () => {
-  location.href = './home.html';
+  window.history.back();
 });
+
