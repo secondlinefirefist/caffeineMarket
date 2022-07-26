@@ -31,11 +31,6 @@ function isFollowCheck(resJson) {
   } else changePageeHome();
 }
 
-//검색창으로 이동
-function changePageToSerch() {
-  location.href = './search.html';
-}
-
 //홈 피드로 이동
 function changePageeHome() {
   location.href = './home.html';
@@ -44,6 +39,11 @@ function changePageeHome() {
 //빈 홈으로 이동
 function changePageToHomeEpmty() {
   location.href = './homeEmpty.html';
+}
+
+//검색창으로 이동
+function changePageToSerch() {
+  location.href = './search.html';
 }
 
 //화면 진입 시 피드 여부 판단
