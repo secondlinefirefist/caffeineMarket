@@ -6,7 +6,7 @@ const accountname = localStorage.getItem('accountname');
 const yourAccountname = location.search.replace('?', '').split('=')[1];
 
 //  팔로잉 유저 GET요청으로 불러오기
-(async function chatListData() {
+(async function getChatListData() {
   try {
     const res = await fetch(url + '/profile/' + accountname + '/following/?limit=50', {
       method: 'GET',
@@ -16,7 +16,7 @@ const yourAccountname = location.search.replace('?', '').split('=')[1];
       },
     });
     const resJson = await res.json();
-    showfollowingList(resJson);
+    showFollowingList(resJson);
   } catch {
     console.error('err');
   }
@@ -24,7 +24,7 @@ const yourAccountname = location.search.replace('?', '').split('=')[1];
 
 const date = new Date();
 const time = date.getMonth() + 1 + '월 ' + date.getDate() + '일';
-const showfollowingList = (resJson) => {
+const showFollowingList = (resJson) => {
   console.log(resJson);
   for (let i = 0; i < resJson.length; i++) {
     const $li = document.createElement('li'),

@@ -20,7 +20,7 @@ const imgPreView = async (event) => {
     $productImg.style.display = 'block';
   };
   reader.readAsDataURL(event.target.files[0]);
-  filename = await storeImage(event.target); // 리턴 받은 파일명을 filename에 저장
+  filename = await storeImage(event.target);
   console.log(event.target.files[0]);
 };
 
@@ -34,14 +34,13 @@ const storeImage = async (target) => {
       body: formData,
     });
     const resJson = await res.json();
-    return resJson.filename; // 응답 중 filename 리턴
+    return resJson.filename;
   } catch (err) {
     console.error(err);
   }
 };
 
-// 상품명 길이 유효성 검사 -> if문 리턴으로
-
+// 상품명 길이 유효성 검사 
 const checkProductName = () => {
   if (
     $inputProductTitle.value.length < 16 &&
@@ -118,7 +117,7 @@ async function productData() {
     alert('상품이 정상적으로 등록되었습니다');
     if (resJson.type == 'entity.too.large') {
       alert('이미지 용량이 너무 큽니다');
-      // location.href = './page404.html';
+      location.href = './page404.html';
     } else {
       isProductTrue();
     }
