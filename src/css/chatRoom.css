@@ -100,6 +100,7 @@ main .chatRoom {
   width: 42px;
   height: 42px;
   border-radius: 50%;
+  border: 1px solid #dbdbdb;
 }
 
 .yourChatContent .chatText {
@@ -117,7 +118,7 @@ main .chatRoom {
 
 .myChatContent .chatText {
   margin-left: 6px;
-  background-color: #f26e22;
+  background-color: #664836;
   color: #ffffff;
   border-radius: 12px 0 12px 12px;
 }
@@ -172,7 +173,7 @@ main .chatRoom {
 }
 
 .chatForm .btnActive {
-  color: #f26e22;
+  color: #664836;
 }
 
 /* 전송 버튼에 대한 clear fix */

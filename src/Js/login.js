@@ -60,7 +60,7 @@ function isLogin(resJson) {
 
 //로그인 성공 시 페이지 전환
 function isLoginTrue() {
-  location.href = './home.html';
+  location.href = './homeEmpty.html';
 }
 
 //로그인 실패 시 알람 문구 출력

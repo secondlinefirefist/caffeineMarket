@@ -8,7 +8,7 @@ const yourAccountname = location.search.replace('?', '').split('=')[1];
 //  팔로잉 유저 GET요청으로 불러오기
 (async function chatListData() {
   try {
-    const res = await fetch(url + '/profile/' + accountname + '/following', {
+    const res = await fetch(url + '/profile/' + accountname + '/following/?limit=50', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,

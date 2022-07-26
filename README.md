@@ -1,19 +1,17 @@
 # ☕️ caffeineMarket
 
-> 🧷 <a href="https://secondlinefirefist.github.io/caffeineMarket/src/pages/socialLogin.html">배포 URL</a>
+> 🧷 <a href="https://secondlinefirefist.github.io/caffeineMarket">배포 URL</a>
 
 ## **프로젝트 소개**
 
-스토어에 판매하고 있는 상품을 등록하여 홍보할 수 있는 SNS입니다.
-상품을 등록하지 않아도 일상을 공유하며 즐거운 SNS 활동을 할 수 있습니다.
-사용자는 글과 사진을 올려 자신의 일상을 공유할 수 있고,
-다른 사용자를 팔로우하여 홈 화면에서 다른 사람들의 소식을 확인할 수도 있습니다.
-다양한 사람들을 팔로우하고, 마음에 드는 피드가 있다면 '좋아요'를 누르거나 댓글을 달 수도 있습니다.
-또한, 다른 사용자와 채팅창을 이용해 즐거운 대화도 나눌 수 있습니다.
+커피를 좋아하는 현대인이라면 손쉽게 로그인하여 커피와 관련된 상품을 판매하고 일상을 공유할 수 있는 SNS 서비스입니다.  커피와의 일상을 게시글로 공유하며 좋아요와 댓글을 통해 사용자와 소통합니다. 다양한 사람들을 팔로우하고, 마음에 드는 피드가 있다면 '좋아요'를 누르거나 댓글을 달 수도 있습니다. 또한, 다른 사용자와 채팅창을 이용해 즐거운 대화도 나눌 수 있습니다.
+## :fire: 2호선 불주먹팀
 
-## :fire: 팀 : 2호선 불주먹
+|김민영|김지수|김태희|채지훈|
+|:-----------:|:-----------:|:-----------:|:-----------:|
+| <img width="180px" src="https://user-images.githubusercontent.com/101693495/180898054-cf7cbf5c-0476-402b-b7bd-a088ffd6d126.jpg">| <img width="180px" src="https://user-images.githubusercontent.com/101693495/180899475-794fd51c-cef7-4154-b452-aeda89dd6f09.png"> | <img width="180px" src="https://user-images.githubusercontent.com/101693495/180899712-35607b00-3b6f-408d-8f7f-568a60072be9.jpg"> |<img width="180px" src="https://user-images.githubusercontent.com/101693495/180897571-3f123fcb-517b-4c82-83be-af644a98c973.jpg">|
+|🔗 <a href="https://github.com/BradleyyKim">BradleyyKim</a>|🔗 <a href= "https://github.com/jsk3342">jsk3342</a>|🔗 <a href="https://github.com/greenT-Hee">greenT-Hee</a>|<a href ="https://github.com/jihoon-chae">🔗 jihoon-chae</a>|
 
-김지수, 김민영, 채지훈, 김태희
 
 
 ## 1. 목표
@@ -25,7 +23,7 @@
 ### 2.1 스택
 * Front-End : HTML CSS JavaScript
 * Back-End : 제공된 API 사용
-* 버전 관리 및 이슈 : Github, JIRA, Notion, Slack
+* 버전 관리 및 이슈 : Github, Jira, Notion, Slack
 * 디자인 : Figma
 
 ## 3. 프로젝트 구조와 개발 일정
