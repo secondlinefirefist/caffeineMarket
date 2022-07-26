@@ -34,7 +34,7 @@ const postType = document.querySelector('.postType');
 const postGridList = document.querySelector('.postGridList');
 
 //그리드 타입 변환
-// 그리드 타입 보기
+// 그리드 타입 보기 버튼
 const btnGridTypeImg = document.querySelector('#btnGridTypeImg');
 const btnListTypeImg = document.querySelector('#btnListTypeImg');
 const gridType = document.querySelector('.gridType');
@@ -45,7 +45,7 @@ gridType.addEventListener('click', () => {
   btnGridTypeImg.classList.add('btnGridTypeOn');
   btnListTypeImg.classList.remove('btnListTypeOn');
 });
-// 리스트 타입 피드 보기
+// 리스트 타입 피드 보기 버튼
 const listType = document.querySelector('.listType');
 listType.addEventListener('click', () => {
   postIndexList.classList.remove('postTypeHide');
@@ -55,6 +55,7 @@ listType.addEventListener('click', () => {
   btnListTypeImg.classList.add('btnListTypeOn');
 });
 
+// 그리드 타입 피드 보기
 function createGridFeed(resJson) {
   for (let i = 0; i < resJson.post.length; i++) {
     if (resJson.post[i].image != '') {
@@ -67,15 +68,17 @@ function createGridFeed(resJson) {
 
       btnGrid.setAttribute('type', 'button');
       btnGrid.setAttribute('id', 'goDetailPost');
-      btnGrid.setAttribute('postid', resJson.post[i].id);
+      btnGrid.setAttribute('commentid', resJson.post[i].id);
       imgGrid.setAttribute('src', resJson.post[i].image.split(',')[0]);
       imgGrid.setAttribute('alt', '그리드 게시 사진');
       imgGrid.setAttribute('class', 'imgGrindPost');
     }
   }
+  goPostDetailComment();
   goPostDetailPage();
 }
 
+// 리스트 타입 피드 보기
 function createPostFeed(resJson) {
   for (let i = 0; i < resJson.post.length; i++) {
     const li = document.createElement('li'),
@@ -173,6 +176,8 @@ function createPostFeed(resJson) {
     likeNumber.textContent = resJson.post[i].heartCount;
 
     commentBtn.setAttribute('type', 'button');
+    commentBtn.setAttribute('id', 'commentButton');
+    commentBtn.setAttribute('commentid', resJson.post[i].id);
     commentImage.setAttribute('src', '../img/icon/icon-message-circle.png');
     commentImage.setAttribute('alt', '댓글 버튼');
     commentImage.setAttribute('id', 'btnComment');
@@ -265,8 +270,20 @@ function alertDelPost(json) {
 const btnModifyPost = document.querySelector('#btnModifyPost');
 btnModifyPost.addEventListener('click', (event) => {
   location.href =
-    '../pages/upload.html?id=' + event.target.getAttribute('postid');
+    '../pages/upload.html?id=' + event.CurrentTarget.getAttribute('postid');
 });
+
+// 리스트 페이지 댓글 보기
+function goPostDetailComment() {
+  let commentButton = document.querySelectorAll('#commentButton');
+  for (let i = 0; i < commentButton.length; i++) {
+    commentButton[i].addEventListener('click', (event) => {
+      location.href =
+        '../pages/postDetail.html?id=' +
+        event.currentTarget.getAttribute('commentid');
+    });
+  }
+}
 
 // post 상세 페이지로 이동 (그리드 타입에서만 작동)
 function goPostDetailPage() {
@@ -275,7 +292,7 @@ function goPostDetailPage() {
     goDetailPost[i].addEventListener('click', (event) => {
       location.href =
         '../pages/postDetail.html?id=' +
-        event.currentTarget.getAttribute('postid');
+        event.currentTarget.getAttribute('commentid');
     });
   }
 }
@@ -301,7 +318,6 @@ function clickLike(resJson) {
 //좋아요 활성
 async function onLikePost(likeId, heartState, likeBtnClass, likeTarget) {
   if (
-    // heartState == 'false' ||
     (likeBtnClass == null && !heartState) ||
     likeBtnClass == 'activeBtnLikeOff'
   ) {
