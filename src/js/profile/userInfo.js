@@ -69,15 +69,15 @@ function showYourProfileButton(resJson) {
     imgShare.setAttribute('alt', '공유하기');
 
     followDataFunc();
-    goChatRoom();
+    goChatRoom(resJson);
   }
 }
 
 // 카카오 버튼 누르면 채팅창으로 넘어가기
-function goChatRoom() {
+function goChatRoom(resJson) {
   let btnKakao = document.querySelector('.btnKakao');
   btnKakao.addEventListener('click', () => {
-    location.href = '../pages/chatRoom.html';
+    location.href = './chatRoom.html?accountname=' + resJson.profile.accountname;
   });
 }
 
