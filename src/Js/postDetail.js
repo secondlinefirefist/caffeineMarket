@@ -1,8 +1,8 @@
 async function renderPost() {
-  const postId = new URLSearchParams(location.search).get('postId');
+  const postId = location.search.replace('?', '').split('=')[1];
   const url = 'https://mandarin.api.weniv.co.kr';
   const token = localStorage.getItem('token');
-  const accountname = localStorage.getItem('accountname');
+  // const accountname = localStorage.getItem('accountname');
   try {
     const res = await fetch(`${url}/post/${postId}`, {
       method: 'GET',
@@ -12,24 +12,25 @@ async function renderPost() {
       },
     });
     const json = await res.json();
-    console.log(json);
+    // console.log(json);
 
     //render
 
     const profileImage = json.post.author.image;
-
     const userName = json.post.author.username;
     const accountName = json.post.author.accountname;
     const content = json.post.content;
     const jsonImg = json.post.image.split(',');
-    console.log(jsonImg);
-    const heartCount = json.post.heartCount;
-    const commentCount = json.post.commentCount;
-    const createdAt = json.post.createdAt
-      .slice(0, 11)
-      .replace('-', '년 ')
-      .replace('-', '월 ')
-      .replace('T', '일');
+    // console.log(jsonImg);
+
+    // 날짜 구현 미완성
+    // const heartCount = json.post.heartCount;
+    // const commentCount = json.post.commentCount;
+    // const createdAt = json.post.createdAt
+    //   .slice(0, 11)
+    //   .replace('-', '년 ')
+    //   .replace('-', '월 ')
+    //   .replace('T', '일');
 
     const profileImg = document.querySelector('.profileImg');
     const nickName = document.querySelector('.nickName');
@@ -47,7 +48,7 @@ async function renderPost() {
 
     if (jsonImg.length >= 1 && jsonImg[0] !== '') {
       jsonImg.map((src) => {
-        console.log('src', src);
+        // console.log('src', src);
         const imgLi = document.createElement('li');
         const postImg = document.createElement('img');
         postImg.setAttribute('src', src);
