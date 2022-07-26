@@ -1,4 +1,5 @@
 const $btnSave = document.querySelector('.btnSave');
+const $btnBack = document.querySelector('.btnBack');
 const $productForm = document.querySelector('.productForm');
 const $inputProductImg = document.querySelector('.inputProductImg');
 const $inputProductTitle = document.querySelector('.inputProductTitle');
@@ -175,6 +176,10 @@ const isProductTrue = () => {
 $productForm.addEventListener('input', handleCheckInput);
 $btnSave.addEventListener('click', productData);
 $inputProductPrice.addEventListener('input', checkProductPrice);
+
+$btnBack.addEventListener('click', () => {
+  location.href = './myProfile.html';
+});
 
 // prodid값 체크
 const checkProdId = () => {
