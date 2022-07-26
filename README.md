@@ -1,6 +1,6 @@
 # ☕️ caffeineMarket
 
-> 🧷 <a href="https://secondlinefirefist.github.io/caffeineMarket/src/pages/socialLogin.html">배포 URL</a>
+> 🧷 <a href="https://secondlinefirefist.github.io/caffeineMarket">배포 URL</a>
 
 ## **프로젝트 소개**
 
