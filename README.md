@@ -1,4 +1,4 @@
-# caffeineMarket
+# ☕️ caffeineMarket
 
 > 🧷 <a href="https://secondlinefirefist.github.io/caffeineMarket/src/pages/socialLogin.html">배포 URL</a>
 
@@ -20,7 +20,7 @@
 - API를 이용한 SNS 프론트엔드 개발 구현.
 
 
-## 2. 개발 환경 및 배포
+## 2. 개발 환경 
 
 ### 2.1 스택
 * Front-End : HTML CSS JavaScript
