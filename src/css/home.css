@@ -2,8 +2,8 @@
     padding: 13px 16px;
 }
 
-header {
-    position: inherit;
+.contPost {
+    padding-top: 48px;
 }
 
 .title {
@@ -22,4 +22,3 @@ header {
     width: 100%;
     height: 100%;
 }
-
