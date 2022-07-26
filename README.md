@@ -1,5 +1,7 @@
 # caffeineMarket
 
+> 🧷 <a href="https://secondlinefirefist.github.io/caffeineMarket/src/pages/socialLogin.html">배포 URL</a>
+
 ## **프로젝트 소개**
 
 스토어에 판매하고 있는 상품을 등록하여 홍보할 수 있는 SNS입니다.
@@ -19,11 +21,12 @@
 
 
 ## 2. 개발 환경 및 배포
-### 2.1 스택
 
-HTML
-CSS
-JavaScript
+### 2.1 스택
+* Front-End : HTML CSS JavaScript
+* Back-End : 제공된 API 사용
+* 버전 관리 및 이슈 : Github, JIRA, Notion, Slack
+* 디자인 : Figma
 
 ## 3. 프로젝트 구조와 개발 일정
 ### 3.1 프로젝트 구조
@@ -93,3 +96,6 @@ JavaScript
 
 #### 3) 좋아요 기능 
 - 좋아요 API POST, DELETE 요청
+
+## 개발 기간
+2022.06.09 ~ 2022.07.31
