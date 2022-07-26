@@ -20,6 +20,27 @@ fileSelect.addEventListener(
   false
 );
 
+// 프로필 이미지 불러오기
+async function renderProfile() {
+  const accountName = localStorage.getItem('accountname');
+  const profileImg = document.querySelector('.profileImg');
+  try {
+    const res = await fetch(url + '/profile/' + accountName, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    const json = await res.json();
+    console.log(json);
+    profileImg.setAttribute('src', json.profile.image);
+  } catch (err) {
+    console.error(err);
+  }
+}
+renderProfile();
+
 function handleFiles(files) {
   const ul = document.createElement('ul');
   fileList.appendChild(ul);
@@ -46,11 +67,15 @@ function handleFiles(files) {
       urls.push(`${url}/${filename}`);
       if (filesArray.length - 1 === index) {
         postUpload(urls);
+        setTimeout(() => {
+          alert('업로드가 완료되었습니다 :)');
+          window.location.href = './myProfile.html';
+        }, 2000);
       }
     });
-    // alert('게시글이 등록되었습니다.');
 
-    // window.location.href = './myProfile.html';
+    // location.reload();
+    //
     // forEach는 비동기를 기다려주지 않는다.
     // for (const f of filesArray) {
     //   const filename = await imgUpload(f);
@@ -60,6 +85,7 @@ function handleFiles(files) {
 
     // await postUpload(urls);
   });
+  // uploadBtn.addEventListener('click', async () => {});
 }
 // textArea 자동 줄 채우기
 const textArea = document.querySelector('.uploadBoxText');
