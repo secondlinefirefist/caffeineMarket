@@ -50,7 +50,7 @@ const imgPreView = (event) => {
   let reader = new FileReader();
 
   reader.onload = (event) => {
-    $chatRoom.innerHTML += ` 
+    $chatRoom.innerHTML += ` s
     <li class="chatContent myChatContent">
     <strong class="chatTime">${time}</strong>
     <img src=${event.target.result} alt="업로드 이미지" class="chatImg" />
@@ -94,6 +94,7 @@ document.querySelector('.btnBack').addEventListener('click', () => {
     showUserName(resJson);
   } catch {
     console.error('err');
+    location.href = './page404.html';
   }
 })();
 
@@ -108,5 +109,5 @@ const showUserImg = (resJson) => {
 // 유저 이름 바인딩
 const showUserName = (resJson) => {
   const $chatUser = document.querySelector('.chatUser');
-  $chatUser.textContent = resJson.profile.username
+  $chatUser.textContent = resJson.profile.username;
 };
