@@ -56,7 +56,7 @@ body {
   height: 12px;
   left: 0;
   border-radius: 50%;
-  background-color: #f26e22;
+  background-color: #bc382d;
 }
 
 .chatList .chatProfile {
@@ -66,6 +66,7 @@ body {
   height: 42px;
   vertical-align: -5px;
   border-radius: 50%;
+  border: 1px solid #dbdbdb;
 }
 
 .chatList .chatItem {
@@ -86,6 +87,7 @@ body {
   line-height: 18px;
   color: black;
 }
+
 .chatItem .linkChatRoom {
   text-decoration: none;
 }
