@@ -5,6 +5,8 @@ const btnBack = document.querySelector('.btnBack');
 btnBack.addEventListener('click', () => {
   if (accountname == yourAccountname) {
     location.href = `../pages/${locationPath}.html?accountname=${yourAccountname}`;
+  } else if (accountname == myAccountname) {
+    location.href = `../pages/${locationPath}.html`;
   }
-  location.href = window.history.go(-1);
+  location.href = window.history.back();
 });
