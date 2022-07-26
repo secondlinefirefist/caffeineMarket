@@ -122,7 +122,6 @@ const handleCheckInput = () => {
       },
     });
     const resJson = await res.json();
-    console.log(resJson.product);
     setProductData(resJson.product);
   } catch (err) {
     console.error(err);
