@@ -1,4 +1,5 @@
 const $btnSave = document.querySelector('.btnSave');
+const $btnBack = document.querySelector('.btnBack');
 const $productForm = document.querySelector('.productForm');
 const $inputProductImg = document.querySelector('.inputProductImg');
 const $inputProductTitle = document.querySelector('.inputProductTitle');
@@ -153,12 +154,12 @@ async function productData() {
     console.log(resJson.type);
     if (resJson.type == 'entity.too.large') {
       alert('이미지 용량이 너무 큽니다');
-      // location.href = './page404.html';
+      location.href = './page404.html';
     } else {
       isProductTrue();
     }
-    // alert('상품이 정상적으로 수정되었습니다');
-    // isProductTrue();
+    alert('상품이 정상적으로 수정되었습니다');
+    isProductTrue();
   } catch (err) {
     console.error(err);
     location.href = './page404.html';
@@ -175,6 +176,10 @@ const isProductTrue = () => {
 $productForm.addEventListener('input', handleCheckInput);
 $btnSave.addEventListener('click', productData);
 $inputProductPrice.addEventListener('input', checkProductPrice);
+
+$btnBack.addEventListener('click', () => {
+  location.href = './myProfile.html';
+});
 
 // prodid값 체크
 const checkProdId = () => {
