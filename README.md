@@ -29,7 +29,7 @@
 ### 2.1 스택
 * Front-End : HTML CSS JavaScript
 * Back-End : 제공된 API 사용
-* 버전 관리 및 이슈 : Github, JIRA, Notion, Slack
+* 버전 관리 및 이슈 : Github, Jira, Notion, Slack
 * 디자인 : Figma
 
 ## 3. 프로젝트 구조와 개발 일정
