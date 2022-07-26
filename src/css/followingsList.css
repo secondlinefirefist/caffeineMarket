@@ -101,6 +101,8 @@ footer {
   font-size: 12px;
   margin-top: 6px;
   color: #767676;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .followersList li .btnFollow {
