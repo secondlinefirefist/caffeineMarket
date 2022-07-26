@@ -177,7 +177,7 @@ $btnSave.addEventListener('click', productData);
 $inputProductPrice.addEventListener('input', checkProductPrice);
 
 $btnBack.addEventListener('click', () => {
-  location.href = './myProfile.html';
+  window.history.back();
 });
 
 // prodid값 체크

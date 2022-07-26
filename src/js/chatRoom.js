@@ -75,7 +75,7 @@ $btnTextSubmit.addEventListener('click', handleTextSend);
 $btnModalClose.addEventListener('click', closeModal);
 
 document.querySelector('.btnBack').addEventListener('click', () => {
-  location.href = './chatList.html';
+  window.history.back();
 });
 
 //  팔로잉 유저 GET요청으로 불러오기
@@ -108,5 +108,5 @@ const showUserImg = (resJson) => {
 // 유저 이름 바인딩
 const showUserName = (resJson) => {
   const $chatUser = document.querySelector('.chatUser');
-  $chatUser.textContent = resJson.profile.username
+  $chatUser.textContent = resJson.profile.username;
 };
