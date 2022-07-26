@@ -19,7 +19,7 @@ async function infoUser() {
     showYourProfileButton(resJson);
   } catch {
     console.error('ERROR!');
-    location.href = '../pages/page404.html';
+    // location.href = '../pages/page404.html';
   }
 }
 infoUser();
@@ -46,7 +46,7 @@ function showYourProfileButton(resJson) {
     sectionName.setAttribute('class', 'ir');
     btnKakao.setAttribute('class', 'btnKakao');
     btnKakao.setAttribute('type', 'button');
-    imgKakao.setAttribute('src', '../img/message-circle.png');
+    imgKakao.setAttribute('src', '../img/icon-kakao.png');
     imgKakao.setAttribute('alt', '카카오');
 
     btnFollow.setAttribute('isfollow', resJson.profile.isfollow);
@@ -69,7 +69,16 @@ function showYourProfileButton(resJson) {
     imgShare.setAttribute('alt', '공유하기');
 
     followDataFunc();
+    goChatRoom();
   }
+}
+
+// 카카오 버튼 누르면 채팅창으로 넘어가기
+function goChatRoom() {
+  let btnKakao = document.querySelector('.btnKakao');
+  btnKakao.addEventListener('click', () => {
+    location.href = '../pages/chatRoom.html';
+  });
 }
 
 // 팔로우 & 언팔로우 매개변수
@@ -111,7 +120,7 @@ async function clickUserInfoFollowBtn(
       const resJson = await res.json();
     } catch {
       console.error('ERROR');
-      location.href = '../pages/page404.html';
+      // location.href = '../pages/page404.html';
     }
 }
 // 언팔로우
@@ -140,7 +149,7 @@ async function clickUserInfoUnFollowBtn(
       followingTarget.textContent = '팔로우';
     } catch {
       console.error('ERROR');
-      location.href = '../pages/page404.html';
+      // location.href = '../pages/page404.html';
     }
   }
 }
