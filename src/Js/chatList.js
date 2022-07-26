@@ -16,7 +16,6 @@ const yourAccountname = location.search.replace('?', '').split('=')[1];
       },
     });
     const resJson = await res.json();
-    // console.log(resJson);
     showfollowingList(resJson);
   } catch {
     console.error('err');
