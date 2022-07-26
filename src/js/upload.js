@@ -48,7 +48,9 @@ function handleFiles(files) {
         postUpload(urls);
       }
     });
+    // alert('게시글이 등록되었습니다.');
 
+    // window.location.href = './myProfile.html';
     // forEach는 비동기를 기다려주지 않는다.
     // for (const f of filesArray) {
     //   const filename = await imgUpload(f);
@@ -57,7 +59,6 @@ function handleFiles(files) {
     // postUpload(urls);
 
     // await postUpload(urls);
-    // window.location.href = './myProfile.html';
   });
 }
 // textArea 자동 줄 채우기
