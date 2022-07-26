@@ -110,7 +110,11 @@ body {
 
 /* 하단메뉴 */
 .contNav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   border-top: 0.5px solid #dbdbdb;
+  background-color: #fff;
   box-sizing: border-box;
 }
 
