@@ -14,7 +14,6 @@ body {
 }
 
 /* header */
-
 .wrapHeaderNav {
   height: 48px;
   padding: 12px 12px 12px 16px;
@@ -41,7 +40,6 @@ body {
   margin: 0 auto;
   padding: 24px 16px;
   max-width: 390px;
-  height: calc(100% - 163px);
 }
 
 .contChatList .userContent {
@@ -96,6 +94,9 @@ body {
   font-size: 12px;
   line-height: 15px;
   color: #767676;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .chatItem .chatInfo {
@@ -112,8 +113,6 @@ body {
 
 /* 하단메뉴 */
 .contNav {
-  position: fixed;
-  bottom: 0;
   width: 100%;
   border-top: 0.5px solid #dbdbdb;
   background-color: #fff;
