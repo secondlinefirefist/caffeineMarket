@@ -15,10 +15,23 @@ async function getFollowerFeed() {
     });
     const resJson = await res.json();
     console.log(resJson); //나중에 지우기
+    isFollowCheck(resJson);
     createPostFeed(resJson);
   } catch (err) {
     console.error(err); //나중에 지우기
   }
+}
+
+//팔로우 피드 체크
+function isFollowCheck(resJson) {
+  if (Array.isArray(resJson) && resJson.length === 0) {
+    changePageToHomeEpmty();
+  }
+}
+
+//빈 홈으로 이동
+function changePageToHomeEpmty() {
+  location.href = './homeEmpty.html';
 }
 
 //피드 내역 불러오기

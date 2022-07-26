@@ -1,6 +1,6 @@
 #splash-login {
   background-color: #EA7F42;
-  height: 100vh;
+  min-width: 360px;
 }
 
 .header-background {
