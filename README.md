@@ -1,33 +1,44 @@
 # ☕️ caffeineMarket
-
-> 🧷 <a href="https://secondlinefirefist.github.io/caffeineMarket">배포 URL</a>
-
-## **프로젝트 소개**
+## **1. 프로젝트 소개**
 
 커피를 좋아하는 현대인이라면 손쉽게 로그인하여 커피와 관련된 상품을 판매하고 일상을 공유할 수 있는 SNS 서비스입니다.  커피와의 일상을 게시글로 공유하며 좋아요와 댓글을 통해 사용자와 소통합니다. 다양한 사람들을 팔로우하고, 마음에 드는 피드가 있다면 '좋아요'를 누르거나 댓글을 달 수도 있습니다. 또한, 다른 사용자와 채팅창을 이용해 즐거운 대화도 나눌 수 있습니다.
-## :fire: 2호선 불주먹팀
 
+<br>
+
+## 2. 팀원 소개(2호선 불주먹팀)
 |김민영|김지수|김태희|채지훈|
 |:-----------:|:-----------:|:-----------:|:-----------:|
 | <img width="180px" src="https://user-images.githubusercontent.com/101693495/180898054-cf7cbf5c-0476-402b-b7bd-a088ffd6d126.jpg">| <img width="180px" src="https://user-images.githubusercontent.com/101693495/180899475-794fd51c-cef7-4154-b452-aeda89dd6f09.png"> | <img width="180px" src="https://user-images.githubusercontent.com/101693495/180899712-35607b00-3b6f-408d-8f7f-568a60072be9.jpg"> |<img width="180px" src="https://user-images.githubusercontent.com/101693495/180897571-3f123fcb-517b-4c82-83be-af644a98c973.jpg">|
 |🔗 <a href="https://github.com/BradleyyKim">BradleyyKim</a>|🔗 <a href= "https://github.com/jsk3342">jsk3342</a>|🔗 <a href="https://github.com/greenT-Hee">greenT-Hee</a>|<a href ="https://github.com/jihoon-chae">🔗 jihoon-chae</a>|
 
+<br>
 
+## 3. 목표
+(바닐라자스 선택 이유)~~ 를 위해 바닐라자바스크립트로 비동기 통신을 통한 반응형 SNS 서비스 페이지 구현
 
-## 1. 목표
-- API를 이용한 SNS 프론트엔드 개발 구현.
+<br>
 
+## 4. 개발 환경 
 
-## 2. 개발 환경 
-
-### 2.1 스택
+### 4.1 스택
 * Front-End : HTML CSS JavaScript
 * Back-End : 제공된 API 사용
-* 버전 관리 및 이슈 : Github, Jira, Notion, Slack
-* 디자인 : Figma
+### 4.2 개발 관리
+* 버전 관리 및 이슈 : Github, Jira, Slack
+* 회의록: 🔗 <a href="https://github.com/secondlinefirefist/caffeineMarket/wiki/2%ED%98%B8%EC%84%A0-%EB%B6%88%EC%A3%BC%EB%A8%B9-%ED%9A%8C%EC%9D%98%EB%A1%9D-%F0%9F%94%A5">Github Wiki</a>, Notion
+* 디자인 : Figma, Illustrator
 
-## 3. 프로젝트 구조와 개발 일정
-### 3.1 프로젝트 구조
+|Jira|Slack|
+|:-----------:|:-----------:|
+|<img src= "https://user-images.githubusercontent.com/101693495/181179852-4a42b02f-c587-46dd-8538-680c771163b2.png" width= "500px">|<img src="https://user-images.githubusercontent.com/101693495/181180614-afc1cba9-e4d2-478c-9747-3026c5277c26.png" width="360px">|
+
+### 4.3 배포
+* Github Actions (🧷 <a href="https://secondlinefirefist.github.io/caffeineMarket">배포 URL</a>)
+
+<br>
+
+## 5. 프로젝트 구조와 개발 일정
+### 5.1 프로젝트 구조
 ```
 .
 ├──📁 node_modules
@@ -44,7 +55,7 @@
 └── app.js
 ```
 
-## 4. 역할 분담
+## 6. 역할 분담
 
 ### 👨🏻‍🚒 김지수
 - splash 구현
