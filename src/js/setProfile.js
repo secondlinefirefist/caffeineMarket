@@ -123,7 +123,7 @@ async function sendSignUpdata() {
       //userIdDuplicateCheck(resJson); //중복 체크 나중에 구현하기
       location.href = './login.html';
     } catch (err) {
-      console.error(err);
+      changePageTo404();
     }
   }
 }
@@ -158,7 +158,7 @@ async function resImage() {
 
     console.log(data);
   } catch (err) {
-    console.error(err);
+    changePageTo404();
   }
 }
 

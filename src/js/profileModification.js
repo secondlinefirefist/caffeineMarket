@@ -71,7 +71,7 @@ async function modifiaction() {
     saveData(resJson);
     location.href = './myProfile.html';
   } catch (err) {
-    console.error(err);
+    changePageTo404();
   }
 }
 
@@ -102,7 +102,7 @@ async function userIdValid() {
 
     return resJson.message;
   } catch (err) {
-    console.error(err);
+    changePageTo404();
   }
 }
 

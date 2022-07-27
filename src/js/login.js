@@ -45,11 +45,9 @@ async function loginData() {
       }),
     });
     const resJson = await res.json();
-    console.log(resJson); //나중에 지우기
     saveData(resJson);
   } catch (err) {
-    console.log(err);
-    //changePageTo404();
+    changePageTo404();
   }
 }
 
