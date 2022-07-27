@@ -36,7 +36,7 @@ input[class*='-input'] {
 }
 
 input[class*='-input']:focus {
-  border-bottom: 1px solid #f26e22;
+  border-bottom: 1px solid #664836;
 }
 
 .login-button {
@@ -55,7 +55,7 @@ input[class*='-input']:focus {
 }
 
 .login-button.focus {
-  background-color: #f26e22;
+  background-color: #664836;
   cursor: pointer;
 }
 

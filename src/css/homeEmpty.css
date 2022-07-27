@@ -1,21 +1,21 @@
 .empty-home {
-    margin-top: 220px;
-    text-align: center;
+  margin-top: 220px;
+  text-align: center;
 }
 
 .sub-title {
-    margin-top: 20px;
-    color: #767676;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 14px;
+  margin-top: 20px;
+  color: #767676;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
 }
 
 .serch-btn {
-    margin-top: 20px;
-    background-color: #f26e22;
-    color: #fff;
-    width: 120px;
-    height: 44px;
-    border-radius: 44px;
+  margin-top: 20px;
+  background-color: #664836;
+  color: #fff;
+  width: 120px;
+  height: 44px;
+  border-radius: 44px;
 }
