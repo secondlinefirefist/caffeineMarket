@@ -66,39 +66,33 @@
    - 로그인 토큰을 통해 개인 프로필 댓글 작성 기능 구현
 
 ### 👨🏻‍🚒 채지훈
-#### 1) 상품등록 (product)
+- 상품등록 (product)
+   - 이미지 업로드 기능 구현
+   - 상품 데이터 POST 요청
 
-- 이미지 업로드 기능 구현
-- 상품 데이터 POST 요청
+- 상품수정(productModification)
+   - 이미지 업로드 기능 구현
+   - 상품 데이터 GET요청/ PUT 요청
 
-#### 2) 상품수정(productModification)
-
-- 이미지 업로드 기능 구현
-- 상품 데이터 GET요청
-- 상품 데이터 PUT요청
-
-#### 3) 채팅방(chatRoom) 
-
-- 텍스트 입력후 전송 버튼 클릭시 채팅창에 렌더링
-- 이미지 업로드시 채팅창에 렌더링
+- 채팅방(chatRoom) 
+   - 텍스트 입력후 전송 버튼 클릭시 채팅창에 렌더링
+   - 이미지 업로드시 채팅창에 렌더링
 
 ### 👷🏻‍♀️ 김태희
-#### 1)  myProfile & yourProfile 
-- 유저 정보 API GET 
-- 상품 리스트 API GET, DELETE
-- 게시글 리스트 API GET, DELETE
-- 공용 및 프로필 모달  기능 구현
-- 로그아웃 기능 구현
+- myProfile & yourProfile 
+   - 유저 정보, 상품&게시글 리스트 PUT, POST, GET, DELETE 요청
+   - 공용 및 프로필 모달  기능 구현
+   - 로그아웃 기능 구현
 
-#### 2) follwing & follower
-- 팔로잉/ 팔로우 API GET, DELETE, POST
-- 팔로우 버튼 누르면 숫자 증가  
-- 팔로우 취소 버튼 누르면 숫자 감소
+- follwing & follower
+   - 팔로잉/ 팔로우 API GET, DELETE, POST
+   - 팔로우 버튼 누르면 숫자 증감 반영  
 
-#### 3) 좋아요 기능 
-- 좋아요 API POST, DELETE 요청
+- 좋아요 기능 
+   - 좋아요 API POST, DELETE 요청
 
-#### 4) 일러스트 로고 디자인
+- 일러스트 로고 디자인
+   - 카페인 마켓 캐릭터 로고 및 아이콘 제작
 
 ## 7. 개발 기간
 2022.06.09 ~ 2022.07.31
