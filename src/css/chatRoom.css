@@ -132,7 +132,7 @@ main .chatRoom {
   border-top: 0.5px solid #dbdbdb;
   box-sizing: border-box;
   position: fixed;
-  bottom: 0;
+  bottom: 2px;
 }
 
 .chatForm .labelImgUpload {
