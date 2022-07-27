@@ -21,7 +21,6 @@ async function renderPost() {
     const accountName = json.post.author.accountname;
     const content = json.post.content;
     const jsonImg = json.post.image.split(',');
-    // console.log(jsonImg);
 
     // 날짜 구현 미완성
     // const heartCount = json.post.heartCount;

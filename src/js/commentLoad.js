@@ -27,10 +27,11 @@ async function commentLoad() {
       //   .replace('-', '월 ')
       //   .replace('T', '일');
 
-      const div = document.querySelector('.commentComponent');
+      const div1 = document.querySelector('.commentComponent');
       // div.textContent = '';
       const div2 = document.createElement('div');
       const div3 = document.createElement('div');
+      const div4 = document.createElement('div');
       const img1 = document.createElement('img');
       const img2 = document.createElement('img');
       const p1 = document.createElement('p');
@@ -39,16 +40,18 @@ async function commentLoad() {
       const btn = document.createElement('button');
 
       div2.className = 'commentProfileInfo';
-      div3.className = 'commentNames';
+      div3.className = 'commentAndNames';
+      div4.className = 'commentNames';
       img1.className = 'commentProfileImg';
       p1.className = 'commentNickName';
       p2.className = 'commentWrittenTime';
       p3.className = 'commentText';
       btn.className = 'commonSetting';
 
-      div.append(div2, p3);
+      div1.append(div2);
       div2.append(img1, div3, btn);
-      div3.append(p1, p2);
+      div3.append(div4, p3);
+      div4.append(p1, p2);
       btn.append(img2);
 
       img1.setAttribute('src', profileImg);

@@ -186,34 +186,55 @@ body .commentComponent .commentProfileInfo {
   display: flex;
   position: relative;
   padding-right: 16px;
-  width: calc(100vw-32px);
+  padding-bottom: 20px;
 }
 
 body .commentComponent .commentProfileInfo .commentProfileImg {
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  padding-right: 10px;
 }
 
-body .commentComponent .commentProfileInfo .commentNames {
+body .commentComponent .commentProfileInfo .commentAndNames {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   line-height: 20px;
 }
 
-body .commentComponent .commentProfileInfo .commentNames .commentNickName {
+body .commentComponent .commentProfileInfo .commentAndNames .commentNames {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-bottom: 5px;
+}
+
+body .commentComponent .commentProfileInfo .commentAndNames .commentNames .commentNickName {
   font-size: 14px;
-  margin-left: 12px;
   padding-top: 6px;
 }
 
-body .commentComponent .commentProfileInfo .commentNames .commentWrittenTime {
+body .commentComponent .commentProfileInfo .commentAndNames .commentNames .commentWrittenTime {
   margin-left: 6px;
   font-size: 10px;
   padding-top: 9px;
   line-height: 12px;
   color: #767676;
+}
+
+body .commentComponent .commentProfileInfo .commentAndNames .commentText {
+  font-size: 14px;
+  line-height: 18px;
+  color: #333333;
 }
 
 body .commentComponent .commentProfileInfo .commonSetting {
@@ -222,13 +243,6 @@ body .commentComponent .commentProfileInfo .commonSetting {
   position: absolute;
   right: 0;
   top: 5px;
-}
-
-body .commentComponent .commentText {
-  padding-left: 48px;
-  font-size: 14px;
-  line-height: 18px;
-  color: #333333;
 }
 
 body .inputComponent {

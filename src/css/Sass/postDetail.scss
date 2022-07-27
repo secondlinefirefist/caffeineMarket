@@ -138,26 +138,37 @@ body {
       display: flex;
       position: relative;
       padding-right: 16px;
-      width: calc(100vw-32px);
+      padding-bottom: 20px;
       .commentProfileImg {
         width: 36px;
         height: 36px;
         border-radius: 50%;
+        padding-right: 10px;
       }
-      .commentNames {
+      .commentAndNames {
         display: flex;
+        flex-direction: column;
         line-height: 20px;
-        .commentNickName {
-          font-size: 14px;
-          margin-left: 12px;
-          padding-top: 6px;
+        .commentNames {
+          display: flex;
+          flex-direction: row;
+          padding-bottom: 5px;
+          .commentNickName {
+            font-size: 14px;
+            padding-top: 6px;
+          }
+          .commentWrittenTime {
+            margin-left: 6px;
+            font-size: 10px;
+            padding-top: 9px;
+            line-height: 12px;
+            color: #767676;
+          }
         }
-        .commentWrittenTime {
-          margin-left: 6px;
-          font-size: 10px;
-          padding-top: 9px;
-          line-height: 12px;
-          color: #767676;
+        .commentText {
+          font-size: 14px;
+          line-height: 18px;
+          color: #333333;
         }
       }
       .commonSetting {
@@ -167,12 +178,6 @@ body {
         right: 0;
         top: 5px;
       }
-    }
-    .commentText {
-      padding-left: 48px;
-      font-size: 14px;
-      line-height: 18px;
-      color: #333333;
     }
   }
   .inputComponent {
