@@ -37,7 +37,7 @@ const storeImage = async (target) => {
     return resJson.filename;
   } catch (err) {
     console.error(err);
-    location.href = './page404.html';
+    // location.href = './page404.html';
   }
 };
 
@@ -120,14 +120,14 @@ async function productData() {
     console.log(resJson);
     if (resJson.type == 'entity.too.large') {
       alert('이미지 용량이 너무 큽니다');
-      location.href = './page404.html';
+      // location.href = './page404.html';
     } else {
       alert('상품이 정상적으로 등록되었습니다');
       isProductTrue();
     }
   } catch (err) {
     console.error(err);
-    location.href = './page404.html';
+    // location.href = './page404.html';
   }
 }
 

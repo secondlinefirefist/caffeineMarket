@@ -129,7 +129,7 @@ const handleCheckInput = () => {
     setProductData(resJson.product);
   } catch (err) {
     console.error(err);
-    location.href = './page404.html';
+    // location.href = './page404.html';
   }
 })();
 
@@ -157,7 +157,7 @@ async function productData() {
     console.log(resJson.type);
     if (resJson.type == 'entity.too.large') {
       alert('이미지 용량이 너무 큽니다');
-      location.href = './page404.html';
+      // location.href = './page404.html';
     } else {
       isProductTrue();
     }
@@ -165,7 +165,7 @@ async function productData() {
     isProductTrue();
   } catch (err) {
     console.error(err);
-    location.href = './page404.html';
+    // location.href = './page404.html';
   }
 }
 
