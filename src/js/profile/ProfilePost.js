@@ -24,7 +24,7 @@
     clickLike(resJson);
   } catch {
     console.error('ERROR');
-    // location.href = '../pages/page404.html';
+    location.href = '../pages/page404.html';
   }
 })();
 
@@ -196,7 +196,6 @@ function openPostSettingModal() {
     btnPostSetting[i].addEventListener('click', (event) => {
       event.stopPropagation();
       postModal.classList.toggle('displayModal');
-      // console.log(event.currentTarget);
       btnDelPost.setAttribute(
         'postId',
         event.currentTarget.getAttribute('data-id')
@@ -251,7 +250,7 @@ async function confirmDelPost() {
     alertDelPost(json);
   } catch {
     console.error('ERROR!');
-    // location.href = '../pages/page404.html';
+    location.href = '../pages/page404.html';
   }
 }
 btnOkDelPost.addEventListener('click', confirmDelPost);
