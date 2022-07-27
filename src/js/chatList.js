@@ -19,6 +19,7 @@ const yourAccountname = location.search.replace('?', '').split('=')[1];
     showFollowingList(resJson);
   } catch {
     console.error('err');
+    location.href = './page404.html';
   }
 })();
 
