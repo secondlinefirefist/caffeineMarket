@@ -103,6 +103,7 @@ body {
   color: #767676;
   width: 250px;
   overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
 
