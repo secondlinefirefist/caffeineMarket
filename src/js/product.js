@@ -75,7 +75,6 @@ const checkProductPrice = () => {
     return true;
   } else {
     $errProductPrice.style.display = 'block';
-
     return false;
   }
 };

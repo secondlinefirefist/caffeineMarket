@@ -21,7 +21,7 @@ const setProductData = (resJson) => {
     .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   $inputProductLink.value = resJson.link;
 
-  filename = resJson.itemImage; //가져온 이미지 주소 filename에 할당
+  filename = resJson.itemImage; 
 
   if ($productImg.src) {
     $productImg.style.display = 'block';
@@ -82,22 +82,25 @@ $inputProductTitle.addEventListener('input', (event) => {
 });
 
 // 상품 가격 유효성 검사
-const checkProductPrice = (event) => {
+const checkProductPrice = () => {
   const $errProductPrice = document.querySelector('.errProductPrice');
-  let originNum = event.target.value.replace(/,/gi, ''); // 콤마를 빈 문자열로 변경
+  let originNum = $inputProductPrice.value.replace(/,/gi, ''); // 콤마를 빈 문자열로 변경
   // 숫자가 아니라면 error 메시지 출력
-  if (isNaN(originNum)) {
-    $errProductPrice.style.display = 'block';
-  } else {
+  if (!isNaN(originNum)) {
     $errProductPrice.style.display = 'none';
     // 가격자동 원단위 콤마 표시
-    event.target.value = originNum.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    $inputProductPrice.value = originNum.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return true;
+  } else {
+    $errProductPrice.style.display = 'block';
+    return false;
   }
 };
 
 // 이미지, 상품명, 가격, 판매링크 모두 입력될 경우 저장버튼 활성화 함수
 const handleCheckInput = () => {
   if (
+    checkProductPrice() &&
     checkProductName() &&
     ($inputProductImg.files.length ||
       $inputProductTitle.value ||
