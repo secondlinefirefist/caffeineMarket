@@ -1,7 +1,6 @@
 /* layout */
 .wrap {
   max-width: 390px;
-  min-height: 840px;
   margin: 0 auto;
   padding: 0 34px;
   box-sizing: border-box;

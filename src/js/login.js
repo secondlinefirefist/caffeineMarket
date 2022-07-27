@@ -47,20 +47,15 @@ async function loginData() {
     const resJson = await res.json();
     console.log(resJson); //나중에 지우기
     saveData(resJson);
-    isLogin(resJson);
   } catch (err) {
-    changePageTo404();
+    console.log(err);
+    //changePageTo404();
   }
 }
 
 //404에러 처리
 function changePageTo404() {
   location.href = './page404.html';
-}
-
-//로그인 체크 로직
-function isLogin(resJson) {
-  resJson.hasOwnProperty('user') ? isLoginTrue() : isLoginFalse();
 }
 
 //로그인 성공 시 페이지 전환
@@ -75,9 +70,13 @@ function isLoginFalse() {
 
 //로컬스토리지에 토큰 저장하기
 function saveData(resJson) {
-  localStorage.setItem('token', resJson.user.token);
-  localStorage.setItem('accountname', resJson.user.accountname);
-  localStorage.setItem('key', resJson.user._id);
+  if (resJson.hasOwnProperty('user')) {
+    isLoginTrue();
+    localStorage.setItem('token', resJson.user.token);
+    localStorage.setItem('accountname', resJson.user.accountname);
+    localStorage.setItem('key', resJson.user._id);
+  }
+  isLoginFalse();
 }
 
 $emailInput.addEventListener('input', checkEmailInputValue);
