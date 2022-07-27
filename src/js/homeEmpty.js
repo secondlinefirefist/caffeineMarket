@@ -16,19 +16,18 @@ async function getFollower() {
       },
     });
     const resJson = await res.json();
-    console.log(resJson); //나중에 지우기
     //팔로우 리스트 체크
     isFollowCheck(resJson);
   } catch (err) {
-    console.error(err); //나중에 지우기
+    changePageTo404();
   }
 }
 
 //팔로우 리스트 체크
 function isFollowCheck(resJson) {
-  if (Array.isArray(resJson) && resJson.length === 0) {
-    changePageToHomeEpmty();
-  } else changePageeHome();
+  if (!Array.isArray(resJson) && resJson.length === 0) {
+    changePageeHome();
+  }
 }
 
 //홈 피드로 이동
@@ -36,14 +35,13 @@ function changePageeHome() {
   location.href = './home.html';
 }
 
-//빈 홈으로 이동
-function changePageToHomeEpmty() {
-  location.href = './homeEmpty.html';
-}
-
 //검색창으로 이동
 function changePageToSerch() {
   location.href = './search.html';
+}
+
+function changePageTo404() {
+  location.href = './page404.html';
 }
 
 //화면 진입 시 피드 여부 판단
