@@ -17,11 +17,15 @@ async function getFollower() {
     });
     const resJson = await res.json();
     //팔로우 리스트 체크
+    console.log(resJson);
     isFollowCheck(resJson);
   } catch (err) {
     changePageTo404();
   }
 }
+
+//화면 진입 시 피드 여부 판단
+getFollower();
 
 //404에러 처리
 function changePageTo404() {
@@ -30,7 +34,7 @@ function changePageTo404() {
 
 //팔로우 리스트 체크
 function isFollowCheck(resJson) {
-  if (!Array.isArray(resJson) && resJson.length === 0) {
+  if (Array.isArray(resJson) && !(resJson.length === 0)) {
     changePageeHome();
   }
 }
@@ -48,9 +52,6 @@ function changePageToSerch() {
 function changePageTo404() {
   location.href = './page404.html';
 }
-
-//화면 진입 시 피드 여부 판단
-getFollower();
 
 $navSerch.addEventListener('click', changePageToSerch);
 $mainSerchButton.addEventListener('click', changePageToSerch);
