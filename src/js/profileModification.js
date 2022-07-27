@@ -43,6 +43,7 @@ function changePageTo404() {
   location.href = './page404.html';
 }
 
+//인풋 초기값 불러오는 세팅
 function infoUserProfile(resJson) {
   $profileCover.setAttribute('src', resJson.profile.image);
   $userNameInput.value = resJson.profile.username;
