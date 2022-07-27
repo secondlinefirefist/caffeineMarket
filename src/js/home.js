@@ -16,6 +16,7 @@ async function getFollowerFeed() {
     const resJson = await res.json();
     isFollowCheck(resJson);
     createPostFeed(resJson);
+    clickLike(resJson);
   } catch (err) {
     changePageTo404();
   }
@@ -154,9 +155,88 @@ function createPostFeed(resJson) {
     likeNumber.textContent = resJson.posts[i].heartCount;
 
     commentBtn.setAttribute('type', 'button');
+    commentBtn.setAttribute('id', 'commentButton');
+    commentBtn.setAttribute('commentid', resJson.posts[i].id);
     commentImage.setAttribute('src', '../img/icon/icon-message-circle.png');
     commentImage.setAttribute('alt', '댓글 버튼');
     commentImage.setAttribute('id', 'btnComment');
     commentNumber.textContent = resJson.posts[i].commentCount;
+  }
+  goPostDetailComment();
+}
+
+// 리스트 페이지 댓글 보기
+function goPostDetailComment() {
+  let commentButton = document.querySelectorAll('#commentButton');
+  for (let i = 0; i < commentButton.length; i++) {
+    commentButton[i].addEventListener('click', (event) => {
+      location.href =
+        '../pages/postDetail.html?id=' +
+        event.currentTarget.getAttribute('commentid');
+    });
+  }
+}
+
+//좋아요 버튼 누르기
+function clickLike(resJson) {
+  let likeBtn = document.querySelectorAll('#likeBtn');
+  let btnLikeImg = document.querySelectorAll('#btnLikeImg');
+  for (let i = 0; i < likeBtn.length; i++) {
+    likeBtn[i].addEventListener('click', (event) => {
+      let likeId = event.currentTarget.getAttribute('likeid');
+      let heartState = resJson.posts[i].hearted;
+      let likeBtnClass = btnLikeImg[i].getAttribute('class');
+      let likeTarget = event.currentTarget.firstElementChild;
+      console.log(likeBtnClass, likeTarget);
+
+      onLikePost(likeId, heartState, likeBtnClass, likeTarget);
+      cancleLikePost(likeId, heartState, likeBtnClass, likeTarget);
+    });
+  }
+}
+
+//좋아요 활성
+async function onLikePost(likeId, heartState, likeBtnClass, likeTarget) {
+  if (
+    (likeBtnClass == null && !heartState) ||
+    likeBtnClass == 'activeBtnLikeOff'
+  ) {
+    try {
+      const res = await fetch(url + '/post/' + likeId + '/heart', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Content-type': 'application/json',
+        },
+      });
+      const likeJson = await res.json();
+      console.log('💜');
+      likeTarget.classList.add('activeBtnLike');
+      likeTarget.classList.remove('activeBtnLikeOff');
+    } catch {
+      console.error('ERROR');
+    }
+  }
+}
+
+//좋아요 취소
+async function cancleLikePost(likeId, heartState, likeBtnClass, likeTarget) {
+  if (likeBtnClass == 'activeBtnLike' || (heartState && likeBtnClass == null)) {
+    try {
+      const res = await fetch(url + '/post/' + likeId + '/unheart', {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Content-type': 'application/json',
+        },
+      });
+      const likeJson = await res.json();
+      console.log('💜취소');
+      likeTarget.classList.add('activeBtnLikeOff');
+      likeTarget.classList.remove('activeBtnLike');
+      likeTarget.setAttribute('src', '../img/icon/icon-heart.png');
+    } catch {
+      console.error('ERROR');
+    }
   }
 }
