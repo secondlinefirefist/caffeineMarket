@@ -122,9 +122,11 @@ async function uploadComment() {
       },
     });
     const json = await res.json();
-    console.log(json);
     inputCommentText.value = '';
     checkValue();
+    setTimeout(() => {
+      location.reload();
+    }, 500);
   } catch (err) {
     console.log(err);
   }

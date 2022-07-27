@@ -304,4 +304,53 @@ body .inputComponent .commentPostBtn {
   font-size: 14px;
   font-weight: bold;
 }
+
+body .mainModal {
+  position: fixed;
+  display: none;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 10px 10px 0 0;
+  background-color: #fff;
+  -webkit-box-shadow: 0px -5px 22px -4px #b1b1b1;
+          box-shadow: 0px -5px 22px -4px #b1b1b1;
+  z-index: 20;
+}
+
+body .mainModal::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  left: calc(50% - 12px);
+  top: 16px;
+  border-radius: 5px;
+  background-color: #dbdbdb;
+}
+
+body .mainModal .mainModalList {
+  padding-top: 36px;
+}
+
+body .mainModal .mainModalList li {
+  display: block;
+  text-align: center;
+  padding: 14px 0 14px 26px;
+}
+
+body .mainModal .mainModalList li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #000;
+}
+
+body .displayModal {
+  display: block;
+}
 /*# sourceMappingURL=postDetail.css.map */
