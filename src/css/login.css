@@ -1,7 +1,6 @@
 /* layout */
 .wrap {
   max-width: 390px;
-  min-height: 840px;
   margin: 0 auto;
   padding: 0 34px;
   box-sizing: border-box;
@@ -36,7 +35,7 @@ input[class*='-input'] {
 }
 
 input[class*='-input']:focus {
-  border-bottom: 1px solid #f26e22;
+  border-bottom: 1px solid #664836;
 }
 
 .login-button {
@@ -46,7 +45,7 @@ input[class*='-input']:focus {
   font-weight: 500;
   border: none;
   color: white;
-  background-color: #ffc7a7;
+  background-color: #b3a49b;
   width: 100%;
   height: 44px;
   border-radius: 44px;
@@ -55,7 +54,7 @@ input[class*='-input']:focus {
 }
 
 .login-button.focus {
-  background-color: #f26e22;
+  background-color: #664836;
   cursor: pointer;
 }
 
@@ -73,7 +72,7 @@ input[class*='-input']:focus {
 /* 에러 메세지 */
 .error-message {
   font-size: 12px;
-  color: #eb5757;
+  color: #664836;
   margin: 6px 0;
 }
 

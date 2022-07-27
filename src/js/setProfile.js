@@ -79,8 +79,13 @@ async function userIdValid() {
     showButton();
     return resJson.message;
   } catch (err) {
-    console.error(err);
+    changePageTo404();
   }
+}
+
+//404에러 처리
+function changePageTo404() {
+  location.href = './page404.html';
 }
 
 //아이디 중복 체크 오류 메시지 출력
@@ -118,7 +123,7 @@ async function sendSignUpdata() {
       //userIdDuplicateCheck(resJson); //중복 체크 나중에 구현하기
       location.href = './login.html';
     } catch (err) {
-      console.error(err);
+      changePageTo404();
     }
   }
 }
@@ -153,7 +158,7 @@ async function resImage() {
 
     console.log(data);
   } catch (err) {
-    console.error(err);
+    changePageTo404();
   }
 }
 

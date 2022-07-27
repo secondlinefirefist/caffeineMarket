@@ -32,11 +32,16 @@ async function infoUser() {
     const resJson = await res.json();
     console.log(resJson);
     infoUserProfile(resJson);
-  } catch {
-    console.error('ERROR!');
+  } catch (err) {
+    changePageTo404();
   }
 }
 infoUser();
+
+//404에러 처리
+function changePageTo404() {
+  location.href = './page404.html';
+}
 
 function infoUserProfile(resJson) {
   $profileCover.setAttribute('src', resJson.profile.image);
@@ -66,7 +71,7 @@ async function modifiaction() {
     saveData(resJson);
     location.href = './myProfile.html';
   } catch (err) {
-    console.error(err);
+    changePageTo404();
   }
 }
 
@@ -97,7 +102,7 @@ async function userIdValid() {
 
     return resJson.message;
   } catch (err) {
-    console.error(err);
+    changePageTo404();
   }
 }
 
