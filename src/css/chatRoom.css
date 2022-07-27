@@ -232,8 +232,8 @@ main .chatRoom {
   display: block;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 320px) {
   #app {
-    width: 375px;
+    width: 310px;
   }
 }
