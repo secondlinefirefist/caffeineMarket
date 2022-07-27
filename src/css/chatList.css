@@ -23,7 +23,7 @@ body {
 }
 
 .wrapHeaderNav {
-  height: 48px;
+  height: 55px;
   padding: 12px 12px 12px 16px;
   display: flex;
   justify-content: space-between;
@@ -119,13 +119,16 @@ body {
 }
 
 /* 하단메뉴 */
-.contNav {
+
+footer {
+  background-color: #fff;
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.contNav {
   border-top: 0.5px solid #dbdbdb;
-  background-color: #fff;
-  box-sizing: border-box;
 }
 
 .navList {
@@ -138,13 +141,8 @@ body {
   opacity: 0.7;
 }
 
-.navList img {
+.navList li a img {
   width: 84px;
-}
-
-.navList li,
-.navList button {
-  height: 60px;
 }
 
 @media (max-width: 390px) {
