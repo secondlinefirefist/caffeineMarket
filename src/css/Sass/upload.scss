@@ -26,11 +26,14 @@ body {
     }
     .uploadBtn {
       width: 90px;
-      background-color: #ffc7a7;
+      background-color: #664836;
       border-radius: 32px;
       height: 32px;
       font-size: 14px;
       color: #fff;
+      &:disabled {
+        background-color: #b3a49b;
+      }
     }
   }
   .uploadCard {
@@ -40,6 +43,7 @@ body {
     .profileImg {
       width: 42px;
       height: 42px;
+      border-radius: 50%;
     }
     .textImgPart {
       width: 100%;
@@ -89,6 +93,9 @@ body {
     right: 16px;
     width: 50px;
     cursor: pointer;
+    img {
+      width: 50px;
+    }
   }
   input[type='file'] {
     display: none;

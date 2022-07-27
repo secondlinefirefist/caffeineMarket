@@ -10,22 +10,25 @@
   font-family: 'SpoqaHanSansNeo-Regular', 'sans-serif';
 }
 body {
-  width: 390px;
+  width: 100%;
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
   .headerBtns {
-    padding: 13px 16px;
+    padding: 16px 16px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #dbdbdb;
+    border-bottom: 0.5px solid #dbdbdb;
     .headerIcon {
       width: 22px;
       height: 22px;
     }
   }
   .postCard {
+    width: 375px;
     padding: 20px 16px;
+    left: 50%;
+    transform: translateX(-50%);
     position: relative;
     .commonProfileHeader {
       display: flex;
@@ -128,6 +131,8 @@ body {
     margin-bottom: 26px;
   }
   .commentComponent {
+    width: 375px;
+    margin: 0 auto;
     padding: 0 16px 16px;
     .commentProfileInfo {
       display: flex;
@@ -137,6 +142,7 @@ body {
       .commentProfileImg {
         width: 36px;
         height: 36px;
+        border-radius: 50%;
       }
       .commentNames {
         display: flex;
@@ -178,13 +184,17 @@ body {
     .inputProfileImg {
       width: 36px;
       height: 36px;
+      border-radius: 50%;
     }
     .commentForm {
+      flex: 1;
       .inputCommentText {
-        width: 278px;
+        width: 100%;
+        display: block;
         appearance: none;
         border: none;
-        padding: 10px 0 10px 18px;
+        box-sizing: border-box;
+        padding: 10px 18px 10px 18px;
         font-size: 14px;
         &::placeholder {
           color: #c4c4c4;
@@ -192,12 +202,12 @@ body {
       }
     }
     .commentPostBtn {
-      position: absolute;
-      padding-top: 12px;
-      color: #c4c4c4;
+      width: 26px;
+      padding-top: 2px;
+      color: #b3a49b;
       right: 16px;
       font-size: 14px;
-      width: 26px;
+      font-weight: bold;
     }
   }
 }

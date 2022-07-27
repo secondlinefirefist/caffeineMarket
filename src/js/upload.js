@@ -40,7 +40,7 @@ async function renderProfile() {
   }
 }
 renderProfile();
-
+uploadBtn.disabled = true;
 function handleFiles(files) {
   const ul = document.createElement('ul');
   fileList.appendChild(ul);
@@ -58,7 +58,7 @@ function handleFiles(files) {
     img.src = window.URL.createObjectURL(files[i]);
   }
   filesArray = Array.from(files);
-  uploadBtn.style.backgroundColor = '#F26E22';
+  uploadBtn.disabled = false;
   let urls = [];
   uploadBtn.addEventListener('click', async () => {
     await filesArray.forEach(async (f, index) => {
@@ -73,19 +73,7 @@ function handleFiles(files) {
         }, 2000);
       }
     });
-
-    // location.reload();
-    //
-    // forEach는 비동기를 기다려주지 않는다.
-    // for (const f of filesArray) {
-    //   const filename = await imgUpload(f);
-    //   urls.push(`${url}/${filename}`);
-    // }
-    // postUpload(urls);
-
-    // await postUpload(urls);
   });
-  // uploadBtn.addEventListener('click', async () => {});
 }
 // textArea 자동 줄 채우기
 const textArea = document.querySelector('.uploadBoxText');
@@ -135,18 +123,16 @@ async function postUpload(urls) {
   }
 }
 
-// x 버튼 추가, 클릭시 이미지 삭제
-// fileList index 대상 파일 삭제
-// post 시, 삭제된 파일 전송 불가 기능
+// 업로드 전 이미지, 이미지 데이터 삭제
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('deleteImg')) {
     const list = [...e.target.parentElement.parentElement.children];
     const index = list.indexOf(e.target.parentElement);
     filesArray.splice(index, 1);
     e.target.parentNode.remove();
+    // 이미지를 모두 지우는 경우, 업로드 버튼 비활성화
+    if (filesArray.length === 0) {
+      uploadBtn.disabled = true;
+    }
   }
 });
-
-// 업로드 버튼 클릭 시, POST로 서버에 파일전송 및 피드에 UI 생성
-// 업로드 클릭 시, 페이지 post 페이지로 이동
-// post 전송을 통해 post 페이지에 Template 불러오기

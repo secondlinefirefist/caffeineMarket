@@ -36,11 +36,15 @@ body .headerBtns .iconArrowLeft {
 
 body .headerBtns .uploadBtn {
   width: 90px;
-  background-color: #ffc7a7;
+  background-color: #664836;
   border-radius: 32px;
   height: 32px;
   font-size: 14px;
   color: #fff;
+}
+
+body .headerBtns .uploadBtn:disabled {
+  background-color: #b3a49b;
 }
 
 body .uploadCard {
@@ -54,6 +58,7 @@ body .uploadCard {
 body .uploadCard .profileImg {
   width: 42px;
   height: 42px;
+  border-radius: 50%;
 }
 
 body .uploadCard .textImgPart {
@@ -118,6 +123,10 @@ body .fileUploadBtn {
   right: 16px;
   width: 50px;
   cursor: pointer;
+}
+
+body .fileUploadBtn img {
+  width: 50px;
 }
 
 body input[type='file'] {
