@@ -1,24 +1,24 @@
 .wrapHeaderNav {
-    padding: 13px 16px;
+  padding: 13px 16px;
 }
 
 .contPost {
-    padding-top: 48px;
+  padding-top: 48px;
 }
 
 .title {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 22px;
-    
+  font-family: 'SpoqaHanSansNeo-Regular', 'sans-serif';
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
 }
 
 .serch-button {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .serch-button img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
