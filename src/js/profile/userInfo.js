@@ -19,7 +19,7 @@ async function infoUser() {
     showYourProfileButton(resJson);
   } catch {
     console.error('ERROR!');
-    // location.href = '../pages/page404.html';
+    location.href = '../pages/page404.html';
   }
 }
 infoUser();
@@ -77,7 +77,8 @@ function showYourProfileButton(resJson) {
 function goChatRoom(resJson) {
   let btnKakao = document.querySelector('.btnKakao');
   btnKakao.addEventListener('click', () => {
-    location.href = './chatRoom.html?accountname=' + resJson.profile.accountname;
+    location.href =
+      './chatRoom.html?accountname=' + resJson.profile.accountname;
   });
 }
 
@@ -120,7 +121,7 @@ async function clickUserInfoFollowBtn(
       const resJson = await res.json();
     } catch {
       console.error('ERROR');
-      // location.href = '../pages/page404.html';
+      location.href = '../pages/page404.html';
     }
 }
 // 언팔로우
@@ -149,7 +150,7 @@ async function clickUserInfoUnFollowBtn(
       followingTarget.textContent = '팔로우';
     } catch {
       console.error('ERROR');
-      // location.href = '../pages/page404.html';
+      location.href = '../pages/page404.html';
     }
   }
 }
