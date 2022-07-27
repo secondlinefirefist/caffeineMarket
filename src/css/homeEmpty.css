@@ -1,3 +1,7 @@
+body {
+  height: inherit;
+}
+
 .empty-home {
   margin-top: 220px;
   text-align: center;
@@ -18,4 +22,8 @@
   width: 120px;
   height: 44px;
   border-radius: 44px;
+}
+
+.empty-home img {
+  width: 100px;
 }
