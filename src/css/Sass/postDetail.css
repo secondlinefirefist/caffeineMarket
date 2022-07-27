@@ -10,7 +10,7 @@
 }
 
 body {
-  width: 390px;
+  width: 100%;
   margin: 0 auto;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -18,14 +18,14 @@ body {
 }
 
 body .headerBtns {
-  padding: 13px 16px;
+  padding: 16px 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 0.5px solid #dbdbdb;
 }
 
 body .headerBtns .headerIcon {
@@ -34,7 +34,11 @@ body .headerBtns .headerIcon {
 }
 
 body .postCard {
+  width: 375px;
   padding: 20px 16px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   position: relative;
 }
 
@@ -171,6 +175,8 @@ body .dividingLine {
 }
 
 body .commentComponent {
+  width: 375px;
+  margin: 0 auto;
   padding: 0 16px 16px;
 }
 
@@ -186,6 +192,7 @@ body .commentComponent .commentProfileInfo {
 body .commentComponent .commentProfileInfo .commentProfileImg {
   width: 36px;
   height: 36px;
+  border-radius: 50%;
 }
 
 body .commentComponent .commentProfileInfo .commentNames {
@@ -237,15 +244,25 @@ body .inputComponent {
 body .inputComponent .inputProfileImg {
   width: 36px;
   height: 36px;
+  border-radius: 50%;
+}
+
+body .inputComponent .commentForm {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 body .inputComponent .commentForm .inputCommentText {
-  width: 278px;
+  width: 100%;
+  display: block;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border: none;
-  padding: 10px 0 10px 18px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px 18px 10px 18px;
   font-size: 14px;
 }
 
@@ -266,11 +283,11 @@ body .inputComponent .commentForm .inputCommentText::placeholder {
 }
 
 body .inputComponent .commentPostBtn {
-  position: absolute;
-  padding-top: 12px;
-  color: #c4c4c4;
+  width: 26px;
+  padding-top: 2px;
+  color: #b3a49b;
   right: 16px;
   font-size: 14px;
-  width: 26px;
+  font-weight: bold;
 }
 /*# sourceMappingURL=postDetail.css.map */

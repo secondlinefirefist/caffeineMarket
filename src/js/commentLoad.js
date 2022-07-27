@@ -92,10 +92,10 @@ const inputCommentText = document.querySelector('.inputCommentText');
 function checkValue() {
   if (inputCommentText.value !== '') {
     commentPostBtn.disabled = false;
-    commentPostBtn.style.color = '#E26E7E';
+    commentPostBtn.style.color = '#664836';
   } else {
     commentPostBtn.disabled = true;
-    commentPostBtn.style.color = '#C4C4C4';
+    commentPostBtn.style.color = '#b3a49b';
   }
 }
 inputCommentText.addEventListener('input', checkValue);
