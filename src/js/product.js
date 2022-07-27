@@ -37,6 +37,7 @@ const storeImage = async (target) => {
     return resJson.filename;
   } catch (err) {
     console.error(err);
+    location.href = './page404.html';
   }
 };
 
