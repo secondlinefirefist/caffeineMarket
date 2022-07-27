@@ -21,7 +21,7 @@ const setProductData = (resJson) => {
     .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   $inputProductLink.value = resJson.link;
 
-  filename = resJson.itemImage; 
+  filename = resJson.itemImage;
 
   if ($productImg.src) {
     $productImg.style.display = 'block';
@@ -54,7 +54,6 @@ const storeImage = async (target) => {
     return `${url}/${resJson.filename}`;
   } catch (err) {
     console.error(err);
-    location.href = './page404.html';
   }
 };
 
@@ -88,7 +87,6 @@ const checkProductPrice = () => {
   // 숫자가 아니라면 error 메시지 출력
   if (!isNaN(originNum)) {
     $errProductPrice.style.display = 'none';
-    // 가격자동 원단위 콤마 표시
     $inputProductPrice.value = originNum.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     return true;
   } else {
@@ -97,7 +95,7 @@ const checkProductPrice = () => {
   }
 };
 
-// 이미지, 상품명, 가격, 판매링크 모두 입력될 경우 저장버튼 활성화 함수
+// 이미지, 상품명, 가격, 판매링크 모두 입력될 경우 저장버튼 활성화 
 const handleCheckInput = () => {
   if (
     checkProductPrice() &&
@@ -129,11 +127,10 @@ const handleCheckInput = () => {
     setProductData(resJson.product);
   } catch (err) {
     console.error(err);
-    // location.href = './page404.html';
   }
 })();
 
-// 저장버튼 클릭시 상품 데이터 PUT 요청(이미지 업로드 미구현)
+// 저장버튼 클릭시 상품 데이터 PUT 요청
 
 async function productData() {
   try {
@@ -157,7 +154,6 @@ async function productData() {
     console.log(resJson.type);
     if (resJson.type == 'entity.too.large') {
       alert('이미지 용량이 너무 큽니다');
-      // location.href = './page404.html';
     } else {
       isProductTrue();
     }
@@ -165,7 +161,7 @@ async function productData() {
     isProductTrue();
   } catch (err) {
     console.error(err);
-    // location.href = './page404.html';
+    alert('상품 수정이 실패 했습니다. 다시 시도해 주세요');
   }
 }
 
