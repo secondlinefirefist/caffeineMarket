@@ -79,8 +79,13 @@ async function userIdValid() {
     showButton();
     return resJson.message;
   } catch (err) {
-    console.error(err);
+    changePageTo404();
   }
+}
+
+//404에러 처리
+function changePageTo404() {
+  location.href = './page404.html';
 }
 
 //아이디 중복 체크 오류 메시지 출력

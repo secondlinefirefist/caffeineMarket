@@ -32,11 +32,16 @@ async function infoUser() {
     const resJson = await res.json();
     console.log(resJson);
     infoUserProfile(resJson);
-  } catch {
-    console.error('ERROR!');
+  } catch (err) {
+    changePageTo404();
   }
 }
 infoUser();
+
+//404에러 처리
+function changePageTo404() {
+  location.href = './page404.html';
+}
 
 function infoUserProfile(resJson) {
   $profileCover.setAttribute('src', resJson.profile.image);

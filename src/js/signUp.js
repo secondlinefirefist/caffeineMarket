@@ -49,13 +49,17 @@ async function emailValid() {
       }),
     });
     const resJson = await res.json();
-    console.log(resJson); // 나중에 지우기
     emailDuplicateCheck(resJson);
     showButton();
     return resJson.message;
   } catch (err) {
-    console.error(err);
+    changePageTo404();
   }
+}
+
+//404에러 처리
+function changePageTo404() {
+  location.href = './page404.html';
 }
 
 //이메일 중복 체크

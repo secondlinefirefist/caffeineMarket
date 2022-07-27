@@ -23,6 +23,11 @@ async function getFollower() {
   }
 }
 
+//404에러 처리
+function changePageTo404() {
+  location.href = './page404.html';
+}
+
 //팔로우 리스트 체크
 function isFollowCheck(resJson) {
   if (!Array.isArray(resJson) && resJson.length === 0) {

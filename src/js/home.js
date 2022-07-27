@@ -18,8 +18,13 @@ async function getFollowerFeed() {
     isFollowCheck(resJson);
     createPostFeed(resJson);
   } catch (err) {
-    console.error(err); //나중에 지우기
+    changePageTo404();
   }
+}
+
+//404에러 처리
+function changePageTo404() {
+  location.href = './page404.html';
 }
 
 //팔로우 피드 체크

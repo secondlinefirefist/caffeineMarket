@@ -49,8 +49,13 @@ async function loginData() {
     saveData(resJson);
     isLogin(resJson);
   } catch (err) {
-    console.error(err);
+    changePageTo404();
   }
+}
+
+//404에러 처리
+function changePageTo404() {
+  location.href = './page404.html';
 }
 
 //로그인 체크 로직
