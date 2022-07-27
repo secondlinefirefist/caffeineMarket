@@ -16,7 +16,7 @@ body {
 /* header */
 
 .wrapHeaderNav {
-  height: 48px;
+  height: 55px;
   padding: 12px 12px 12px 16px;
   display: flex;
   justify-content: space-between;
@@ -46,7 +46,7 @@ body {
 
 #app main {
   overflow-y: scroll;
-  height: calc(100% - 112px);
+  height: calc(100% - 119px);
   background-color: #f2f2f2;
 }
 
