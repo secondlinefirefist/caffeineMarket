@@ -14,7 +14,6 @@ async function getFollowerFeed() {
       },
     });
     const resJson = await res.json();
-    console.log(resJson); //나중에 지우기
     isFollowCheck(resJson);
     createPostFeed(resJson);
   } catch (err) {
@@ -29,7 +28,8 @@ function changePageTo404() {
 
 //팔로우 피드 체크
 function isFollowCheck(resJson) {
-  if (Array.isArray(resJson) && resJson.length === 0) {
+  if (Array.isArray(resJson.posts) && resJson.posts.length === 0) {
+    console.log(resJson);
     changePageToHomeEpmty();
   }
 }
