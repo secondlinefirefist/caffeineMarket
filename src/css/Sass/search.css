@@ -69,7 +69,6 @@ body .tapMenu {
   display: flex;
   width: 100%;
   border-top: 1px solid #dbdbdb;
-  padding: 0 6px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -83,7 +82,6 @@ body .tapMenu .menuIcon {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 12px 30px 6px;
   width: 84px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -93,7 +91,7 @@ body .tapMenu .menuIcon {
 }
 
 body .tapMenu .menuIcon .iconImg {
-  width: 24px;
+  width: 84px;
   margin-bottom: 4px;
 }
 
