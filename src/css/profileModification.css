@@ -1,27 +1,27 @@
 .wrapHeaderNav {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 0.5px solid #dbdbdb;
-    background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #dbdbdb;
+  background-color: #fff;
 }
 
 .wrapHeaderNav .btnBack {
-display: block;
-width: fit-content;
-padding: 13px;
+  display: block;
+  width: fit-content;
+  padding: 13px;
 }
 
 .btnSave {
-    width: 90px;
-    height: 32px;
-    line-height: 32px;
-    background-color: #ffc7a7;
-    color: #fff;
-    margin: auto 0;
-    border-radius: 32px;
+  width: 90px;
+  height: 32px;
+  line-height: 32px;
+  background-color: #b3a49b;
+  color: #fff;
+  margin: auto 0;
+  border-radius: 32px;
 }
 
 .btnSave.focus {
-    background-color: #664836;
-    cursor: pointer;
-  }
+  background-color: #664836;
+  cursor: pointer;
+}
