@@ -3,6 +3,7 @@ const url = 'https://mandarin.api.weniv.co.kr';
 const myAccountname = `${window.localStorage.getItem('accountname')}`;
 const yourAccountname = location.search.replace('?', '').split('=')[1];
 const accountname = yourAccountname ? yourAccountname : myAccountname;
+const token = window.localStorage.getItem('token');
 async function followListData() {
   try {
     const res = await fetch(
@@ -10,7 +11,7 @@ async function followListData() {
       {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Authorization': `Bearer ${token}`,
           'Content-type': 'application/json',
         },
       }
@@ -103,7 +104,7 @@ async function clickUnFollow(followUserData, followState, targetButton) {
         {
           method: 'DELETE',
           headers: {
-            'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+            'Authorization': `Bearer ${token}`,
             'Content-type': 'application/json',
           },
           body: JSON.stringify(),
@@ -132,7 +133,7 @@ async function clickFollow(followUserData, followState, targetButton) {
         method: 'POST',
         body: JSON.stringify(),
         headers: {
-          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Authorization': `Bearer ${token}`,
           'Content-type': 'application/json',
         },
       });
