@@ -264,12 +264,15 @@ body .commentComponent .commentProfileInfo .commonSetting {
 
 body .inputComponent {
   border-top: 1px solid #dbdbdb;
-  margin-top: 50px;
+  margin: 0 auto;
   padding: 13px 16px 12px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 390px;
+  box-sizing: border-box;
+  gap: 6px;
 }
 
 body .inputComponent .inputProfileImg {
@@ -315,7 +318,7 @@ body .inputComponent .commentForm .inputCommentText::placeholder {
 }
 
 body .inputComponent .commentPostBtn {
-  width: 26px;
+  width: 28px;
   padding-top: 2px;
   color: #b3a49b;
   right: 16px;
