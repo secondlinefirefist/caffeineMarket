@@ -45,7 +45,13 @@ async function loginData() {
       }),
     });
     const resJson = await res.json();
-    saveData(resJson);
+    if (resJson.user !== null) {
+      saveData(resJson);
+    }
+
+    if (resJson.status === 422) {
+      isLoginFalse();
+    }
   } catch (err) {
     changePageTo404();
   }
@@ -74,7 +80,6 @@ function saveData(resJson) {
     localStorage.setItem('accountname', resJson.user.accountname);
     localStorage.setItem('key', resJson.user._id);
   }
-  isLoginFalse();
 }
 
 $emailInput.addEventListener('input', checkEmailInputValue);
