@@ -121,7 +121,6 @@ async function clickUserInfoFollowBtn(
       const resJson = await res.json();
     } catch {
       console.error('ERROR');
-      location.href = '../pages/page404.html';
     }
 }
 // 언팔로우
@@ -150,7 +149,6 @@ async function clickUserInfoUnFollowBtn(
       followingTarget.textContent = '팔로우';
     } catch {
       console.error('ERROR');
-      location.href = '../pages/page404.html';
     }
   }
 }
