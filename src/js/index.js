@@ -31,5 +31,5 @@ function splash() {
 
 //홈 피드로 이동
 function changePageeHome() {
-  location.href = './home.html';
+  location.href = './src/pages/home.html';
 }
