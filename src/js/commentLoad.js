@@ -1,5 +1,6 @@
+let postCommentId;
+const postId = location.search.replace('?', '').split('=')[1];
 async function commentLoad() {
-  const postId = location.search.replace('?', '').split('=')[1];
   const url = 'https://mandarin.api.weniv.co.kr';
   const token = localStorage.getItem('token');
 
@@ -12,7 +13,6 @@ async function commentLoad() {
       },
     });
     const json = await res.json();
-    // console.log(json);
 
     for (let i = 0; i < json.comments.length; i++) {
       const element = json.comments[i];
@@ -46,7 +46,8 @@ async function commentLoad() {
       p1.className = 'commentNickName';
       p2.className = 'commentWrittenTime';
       p3.className = 'commentText';
-      btn.className = 'commonSetting';
+      btn.className = 'commonSetting btnCommentSetting';
+      img2.setAttribute('comment-id', commentId);
 
       div1.append(div2);
       div2.append(img1, div3, btn);
@@ -60,12 +61,90 @@ async function commentLoad() {
       p1.textContent = accountName;
       p3.textContent = content;
     }
+    openPostSettingModal();
   } catch (err) {
     console.log(err);
   }
 }
 
 commentLoad();
+
+//댓글 설정 모달
+const commentModal = document.querySelector('#commentModal');
+const btnDelComment = document.querySelector('#btnDelComment');
+const contPost = document.querySelector('.contPost');
+function openPostSettingModal() {
+  let btnCommentSetting = document.querySelectorAll('.btnCommentSetting');
+
+  for (let i = 0; i < btnCommentSetting.length; i++) {
+    btnCommentSetting[i].addEventListener('click', (event) => {
+      event.stopPropagation();
+      commentModal.classList.toggle('displayModal');
+      postCommentId = event.target.getAttribute('comment-id');
+      btnDelComment.setAttribute(
+        'comment-id',
+        event.target.getAttribute('comment-id')
+      );
+      btnOkDelPost.setAttribute(
+        'commentId',
+        event.target.getAttribute('comment-id')
+      );
+      btnModifyComment.setAttribute(
+        'commentId',
+        event.target.getAttribute('comment-id')
+      );
+    });
+  }
+  document.querySelector('main').addEventListener('click', (event) => {
+    commentModal.classList.remove('displayModal');
+  });
+}
+
+const subDelCommentModal = document.querySelector('#subDelCommentModal');
+const btnCancelDelComment = document.querySelector('#btnCancelDelComment');
+const btnOkDelComment = document.querySelector('#btnOkDelComment');
+const txtSubModal = document.querySelector('.txtSubModal');
+txtSubModal.textContent = '댓글을 삭제할까요?';
+function checkDelPost() {
+  // 댓글 셋팅 모달의 '삭제' 버튼 누르기
+  btnDelComment.addEventListener('click', (event) => {
+    event.stopPropagation();
+    subDelCommentModal.classList.add('displayModal');
+    commentModal.classList.remove('displayModal');
+  });
+
+  // 댓글 삭제 '취소' 버튼 누르기
+  btnCancelDelComment.addEventListener('click', () => {
+    subDelCommentModal.classList.remove('displayModal');
+  });
+}
+checkDelPost();
+
+//게시글 최종 삭제 버튼 누르기
+async function confirmDelPost() {
+  const url = 'https://mandarin.api.weniv.co.kr';
+  const token = localStorage.getItem('token');
+
+  try {
+    const res = await fetch(
+      url + '/post/' + postId + '/comments/' + postCommentId,
+      {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(),
+      }
+    );
+    const json = await res.json();
+
+    location.reload();
+  } catch (err) {
+    console.error(err);
+  }
+}
+btnOkDelComment.addEventListener('click', confirmDelPost);
 
 async function renderProfile() {
   const url = 'https://mandarin.api.weniv.co.kr';
@@ -81,7 +160,7 @@ async function renderProfile() {
       },
     });
     const json = await res.json();
-    // console.log(json);
+
     inputProfileImg.setAttribute('src', json.profile.image);
   } catch (err) {
     console.error(err);
@@ -106,7 +185,6 @@ async function uploadComment() {
   const postId = location.search.replace('?', '').split('=')[1];
   const url = 'https://mandarin.api.weniv.co.kr';
   const token = localStorage.getItem('token');
-  console.log(inputCommentText.value);
 
   try {
     const res = await fetch(url + '/post/' + postId + '/comments', {

@@ -149,7 +149,6 @@ async function renderPost() {
 
   //게시글 최종 삭제 버튼 누르기
   async function confirmDelPost() {
-    const productId = btnOkDelPost.getAttribute('postid');
     try {
       const res = await fetch(url + '/post/' + postId, {
         method: 'DELETE',
@@ -161,9 +160,9 @@ async function renderPost() {
       });
       const json = await res.json();
       alertDelPost(json);
-      location.back();
     } catch {
       console.error('ERROR!');
+      location.href = './myProfile.html';
     }
   }
   btnOkDelPost.addEventListener('click', confirmDelPost);
