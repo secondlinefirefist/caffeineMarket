@@ -1,7 +1,8 @@
 @charset "UTF-8";
 @font-face {
   font-family: 'SpoqaHanSansNeo-Regular';
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff") format("woff");
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +16,7 @@ body {
   margin: 0 auto;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /*로그아웃 확인 모달, 게시글 삭제 모달*/
   /* 게시글 설정 모달, 상품 설정 모달 */
 }
@@ -26,8 +27,8 @@ body .headerBtns {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border-bottom: 0.5px solid #dbdbdb;
 }
 
@@ -41,7 +42,7 @@ body .postCard {
   padding: 20px 16px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   position: relative;
 }
 
@@ -55,6 +56,7 @@ body .postCard .commonProfileHeader {
 body .postCard .commonProfileHeader .profileImg {
   width: 42px;
   height: 42px;
+  border-radius: 50%;
 }
 
 body .postCard .commonProfileHeader .profileTextBox {
@@ -63,8 +65,8 @@ body .postCard .commonProfileHeader .profileTextBox {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding-left: 12px;
 }
 
@@ -189,7 +191,7 @@ body .commentComponent .commentProfileInfo {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  padding-right: 16px;
+  gap: 16px;
   padding-bottom: 20px;
 }
 
@@ -197,7 +199,6 @@ body .commentComponent .commentProfileInfo .commentProfileImg {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  padding-right: 10px;
 }
 
 body .commentComponent .commentProfileInfo .commentAndNames {
@@ -206,8 +207,8 @@ body .commentComponent .commentProfileInfo .commentAndNames {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   line-height: 20px;
 }
 
@@ -217,17 +218,27 @@ body .commentComponent .commentProfileInfo .commentAndNames .commentNames {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   padding-bottom: 5px;
 }
 
-body .commentComponent .commentProfileInfo .commentAndNames .commentNames .commentNickName {
+body
+  .commentComponent
+  .commentProfileInfo
+  .commentAndNames
+  .commentNames
+  .commentNickName {
   font-size: 14px;
   padding-top: 6px;
 }
 
-body .commentComponent .commentProfileInfo .commentAndNames .commentNames .commentWrittenTime {
+body
+  .commentComponent
+  .commentProfileInfo
+  .commentAndNames
+  .commentNames
+  .commentWrittenTime {
   margin-left: 6px;
   font-size: 10px;
   padding-top: 9px;
@@ -267,19 +278,19 @@ body .inputComponent .inputProfileImg {
 
 body .inputComponent .commentForm {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 body .inputComponent .commentForm .inputCommentText {
   width: 100%;
   display: block;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: none;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 10px 18px 10px 18px;
   font-size: 14px;
 }
@@ -314,15 +325,15 @@ body .mainModal {
   display: none;
   width: 100%;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   bottom: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   border-radius: 10px 10px 0 0;
   background-color: #fff;
   -webkit-box-shadow: 0px -5px 22px -4px #b1b1b1;
-          box-shadow: 0px -5px 22px -4px #b1b1b1;
+  box-shadow: 0px -5px 22px -4px #b1b1b1;
   z-index: 20;
 }
 
@@ -369,11 +380,11 @@ body .wrapSubModal .subModal {
   width: 252px;
   position: absolute;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 10px 10px 0 0;
   border-radius: 10px;
   background-color: #fff;
@@ -424,15 +435,15 @@ body .postModal {
   display: none;
   width: 100%;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   bottom: 0px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   border-radius: 10px 10px 0 0;
   background-color: #fff;
   -webkit-box-shadow: 0px -5px 22px -4px rgba(166, 166, 166, 0.75);
-          box-shadow: 0px -5px 22px -4px rgba(166, 166, 166, 0.75);
+  box-shadow: 0px -5px 22px -4px rgba(166, 166, 166, 0.75);
   z-index: 10;
 }
 
@@ -473,15 +484,15 @@ body .productModal {
   display: none;
   width: 100%;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   bottom: 0px;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 10px 10px 0 0;
   background-color: #fff;
   -webkit-box-shadow: 0px -5px 22px -4px rgba(166, 166, 166, 0.75);
-          box-shadow: 0px -5px 22px -4px rgba(166, 166, 166, 0.75);
+  box-shadow: 0px -5px 22px -4px rgba(166, 166, 166, 0.75);
   z-index: 10;
   margin-bottom: -24px;
 }
