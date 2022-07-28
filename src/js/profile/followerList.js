@@ -31,7 +31,6 @@ async function followListData() {
 followListData();
 
 function showfollowingList(resJson) {
-  console.log(resJson);
   for (let i = 0; i < resJson.length; i++) {
     const li = document.createElement('li'),
       link = document.createElement('a'),
@@ -80,7 +79,6 @@ function showfollowingList(resJson) {
 
 //팔로우 & 언팔로에 필요한 매개변수값들 넘겨주기
 function followingData(resJson) {
-  console.log(resJson, '언팔로우 함수 내부입니다');
   let btnSelectFollow = document.querySelectorAll('#btnSelectFollow');
   for (let i = 0; i < btnSelectFollow.length; i++) {
     btnSelectFollow[i].addEventListener('click', (event) => {
