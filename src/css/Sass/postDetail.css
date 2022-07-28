@@ -57,6 +57,7 @@ body .postCard .commonProfileHeader .profileImg {
   width: 42px;
   height: 42px;
   border-radius: 50%;
+  border: 1px solid #dbdbdb;
 }
 
 body .postCard .commonProfileHeader .profileTextBox {
@@ -199,6 +200,7 @@ body .commentComponent .commentProfileInfo .commentProfileImg {
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  border: 1px solid #dbdbdb;
 }
 
 body .commentComponent .commentProfileInfo .commentAndNames {
@@ -274,6 +276,7 @@ body .inputComponent .inputProfileImg {
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  border: 1px solid #dbdbdb;
 }
 
 body .inputComponent .commentForm {
