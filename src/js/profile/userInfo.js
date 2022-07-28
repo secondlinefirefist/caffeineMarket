@@ -1,15 +1,16 @@
 const url = 'https://mandarin.api.weniv.co.kr';
 const myAccountname = `${window.localStorage.getItem('accountname')}`;
 const yourAccountname = location.search.replace('?', '').split('=')[1];
+const token = window.localStorage.getItem('token');
 const accountname = yourAccountname ? yourAccountname : myAccountname;
-const userSettings = document.querySelector('.userSettings');
 //프로필 정보 보여주기
+const userSettings = document.querySelector('.userSettings');
 async function infoUser() {
   try {
     const res = await fetch(url + '/profile/' + accountname, {
       method: 'GET',
       headers: {
-        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+        'Authorization': `Bearer ${token}`,
         'Content-type': 'application/json',
       },
     });
@@ -107,7 +108,7 @@ async function clickUserInfoFollowBtn(
         method: 'POST',
         body: JSON.stringify(),
         headers: {
-          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Authorization': `Bearer ${token}`,
           'Content-type': 'application/json',
         },
       });
@@ -133,7 +134,7 @@ async function clickUserInfoUnFollowBtn(
       const res = await fetch(url + '/profile/' + accountname + '/unfollow', {
         method: 'DELETE',
         headers: {
-          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Authorization': `Bearer ${token}`,
           'Content-type': 'application/json',
         },
         body: JSON.stringify(),

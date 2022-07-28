@@ -6,7 +6,7 @@
       {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Authorization': `Bearer ${token}`,
           'Content-type': 'application/json',
         },
       }
@@ -241,7 +241,7 @@ async function confirmDelPost() {
     const res = await fetch(url + '/post/' + productId, {
       method: 'DELETE',
       headers: {
-        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+        'Authorization': `Bearer ${token}`,
         'Content-type': 'application/json',
       },
       body: JSON.stringify(),
@@ -323,7 +323,7 @@ async function onLikePost(likeId, heartState, likeBtnClass, likeTarget) {
       const res = await fetch(url + '/post/' + likeId + '/heart', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Authorization': `Bearer ${token}`,
           'Content-type': 'application/json',
         },
       });
@@ -343,7 +343,7 @@ async function cancleLikePost(likeId, heartState, likeBtnClass, likeTarget) {
       const res = await fetch(url + '/post/' + likeId + '/unheart', {
         method: 'DELETE',
         headers: {
-          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Authorization': `Bearer ${token}`,
           'Content-type': 'application/json',
         },
       });
