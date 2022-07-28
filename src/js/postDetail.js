@@ -68,6 +68,8 @@ async function renderPost() {
     // location.href = './page404.html';
     console.error(err);
   }
+
+  // 메인 설정 모달창
   const mainModal = document.querySelector('.mainModal');
   const iconMoreVertical = document.querySelector('.iconMoreVertical');
 
@@ -78,6 +80,92 @@ async function renderPost() {
   iconMoreVertical.addEventListener('blur', (event) => {
     mainModal.classList.remove('displayModal');
   });
+
+  /*로그아웃 모달*/
+  const btnGoLogout = document.querySelector('.btnGoLogout');
+  const subModal = document.querySelector('#subLogoutModal');
+  btnGoLogout.addEventListener('mousedown', (event) => {
+    subLogoutModal.classList.add('displayModal');
+  });
+  /*로그아웃 취소 버튼 기능*/
+  const btnCancelLogout = document.querySelector('.btnCancelLogout');
+  btnCancelLogout.addEventListener('click', () => {
+    subLogoutModal.classList.remove('displayModal');
+  });
+
+  //로그아웃
+  const btnOkLogout = document.querySelector('.btnOkLogout');
+  btnOkLogout.addEventListener('click', () => {
+    location.href = '../pages/splash.html';
+    localStorage.clear();
+  });
+
+  //포스트 게시글 설정 모달
+  const postModal = document.querySelector('#postModal');
+  const btnDelPost = document.querySelector('#btnDelPost');
+  const contPost = document.querySelector('.contPost');
+  function openPostSettingModal() {
+    let btnPostSetting = document.getElementById('btnPostSetting');
+    btnPostSetting.addEventListener('click', (event) => {
+      event.stopPropagation();
+      postModal.classList.toggle('displayModal');
+      btnDelPost.setAttribute(
+        'postId',
+        event.currentTarget.getAttribute('data-id')
+      );
+      btnOkDelPost.setAttribute(
+        'postId',
+        event.currentTarget.getAttribute('data-id')
+      );
+      btnModifyPost.setAttribute(
+        'postId',
+        event.currentTarget.getAttribute('data-id')
+      );
+    });
+
+    document.querySelector('main').addEventListener('click', (event) => {
+      postModal.classList.remove('displayModal');
+    });
+  }
+  openPostSettingModal();
+
+  const subDelPostModal = document.querySelector('#subDelPostModal');
+  const btnCancelDelPost = document.querySelector('#btnCancelDelPost');
+  const btnOkDelPost = document.querySelector('#btnOkDelPost');
+  function checkDelPost() {
+    // 게시글 셋팅 모달의 '삭제' 버튼 누르기
+    btnDelPost.addEventListener('click', (event) => {
+      event.stopPropagation();
+      subDelPostModal.classList.add('displayModal');
+      postModal.classList.remove('displayModal');
+    });
+
+    // 게시글 삭제 '취소' 버튼 누르기
+    btnCancelDelPost.addEventListener('click', () => {
+      subDelPostModal.classList.remove('displayModal');
+    });
+  }
+  checkDelPost();
+
+  //게시글 최종 삭제 버튼 누르기
+  async function confirmDelPost() {
+    try {
+      const res = await fetch(url + '/post/' + postId, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(),
+      });
+      const json = await res.json();
+      alertDelPost(json);
+    } catch {
+      console.error('ERROR!');
+      location.href = './myProfile.html';
+    }
+  }
+  btnOkDelPost.addEventListener('click', confirmDelPost);
 }
 
 renderPost();

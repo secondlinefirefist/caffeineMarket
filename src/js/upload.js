@@ -70,7 +70,7 @@ function handleFiles(files) {
         setTimeout(() => {
           alert('업로드가 완료되었습니다 :)');
           window.location.href = './myProfile.html';
-        }, 2000);
+        }, 1000);
       }
     });
   });
