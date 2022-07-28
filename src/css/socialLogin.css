@@ -95,7 +95,8 @@
 }
 
 .social-button.kakao::before {
-  background: url(../img/message-circle.png);
+  background: url(../img/icon-kakao.png);
+  background-size: cover;
 }
 
 .social-button.google {
