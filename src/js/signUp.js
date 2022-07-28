@@ -2,6 +2,9 @@ const $emailInput = document.querySelector('#email');
 const $pwInput = document.querySelector('#password');
 const $loginButton = document.querySelector('.login-button');
 const $emailErrorMessage = document.querySelector('#email-error-message');
+const $emailErrorMessageTypeWrong = document.querySelector(
+  '#email-error-message-type-wrong'
+);
 const $pwErrorMessage = document.querySelector('#pw-error-message');
 
 let checkemailInput = false;
@@ -15,6 +18,19 @@ const checkEmailInputValue = (event) => {
   emailValid();
   showButton();
 };
+
+const emailRegExp =
+  /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+//이메일 유효성 검사
+function checkEmailValid() {
+  if ($emailInput.value.match(emailRegExp) !== null) {
+    console.log('동작중 1번');
+    $emailErrorMessageTypeWrong.classList.add('display-none');
+  } else {
+    console.log('동작중 2번');
+    $emailErrorMessageTypeWrong.classList.remove('display-none');
+  }
+}
 
 //비밀번호 인풋값 검사
 const checkpwInputValue = (event) => {
@@ -102,9 +118,9 @@ async function checkProfileData() {
   }
 }
 
-//이렇게 리스너 많이 달아도 되는건가요?
 $emailInput.addEventListener('input', checkEmailInputValue);
 $emailInput.addEventListener('blur', emailValid);
+$emailInput.addEventListener('blur', checkEmailValid);
 $pwInput.addEventListener('input', checkpwInputValue);
 $pwInput.addEventListener('blur', pwLengthCheck);
 $loginButton.addEventListener('click', checkProfileData);
