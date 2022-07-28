@@ -152,8 +152,11 @@ function createPostFeed(resJson) {
     text.setAttribute('class', 'postIndexText');
     text.textContent = resJson.post[i].content;
     date.setAttribute('class', 'dateTxt');
-    date.textContent = resJson.post[i].createdAt.split('T')[0];
-
+    date.textContent = resJson.post[i].createdAt
+      .slice(0, 11)
+      .replace('-', '년 ')
+      .replace('-', '월 ')
+      .replace('T', '일');
     wrapReaction.append(likeBtn, commentBtn);
     likeBtn.append(likeImage, likeNumber);
     commentBtn.append(commentImage, commentNumber);
