@@ -14,7 +14,6 @@ async function infoUser() {
       },
     });
     const resJson = await res.json();
-    console.log(resJson);
     infoUserProfile(resJson);
     showYourProfileButton(resJson);
   } catch {
@@ -53,7 +52,6 @@ function showYourProfileButton(resJson) {
     btnFollow.setAttribute('id', 'userInfoFollowBtn');
 
     if (btnFollow.getAttribute('isfollow') == 'true') {
-      console.log(resJson.profile.isfollow);
       btnFollow.setAttribute('class', 'btnFollowUser');
       btnFollow.setAttribute('type', 'button');
       btnFollow.textContent = '언팔로우';
@@ -85,7 +83,6 @@ function goChatRoom(resJson) {
 // 팔로우 & 언팔로우 매개변수
 function followDataFunc() {
   let userInfoFollowBtn = document.querySelector('#userInfoFollowBtn');
-  console.log(userInfoFollowBtn);
   userInfoFollowBtn.addEventListener('click', (event) => {
     let followingState = event.currentTarget.getAttribute('isfollow');
     let followingClass = event.currentTarget.getAttribute('class');
@@ -114,7 +111,6 @@ async function clickUserInfoFollowBtn(
           'Content-type': 'application/json',
         },
       });
-      console.log('왜 왜 왜!!!!!!!!!🐰 팔로우됨');
       followingTarget.classList.add('btnFollowUser');
       followingTarget.classList.remove('btnUnFollowUser');
       followingTarget.textContent = '언팔로우';
@@ -143,7 +139,6 @@ async function clickUserInfoUnFollowBtn(
         body: JSON.stringify(),
       });
       const resJson = await res.json();
-      console.log('언팔로우됨');
       followingTarget.classList.add('btnUnFollowUser');
       followingTarget.classList.remove('btnFollowUser');
       followingTarget.textContent = '팔로우';

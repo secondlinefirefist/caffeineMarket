@@ -10,7 +10,6 @@
     });
     const resJson = await res.json();
     showSwitchProduct(resJson);
-    console.log(resJson, '상품목록');
     prodcutListDummy = resJson.product;
     createProductList(prodcutListDummy);
   } catch {
@@ -29,7 +28,6 @@ function showSwitchProduct(resJson) {
 //판매 상품 리스트 생성
 const productList = document.querySelector('.productList');
 function createProductList() {
-  console.log(prodcutListDummy, 'test');
   for (let i = 0; i < prodcutListDummy.length; i++) {
     const li = document.createElement('li');
     const button = document.createElement('button');
