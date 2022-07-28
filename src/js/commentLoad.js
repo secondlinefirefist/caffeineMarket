@@ -104,7 +104,7 @@ const subDelCommentModal = document.querySelector('#subDelCommentModal');
 const btnCancelDelComment = document.querySelector('#btnCancelDelComment');
 const btnOkDelComment = document.querySelector('#btnOkDelComment');
 const txtSubModal = document.querySelector('.txtSubModal');
-txtSubModal.textContent = '댓글을 삭제할까요?';
+
 function checkDelPost() {
   // 댓글 셋팅 모달의 '삭제' 버튼 누르기
   btnDelComment.addEventListener('click', (event) => {
@@ -200,14 +200,27 @@ async function uploadComment() {
       },
     });
     const json = await res.json();
+    commentForm.onsubmit;
     inputCommentText.value = '';
     checkValue();
     setTimeout(() => {
       location.reload();
-    }, 500);
+    }, 100);
   } catch (err) {
     console.log(err);
   }
 }
 
 commentPostBtn.addEventListener('click', uploadComment);
+
+// 댓글 엔터 입력 기능
+const commentForm = document.querySelector('.commentForm');
+commentForm.onsubmit = (e) => {
+  e.preventDefault();
+};
+document.addEventListener('keydown', (e) => {
+  const key = e.key;
+  if (key === 'Enter') {
+    uploadComment();
+  }
+});
