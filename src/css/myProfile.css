@@ -339,6 +339,7 @@ footer {
   height: 42px;
   object-fit: cover;
   border-radius: 50%;
+  border: #dbdbdb 1px solid;
 }
 
 .postIndexCont {
