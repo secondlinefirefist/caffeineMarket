@@ -33,7 +33,7 @@
           <p class="nickName">애월읍 위니브 감귤농장</p>
           <p class="idName">@weniv_Mandarin</p>
         </div>
-        <button type="button" class="commonSetting">
+        <button type="button" id="btnPostSetting" class="commonSetting">
           <img src="../img/icon/s-icon-more-vertical.png" alt="" />
         </button>
       </div>
@@ -108,6 +108,46 @@
       </ul>
     </section>
     <!--메인모달-->
+    <section class="wrapSubModal" id="subLogoutModal">
+      <h2 class="ir">로그아웃 모달 영역</h2>
+      <div class="subModal">
+        <p class="txtSubModal">로그아웃 하시겠어요?</p>
+        <div class="wrapSubModalBtns">
+          <button type="button" class="btnCancelLogout">취소</button>
+          <button
+            type="button"
+            class="btnOkLogout"
+            onclick="location.href='../pages/login.html'"
+          >
+            로그아웃
+          </button>
+        </div>
+      </div>
+    </section>
+    <!--게시글 설정 모달-->
+    <section class="postModal" id="postModal">
+      <h2 class="ir">게시글 모달 영역</h2>
+      <ul class="postModalList">
+        <li id="btnDelPost"><a href="#">삭제</a></li>
+        <li><a href="#" class="btnGoLogout" id="btnModifyPost">수정</a></li>
+      </ul>
+    </section>
+    <!--게시글 설정 모달-->
+
+    <!--게시글 삭제 확인 모달-->
+    <section class="wrapSubModal" id="subDelPostModal">
+      <h2 class="ir">게시글 삭제 확인 모달 영역</h2>
+      <div class="subModal">
+        <p class="txtSubModal">게시글을 삭제할까요?</p>
+        <div class="wrapSubModalBtns">
+          <button type="button" class="btnCancelDel" id="btnCancelDelPost">
+            취소
+          </button>
+          <button type="button" class="btnOkDel" id="btnOkDelPost">삭제</button>
+        </div>
+      </div>
+    </section>
+    <!--게시글 삭제 확인 모달-->
     <script src="../js/postDetail.js"></script>
     <script src="../js/commentLoad.js"></script>
   </body>

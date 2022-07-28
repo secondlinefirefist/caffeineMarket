@@ -78,6 +78,7 @@ body .uploadCard .textImgPart .uploadBoxText {
   padding-top: 12px;
   border: none;
   resize: none;
+  overflow-x: hidden;
 }
 
 body .uploadCard .textImgPart .fileImgArea {
