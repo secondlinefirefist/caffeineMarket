@@ -56,6 +56,7 @@ body .postCard .commonProfileHeader {
 body .postCard .commonProfileHeader .profileImg {
   width: 42px;
   height: 42px;
+  border-radius: 50%;
 }
 
 body .postCard .commonProfileHeader .profileTextBox {
