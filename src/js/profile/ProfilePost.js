@@ -12,7 +12,6 @@
       }
     );
     const resJson = await res.json();
-    console.log(resJson, 'postData');
     if (resJson.post != '') {
       postType.classList.remove('postTypeHide');
     }
@@ -24,7 +23,6 @@
     clickLike(resJson);
   } catch {
     console.error('ERROR');
-    location.href = '../pages/page404.html';
   }
 })();
 
@@ -228,7 +226,6 @@ function checkDelPost() {
 
   // 게시글 삭제 '취소' 버튼 누르기
   btnCancelDelPost.addEventListener('click', () => {
-    console.log('와이라노');
     subDelPostModal.classList.remove('displayModal');
   });
 }
@@ -250,7 +247,6 @@ async function confirmDelPost() {
     alertDelPost(json);
   } catch {
     console.error('ERROR!');
-    location.href = '../pages/page404.html';
   }
 }
 btnOkDelPost.addEventListener('click', confirmDelPost);
@@ -329,7 +325,6 @@ async function onLikePost(likeId, heartState, likeBtnClass, likeTarget) {
         },
       });
       const likeJson = await res.json();
-      console.log('💜');
       likeTarget.classList.add('activeBtnLike');
       likeTarget.classList.remove('activeBtnLikeOff');
     } catch {
@@ -350,7 +345,6 @@ async function cancleLikePost(likeId, heartState, likeBtnClass, likeTarget) {
         },
       });
       const likeJson = await res.json();
-      console.log('💜취소');
       likeTarget.classList.add('activeBtnLikeOff');
       likeTarget.classList.remove('activeBtnLike');
       likeTarget.setAttribute('src', '../img/icon/icon-heart.png');

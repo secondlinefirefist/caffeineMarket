@@ -31,7 +31,6 @@ async function followListData() {
 followListData();
 
 function showfollowingList(resJson) {
-  console.log(resJson);
   for (let i = 0; i < resJson.length; i++) {
     const li = document.createElement('li'),
       link = document.createElement('a'),
@@ -83,7 +82,6 @@ function followingData(resJson) {
   let btnSelectFollow = document.querySelectorAll('#btnSelectFollow');
   for (let i = 0; i < btnSelectFollow.length; i++) {
     btnSelectFollow[i].addEventListener('click', (event) => {
-      // console.log(resJson[i].accountname);
       let followUserData = resJson[i];
       let followState = event.currentTarget.getAttribute('isfollow');
       let targetButton = event.currentTarget;
@@ -113,13 +111,11 @@ async function clickUnFollow(followUserData, followState, targetButton) {
         }
       );
       const resJson = await res.json();
-      console.log('언팔로우됨');
       targetButton.classList.add('btnUnfollow');
       targetButton.classList.remove('btnFollow');
       targetButton.textContent = '팔로우';
     } catch {
       console.error('ERROR');
-      location.href = '../pages/page404.html';
     }
   }
 }
@@ -140,14 +136,12 @@ async function clickFollow(followUserData, followState, targetButton) {
           'Content-type': 'application/json',
         },
       });
-      console.log('왜 왜 왜!!!!!!!!!🐰 팔로우됨');
       const resJson = await res.json();
       targetButton.classList.add('btnFollow');
       targetButton.classList.remove('btnUnfollow');
       targetButton.textContent = '취소';
     } catch {
       console.error('ERROR');
-      location.href = '../pages/page404.html';
     }
   }
 }
