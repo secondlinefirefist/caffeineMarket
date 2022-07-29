@@ -113,7 +113,7 @@
 
 
 ## 9. 페이지 기능
-> <a href="hhttps://github.com/secondlinefirefist/caffeineMarket/wiki/%ED%8E%98%EC%9D%B4%EC%A7%80-%EA%B8%B0%EB%8A%A5-%EC%83%81%EC%84%B8-%EC%84%A4%EB%AA%85h"> 페이지 기능 상세 설명</a>
+> <a href="https://github.com/secondlinefirefist/caffeineMarket/wiki/%ED%8E%98%EC%9D%B4%EC%A7%80-%EA%B8%B0%EB%8A%A5-%EC%83%81%EC%84%B8-%EC%84%A4%EB%AA%85h"> 페이지 기능 상세 설명</a>
 ### 1) 홈
 
 |🔗splash|🔗로그인 페이지|🔗회원가입 페이지|
