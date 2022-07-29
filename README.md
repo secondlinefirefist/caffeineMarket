@@ -149,6 +149,7 @@
 |![상품등록](https://user-images.githubusercontent.com/85912592/181693893-5410da25-aef5-4065-b59a-214485d7ab71.gif)|![상품 수정](https://user-images.githubusercontent.com/85912592/181693919-fd9fea09-80c9-4c6d-92b7-2712ac7fbea0.gif)|![상품 삭제](https://user-images.githubusercontent.com/85912592/181694065-6548337a-be72-4b3e-9190-4686d0807762.gif)|
 	
 ## 10. 트러블 슈팅(핵심 로직)
+> <a href="https://github.com/secondlinefirefist/caffeineMarket/wiki/%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85">트러블 슈팅 보러 가기</a>
 ### 요소 생성(createElement vs innerHTML)
 
 - 문제 상황
