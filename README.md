@@ -33,7 +33,7 @@
 |<img src= "https://user-images.githubusercontent.com/101693495/181179852-4a42b02f-c587-46dd-8538-680c771163b2.png" width= "500px">|<img src="https://user-images.githubusercontent.com/101693495/181180614-afc1cba9-e4d2-478c-9747-3026c5277c26.png" width="360px">|
 
 ### 4.3 배포
-* Github Actions (🧷 <a href="https://secondlinefirefist.github.io/caffeineMarket">배포 URL</a>)
+> 🧷 <a href="https://secondlinefirefist.github.io/caffeineMarket">배포 URL</a>
 
 <br>
 
