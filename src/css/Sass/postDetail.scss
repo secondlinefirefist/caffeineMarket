@@ -6,14 +6,12 @@
   font-style: normal;
 }
 
-* {
-  font-family: 'SpoqaHanSansNeo-Regular', 'sans-serif';
-}
 body {
   width: 100%;
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'SpoqaHanSansNeo-Regular', 'sans-serif';
   .headerBtns {
     padding: 16px 16px;
     display: flex;
@@ -98,7 +96,7 @@ body {
         display: flex;
 
         // justify-content: space-between;
-        .likeBtnBox {
+        .likeAndComment {
           display: flex;
           padding: 4px;
           margin-right: 14px;

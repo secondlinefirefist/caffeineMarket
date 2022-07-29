@@ -21,67 +21,9 @@
         <img src="../img/icon/icon-more-vertical.png" alt="" />
       </button>
     </nav>
-    <main class="postCard">
-      <!-- 프로필 이미지, 아이디, 닉네임 받아오기-->
-      <div class="commonProfileHeader">
-        <img
-          class="profileImg"
-          src="../img/basic-profile-img.png"
-          alt="profile"
-        />
-        <div class="profileTextBox">
-          <p class="nickName">애월읍 위니브 감귤농장</p>
-          <p class="idName">@weniv_Mandarin</p>
-        </div>
-        <button type="button" id="btnPostSetting" class="commonSetting">
-          <img src="../img/icon/s-icon-more-vertical.png" alt="" />
-        </button>
-      </div>
-
-      <article class="postCardMain">
-        <!-- content 내용 불러오기 -->
-        <div class="postCardMainTextBox">
-          <p class="postCardMainText">
-            옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다.
-            이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할 넣는
-            풍부하게 뛰노는 인생의 힘있다.
-          </p>
-        </div>
-
-        <!-- 이미지  -->
-        <!-- post 사진 불러오기 -->
-        <div class="fileImgArea"></div>
-
-        <!-- like and comment  -->
-        <div class="commentBox">
-          <div class="likeBtnBox">
-            <button class="likeBtn">
-              <img class="likeBtnImg" src="../img/icon/icon-heart.png" alt="" />
-            </button>
-            <div class="likeTxt heartCountTxt">58</div>
-          </div>
-          <div class="likeBtnBox">
-            <button class="likeBtn">
-              <img
-                class="likeBtnImg"
-                src="../img/icon/icon-message-circle.png"
-                alt=""
-              />
-            </button>
-            <div class="likeTxt commentCountTxt">12</div>
-          </div>
-        </div>
-
-        <!-- date -->
-        <!-- 업로드한 날짜 불러오기 -->
-        <div class="date">
-          <p class="dateTxt">2020년 10월 21일</p>
-        </div>
-      </article>
-    </main>
+    <main class="postCard"></main>
     <p class="dividingLine"></p>
     <div class="commentComponent"></div>
-
     <!-- 댓글 입력란  -->
     <div class="inputComponent">
       <img
@@ -89,7 +31,7 @@
         src="../img/basic-profile-img.png"
         alt="profile"
       />
-      <form class="commentForm" action="myProfile.html">
+      <form class="commentForm" name="commentForm">
         <h2 class="ir">댓글입력창입니다.</h2>
         <input
           class="inputCommentText"

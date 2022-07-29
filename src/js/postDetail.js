@@ -12,7 +12,7 @@ async function renderPost() {
       },
     });
     const json = await res.json();
-    // console.log(json);
+    console.log(json);
 
     //render
 
@@ -32,14 +32,75 @@ async function renderPost() {
       .replace('-', '월 ')
       .replace('T', '일');
 
-    const profileImg = document.querySelector('.profileImg');
-    const nickName = document.querySelector('.nickName');
-    const idName = document.querySelector('.idName');
-    const postCardMainText = document.querySelector('.postCardMainText');
-    const fileImgArea = document.querySelector('.fileImgArea');
-    const heartCountTxt = document.querySelector('.heartCountTxt');
-    const commentCountTxt = document.querySelector('.commentCountTxt');
-    const dateTxt = document.querySelector('.dateTxt');
+    const postCard = document.querySelector('.postCard');
+
+    const commonProfileHeader = document.createElement('div');
+    const profileImg = document.createElement('img');
+    const profileTextBox = document.createElement('div');
+    const nickName = document.createElement('p');
+    const idName = document.createElement('p');
+    const commonSetting = document.createElement('button');
+    const commonSettingSmall = document.createElement('img');
+    const postCardMain = document.createElement('article');
+    const postCardMainTextBox = document.createElement('div');
+    const postCardMainText = document.createElement('p');
+
+    const fileImgArea = document.createElement('div');
+    const commentBox = document.createElement('div');
+    const likeBtnBox = document.createElement('div');
+    const commentBtnBox = document.createElement('div');
+    const date = document.createElement('div');
+    const likeBtnHeart = document.createElement('button');
+    const heartCountTxt = document.createElement('div');
+    const likeBtnComment = document.createElement('button');
+    const commentCountTxt = document.createElement('div');
+    const dateTxt = document.createElement('p');
+    const likeBtnImgHeart = document.createElement('img');
+    const likeBtnImgComment = document.createElement('img');
+
+    commonProfileHeader.className = 'commonProfileHeader';
+    profileImg.className = 'profileImg';
+    profileTextBox.className = 'profileTextBox';
+    nickName.className = 'nickName';
+    idName.className = 'idName';
+    commonSetting.className = 'commonSetting';
+    commonSetting.setAttribute('id', 'btnPostSetting');
+    commonSettingSmall.className = 'commonSettingSmall';
+
+    postCardMain.className = 'postCardMain';
+    postCardMainTextBox.className = 'postCardMainTextBox';
+    fileImgArea.className = 'fileImgArea';
+    postCardMainText.className = 'postCardMainText';
+    likeBtnHeart.className = 'likeBtn likeBtnHeart';
+    heartCountTxt.className = 'likeTxt heartCountTxt';
+    likeBtnComment.className = 'likeBtn likeBtnComment';
+    commentCountTxt.className = 'likeTxt commentCountTxt';
+    dateTxt.className = 'dateTxt';
+    likeBtnImgHeart.className = 'likeBtnImg likeBtnImgHeart';
+    likeBtnImgHeart.setAttribute('src', '../img/icon/icon-heart.png');
+    likeBtnImgComment.className = 'likeBtnImg likeBtnImgComment';
+    likeBtnImgComment.setAttribute(
+      'src',
+      '../img/icon/icon-message-circle.png'
+    );
+    commentBox.className = 'commentBox';
+    likeBtnBox.className = 'likeAndComment likeBtnBox';
+    commentBtnBox.className = 'likeAndComment commentBtnBox';
+    date.className = 'date';
+
+    postCard.append(commonProfileHeader, postCardMain);
+    commonProfileHeader.append(profileImg, profileTextBox, commonSetting);
+    profileTextBox.append(nickName, idName);
+    commonSetting.append(commonSettingSmall);
+
+    postCardMain.append(postCardMainTextBox, fileImgArea, commentBox, date);
+    postCardMainTextBox.append(postCardMainText);
+    commentBox.append(likeBtnBox, commentBtnBox);
+    likeBtnBox.append(likeBtnHeart, heartCountTxt);
+    commentBtnBox.append(likeBtnComment, commentCountTxt);
+    date.append(dateTxt);
+    likeBtnHeart.append(likeBtnImgHeart);
+    likeBtnComment.append(likeBtnImgComment);
 
     profileImg.setAttribute('src', profileImage);
     nickName.textContent = userName;
