@@ -121,17 +121,17 @@
 
 |홈 페이지|채팅 페이지|
 |:---:|:---:|
-|<img src="https://user-images.githubusercontent.com/85912592/181693043-450a811e-bca1-43a8-ae85-240bd8430a94.gif" width="315px">|<img src = "https://user-images.githubusercontent.com/85912592/181693095-a819296f-13a7-4038-8f80-ec3ef3f4b0a9.gif" width="315px">|
+|<img src="https://user-images.githubusercontent.com/85912592/181693043-450a811e-bca1-43a8-ae85-240bd8430a94.gif" width="310px">|<img src = "https://user-images.githubusercontent.com/85912592/181693095-a819296f-13a7-4038-8f80-ec3ef3f4b0a9.gif" width="310px">|
 		
 ### 2) 게시글
 
 |게시글 작성 페이지|게시물 상세 페이지|
 |:---:|:---:|
-|<img src="https://user-images.githubusercontent.com/85912592/181693332-07033992-a961-42a2-98d7-b7e4c7e5ca1f.gif" width="314px">|<img src="https://user-images.githubusercontent.com/85912592/181693351-2ad9af49-d6e3-4b87-b645-e10565963bee.gif"  width="314px">|
+|<img src="https://user-images.githubusercontent.com/85912592/181693332-07033992-a961-42a2-98d7-b7e4c7e5ca1f.gif" width="310px">|<img src="https://user-images.githubusercontent.com/85912592/181693351-2ad9af49-d6e3-4b87-b645-e10565963bee.gif"  width="310px">|
 
 |게시글 수정|댓글 기능 |
 |:---:|:---:|
-|<img src="https://user-images.githubusercontent.com/85912592/181693379-ed4d7f92-bb2e-43ce-b108-7cf9a894d987.gif"  width="314px">|<img src="https://user-images.githubusercontent.com/85912592/181693416-299cf569-dbbe-4bcb-9f6c-c621411745d6.gif"  width="314px">|
+|<img src="https://user-images.githubusercontent.com/85912592/181693379-ed4d7f92-bb2e-43ce-b108-7cf9a894d987.gif"  width="310px">|<img src="https://user-images.githubusercontent.com/85912592/181693416-299cf569-dbbe-4bcb-9f6c-c621411745d6.gif"  width="310px">|
 	
 ### 3) 프로필
 
