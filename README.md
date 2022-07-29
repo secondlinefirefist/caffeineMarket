@@ -145,6 +145,55 @@
 |![상품등록](https://user-images.githubusercontent.com/85912592/181693893-5410da25-aef5-4065-b59a-214485d7ab71.gif)|![상품 수정](https://user-images.githubusercontent.com/85912592/181693919-fd9fea09-80c9-4c6d-92b7-2712ac7fbea0.gif)|![상품 삭제](https://user-images.githubusercontent.com/85912592/181694065-6548337a-be72-4b3e-9190-4686d0807762.gif)|
 	
 ## 10. 트러블 슈팅(핵심 로직)
+### 요소 생성(createElement vs innerHTML)
+
+- 문제 상황
+    - JavaScript에서 요소를 생성할 때(특히 반복되는 리스트들), map과 innerHTML을 사용함
+    - innerHTML은 간혹 인식되 않아 null 값을 반환하는 경우가 생겨 Error가 발생
+    - 사용은 편리하지만 성능이 가장 나쁨
+    - 보안 상의 문제도 존재(스크립트 해킹을 당할 수 있음)
+
+- 해결 방법
+    - 코드가 길어지더라도 안전하고 성능이 좋은 createElement로 모든 요소를 생성하고 반복되는 요소를 생성할 때는 for문을 사용
+    - 팀원 모두 createElement를 공통적으로 사용
+
+**기존 코드)**
+
+```jsx
+function createProductList() {
+  productList.innerHTML = prodcutListDummy
+    .map(
+      (element) =>
+        `
+  <li>
+    <button type="button" class="btnProductItem" id="btnProductItem">
+      <img src=${element.itemImage} alt="상품1" />
+      <span class="prodcutTitle">${element.itemName}</span>
+      <strong class="prodcutPrice">${element.price
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</strong>
+    </button>
+  </li>
+  `
+    )
+    .join('');
+}
+```
+
+**해결 코드)**
+
+```jsx
+function createProductList() {
+  for (let i = 0; i < prodcutListDummy.length; i++) {
+    const li = document.createElement('li');
+    const button = document.createElement('button');
+    const img = document.createElement('img');
+    const span = document.createElement('span');
+    const strong = document.createElement('strong');
+		
+	**생략 ...**
+}
+```
 
 ## 11. 스페셜 포인트
 - 팀원들과 가까운 거리에 거주하여, 물리적 허들이 없다는 장점을 통해 최소 주 2회 오프라인 만남을 통해 빠른 피드백과 소통으로 소통 비용 절감
