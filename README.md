@@ -119,7 +119,7 @@
 |splash|로그인 페이지|회원가입 페이지|
 |---|---|---|
 |![splash](https://user-images.githubusercontent.com/85912592/181692800-8fa20db5-ca1f-461a-bbea-eaf56556d858.gif)|![login](https://user-images.githubusercontent.com/85912592/181692853-7143bf70-4073-4196-92f0-a485f5dc5ff5.gif)|![회원가입](https://user-images.githubusercontent.com/85912592/181692894-3fc71447-3c53-474b-98d2-6d870b5dd5a3.gif)|
-|🔗홈 페이지|🔗채팅 페이지|
+|홈 페이지|채팅 페이지|
 |![홈화면](https://user-images.githubusercontent.com/85912592/181693043-450a811e-bca1-43a8-ae85-240bd8430a94.gif)|![채팅](https://user-images.githubusercontent.com/85912592/181693095-a819296f-13a7-4038-8f80-ec3ef3f4b0a9.gif)|
 		
 ### 2) 게시글
@@ -127,7 +127,7 @@
 |게시글 작성 페이지|게시물 상세 페이지|
 |---|---|
 |![게시글 작성](https://user-images.githubusercontent.com/85912592/181693332-07033992-a961-42a2-98d7-b7e4c7e5ca1f.gif)|![게시글 상세](https://user-images.githubusercontent.com/85912592/181693351-2ad9af49-d6e3-4b87-b645-e10565963bee.gif)|
-|🔗게시글 수정|🔗댓글 기능 |
+|게시글 수정|댓글 기능 |
 |![게시글 수정](https://user-images.githubusercontent.com/85912592/181693379-ed4d7f92-bb2e-43ce-b108-7cf9a894d987.gif)|![댓글 기능](https://user-images.githubusercontent.com/85912592/181693416-299cf569-dbbe-4bcb-9f6c-c621411745d6.gif)|
 	
 ### 3) 프로필
@@ -135,7 +135,7 @@
 |마이 프로필 페이지|유저 프로필 페이지|팔로우 기능|
 |---|---|---|
 |![마이프로필](https://user-images.githubusercontent.com/85912592/181693644-9203e11b-2864-4893-b818-b53381305044.gif)|![유저프로필](https://user-images.githubusercontent.com/85912592/181693679-c5255b89-c021-43da-94b9-bcd0073dddae.gif)|![팔로워페이지](https://user-images.githubusercontent.com/85912592/181693711-7ccb1428-01ae-43bd-8a1e-aae8c018ce3b.gif)|
-|로그아웃 페이지|🔗프로필 수정 페이지|
+|로그아웃 페이지|프로필 수정 페이지|
 |![로그아웃](https://user-images.githubusercontent.com/85912592/181693790-af05192c-b506-4738-9ed4-5d0db68bdc5e.gif)|![프로필수정](https://user-images.githubusercontent.com/85912592/181693818-625a358a-d093-4ab1-834b-e7aa4e213110.gif)|
 		
 ### 4) 판매 상품
