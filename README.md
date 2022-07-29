@@ -207,12 +207,12 @@ function createProductList() {
 
 ## 13. 레슨런 
 
-Team Organization
+Team Operation
 - <a href="https://velog.io/@minyoungdumb/%EC%A3%BC%EB%8B%88%EC%96%B4%EC%9D%98-JIRA%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%98%91%EC%97%85%ED%95%98%EA%B8%B0">JIRA를 도입하여 1주일 단위로 스프린트에 할 일을 작성하여 원할한 일정 관리</a>
 - Slack과 Github 브랜치를 연결하여 팀원의 커밋을 확인하고, 어떤 기능을 작업하는 지 즉각 확인
 - github 페이지를 초기에 빠르게 배포하여 트러블 슈팅과 에러처리를 해결 및 유저 피드백을 통해 지속적으로 Q/A 진행
 
-Tech Organization
+Tech Operation
 - 잘 이행된 부분
     - 간단한 CI/CD action 기능으로 자동 배포 수행 및 개념 이해
     - API 명세에 대해 구체적으로 미리 파악해 서버와 통신을 원활하게 유지
