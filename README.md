@@ -105,7 +105,11 @@
 
 <br>
 
-## 8. 페이지 기능
+## 8. UI 
+![image](https://user-images.githubusercontent.com/85912592/181695898-0b214533-85e1-4793-a6d0-0da63d1ecd22.png)
+
+
+## 9. 페이지 기능
 상세 기능 설명은 각 페이지별 링크 연결해두었습니다.
 ### 1) 홈
 
@@ -137,9 +141,7 @@
 |---|---|---|
 |![상품등록](https://user-images.githubusercontent.com/85912592/181693893-5410da25-aef5-4065-b59a-214485d7ab71.gif)|![상품 수정](https://user-images.githubusercontent.com/85912592/181693919-fd9fea09-80c9-4c6d-92b7-2712ac7fbea0.gif)|![상품 삭제](https://user-images.githubusercontent.com/85912592/181694065-6548337a-be72-4b3e-9190-4686d0807762.gif)|
 	
-## 9. 트러블 슈팅(핵심 로직)
-
-## 10. 시연 영상 
+## 10. 트러블 슈팅(핵심 로직)
 
 ## 11. 스페셜 포인트
 
