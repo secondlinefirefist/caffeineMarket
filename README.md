@@ -159,7 +159,7 @@
 
 ## 13. 레슨런 
 Team Organization
-- JIRA를 도입하여 1주일 단위로 스프린트에 할 일을 작성하여 원할한 일정 관리
+- <a href="https://velog.io/@minyoungdumb/%EC%A3%BC%EB%8B%88%EC%96%B4%EC%9D%98-JIRA%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%98%91%EC%97%85%ED%95%98%EA%B8%B0">JIRA를 도입하여 1주일 단위로 스프린트에 할 일을 작성하여 원할한 일정 관리</a>
 - Slack과 Github 브랜치를 연결하여 팀원의 커밋을 확인하고, 어떤 기능을 작업하는 지 즉각 확인
 - github 페이지를 초기에 구현하여 트러블 슈팅과 에러처리를 쉽게 해결
 - 페이지를 우선적으로 배포함으로써 유저들의 Q/A를 지속적으로 일찍 진행
