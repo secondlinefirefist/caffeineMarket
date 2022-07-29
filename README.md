@@ -113,7 +113,7 @@
 
 
 ## 9. 페이지 기능
-상세 기능 설명은 각 페이지별 링크 연결해두었습니다.
+> <a href="https://github.com/secondlinefirefist/caffeineMarket/wiki/%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%83%81%EC%84%B8-%EA%B8%B0%EB%8A%A5-%EC%84%A4%EB%AA%85#splash"> 페이지 기능 상세 설명</a>
 ### 1) 홈
 
 |🔗splash|🔗로그인 페이지|🔗회원가입 페이지|
@@ -140,7 +140,7 @@
 		
 ### 4) 판매 상품
 
-|🔗<a href="https://github.com/secondlinefirefist/caffeineMarket/wiki/%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%83%81%EC%84%B8-%EA%B8%B0%EB%8A%A5-%EC%84%A4%EB%AA%85#%EC%83%81%ED%92%88-%EB%93%B1%EB%A1%9D">상품 등록 페이지 & 상품 링크 이동</a>|🔗상품 수정 페이지|🔗상품 삭제 페이지|
+|🔗상품 등록 페이지 & 상품 링크 이동|🔗상품 수정 페이지|🔗상품 삭제 페이지|
 |---|---|---|
 |![상품등록](https://user-images.githubusercontent.com/85912592/181693893-5410da25-aef5-4065-b59a-214485d7ab71.gif)|![상품 수정](https://user-images.githubusercontent.com/85912592/181693919-fd9fea09-80c9-4c6d-92b7-2712ac7fbea0.gif)|![상품 삭제](https://user-images.githubusercontent.com/85912592/181694065-6548337a-be72-4b3e-9190-4686d0807762.gif)|
 	
