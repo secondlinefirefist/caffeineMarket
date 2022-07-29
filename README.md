@@ -135,7 +135,7 @@
 	
 ### 3) 프로필
 
-|마이 프로필 페이지|유저 프로필 페이지|팔로우 기능|
+|마이 프로필 페이지|유어 프로필 페이지|팔로우/팔로잉 기능|
 |---|---|---|
 |![마이프로필](https://user-images.githubusercontent.com/85912592/181693644-9203e11b-2864-4893-b818-b53381305044.gif)|![유저프로필](https://user-images.githubusercontent.com/85912592/181693679-c5255b89-c021-43da-94b9-bcd0073dddae.gif)|![팔로워페이지](https://user-images.githubusercontent.com/85912592/181693711-7ccb1428-01ae-43bd-8a1e-aae8c018ce3b.gif)|
 
