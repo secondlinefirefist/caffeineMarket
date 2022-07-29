@@ -27,7 +27,7 @@
 ## 4. 개발 환경 
 
 ### 4.1 스택
-* Front-End : HTML CSS JavaScript
+* Front-End : HTML CSS JavaScript Sass
 * Back-End : 제공된 API 사용
 ### 4.2 개발 관리
 * 버전 관리 및 이슈 : Github, Jira, Slack
