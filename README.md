@@ -116,7 +116,7 @@
 > <a href="https://github.com/secondlinefirefist/caffeineMarket/wiki/%ED%8E%98%EC%9D%B4%EC%A7%80-%EA%B8%B0%EB%8A%A5-%EC%83%81%EC%84%B8-%EC%84%A4%EB%AA%85"> 페이지 기능 상세 설명</a>
 ### 1) 홈
 
-|🔗splash|🔗로그인 페이지|🔗회원가입 페이지|
+|splash|로그인 페이지|회원가입 페이지|
 |---|---|---|
 |![splash](https://user-images.githubusercontent.com/85912592/181692800-8fa20db5-ca1f-461a-bbea-eaf56556d858.gif)|![login](https://user-images.githubusercontent.com/85912592/181692853-7143bf70-4073-4196-92f0-a485f5dc5ff5.gif)|![회원가입](https://user-images.githubusercontent.com/85912592/181692894-3fc71447-3c53-474b-98d2-6d870b5dd5a3.gif)|
 |🔗홈 페이지|🔗채팅 페이지|
@@ -135,7 +135,7 @@
 |마이 프로필 페이지|유저 프로필 페이지|팔로우 기능|
 |---|---|---|
 |![마이프로필](https://user-images.githubusercontent.com/85912592/181693644-9203e11b-2864-4893-b818-b53381305044.gif)|![유저프로필](https://user-images.githubusercontent.com/85912592/181693679-c5255b89-c021-43da-94b9-bcd0073dddae.gif)|![팔로워페이지](https://user-images.githubusercontent.com/85912592/181693711-7ccb1428-01ae-43bd-8a1e-aae8c018ce3b.gif)|
-|🔗로그아웃 페이지|🔗프로필 수정 페이지|
+|로그아웃 페이지|🔗프로필 수정 페이지|
 |![로그아웃](https://user-images.githubusercontent.com/85912592/181693790-af05192c-b506-4738-9ed4-5d0db68bdc5e.gif)|![프로필수정](https://user-images.githubusercontent.com/85912592/181693818-625a358a-d093-4ab1-834b-e7aa4e213110.gif)|
 		
 ### 4) 판매 상품
