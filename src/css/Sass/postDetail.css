@@ -6,16 +6,13 @@
   font-style: normal;
 }
 
-* {
-  font-family: 'SpoqaHanSansNeo-Regular', 'sans-serif';
-}
-
 body {
   width: 100%;
   margin: 0 auto;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'SpoqaHanSansNeo-Regular', 'sans-serif';
   /*로그아웃 확인 모달, 게시글 삭제 모달*/
   /* 게시글 설정 모달, 상품 설정 모달 */
 }

@@ -4,7 +4,7 @@
     const res = await fetch(url + '/product/' + accountname, {
       method: 'GET',
       headers: {
-        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+        'Authorization': `Bearer ${token}`,
         'Content-type': 'application/json',
       },
     });
@@ -111,7 +111,7 @@ async function delProduct() {
     const res = await fetch(url + '/product/' + productId, {
       method: 'DELETE',
       headers: {
-        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+        'Authorization': `Bearer ${token}`,
         'Content-type': 'application/json',
       },
       body: JSON.stringify(),
