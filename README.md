@@ -149,55 +149,91 @@
 	
 ## 10. 트러블 슈팅(핵심 로직)
 >🧷 <a href="https://github.com/secondlinefirefist/caffeineMarket/wiki/%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85">트러블 슈팅 보러 가기</a>
-### 요소 생성(createElement vs innerHTML)
 
-- 문제 상황
-    - JavaScript에서 요소를 생성할 때(특히 반복되는 리스트들), map과 innerHTML을 사용함
-    - innerHTML은 간혹 인식되 않아 null 값을 반환하는 경우가 생겨 Error가 발생
-    - 사용은 편리하지만 성능이 가장 나쁨
-    - 보안 상의 문제도 존재(스크립트 해킹을 당할 수 있음)
+### 1. Location Property
 
-- 해결 방법
-    - 코드가 길어지더라도 안전하고 성능이 좋은 createElement로 모든 요소를 생성하고 반복되는 요소를 생성할 때는 for문을 사용
-    - 팀원 모두 createElement를 공통적으로 사용
+- **문제 상황**
+    - 하나의 html파일과 API로 yourProfile, myProfile를 동시에 구현해야 했음
+    - following/follower 리스트에서 프로필로 넘어갈 때,  해당 유저에 맞는 yourProfile을 보여줘야 함
+    - 토큰에서는 상대방의 accountname을 가져올 수 없다는 것과 클릭 했을 때 해당 유저의 accountname만을 정확하게 집어내지 못하고 있었음
+- **원인 추론**
+    - GET 요청 url뒤에 accountname을 넣어줘야 하는데, 나의 프로필은 로컬스토리지에서 getItem으로 사용하면 되지만 상대방 프로필 accountname을 가져오지 못했음
+- **해결 방법**
+    - Location (현재 URL) Property 중에서 query string이라고 불리는 search string을 사용하여 해결
+    - search string은 url에서 `?` 를 포함한 뒷부분을 string 형식으로 반환해주는 역할
+    
+    **실제 적용 코드)** 
+    
+    followingList.html에서 유저를 선택할 때 넘어가는 a태그의 href 주소를   `?accountname=유저의 accountname` 붙여서 보냄
+    
+    <img src= "https://user-images.githubusercontent.com/101693495/181263740-9df28de3-3392-4990-8469-23afe84f3f6c.PNG">
+    
+    ```jsx
+    link.setAttribute(
+          'href',
+          '../pages/myProfile.html?accountname=' + resJson[i].accountname
+        );
+    ```
+    
+    프로필 html로 넘어와서 상대방의 accountname을 location.search로 변수에 담아 사용
+    
+    내 계정일 경우에는 로컬스토리지에서, 상대방 프로필이면 url을 query string값이 accountname에 들어가게 처리
+    
+    1. location.search⇒ `?accountname=유저아이디`
 
-**기존 코드)**
+    2. location.search.replace(’?’,’’) ⇒ `accountname=유저아이디`
 
+    3. location.search.replace(’?’,’’).split(’=’) ⇒ `['accountname', '유저아이디']`
+    
+    📌 **userInfo.js** (프로필 상단, 유저 정보 API GET 요청 코드)
+    
+    ```jsx
+    const url = 'https://mandarin.api.weniv.co.kr';
+    const myAccountname = `${window.localStorage.getItem('accountname')}`;
+    const yourAccountname = location.search.replace('?', '').split('=')[1];
+    const accountname = yourAccountname ? yourAccountname : myAccountname;
+    const userSettings = document.querySelector('.userSettings');
+    //프로필 정보 보여주기
+    async function infoUser() {
+      try {
+        const res = await fetch(url + '/profile/' + accountname, {
+          method: 'GET',
+      
+          ..생략..}
+    }
+    ```
+ ### 라우팅 예외처리에도 사용 
+- 마이프로피로/유어프로필과 팔로잉/팔로워가 서로 같은 html 파일을 공유하고 있어, 404 에러를 많이 겪게 됨
+- Js에서 흔하게 사용하는 뒤로가기인 `window.history.back()` 또는 `window.history.go(-1)`만 썼을 때 에러 발생
+- Location Porperty를 사용해서 예외처리로 Error 해결 
+
+#### 이전 코드) 
 ```jsx
-function createProductList() {
-  productList.innerHTML = prodcutListDummy
-    .map(
-      (element) =>
-        `
-  <li>
-    <button type="button" class="btnProductItem" id="btnProductItem">
-      <img src=${element.itemImage} alt="상품1" />
-      <span class="prodcutTitle">${element.itemName}</span>
-      <strong class="prodcutPrice">${element.price
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</strong>
-    </button>
-  </li>
-  `
-    )
-    .join('');
-}
-```
+const btnBack = document.querySelector('.btnBack');
+btnBack.addEventListener('click', () => {
+  location.href = window.history.back();
+});
 
-**해결 코드)**
+```   
+- location pathname: 위치에 대한 URL의 경로를 포함하는 문자열
+- 사용 의도: html 파일명을 뽑아서 조건식에 사용하기 위해 
 
+#### 해결 코드) 
 ```jsx
-function createProductList() {
-  for (let i = 0; i < prodcutListDummy.length; i++) {
-    const li = document.createElement('li');
-    const button = document.createElement('button');
-    const img = document.createElement('img');
-    const span = document.createElement('span');
-    const strong = document.createElement('strong');
-		
-	**생략 ...**
-}
-```
+const locationPath = location.pathname.split('.')[0].split('/')[3]; 
+const btnBack = document.querySelector('.btnBack');
+btnBack.addEventListener('click', () => {
+  if (accountname == yourAccountname) {
+    location.href = `../pages/${locationPath}.html?accountname=${yourAccountname}`;
+  } else if (accountname == myAccountname) {
+    location.href = `../pages/${locationPath}.html`;
+  }else {
+  location.href = window.history.back();
+  }
+});
+
+```   
+
 
 ## 11. 스페셜 포인트
 - 팀원들과 가까운 거리에 거주하여, 물리적 허들이 없다는 장점을 통해 최소 주 2회 오프라인 만남을 통해 빠른 피드백으로 비용 절감
