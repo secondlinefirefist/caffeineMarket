@@ -153,7 +153,7 @@
 ### 1. Location Property
 
 - **문제 상황**
-    - 하나의 html파일과 API로 yourProfile, myProfile를 동시에 구현해야 했음
+    - 하나의 html파일과 API로 yourProfile, myProfile  & 나의 팔로잉/팔로워 리스트와 다른 유저의 팔로잉/팔로워 리스트 동시에 구현해야 함
     - following/follower 리스트에서 프로필로 넘어갈 때,  해당 유저에 맞는 yourProfile을 보여줘야 함
     - 토큰에서는 상대방의 accountname을 가져올 수 없다는 것과 클릭 했을 때 해당 유저의 accountname만을 정확하게 집어내지 못하고 있었음
 - **원인 추론**
