@@ -128,9 +128,9 @@
 |:---:|:---:|
 |<img src="https://user-images.githubusercontent.com/85912592/181693332-07033992-a961-42a2-98d7-b7e4c7e5ca1f.gif" width="310px">|<img src="https://user-images.githubusercontent.com/85912592/181693351-2ad9af49-d6e3-4b87-b645-e10565963bee.gif"  width="310px">|
 
-|게시글 수정|댓글 기능 |
-|:---:|:---:|
-|<img src="https://user-images.githubusercontent.com/85912592/181693379-ed4d7f92-bb2e-43ce-b108-7cf9a894d987.gif"  width="310px">|<img src="https://user-images.githubusercontent.com/85912592/181693416-299cf569-dbbe-4bcb-9f6c-c621411745d6.gif"  width="310px">|
+|게시글 수정|게시글 삭제|댓글 기능 |
+|:---:|:---:|:---:|
+|<img src="https://user-images.githubusercontent.com/85912592/181693379-ed4d7f92-bb2e-43ce-b108-7cf9a894d987.gif"  width="310px">|<img src = "https://user-images.githubusercontent.com/101693495/181872074-02a2d7c3-ce61-476c-a644-c0fbc392c2d7.gif" width="310px">|<img src="https://user-images.githubusercontent.com/85912592/181693416-299cf569-dbbe-4bcb-9f6c-c621411745d6.gif"  width="310px">|
 	
 ### 3) 프로필
 
@@ -204,19 +204,19 @@ function createProductList() {
 - 팀원들과 가까운 거리에 거주하여, 물리적 허들이 없다는 장점을 통해 최소 주 2회 오프라인 만남을 통해 빠른 피드백으로 비용 절감
 - 팀원 간 이슈가 발생했을 때, 대면을 통한 솔직한 대화를 통해 바로 해결하여 시간 절약
 - 로그인 기능과 배포 페이지를 우선적으로 구현함으로써 시스템적으로 연결된 기능들을 빠르게 구현
-- 압도적인 커밋 수 (over 740 commits)
+- 압도적인 커밋 수 (over 760 commits)
 
 ## 12. 고생담 
 - API와 비동기로 통신하는 로직에 대한 이해가 어려움 
 - 팀원 절반이 중간에 코로나에 걸린 건강 이슈
-- 커밋 컨벤션이 혼재되어 사용된 이슈
+- 초반에 커밋 컨벤션이 혼재되어 사용된 이슈
 
 ## 13. 레슨런 
 
 ### Team Operation
 - <a href="https://velog.io/@minyoungdumb/%EC%A3%BC%EB%8B%88%EC%96%B4%EC%9D%98-JIRA%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%98%91%EC%97%85%ED%95%98%EA%B8%B0">JIRA를 도입하여 1주일 단위로 스프린트에 할 일을 작성하여 원할한 일정 관리</a>
 - Slack과 Github 브랜치를 연결하여 팀원의 커밋을 확인하고, 어떤 기능을 작업하는 지 즉각 확인
-- github 페이지를 초기에 빠르게 배포하여 트러블 슈팅과 에러처리를 해결 및 유저 피드백을 통해 지속적으로 Q/A 진행
+- github 페이지를 초기에 빠르게 배포하여 지속적으로 QA테스트 진행하여 즉각적으로 트러블 슈팅 및 이슈를 해결
 
 ### Tech Operation
 - 잘 이행된 부분
