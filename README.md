@@ -129,7 +129,7 @@
 
 |게시글 수정|게시글 삭제|댓글 기능 |
 |:---:|:---:|:---:|
-|<img src="https://user-images.githubusercontent.com/85912592/181693379-ed4d7f92-bb2e-43ce-b108-7cf9a894d987.gif"  width="310px">|<img src = "https://user-images.githubusercontent.com/101693495/181872074-02a2d7c3-ce61-476c-a644-c0fbc392c2d7.gif" width="310px">|<img src="https://user-images.githubusercontent.com/85912592/181693416-299cf569-dbbe-4bcb-9f6c-c621411745d6.gif"  width="310px">|
+|<img src="https://user-images.githubusercontent.com/85912592/181693379-ed4d7f92-bb2e-43ce-b108-7cf9a894d987.gif" >|<img src = "https://user-images.githubusercontent.com/101693495/181872074-02a2d7c3-ce61-476c-a644-c0fbc392c2d7.gif">|<img src="https://user-images.githubusercontent.com/85912592/181693416-299cf569-dbbe-4bcb-9f6c-c621411745d6.gif" >|
 	
 ### 3) 프로필
 
