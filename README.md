@@ -188,11 +188,9 @@
     📌 **userInfo.js** (프로필 상단, 유저 정보 API GET 요청 코드)
     
     ```jsx
-    const url = 'https://mandarin.api.weniv.co.kr';
     const myAccountname = `${window.localStorage.getItem('accountname')}`;
     const yourAccountname = location.search.replace('?', '').split('=')[1];
     const accountname = yourAccountname ? yourAccountname : myAccountname;
-    const userSettings = document.querySelector('.userSettings');
     //프로필 정보 보여주기
     async function infoUser() {
       try {
@@ -203,7 +201,7 @@
     }
     ```
  ### 라우팅 예외처리에도 사용 
-- 마이프로피로/유어프로필과 팔로잉/팔로워가 서로 같은 html 파일을 공유하고 있어, 404 에러를 많이 겪게 됨
+- 마이프로필로/유어프로필과 팔로잉/팔로워가 서로 같은 html 파일을 공유하고 있어, 404 에러를 많이 겪게 됨
 - Js에서 흔하게 사용하는 뒤로가기인 `window.history.back()` 또는 `window.history.go(-1)`만 썼을 때 에러 발생
 - Location Porperty를 사용해서 예외처리로 Error 해결 
 
