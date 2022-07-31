@@ -176,7 +176,7 @@
         );
     ```
     
-    프로필 html로 넘어와서 상대방의 accountname을 location.search로 변수에 담아 사용
+ 프로필 html로 넘어와서 상대방의 accountname을 location.search로 변수에 담아 사용
     
 ![image](https://user-images.githubusercontent.com/101693495/182012309-8553ff08-4640-40ea-b84b-4e5c29a87e3f.png)
 
@@ -238,6 +238,12 @@ btnBack.addEventListener('click', () => {
 });
 
 ```   
+
+#### bradley의 팔로잉 목록에서 bradley의 프로필로 성공적으로 이동 
+![image](https://user-images.githubusercontent.com/101693495/182014939-0a489340-9a18-4884-a9f2-883130cecdc4.png)
+
+![image](https://user-images.githubusercontent.com/101693495/182014951-b519fe0d-00c1-449a-9363-0ba132e2f154.png)
+
 
 
 ## 11. 스페셜 포인트
