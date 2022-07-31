@@ -178,17 +178,22 @@
     
     프로필 html로 넘어와서 상대방의 accountname을 location.search로 변수에 담아 사용
     
-    내 계정일 경우에는 로컬스토리지에서, 상대방 프로필이면 url을 query string값이 accountname에 들어가게 처리
-    
-    1. location.search⇒ `?accountname=유저아이디`
+![image](https://user-images.githubusercontent.com/101693495/182012309-8553ff08-4640-40ea-b84b-4e5c29a87e3f.png)
 
-    2. location.search.replace(’?’,’’) ⇒ `accountname=유저아이디`
+<img src="https://user-images.githubusercontent.com/101693495/182012431-83b05f74-4d0c-4945-be1e-3abe59223fcb.png" width="350px">
 
-    3. location.search.replace(’?’,’’).split(’=’) ⇒ `['accountname', '유저아이디']`
     
-    📌 **userInfo.js** (프로필 상단, 유저 정보 API GET 요청 코드)
+내 계정일 경우에는 로컬스토리지에서, 상대방 프로필이면 url을 query string값이 accountname에 들어가게 처리
     
-    ```jsx
+1. location.search⇒ `?accountname=유저아이디`
+
+2. location.search.replace(’?’,’’) ⇒ `accountname=유저아이디`
+
+3. location.search.replace(’?’,’’).split(’=’) ⇒ `['accountname', '유저아이디']`
+    
+    
+📌 **userInfo.js** (프로필 상단, 유저 정보 API GET 요청 코드)
+```jsx
     const myAccountname = `${window.localStorage.getItem('accountname')}`;
     const yourAccountname = location.search.replace('?', '').split('=')[1];
     const accountname = yourAccountname ? yourAccountname : myAccountname;
@@ -200,7 +205,8 @@
       
           ..생략..}
     }
-    ```
+```
+    
  ### 라우팅 예외처리에도 사용 
 - 마이프로필로/유어프로필과 팔로잉/팔로워가 서로 같은 html 파일을 공유하고 있어, 404 에러를 많이 겪게 됨
 - Js에서 흔하게 사용하는 뒤로가기인 `window.history.back()` 또는 `window.history.go(-1)`만 썼을 때 에러 발생
