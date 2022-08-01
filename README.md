@@ -121,7 +121,7 @@
 
 |홈 페이지|채팅 페이지|404 페이지|
 |:---:|:---:|:---:|
-|<img src="https://user-images.githubusercontent.com/85912592/181693043-450a811e-bca1-43a8-ae85-240bd8430a94.gif" width="310px">|<img src = "https://user-images.githubusercontent.com/85912592/181693095-a819296f-13a7-4038-8f80-ec3ef3f4b0a9.gif" width="310px">|![image](https://user-images.githubusercontent.com/101693495/182052331-d022e84a-f169-4022-adb1-3905208fd1b2.png)|
+|<img src="https://user-images.githubusercontent.com/85912592/181693043-450a811e-bca1-43a8-ae85-240bd8430a94.gif" >|<img src = "https://user-images.githubusercontent.com/85912592/181693095-a819296f-13a7-4038-8f80-ec3ef3f4b0a9.gif" >|![image](https://user-images.githubusercontent.com/101693495/182052331-d022e84a-f169-4022-adb1-3905208fd1b2.png)|
 		
 ### 2) 게시글
 
