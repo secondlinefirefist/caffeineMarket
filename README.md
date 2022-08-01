@@ -1,11 +1,11 @@
 # ☕️ caffeineMarket
 ## **1. 프로젝트 소개**
-> 🧷 <a href="https://secondlinefirefist.github.io/caffeineMarket">배포 URL</a>
-
 
 <img width="80%" height="90%" src="https://user-images.githubusercontent.com/85912592/182094232-72c8bd65-14c1-4b6e-bdc5-6b922945e039.png">
 
 커피를 좋아하는 현대인이라면 손쉽게 로그인하여 커피와 관련된 상품을 판매하고 일상을 공유할 수 있는 SNS 서비스입니다.  커피와의 일상을 게시글로 공유하며 좋아요와 댓글을 통해 사용자와 소통합니다. 다양한 사람들을 팔로우하고, 마음에 드는 피드가 있다면 '좋아요'를 누르거나 댓글을 달 수도 있습니다. 또한, 다른 사용자와 채팅창을 이용해 즐거운 대화도 나눌 수 있습니다.
+
+> 🧷 <a href="https://secondlinefirefist.github.io/caffeineMarket">배포 URL</a>
 
 <br>
 
