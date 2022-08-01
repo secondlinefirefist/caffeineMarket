@@ -210,7 +210,7 @@
     
  ### 라우팅 예외처리에도 사용 
 - 마이프로필로/유어프로필과 팔로잉/팔로워가 서로 같은 html 파일을 공유하고 있어, 404 에러를 많이 겪게 됨
-- Js에서 흔하게 사용하는 뒤로가기인 `window.history.back()` 또는 `window.history.go(-1)`만 썼을 때 에러 발생
+- JS에서 흔하게 사용하는 뒤로가기인 `window.history.back()` 또는 `window.history.go(-1)`만 썼을 때 에러 발생
 - Location Porperty를 사용해서 예외처리로 Error 해결 
 
 #### 이전 코드) 
