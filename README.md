@@ -31,6 +31,7 @@
 ### 4.2 개발 관리
 * 버전 관리 및 이슈 : Github, Jira, Slack
 * 회의록: 🔗 <a href="https://github.com/secondlinefirefist/caffeineMarket/wiki/2%ED%98%B8%EC%84%A0-%EB%B6%88%EC%A3%BC%EB%A8%B9-%ED%9A%8C%EC%9D%98%EB%A1%9D-%F0%9F%94%A5">Github Wiki</a>, Notion
+* prettier 사용
 * 디자인 : Figma, Illustrator
 
 |Jira|Slack|
@@ -89,7 +90,7 @@
 ### 👷🏻‍♀️ 김태희
 - myProfile & yourProfile 
    - 유저 정보, 상품&게시글 리스트 GET
- - 공용 및 프로필 모달, 삭제, 로그아웃 기능 구현
+ - 404, 공용 및 프로필 모달, 삭제, 로그아웃 기능 구현
 
 - follwing & follower
    - 팔로잉/ 팔로우 API GET, DELETE, POST
@@ -118,9 +119,9 @@
 |---|---|---|
 |![splash](https://user-images.githubusercontent.com/85912592/181692800-8fa20db5-ca1f-461a-bbea-eaf56556d858.gif)|![login](https://user-images.githubusercontent.com/85912592/181692853-7143bf70-4073-4196-92f0-a485f5dc5ff5.gif)|![회원가입](https://user-images.githubusercontent.com/85912592/181692894-3fc71447-3c53-474b-98d2-6d870b5dd5a3.gif)|
 
-|홈 페이지|채팅 페이지|
-|:---:|:---:|
-|<img src="https://user-images.githubusercontent.com/85912592/181693043-450a811e-bca1-43a8-ae85-240bd8430a94.gif" width="310px">|<img src = "https://user-images.githubusercontent.com/85912592/181693095-a819296f-13a7-4038-8f80-ec3ef3f4b0a9.gif" width="310px">|
+|홈 페이지|채팅 페이지|404 페이지|
+|:---:|:---:|:---:|
+|<img src="https://user-images.githubusercontent.com/85912592/181693043-450a811e-bca1-43a8-ae85-240bd8430a94.gif" width="310px">|<img src = "https://user-images.githubusercontent.com/85912592/181693095-a819296f-13a7-4038-8f80-ec3ef3f4b0a9.gif" width="310px">|![image](https://user-images.githubusercontent.com/101693495/182052331-d022e84a-f169-4022-adb1-3905208fd1b2.png)|
 		
 ### 2) 게시글
 
