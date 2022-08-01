@@ -31,7 +31,7 @@
 ### 4.2 개발 관리
 * 버전 관리 및 이슈 : Github, Jira, Slack
 * 회의록: 🔗 <a href="https://github.com/secondlinefirefist/caffeineMarket/wiki/2%ED%98%B8%EC%84%A0-%EB%B6%88%EC%A3%BC%EB%A8%B9-%ED%9A%8C%EC%9D%98%EB%A1%9D-%F0%9F%94%A5">Github Wiki</a>, Notion
-* prettier 사용
+* <a href="https://github.com/secondlinefirefist/caffeineMarket/wiki">merge convention, commit convention, prettier 사용</a>
 * 디자인 : Figma, Illustrator
 
 |Jira|Slack|
